@@ -1,0 +1,85 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{wyngaard}{book}{}
+      \name{author}{1}{}{%
+        {{hash=029151758446d7abd567deca668fd069}{%
+           family={Wyngaard},
+           familyi={W\bibinitperiod},
+           given={John\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{029151758446d7abd567deca668fd069}
+      \strng{fullhash}{029151758446d7abd567deca668fd069}
+      \strng{bibnamehash}{029151758446d7abd567deca668fd069}
+      \strng{authorbibnamehash}{029151758446d7abd567deca668fd069}
+      \strng{authornamehash}{029151758446d7abd567deca668fd069}
+      \strng{authorfullhash}{029151758446d7abd567deca668fd069}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Turbulence in the Atmosphere}
+      \field{title}{Turbulence in the Atmosphere}
+      \field{year}{2010}
+      \true{nocite}
+    \endentry
+  \enddatalist
+  \datalist[entry]{nty/global//global/global}
+    \entry{wyngaard}{book}{}
+      \name{author}{1}{}{%
+        {{hash=029151758446d7abd567deca668fd069}{%
+           family={Wyngaard},
+           familyi={W\bibinitperiod},
+           given={John\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{029151758446d7abd567deca668fd069}
+      \strng{fullhash}{029151758446d7abd567deca668fd069}
+      \strng{bibnamehash}{029151758446d7abd567deca668fd069}
+      \strng{authorbibnamehash}{029151758446d7abd567deca668fd069}
+      \strng{authornamehash}{029151758446d7abd567deca668fd069}
+      \strng{authorfullhash}{029151758446d7abd567deca668fd069}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Turbulence in the Atmosphere}
+      \field{title}{Turbulence in the Atmosphere}
+      \field{year}{2010}
+      \true{nocite}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

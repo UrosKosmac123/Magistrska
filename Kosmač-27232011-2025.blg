@@ -1,0 +1,17 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'Kosmač-27232011-2025.blg'
+[26] biber-darwin:340> INFO - === Thu Mar 27, 2025, 12:10:26
+[95] Biber.pm:420> INFO - Reading './Kosmač-27232011-2025.bcf'
+[124] Biber.pm:994> INFO - Found 1 citekeys in bib section 0
+[131] Biber.pm:4463> INFO - Processing section 0
+[134] Biber.pm:4654> INFO - Looking for bibtex file 'literatura.bib' for section 0
+[135] bibtex.pm:1713> INFO - LaTeX decoding ...
+[142] bibtex.pm:1519> INFO - Found BibTeX data source 'literatura.bib'
+[155] UCollate.pm:68> INFO - Overriding locale 'sl-SI' defaults 'variable = shifted' with 'variable = non-ignorable'
+[155] UCollate.pm:68> INFO - Overriding locale 'sl-SI' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[155] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'sl-SI'
+[158] UCollate.pm:68> INFO - Overriding locale 'sl-SI' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[158] UCollate.pm:68> INFO - Overriding locale 'sl-SI' defaults 'variable = shifted' with 'variable = non-ignorable'
+[158] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'sl-SI'
+[158] bbl.pm:676> INFO - Writing 'KosmaÄ-27232011-2025.bbl' with encoding 'UTF-8'
+[159] bbl.pm:779> INFO - Output to KosmaÄ-27232011-2025.bbl
