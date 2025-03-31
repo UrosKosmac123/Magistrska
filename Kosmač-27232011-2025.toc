@@ -17,7 +17,9 @@
 \contentsline {subsection}{\numberline {2.2}Filtrirani ohranitveni zakoni}{24}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Filtriran zakon o ohranitvi mase}{24}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Filtriran zakon o ohranitvi gibalne količine}{24}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Filtriran zakon o ohranitvi vrtinčnosti}{25}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.3}Filtriran zakon o ohranitvi vrtinčnosti}{26}{subsubsection.2.2.3}%
 \contentsline {subsubsection}{\numberline {2.2.4}Filtriran zakon o ohranitvi skalarja}{26}{subsubsection.2.2.4}%
-\contentsline {subsubsection}{\numberline {2.2.5}Filtriran materialni odvod}{26}{subsubsection.2.2.5}%
-\contentsline {section}{Literatura}{29}{section*.9}%
+\contentsline {subsubsection}{\numberline {2.2.5}Filtriran materialni odvod}{27}{subsubsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.3}Razreševanje filtriranih polj}{28}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Diskretna Fourierova analiza}{28}{subsubsection.2.3.1}%
+\contentsline {section}{Literatura}{31}{section*.9}%

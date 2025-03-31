@@ -1,20 +1,20 @@
 # Fdb version 4
-["biber Kosmač-27232011-2025"] 1743073817.90718 "Kosmač-27232011-2025.bcf" "Kosmač-27232011-2025.bbl" "Kosmač-27232011-2025" 1743073829.62631 0
-  "./Kosmač-27232011-2025.bcf" 1743073829.53023 109818 dba66f8c0c8c481224449ac38ac27e5f ""
-  "Kosmač-27232011-2025.bcf" 1743073829.53023 109818 dba66f8c0c8c481224449ac38ac27e5f "pdflatex"
+["biber Kosmač-27232011-2025"] 1743073817.90718 "Kosmač-27232011-2025.bcf" "Kosmač-27232011-2025.bbl" "Kosmač-27232011-2025" 1743434789.74453 0
+  "./Kosmač-27232011-2025.bcf" 1743434789.64355 109818 dba66f8c0c8c481224449ac38ac27e5f ""
+  "Kosmač-27232011-2025.bcf" 1743434789.64355 109818 dba66f8c0c8c481224449ac38ac27e5f "pdflatex"
   "literatura.bib" 1743073730.65396 5420 f5f4f048d9a48c35953c72e654f6575f ""
   (generated)
   "Kosmač-27232011-2025.bbl"
   "Kosmač-27232011-2025.blg"
   (rewritten before read)
-["makeindex Kosmač-27232011-2025.idx"] 1742665738.92519 "Kosmač-27232011-2025.idx" "Kosmač-27232011-2025.ind" "Kosmač-27232011-2025" 1743073829.62624 0
-  "Kosmač-27232011-2025.idx" 1743073828.84318 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex Kosmač-27232011-2025.idx"] 1743434787.29712 "Kosmač-27232011-2025.idx" "Kosmač-27232011-2025.ind" "Kosmač-27232011-2025" 1743434789.74447 0
+  "Kosmač-27232011-2025.idx" 1743434788.90214 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "Kosmač-27232011-2025.ilg"
   "Kosmač-27232011-2025.ind"
   (rewritten before read)
-["pdflatex"] 1743073828.50915 "/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex" "Kosmač-27232011-2025.pdf" "Kosmač-27232011-2025" 1743073829.62663 0
-  "/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex" 1743073816.41871 72666 0f8eab528a1ad1e9c9e0d6539bf8e5d0 ""
+["pdflatex"] 1743434788.55789 "/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex" "Kosmač-27232011-2025.pdf" "Kosmač-27232011-2025" 1743434789.74486 0
+  "/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex" 1743434787.12934 76220 8a811f8cf803342751f588b244d8d53f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -78,6 +78,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb" 1255129361 122174 a7a08406857c9530a0320a2517f60370 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb" 1255129361 109265 32320cb6133d4d76bf83e27b5eb4009b ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb" 1254269338 27863 09ce3735688ffde955e72da27c95b61a ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb" 1254269338 28109 6d61305ed3d0eb794ebe36f15cf44aa0 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb" 1254269338 27802 5c876bb2c4040caaf035d60bd74a86bd ""
   "/usr/local/texlive/2025/texmf-dist/fonts/vf/public/boondox/BOONDOX-r-calo.vf" 1304615349 836 c668e50a9b8834b1985c13c06ce6e1ca ""
   "/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -306,16 +307,16 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1742917895 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1742917876 3345739 ffe335e16861018dcb8662250095c13f ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "Kosmač-27232011-2025.aux" 1743073829.52712 6263 2890c92bfb3eb1395f09c0d7e8213725 "pdflatex"
+  "Kosmač-27232011-2025.aux" 1743434789.64034 6547 2ea3d981ce126de28e07c3a944c7cc25 "pdflatex"
   "Kosmač-27232011-2025.bbl" 1743073826.25403 3114 fba887d60ff4056006d5291175292110 "biber Kosmač-27232011-2025"
-  "Kosmač-27232011-2025.ind" 1743073730.62825 0 d41d8cd98f00b204e9800998ecf8427e "makeindex Kosmač-27232011-2025.idx"
-  "Kosmač-27232011-2025.out" 1743073829.52844 2894 1726a847f37a3e378f0e70d95697dc1d "pdflatex"
-  "Kosmač-27232011-2025.run.xml" 1743073829.53069 2424 41bbcb5dd94c68e13d5adc69c1f4f776 "pdflatex"
-  "Kosmač-27232011-2025.tex" 1743073816.41871 72666 0f8eab528a1ad1e9c9e0d6539bf8e5d0 ""
-  "Kosmač-27232011-2025.toc" 1743073829.53074 2090 62bc999f9b44e851dc6133b750593110 "pdflatex"
-  "Kosmač-27232011-2025.xmpdata" 1743073829.07655 183 2733c9a0e4d834da936e8e8265eae044 "pdflatex"
+  "Kosmač-27232011-2025.ind" 1743434787.37619 0 d41d8cd98f00b204e9800998ecf8427e "makeindex Kosmač-27232011-2025.idx"
+  "Kosmač-27232011-2025.out" 1743434789.64166 3074 34773f70836089981021a5d088fc8d24 "pdflatex"
+  "Kosmač-27232011-2025.run.xml" 1743434789.64405 2424 41bbcb5dd94c68e13d5adc69c1f4f776 "pdflatex"
+  "Kosmač-27232011-2025.tex" 1743434787.12934 76220 8a811f8cf803342751f588b244d8d53f ""
+  "Kosmač-27232011-2025.toc" 1743434789.6441 2292 bbec846445a739747ec80efdc4842e8c "pdflatex"
+  "Kosmač-27232011-2025.xmpdata" 1743434789.16191 183 2733c9a0e4d834da936e8e8265eae044 "pdflatex"
   "fmfdelo.cls" 1743073730.60598 27417 2d3295dcdd2612a7e09ad6b1af1198b2 ""
-  "pdfa.xmpi" 1743073829.21482 5524 02caa1f9e013dd263d5fa3ec61bd32ac "pdflatex"
+  "pdfa.xmpi" 1743434789.30627 5524 fba4eb542fe54d0e4dfa182301205e60 "pdflatex"
   "slike/Reynolds.jpeg" 1743073730.65869 286420 56886526e0168d243d7a0f040ce3e4f2 ""
   "slike/difus.jpeg" 1743073730.65956 378662 4ee7c8da7cae57134d3e432ebd69ab65 ""
   "slike/vrtinci.jpeg" 1743073730.66279 743051 76d1ad43f7321e74219e8c6d84684536 ""

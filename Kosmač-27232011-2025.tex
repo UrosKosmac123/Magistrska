@@ -1344,14 +1344,24 @@ G(x) &= \frac{1}{2\pi} \int_\R T_c(\kappa) e^{-i\kappa x} \dif \kappa = \\
 \end{align*} 
 
 \begin{definicija}
-Valovno preklopni filter je filter s filtracijsko funkcijo $G$
+Enodimenzionalni valovno preklopni filter je filter s filtracijsko funkcijo $G$
 \begin{equation}
 G(x) = \frac{\sin(\kappa_c x)}{\pi x}.
 \end{equation}
 \end{definicija}
+\noindent
+To lahko enostavno posplošimo na poljubno dimenzijo 
+\begin{definicija}
+Za $n\in \N$ definiramo $n$-dimenzionalni valovno preklopno filtracijsko 
+funkcijo $G_n$
+\begin{equation}
+G_n(x) = \prod_{i=1}^n G(x_i) =\prod_{i=1}^n \frac{\sin(\kappa_c x_i)}{\pi x_i}.
+\end{equation} 
+\end{definicija}
+
 
 \begin{opomba}
-Lahko tudi definiramo visiko-prehodno prenosno funkcijo
+Lahko tudi definiramo visoko-prehodno prenosno funkcijo
 $$
 T_c(\kappa)=\left\{\begin{array}{l}
   1 ;\,\, |\kappa| \geq \kappa_c \\
@@ -1361,21 +1371,41 @@ $$
 vendar v tem filtracijska funkcija ne obstaja.
 \end{opomba}
 
+
 \noindent
 \textbf{Škatlast filter:}\\
 Nekoliko bolj naravna filtracijska funkcija, ki nas spomne prostorsko povprečje je 
 škatlasta funkcija 
 \begin{definicija}
-Naj bo $\Delta > 0$. Škatlasta funkcija je 
+Naj bodo $\Delta > 0$. Škatlasta funkcija je 
 \begin{equation}
 G(x)= \begin{cases}\frac{1}{\Delta} & ; x \in\left[-\frac{\Delta}{2}, \frac{\Delta}{2}\right] \\ 0 & ; \text { sicer }\end{cases}
 \end{equation}
 \end{definicija}
 
-Prenosno funkcijo lahko iračunamo po zgoraj izpeljani formuli, kar nam da 
+Prenosno funkcijo lahko izračunamo po zgoraj izpeljani formuli, kar nam da 
 $$
 T(\kappa) = \frac{\sin(\kappa \frac{\Delta}{2})}{\kappa \frac{\Delta}{2}}.
 $$
+Navedimo še večdimenzionalno škatlasto funkcijo
+\begin{definicija}
+Naj bodo $\Delta_1, \dots, \Delta_n > 0$. $n$-dimenzionalna
+škatlasta funkcija je 
+\begin{equation}
+  G(x_1, \dots, x_n)= \begin{cases}\frac{1}{\prod_{i=1}^{n}\Delta_i} & ; x_i \in\left[-\frac{\Delta_i}{2}, \frac{\Delta_i}{2}\right] \\ 0 & ; \text { sicer }\end{cases}
+\end{equation}  
+\end{definicija}
+
+\begin{opomba}
+  \hfill
+  \begin{itemize}
+    \item Temu filtri se tudi pravi lokalno povprečje.
+    \item V literaturi se občasno pojavi tudi nekoliko drugačna definicija. kjer 
+    se integrira po krogli namesto po kvadratu.
+  \end{itemize}
+  \end{opomba}
+  
+
 \noindent
 \textbf{Gaussov filter}:
 Poglejmo filtracijsko funkcijo, ki se razlikuje od prejšnij dveh primerov v dveh pogledih.
@@ -1384,11 +1414,14 @@ primeov zvezna in pomembneje pozitivna
 \begin{definicija}
 Naj bo $\sigma > 0$. Gaussov filter je filter dan z Gaussovo funkcijo 
 \begin{equation}
-G(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{x^2}{2\sigma^2}}.
+G(x_1, \dots, x_n) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{x^2}{2\sigma^2}}.
+\end{equation}
+oz. $n$-dimenzionalni Gaussov filter je dan z 
+\begin{equation}
+G(x_1, \dots, x_n) = \frac{1}{(2\pi \sigma^2)^{n/2}} e^{-\frac{1}{2\sigma^2}(x_1^2 + \dots + x_n^2)}
 \end{equation}
 \end{definicija}
 
-\newpage
 
 \subsection{Filtrirani ohranitveni zakoni}
 
@@ -1445,7 +1478,6 @@ $$
 \sum_{k=1}^3 \frac{\partial}{\partial x_k} (U_k U_j) = \nabla \cdot (U_j U) = 
 \nabla \cdot [U U^T]_{j} = \nabla \odot [U U^T],
 $$
-\newpage
 
 kjer je $U\times U$ Hadamardov produkt oz. produkt po komponentah 
 \[
@@ -1552,7 +1584,7 @@ k_r = \frac{1}{2} \tau_{ii}^R = \frac{1}{2}\text{tr}(\tau^R).
 \tau_{ij}^\text{anizo} = \tau_{ij}^R - \tau_{ij}^\text{izo}.
 \end{equation}
 \end{definicija}
-\newpage
+
 Zapišemo filtrirano Navier-Stokesovo enačbo preko teh definicij
 \begin{align*}
 \frac{\partial \overline{U}_j}{\partial t} + &\frac{\partial \overline{U_i U_j}}{\partial x_i} = 
@@ -1581,6 +1613,70 @@ Filtriran materialni odvod za vektorko polje $U$ je
 \end{equation}
 \end{definicija}
 
+\subsection{Razreševanje filtriranih polj}
+
+Sedaj bomo videli, zakaj smo uvedli filtrirane enačbe, saj če 
+trenutno primerjamo z nefiltriranimi enačbami nevidimo bistvene razlike.
+
+Omejimo, se na enodomenzionalni primer polja $u$ in interval $[0, L)$, 
+$L > 0$. Če polje $u$ evalviramo na $N \in \N$ točkah, nas zanima 
+kolikšen mora biti velik korah $h = \frac{L}{N}$, da lahko primerno aproksimiramo 
+polje $u$ in določimo željene informacije (ekvivaletno lahko fiksiramo 
+korak in določamo število točk $N$)? \\
+Na to uprašanje bomo odgovorili z uporabo diskretne Fourierove analize. 
+
+\subsubsection{Diskretna Fourierova analiza}
+
+\begin{definicija}
+Naj bo $u: [a, b) \rightarrow \C$ periodična funkcija, $a < b$ in $n\in \N$. 
+Diskretna Fourierova transformacija funkcije $u$ je zaporedje 
+\begin{equation}
+U(x(n)) = \sum_{k=0}^{N-1} u(x(k)) e^{\frac{-2\pi k n i}{N}}, \quad n = 0, 1, \dots, N-1,
+\end{equation}
+Inverzna diskretna Fourierova
+transformacija pa je definirana kot 
+\begin{equation}
+  U^{-1}(x(n)) = \frac{1}{N}\sum_{k=0}^{N-1} u(x(k)) e^{\frac{2\pi k n i}{N}}, \quad n = 0, 1, \dots, N-1.
+\end{equation}
+V obeh primerih je $x(k) = a + \frac{k}{N}(b-a)$.
+\end{definicija}
+
+\begin{opomba}
+Če funkcijo $u$ iz definicije trasliramo, je dovolj če se 
+omejimo na interval $[0, L]$. V tem primeru je $x(k) = \frac{kL}{N}$.
+\end{opomba}
+
+Pričakovali bi, da imata diskretni Fourierovi transformaciji podobne 
+lastnosti kot klasična Fourierova transformacija, kar povemo z naslednjim izrekom 
+
+\begin{izrek}
+Naj bo $u: [a, b) \rightarrow \C$ periodična funkcija in $N\in \N$. Potem velja
+\begin{equation}
+U^{-1}(U(x(n))) = u(x(n)).
+\end{equation}
+\end{izrek}
+
+\begin{dokaz}
+Označimo $x_n = n(n)$.
+\begin{align*}
+  U^{-1}(U(x(n))) &= \frac{1}{N}\sum_{k=0}^{N-1} U(x_k) e^{\frac{2\pi k n i}{N}} = \\
+  &= \frac{1}{N}\sum_{k=0}^{N-1} \sum_{j=0}^{N-1} u(x_j) e^{\frac{-2\pi i j k}{N}} e^{\frac{2\pi i k n }{N}} = \\
+  &= \frac{1}{N}\sum_{k=0}^{N-1} \sum_{j=0}^{N-1} u(x_j) e^{\frac{-2\pi i k(n - j)}{N}} = 
+\end{align*}
+
+Označimo $x = e^{\frac{2\pi i (n-j)}{N}}$ in zamenjamo vrstni red seštevanja v 
+zadnji enakosti 
+\begin{align*}
+=& \frac{1}{N}\sum_{j=0}^{N-1} u(x_j)\sum_{k=0}^{N-1} x^k = \\
+=& \frac{1}{N}\sum_{j=0}^{N-1} u(x_j) \frac{x^N - 1}{x - 1} = 
+\end{align*}
+
+
+\end{dokaz}
+
+\newpage
+Ker $u$ predstavimo z diskretnimi vrednostmi, jo razvijemo v 
+inverzno diskreno Fourierovo vrsto 
 
 
 
