@@ -22,4 +22,4 @@
 \contentsline {subsubsection}{\numberline {2.2.5}Filtriran materialni odvod}{27}{subsubsection.2.2.5}%
 \contentsline {subsection}{\numberline {2.3}Razreševanje filtriranih polj}{28}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Diskretna Fourierova analiza}{28}{subsubsection.2.3.1}%
-\contentsline {section}{Literatura}{31}{section*.9}%
+\contentsline {section}{Literatura}{35}{section*.9}%

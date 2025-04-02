@@ -112,11 +112,12 @@ the content and not the structure of your work.}
   linkcolor=blue,
   urlcolor=cyan,
 }
-
 \usepackage{esdiff}
 \usepackage{animate}
 \usetikzlibrary{quotes,arrows.meta}
 \usetikzlibrary{decorations.pathreplacing} 
+\AtBeginDocument{\hypersetup{pdfborder={0 0 1.1}}}
+
 % VEČ ZANIMIVIH PAKETOV
 % \usepackage{array}      % več možnosti za tabele
 % \usepackage[list=true,listformat=simple]{subcaption}  % več kot ena slika na figure, omogoči slika 1a, slika 1b
@@ -1628,7 +1629,7 @@ Na to uprašanje bomo odgovorili z uporabo diskretne Fourierove analize.
 \subsubsection{Diskretna Fourierova analiza}
 
 \begin{definicija}
-Naj bo $u: [a, b) \rightarrow \C$ periodična funkcija, $a < b$ in $n\in \N$. 
+Naj bo $u: [a, b) \rightarrow \C$ periodična funkcija, $a < b$ in $N\in \N$. 
 Diskretna Fourierova transformacija funkcije $u$ je zaporedje 
 \begin{equation}
 U(x(n)) = \sum_{k=0}^{N-1} u(x(k)) e^{\frac{-2\pi k n i}{N}}, \quad n = 0, 1, \dots, N-1,
@@ -1638,7 +1639,8 @@ transformacija pa je definirana kot
 \begin{equation}
   U^{-1}(x(n)) = \frac{1}{N}\sum_{k=0}^{N-1} u(x(k)) e^{\frac{2\pi k n i}{N}}, \quad n = 0, 1, \dots, N-1.
 \end{equation}
-V obeh primerih je $x(k) = a + \frac{k}{N}(b-a)$.
+V obeh primerih je $x(k) = a + \frac{k}{N}(b-a)$, kar bomo označili kot
+$x_k = x(k)$.
 \end{definicija}
 
 \begin{opomba}
@@ -1650,16 +1652,16 @@ Pričakovali bi, da imata diskretni Fourierovi transformaciji podobne
 lastnosti kot klasična Fourierova transformacija, kar povemo z naslednjim izrekom 
 
 \begin{izrek}
+\label{izrek:iDFT}
 Naj bo $u: [a, b) \rightarrow \C$ periodična funkcija in $N\in \N$. Potem velja
 \begin{equation}
-U^{-1}(U(x(n))) = u(x(n)).
+U^{-1}(U(x_n)) = u(x_n) = U(U^{-1}(x_n)).
 \end{equation}
 \end{izrek}
 
 \begin{dokaz}
-Označimo $x_n = n(n)$.
 \begin{align*}
-  U^{-1}(U(x(n))) &= \frac{1}{N}\sum_{k=0}^{N-1} U(x_k) e^{\frac{2\pi k n i}{N}} = \\
+  U^{-1}(U(x_n)) &= \frac{1}{N}\sum_{k=0}^{N-1} U(x_k) e^{\frac{2\pi k n i}{N}} = \\
   &= \frac{1}{N}\sum_{k=0}^{N-1} \sum_{j=0}^{N-1} u(x_j) e^{\frac{-2\pi i j k}{N}} e^{\frac{2\pi i k n }{N}} = \\
   &= \frac{1}{N}\sum_{k=0}^{N-1} \sum_{j=0}^{N-1} u(x_j) e^{\frac{-2\pi i k(n - j)}{N}} = 
 \end{align*}
@@ -1667,12 +1669,232 @@ Označimo $x_n = n(n)$.
 Označimo $x = e^{\frac{2\pi i (n-j)}{N}}$ in zamenjamo vrstni red seštevanja v 
 zadnji enakosti 
 \begin{align*}
-=& \frac{1}{N}\sum_{j=0}^{N-1} u(x_j)\sum_{k=0}^{N-1} x^k = \\
-=& \frac{1}{N}\sum_{j=0}^{N-1} u(x_j) \frac{x^N - 1}{x - 1} = 
+=& \frac{1}{N}\sum_{j=0}^{N-1} u(x_j)\sum_{k=0}^{N-1} x^k .
+\end{align*}
+Notranja vsota je geometrijska vsota in je enaka
+
+\[ 
+  \sum_{k=0}^{N-1} x^k = \begin{cases} 
+      \frac{x^N - 1}{x - 1} &; x\neq 1 \\
+      \,\,\,N &; x = 1 
+   \end{cases}
+\]
+Ker je $n-j \in \Z$, je $x^N = e^{2\pi i(n-j)} = 1$, zato lahko dodatno
+poenostavimo  
+\[ 
+  \sum_{k=0}^{N-1} x^k = \begin{cases} 
+      \,\,\,0 &; x\neq 1 \\
+      \,\,\,N &; x = 1 
+   \end{cases}
+   = 
+   \begin{cases} 
+    \,\,\,0 &; j\neq n \\
+    \,\,\,N &; j=n 
+ \end{cases}
+ = N\delta_{jn}
+\]
+\begin{align*}
+  =& \frac{1}{N}\sum_{j=0}^{N-1} u(x_j)\sum_{k=0}^{N-1} x^k = \sum_{j=0}^{N-1} u(x_j) \delta_{jn} = u(x_n). 
+\end{align*}
+Enak način dokažemo tudi drugo enakost.
+\end{dokaz}
+
+Poglejmo si še nekaj pomebnih lasnotsti diskretne Fourierove transformacije
+\begin{trditev}
+Naj bo $u: [a, b) \rightarrow \C$ periodična funkcija, $N\in \N$ in\quad
+$t, n \in \{0, 1, \dots, N-1\}$. Potem veljajo naslednje lastnosti:
+\begin{enumerate}
+  \item[i)] Periodičnost:
+  \begin{equation}
+    U(x_n) = U(x_{n + N}).
+  \end{equation}
+  \item[ii)] Invarianca za translacijo indeksa:
+  \begin{equation}
+  \sum_{k=t}^{N-1 + t} u(x_k) e^{\frac{-2\pi i k n}{N}} = \sum_{k=0}^{N-1} u(x_k) e^{\frac{-2\pi i k n}{N}}.
+\end{equation}
+  \item[iii)] Prostorski premik: tranformiranka funkcije $u(x - t)$ je
+  \begin{equation}
+  U^s(x_n) = U(x_n)e^{\frac{-2\pi k m t}{N}} .
+\end{equation}
+  \item[iv)] Konjugacijska simetrija: 
+  \begin{equation}
+    \overline{U(x_n)} = U(x_{N-n}).
+  \end{equation}
+  \item[v)] Plancherel izrek:
+  \begin{equation}
+    \sum_{k=0}^{N-1} |u(x_k)|^2 = \frac{1}{N}\sum_{n=0}^{N-1} |U(x_k)|^2.
+  \end{equation}
+\end{enumerate}
+\end{trditev}
+
+\begin{dokaz}
+  \hfill
+\begin{enumerate}
+  \item[i)]
+  \begin{align*}
+    U(x_{n+N}) &= \sum_{k=0}^{N-1} u(x_{k+N}) e^{\frac{-2\pi k i(n+N)}{N}} = \\
+    &= \sum_{k=0}^{N-1} u(x_k) e^{\frac{-2\pi k n i}{N}} e^{-2\pi k i} = \\
+    &= \sum_{k=0}^{N-1} u(x_k) e^{\frac{-2\pi k n i}{N}} = U(x_n).
+  \end{align*}
+\newpage
+  \item[ii)]
+  \begin{align*}
+    &\sum_{k=t}^{N-1 + t} u(x_k) e^{\frac{-2\pi i k n}{N}} = \sum_{k=0}^{N-1} u(x_{k+t}) e^{\frac{-2\pi i (k+t) n}{N}} = \\
+    =&\sum_{k=0}^{N-t-1} u(x_{k+t}) e^{\frac{-2\pi i (k+t) n}{N}} + 
+    \sum_{k=N-t}^{N-1} u(x_{k+t}) e^{\frac{-2\pi i (k+t) n}{N}} = 
+  \end{align*}
+Obravnavamo vsako vsoto posebaj: 
+\begin{align*}
+\sum_{k=0}^{N-t-1} u(x_{k+t}) e^{\frac{-2\pi i (k+t) n}{N}} &= 
+\sum_{k=t}^{N-1} u(x_{k}) e^{\frac{-2\pi i k n}{N}}\\[5mm]
+  \sum_{k=N-t}^{N-1} u(x_{k+t}) e^{\frac{-2\pi i (k+t) n}{N}} &= 
+  \sum_{k=-t}^{-1} u(x_{N+k+t}) e^{\frac{-2\pi i (k+t+N) n}{N}} = \\
+  &= \sum_{k=-t}^{-1} u(x_{k+t}) e^{\frac{-2\pi i (k+t) n}{N}} \\
+  &= \sum_{k=0}^{t-1} u(x_{k}) e^{\frac{-2\pi i k n}{N}}
+\end{align*}
+končna vsota je 
+$$
+= \sum_{k=t}^{N-1} u(x_{k}) e^{\frac{-2\pi i k n}{N}} + \sum_{k=0}^{t-1} u(x_{k}) e^{\frac{-2\pi i k n}{N}} = 
+\sum_{k=0}^{N-1} u(x_{k}) e^{\frac{-2\pi i k n}{N}}
+$$
+
+\item[iii)] 
+Označimo tranformiranko od $u(x-t)$ s $U^s$. Potem je 
+  \begin{align*}
+    U^s(x_{n}) &= \sum_{k=0}^{N-1} u(x_{k-t}) e^{\frac{-2k \pi i n}{N}} = \\
+    &= \sum_{k=-t}^{N-1-t} u(x_{k}) e^{\frac{-2(k+t) \pi i n}{N}} = \\
+    &= e^{\frac{-2\pi i t n}{N}} \sum_{k=-t}^{N-1-t} u(x_{k}) e^{\frac{-2k \pi i n}{N}} \stackrel{ii)}{=} \\
+    &=e^{\frac{-2\pi i t n}{N}} \sum_{k=0}^{N-1} u(x_{k}) e^{\frac{-2k \pi i n}{N}} \stackrel{ii)}{=} \\
+    &= e^{\frac{-2\pi i t n}{N}} U(x_n).
+  \end{align*}
+
+\item[iv)]
+\begin{align*}
+  \overline{U(x_n)} = \overline{\sum_{k=0}^{N-1} u(x_k) e^{\frac{-2\pi i k n}{N}}} &= 
+  \sum_{k=0}^{N-1} u(x_k) \overline{e^{\frac{-2\pi i k n}{N}}}=\\
+  &= \sum_{k=0}^{N-1} u(x_k) e^{\frac{2\pi i k n}{N}}=  \\
+  &= \sum_{k=0}^{N-1} u(x_k) e^{-\frac{2\pi i (N-k) n}{N}}= \\
+  &= U(x_{N-n}).
+\end{align*}
+\item[v)] 
+\begin{align*}
+|U(x_n)|^2 &= U(x_n) \overline{U(x_n)} = \\
+&= \sum_{k=0}^{N-1} u(x_k) e^{\frac{-2\pi i k n}{N}} \sum_{j=0}^{N-1} \overline{u(x_j)} e^{\frac{2\pi i j n}{N}} = \\
+&= \sum_{k=0}^{N-1} \sum_{j=0}^{N-1} u(x_k) \overline{u(x_j)} e^{\frac{-2\pi i (k-j) n}{N}} = 
+\end{align*}
+\begin{align*}
+\Longrightarrow \sum_{n=0}^{N-1} |U(x_n)|^2 &= \sum_{n=0}^{N-1} \sum_{k=0}^{N-1} \sum_{j=0}^{N-1} u(x_k) \overline{u(x_j)} e^{\frac{-2\pi i (k-j) n}{N}} = \\
+&= \sum_{k=0}^{N-1}u(x_k) \sum_{j=0}^{N-1} \overline{u(x_j)} \sum_{n=0}^{N-1} e^{\frac{-2\pi i (k-j) n}{N}} = \\
 \end{align*}
 
+Kot pri dokazu izreka \refeq{izrek:iDFT} zapišemo 
+\begin{align*}
+\sum_{n=0}^{N-1} e^{\frac{-2\pi i (k-j) n}{N}} = N \delta_{kj}.
+\end{align*}
 
+Dokaz sedaj hitro sledi 
+\begin{align*}
+&= \sum_{k=0}^{N-1}u(x_k) \sum_{j=0}^{N-1} \overline{u(x_j)} \sum_{n=0}^{N-1} e^{\frac{-2\pi i (k-j) n}{N}} = \\
+&= N\sum_{k=0}^{N-1} \sum_{j=0}^{N-1} u(x_k)\overline{u(x_j)} \delta_{kj} = \\
+&= N\sum_{k=0}^{N-1} |u(x_k)|^2.
+\end{align*}
+\end{enumerate}
 \end{dokaz}
+
+Poglejmo sedaj si poglejmo nekaj posledic dokazanih lastnosti in malo 
+širšo sliko našega cilja. \\
+
+Očitna ampak močna posledica izreka \ref{izrek:iDFT} je, da lahko 
+vrednost funkcije zapišemo kot končno vsoto eksponentnih funkcij 
+\begin{equation}
+  \label{eq:DFT decomposition}
+u(x_n) = \sum_{k=0}^{N-1} a_k e^{\frac{2\pi i k n}{N}},
+\end{equation}
+kjer so koeficienti $a_k$ diskretne Fourierove transformiranke 
+\begin{equation}
+a_k = \frac{1}{N} U(x_k) = \frac{1}{N} \sum_{j=0}^{N-1} u(x_j) e^{\frac{-2\pi i j k}{N}}.
+\end{equation}
+Iz definije DFT (diskretne Fourierove transformacije) se spomnimo, da je 
+argument $x_k = \frac{k L}{N}$, kjer je $L$ dolžina intervala. Zapišimo 
+razvoj \ref{eq:DFT decomposition} preko tega argumenta 
+$$
+e^{\frac{-2\pi i k n}{N}} = e^{\frac{-2\pi k}{L}\frac{nL}{N}i} = e^{i\kappa_k x_n}
+$$
+torej je 
+\begin{equation}
+u(x_n) = \sum_{k=0}^{N-1} a_k e^{i\kappa_k x_n},
+\end{equation}
+kjer je $\kappa_k = \frac{2\pi k}{L}$ valovna število ali frekvenca.
+To število smo že srečali, ko smo govorili o valovnem preklopnem 
+filtru, ki se bo pokazalo, da je ključno pri velikosti koraka $h$ 
+za numerično reševanje filtriranih enačb. Še zadnjno spremembo, ki 
+jo opravimo je, da zamaknemo vrsto, da bo (čim bolj) simetrična okoli ničle. 
+Po lastnosti $iii)$ lahko zamaknemo indeks seštevanja $k$ za $N/2 - 1$, pri 
+predpostavki, da je $N$ sodo število
+\begin{equation}
+u(x_n) = \sum_{k=1-\frac{N}{2}}^{\frac{N}{2}} a_k e^{i\kappa_k x_n}.
+\end{equation} 
+
+V praksi se DFS uporablja, ker Fourierovo transformacijo in 
+Fourierovo vrsto le redko kdaj lahko izračunamo analitično.
+Izkaže se, da pri obravnavanih lahko to naredimo točno 
+\begin{izrek}
+Naj bo $u: [0, L] \rightarrow \R$ periodična funkcija s periodo $N\in \N$, katere Fourierov 
+razvoj obstaja. Potem je 
+\begin{equation}
+u(x_n) = \sum_{k=1-\frac{N}{2}}^{\frac{N}{2}} a_k e^{i\kappa_k x_n} =
+\sum_{k=-\infty}^{\infty} b_k e^{i\kappa_k x_n},
+\end{equation}
+zveza med koeficienti $a_k$ in $b_k$ je
+\begin{equation}
+  a_k = \sum_{m=-\infty}^{\infty} b_{k + mN}. 
+\end{equation}
+\end{izrek}
+
+\begin{dokaz}
+Razvijemo vrednost $u(x_n)$ v Fourierovo vrsto 
+$$
+u(x_n) = \sum_{k=-\infty}^{\infty} b_k e^{i\kappa_k x_n}
+$$
+in ločimo na dva primera: \\
+\begin{enumerate}
+  \item[i)] Naj bo $b_k = 0$ za $|\kappa_k| \geq \kappa_{\text{max}}$, kjer je 
+  $\omega_{\text{max}} = \omega_{N/2}$. Potem je vsota indeksirana od 
+  $-(\frac{1}{2} - 1)$ do $\frac{1}{2}N - 1$
+  $$
+  u(x_n) = \sum_{k=1-\frac{N}{2}}^{\frac{N}{2}-1} b_k e^{i\kappa_k x_n}
+  $$
+  in je očitno, da so $b_k = c_k$. 
+  \item[ii)] Poglejmo si sedaj splošen primer, brez omejitve na koeficiente 
+  $c_k$. Naj bo $k \in \{-(\frac{1}{2}N - 1), \dots (\frac{1}{2}N - 1)\}$. 
+  Po osnovnem izreku o deljenju, poljuben indeks zapišemo kot
+  $k + mN$ za $m\in \Z$. Valovno število za ta indeks je 
+  $$
+  \kappa_{k + mN} = \frac{2\pi (k + mN)}{L} = \frac{2\pi k}{L} + 2m\frac{2\pi \frac{N}{2}}{L} = \kappa_k + 2m \kappa_{\text{max}}
+  $$
+  Eksponenti se poenostavijo 
+  $$
+  e^{i \kappa_{k + mN} x_n} =  e^{i \kappa_{k} x_n}  e^{2mi\kappa_{\text{max}} x_n} = 
+  e^{i\kappa_k x_m} e^{2\pi i k m} = e^{i\kappa_k x_m}
+  $$
+  Potem se Fourierova vrsta zreducira na 
+  \begin{align*}
+  u(x_n) &= \sum_{k=-\infty}^{\infty} b_k e^{i\kappa_k x_n} = \\
+         &= \sum_{m=-\infty}^{\infty} \Big(\sum_{k=1-\frac{N}{2}}^{\frac{N}{2}-1} b_{k+mN} e^{i\kappa_{k+mN} x_n}\Big) =\\ 
+         &= \sum_{m=-\infty}^{\infty} \Big(\sum_{k=1-\frac{N}{2}}^{\frac{N}{2}-1} b_{k+mN} e^{i\kappa_{k} x_n}\Big) =\\ 
+         &= \sum_{k=1-\frac{N}{2}}^{\frac{N}{2}-1} e^{i\kappa_{k} x_n}\Big(\sum_{m=-\infty}^{\infty} b_{k+mN}\Big) =\\
+         &= \sum_{k=1-\frac{N}{2}}^{\frac{N}{2}-1} a_k e^{i\kappa_{k} x_n},
+\end{align*}
+kjer so koeficienti $a_k$ enaki 
+$$a_k = \sum_{m=-\infty}^{\infty} b_{k+mN}.$$
+\end{enumerate}
+\end{dokaz}
+
+Ta rezultat pomeni, da lahko Fourierovo vrsto, ki je v splošnem nemoremo 
+točno izračunati, v tem primeru točno prevedemo na končno vsoto preko 
+diskretne Fourierove transformacije.
+
+
 
 \newpage
 Ker $u$ predstavimo z diskretnimi vrednostmi, jo razvijemo v 
