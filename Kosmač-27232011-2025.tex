@@ -1832,6 +1832,7 @@ jo opravimo je, da zamaknemo vrsto, da bo (čim bolj) simetrična okoli ničle.
 Po lastnosti $iii)$ lahko zamaknemo indeks seštevanja $k$ za $N/2 - 1$, pri 
 predpostavki, da je $N$ sodo število
 \begin{equation}
+  \label{eq:DFS expantion}
 u(x_n) = \sum_{k=1-\frac{N}{2}}^{\frac{N}{2}} a_k e^{i\kappa_k x_n}.
 \end{equation} 
 
@@ -1892,14 +1893,97 @@ $$a_k = \sum_{m=-\infty}^{\infty} b_{k+mN}.$$
 
 Ta rezultat pomeni, da lahko Fourierovo vrsto, ki je v splošnem nemoremo 
 točno izračunati, v tem primeru točno prevedemo na končno vsoto preko 
-diskretne Fourierove transformacije.
+diskretne Fourierove transformacije. \\
 
+\noindent
+Naj bo hitrostno polje $u: \R \rightarrow \R$ periodično z periodo $L$.
+Potem lahko $u$ razvijemo kot v \refeq{eq:DFS expantion}:
+$$
+u(x) = \sum_{k=1-\frac{N_{\text{max}}}{2}}^{\frac{N_\text{max}}{2}} a_k e^{i\kappa_k x}.
+$$
+za nek $N \in 2\N$, $a_k \in \C$ in $\kappa_k = \frac{2\pi k}{L}$. 
+Za funkcijo $u$ torej potrebujemo vsaj $N_{\text{max}}$ vrednosti, ločene s korakom $h_{\text{max}}$,
+$u(n h_{\text{max}})$, $n = 0, 1, 2, \dots, N - 1$, da jo točno predstavimo.
+Na začetku razdelk smo videli, da je korak $h_\text{max}$ dan z 
+$$
+h_\text{max} = \frac{L}{N_\text{max}}.
+$$
+To prevedemo na maksimalno valovno število, ki je pojavi v DFS razvoju 
+$$
+h_\text{max} = \frac{L}{N_\text{max}} = \frac{\pi L}{L \kappa_{{N_\text{max}/2}}} = \frac{\pi}{\kappa_{N_\text{max}/2}}.
+$$
 
+Ker delamo s filtriranimi polji, poglejmo še Fourierovo vrsto filtriranega polja:
+$$
+\overline{u}(x) = \sum_{k=1-\frac{N_{\text{max}}}{2}}^{\frac{N_\text{max}}{2}} \overline{a}_k e^{i\kappa_k x}.
+$$
+Da poišemo zvezo med koeficienti $a_n$ in $\overline{a}_n$, filtriramo polje $u$
+\begin{align*}
+\overline{u}(x) &= \overline{\sum_{k=1-\frac{N_{\text{max}}}{2}}^{\frac{N_\text{max}}{2}} a_k e^{i\kappa_k x}} = \\
+&= \sum_{k=1-\frac{N_{\text{max}}}{2}}^{\frac{N_\text{max}}{2}} a_k \overline{e^{i\kappa_k x}} = \\ 
+&= \sum_{k=1-\frac{N_{\text{max}}}{2}}^{\frac{N_\text{max}}{2}} a_k \int_{\R^n} G(r)\cdot e^{i\kappa_k(x - r)} \dif r = \\
+&= \sum_{k=1-\frac{N_{\text{max}}}{2}}^{\frac{N_\text{max}}{2}} a_k e^{i\kappa_n x }\int_{\R^n} G(r)\cdot e^{-i\kappa_k r} \dif r =\\
+&= \sum_{k=1-\frac{N_{\text{max}}}{2}}^{\frac{N_\text{max}}{2}} a_k \hat{G}(\kappa_n) e^{i\kappa_k x}
+\end{align*}
+kjer je $\hat{G}$ Fourierova transformiranka filtracijske funkcije $G$. Zveza med koeficienti je torej 
+$$
+\overline{a}_k = \hat{G}(\kappa_k) a_k = T(\kappa_k) a_k.
+$$
 
-\newpage
-Ker $u$ predstavimo z diskretnimi vrednostmi, jo razvijemo v 
-inverzno diskreno Fourierovo vrsto 
+Sedaj lahko uporabimo izpeljano teorijo, da določimo velikost koraka $h$ 
+za konkretne filtre v eni dimenziji. 
 
+\begin{opomba}
+Nauk razdelka, je da lahko polje $u$ točno predstavimo, z končnim naborom 
+vrednosti oz. od neke točke naprej, ne bo dobili nič boljši rezultat, če 
+uporabimo več funkcijskih vrednosti.
+\end{opomba}
 
+\subsubsection{Valovno preklopni filter}
+
+Spomnimo se, da je valovno preklopni filter je dan z prenosno funkcijo 
+
+$$
+T_c(\kappa)=\left\{\begin{array}{l}
+  1 ;\,\, |\kappa| \leq \kappa_c \\
+  0 ;\,\, |\kappa| > \kappa_c
+\end{array}\right.
+$$
+za $\kappa_c < \kappa_\text{max} = \kappa_{N_\text{max}/2}$. $\kappa_c$
+izberemo tako, da je 
+$$
+N = \frac{\kappa_c L}{\pi} \in 2\N.
+$$
+Koeficienti $\overline{a_k}$ so enaki 
+$$
+\overline{a}_k=\left\{\begin{array}{l}
+  a_k ;\,\, |\kappa_k| \leq \kappa_c \\
+  0 \,\,;\,\, |\kappa_k| > \kappa_c
+\end{array}\right.
+$$
+Zapišemo pogoje preko vrednosti $N$
+\begin{align*}
+|\kappa_k| = \Big| \frac{2\pi k}{L} \Big| &\leq \kappa_c = \frac{N\pi}{L} \Longrightarrow\\[1mm]
+|k| &\leq \frac{N}{2}
+\end{align*}
+Torej je
+$$
+\overline{a}_k=\left\{\begin{array}{l}
+  a_k ;\,\, |k| \leq N \\
+  0 \,\,;\,\, |k| > \frac{N}{2}
+\end{array}\right.
+$$
+in Fourierova vrsta filtriranega polja 
+\begin{equation}
+\overline{u}(x) = \sum_{k = 1 - \frac{1}{2}N}^{\frac{1}{2}N} c_n e^{i\kappa x}.
+\end{equation}
+
+Brez izgube informacij, lahko vrednosti $\overline{u}(nh)$ predstavimo na mreži 
+z razmikom 
+\begin{equation}
+h = \frac{L}{N} = \frac{\pi}{\kappa_c}.
+\end{equation}
+Tej dolžini pravimo \textbf{karakteristična filterska dolžina} in jo 
+označimo z $\Delta$.
 
 \end{document}
