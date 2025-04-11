@@ -1914,9 +1914,10 @@ h_\text{max} = \frac{L}{N_\text{max}} = \frac{\pi L}{L \kappa_{{N_\text{max}/2}}
 $$
 
 Ker delamo s filtriranimi polji, poglejmo še Fourierovo vrsto filtriranega polja:
-$$
+\begin{equation}
+\label{eq:filterDFT}
 \overline{u}(x) = \sum_{k=1-\frac{N_{\text{max}}}{2}}^{\frac{N_\text{max}}{2}} \overline{a}_k e^{i\kappa_k x}.
-$$
+\end{equation}
 Da poišemo zvezo med koeficienti $a_n$ in $\overline{a}_n$, filtriramo polje $u$
 \begin{align*}
 \overline{u}(x) &= \overline{\sum_{k=1-\frac{N_{\text{max}}}{2}}^{\frac{N_\text{max}}{2}} a_k e^{i\kappa_k x}} = \\
@@ -1926,9 +1927,10 @@ Da poišemo zvezo med koeficienti $a_n$ in $\overline{a}_n$, filtriramo polje $u
 &= \sum_{k=1-\frac{N_{\text{max}}}{2}}^{\frac{N_\text{max}}{2}} a_k \hat{G}(\kappa_n) e^{i\kappa_k x}
 \end{align*}
 kjer je $\hat{G}$ Fourierova transformiranka filtracijske funkcije $G$. Zveza med koeficienti je torej 
-$$
+\begin{equation}
+  \label{koef_filter}
 \overline{a}_k = \hat{G}(\kappa_k) a_k = T(\kappa_k) a_k.
-$$
+\end{equation}
 
 Sedaj lahko uporabimo izpeljano teorijo, da določimo velikost koraka $h$ 
 za konkretne filtre v eni dimenziji. 
@@ -1944,10 +1946,10 @@ uporabimo več funkcijskih vrednosti.
 Spomnimo se, da je valovno preklopni filter je dan z prenosno funkcijo 
 
 $$
-T_c(\kappa)=\left\{\begin{array}{l}
+T_c(\kappa)=\begin{cases}
   1 ;\,\, |\kappa| \leq \kappa_c \\
   0 ;\,\, |\kappa| > \kappa_c
-\end{array}\right.
+\end{cases}
 $$
 za $\kappa_c < \kappa_\text{max} = \kappa_{N_\text{max}/2}$. $\kappa_c$
 izberemo tako, da je 
@@ -1956,10 +1958,10 @@ N = \frac{\kappa_c L}{\pi} \in 2\N.
 $$
 Koeficienti $\overline{a_k}$ so enaki 
 $$
-\overline{a}_k=\left\{\begin{array}{l}
+\overline{a}_k=\begin{cases}
   a_k ;\,\, |\kappa_k| \leq \kappa_c \\
-  0 \,\,;\,\, |\kappa_k| > \kappa_c
-\end{array}\right.
+  0 \,\,;\,\,\, |\kappa_k| > \kappa_c
+\end{cases}
 $$
 Zapišemo pogoje preko vrednosti $N$
 \begin{align*}
@@ -1967,15 +1969,13 @@ Zapišemo pogoje preko vrednosti $N$
 |k| &\leq \frac{N}{2}
 \end{align*}
 Torej je
+
 $$
-\overline{a}_k=\left\{\begin{array}{l}
-  a_k ;\,\, |k| \leq N \\
-  0 \,\,;\,\, |k| > \frac{N}{2}
-\end{array}\right.
+\overline{a}_k= \begin{cases}a_k ;\,\, |k| \leq \frac{N}{2} \\ 0 \,\,;\,\, |k| > \frac{N}{2}\end{cases}
 $$
 in Fourierova vrsta filtriranega polja 
 \begin{equation}
-\overline{u}(x) = \sum_{k = 1 - \frac{1}{2}N}^{\frac{1}{2}N} c_n e^{i\kappa x}.
+\overline{u}(x) = \sum_{k = 1 - \frac{1}{2}N}^{\frac{1}{2}N} a_n e^{i\kappa x}.
 \end{equation}
 
 Brez izgube informacij, lahko vrednosti $\overline{u}(nh)$ predstavimo na mreži 
@@ -1984,6 +1984,39 @@ z razmikom
 h = \frac{L}{N} = \frac{\pi}{\kappa_c}.
 \end{equation}
 Tej dolžini pravimo \textbf{karakteristična filterska dolžina} in jo 
-označimo z $\Delta$.
+označimo z $\Delta$. 
+\noindent
+Sedaj se prvič vidi bistvo filtracije. Vemo, da za neko število 
+$N\in \N$, lahko $u$ točno predstavimo, vendar je to pogosto neučinkovito, 
+saj, prostorska in časovna zahtevnost zelo hitro rasteta. Če pa izberemo
+$\kappa_c$ primerno majhen, se število členov v vsoti zmanjša.
+Sicer rešitev zgubi natančnost, vendar pa pridobimo na učinkovitosti reševanja. 
+Kako izbrati mejo (v tem primeru $\kappa_c$) t.j. kako natačno želimo, 
+da naša rešitev je in koliko pridobimo na učinkovitosti, bo tema naslednjega poglavja.
 
+\subsubsection{Gaussov filter}
+
+Sedaj bomo obravnavali Gaussov filter. Uporabimo razvoj \ref{eq:filterDFT}
+$$
+\overline{u}(x) = \sum_{k=1 - \frac{N_{\text{max}}}{2}}^\frac{N_{\text{max}}}{2} \overline{a}_k e^{i\kappa_k x}
+$$
+in poiščimo koeficiente $\overline{a}_k$, v odvisnosti od $a_k$.
+\begin{align*}
+T(\kappa_k) &= \int_\R G(r) \cdot e^{-i\kappa_k r} \dif r = \\
+            &=\int_\R \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{r^2}{2\sigma^2}} \cdot e^{-i\kappa_k r} \dif r = \\
+            &= \frac{1}{\sqrt{2\pi \sigma^2}} \int_\R e^{-\frac{r^2}{2\sigma^2} - i\kappa_k r} \dif r = 
+\end{align*}
+Dopolnimo izraz $-\frac{r^2}{2\sigma^2} - i\kappa_k r$ do popolnega kvadrata
+\begin{align*}
+-\frac{r^2}{2\sigma^2} - i\kappa_k r &= - \frac{1}{2\sigma^2}(r^2 + 2\sigma^2 i \kappa_k) = \\
+&=-\frac{1}{2\sigma^2} ((r + i\sigma^2 \kappa_k)^2  + \sigma^4 \kappa_k^2) = \\
+&=- \left(\frac{r + i\sigma \kappa_k}{\sqrt{2}}\right)^2 - \frac{1}{2} \sigma^2 \kappa_k^2.
+\end{align*}
+Integral postane 
+\begin{align*}
+  =& \frac{1}{\sqrt{2\pi \sigma^2}} \int_\R e^{-\left(\frac{r + i\sigma \kappa_k}{\sqrt{2}}\right)^2 - \frac{1}{2} \sigma^2 \kappa_k^2} \dif r = \\
+  =& \frac{1}{\sqrt{2\pi \sigma^2}} e^{ - \frac{1}{2} \sigma^2 \kappa_k^2} \int_\R e^{-\left(\frac{r + i\sigma \kappa_k}{\sqrt{2}}\right)^2} \dif r = \\[2mm]
+  &\text{ uvedemo }\,\, x = \frac{r + i\sigma \kappa_k}{\sqrt{2}} \Longrightarrow \dif x = \frac{1}{\sqrt{2}} \dif r \\[2mm]
+  =& \frac{1}{\sigma \sqrt{\pi}} e^{- \frac{1}{2} \sigma^2 \kappa_k^2} \int_\R e^{-x^2} \dif r = \frac{1}{\sigma} e^{- \frac{1}{2} \sigma^2 \kappa_k^2}
+\end{align*}
 \end{document}
