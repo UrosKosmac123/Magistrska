@@ -33,7 +33,7 @@
 % \somentorici{...}{...}
 
 % - leto magisterija
-\letnica{2024}
+\letnica{2025}
 
 % - povzetek v slovenščini
 %   V povzetku na kratko opišite vsebinske rezultate dela. Sem ne sodi razlaga
@@ -142,6 +142,7 @@ the content and not the structure of your work.}
 \newcommand{\R}{\mathbb R}
 \newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
+\newcommand{\bd}{\textbf}
 % Lahko se zgodi, da je ukaz \C definiral že paket hyperref,
 % zato dobite napako: Command \C already defined.
 % V tem primeru namesto ukaza \newcommand uporabite \renewcommand
@@ -157,16 +158,16 @@ the content and not the structure of your work.}
 \section{Uvod}
 
 \subsection{Motivacija}
-Turbulenca oz. turbulentni tok je pojav s katerim se srečujemo vsak dan, kljub temu pa na nekatera fundementalna
-vprašanja glede nje še vedno neznamo odgovoriti. Že vprašanja, kaj je turbulenca, nima
-univerzalnega odgovora. Kar pa so opažanja in eksperimenti pokazali, da lahko turbulence
+Turbulenca oz. turbulentni tok je pojav, s katerim se srečujemo vsak dan, kljub temu pa na nekatera fundamentalna
+vprašanja, ki se nanašajo nanjo, še vedno ne znamo odgovoriti. Že vprašanje, kaj je turbulenca, nima
+univerzalnega odgovora. So pa opažanja in eksperimenti pokazali, da lahko turbulence
 karakteriziramo z določenimi lastnostmi. To so:
 \begin{itemize}
 \item \textbf{Kaotičnost}: Turbulentni tok je kaotičen oz. nepredvidljiv. To pomeni, če
-začetno stanje toka malo spermenimo (spremenimo hitrost, tlak ...) bo končno stanje popolnoma
+začetno stanje toka malo spremenimo (spremenimo hitrost, tlak ...), bo končno stanje popolnoma
 drugačno, kot pred spremembo. Zato je v praksi zelo težko deterministično napovedati dogajanje.
-Teoretično obstajajo Navier-Stokesove enačbe, ki opisujejo gibanje vseh tokov tudi turbulentnih
-vendar pa je njihovo reševanje zelo zahtevno tudi v posebnih primerih (že sam obstoj rešitev, je 
+Teoretično obstajajo Navier-Stokesove enačbe, ki opisujejo gibanje vseh tokov, tudi turbulentnih,
+vendar pa je njihovo reševanje zelo zahtevno tudi v posebnih primerih (že sam obstoj rešitev je 
 odprto vprašanje).
 \item \textbf{Vrtinci različnih velikosti}: Turbulenten tok je sestavljen iz vrtincev (eddies). Lahko so zelo
 različnih velikosti, kar je razvidno iz slike \ref{fig:vrtinci}
@@ -185,114 +186,140 @@ različnih velikosti, kar je razvidno iz slike \ref{fig:vrtinci}
     %\label{fig:sub2}
   \end{subfigure}
   \caption{Leva slika prikazuje velike vrtince, ki se pojavijo v atmosferi planeta Jupitra in 
-  imajo lahko premer dolžine več $1000$ kilometrov, med tem ko desna slika prikazuje turbulenco
-  zraka v sobi, kjer se tok zraka prikaže s pomočjo laserja in lahko vidimo vrtince velikosti nekaj mikrometrov} 
+  imajo lahko premer več $1000$ kilometrov, medtem ko desna slika prikazuje turbulenco
+  zraka v sobi, kjer se tok zraka prikaže s pomočjo laserja in lahko vidimo vrtince velikosti nekaj mikrometrov.} 
   \label{fig:vrtinci}
   \end{figure}
-\item \textbf{Difuzivnost}: Zanimiva lastnost turbuletnega toka je difuzivnost. To poemni, da se energija in gibalna količina
-preneseta po celotnem toku. Osborne Reynolds (1842 - 1912) je postavil eksperiment, ki prikazuje to lastnost. Vidno je
+\item \textbf{Difuzivnost}: Zanimiva lastnost turbuletnega toka je difuzivnost. To pomeni, da se energija in gibalna količina
+preneseta po celotnem toku. Osborne Reynolds (1842 - 1912) je postavil eksperiment, ki prikazuje to lastnost. Vidna je
 na sliki \ref{fig:difus}
-\item \textbf{Reynoldsovo število}: Podoben eksperiment kot pri sliki \ref{fig:difus} nam da enostaven kriterij, ki mu turbulenca zadošča.
-Večja kot je dolžina cevi $L$ ali večja kot je hitrost toka $u$ prej bo prišlo do turbulence. Po drugi strani pa večja kot je
-viskoznost tekočine, manj verjetno bo, da pride do turbulence. To zapišemo kot kot brez dimenzijsko 
-konstanto $Re = \frac{uL}{\nu}$. Do turbulence pride pri velikih Reynoldsovih številih, običajno $Re \geq 5000$.
-\item \textbf{Disipativnost}: To je proces prenosa energije iz večjih vrtincev v najmanjše vrtince, dokler ta ne 
-začne izhajati iz tekočine kot toplota. To pomeni, če hočemo imeti turbulenten tok oz. ga ohranjati
-moramo dosledno dodajati energijo sistemu.
+\item \textbf{Reynoldsovo število}: Podoben eksperiment, kot na sliki \ref{fig:difus} nam da enostaven kriterij, ki mu turbulenca zadošča.
+Večja kot je dolžina cevi $L$, ali večja kot je hitrost toka $u$, prej bo prišlo do turbulence. Po drugi strani pa večja kot je
+viskoznost tekočine $\nu$, manj verjetno bo, da pride do turbulence. To zapišemo preko brezdimenzijske 
+konstante $Re = \frac{uL}{\nu}$. Do turbulence pride pri velikih Reynoldsovih številih, običajno pri $Re \geq 5000$.
+\item \textbf{Disipativnost}: To je proces prenosa energije iz večjih vrtincev v manjše vrtince, dokler ta ne 
+začne izhajati iz tekočine kot toplota. To pomeni, če hočemo imeti turbulenten tok oz. ga ohranjati,
+moramo dosledno sistemu dodajati energijo.
 \begin{figure}[h!]
   \centering
 \includegraphics[scale=0.19]{slike/difus.jpeg}
-\caption{V cev s polno vode, spustimo tok barve. Slika je sestavljena iz treh delov, a) del ni turbulenten zato se barva zalo malo razprši,
-b) del je v vmesnem stanju, kjer se že kažejo znaki difuzije in c) del kjer se tok turbulenten in se barva razširi po celotni cevi.}
+\caption{V cev polno vode spustimo tok barve. Slika je sestavljena iz treh delov: a) del ni turbulenten zato se barva zalo malo razprši,
+b) del je v vmesnem stanju, kjer se že kažejo znaki difuzije in c) del, kjer je tok turbulenten in se barva razširi po celotni cevi.}
 \label{fig:difus}
 \end{figure}
 \begin{figure}[h]
   \centering
 \includegraphics[scale=0.19]{slike/Reynolds.jpeg}
-\caption{Slika prikazuje hlape plamena, kako se potujejo v zraku. Na začetku, kjer imamo majhno Reynoldsovo število je tok zelo predvidljiv,
-ko pa se dviguje (parameter $L$ se veča) se Reynoldsovo število veča in tok postane turbulenten.}
+\caption{Slika prikazuje hlape plamena, ki potujejo po zraku. Na začetku, imamo majhno Reynoldsovo število, je tok zelo predvidljiv,
+ko pa se Reynoldsovo število veča (parameter $L$ se veča), tok postane turbulenten.}
 \end{figure}
 \end{itemize}
 
 V delu se bom predvsem osredotočil na turbulenco v atmosferi, kjer je obravnava določenih enačb
-gibanja in fizikalnih količin obravanava nekoliko drugače, kot pri drugih vrstah turbulence (kot so naprimer turbulence tekočin).
-V splošnem pa se kakršen koli tok obravanava na enega od sledečih načinov:
+gibanja in fizikalnih količin nekoliko drugačna, kot pri drugih vrstah turbulence (kot so naprimer turbulence tekočin).
+Omejili se bomo na prostor $\R^3$, čeprav bi lahko določene koncepte 
+obravnavali v višjih dimenzijah, vendar nam za naše potrebe to ne bo 
+prineslo veliko praktične vrednosti.
+V splošnem se kakršenkoli tok obravanava na enega od sledečih načinov:
 \begin{itemize}
-  \item \textbf{Eulerjev pristop}: recimo, da opazujemo neko domeno $D$ skozi katero teče tok.
-  Zanima nas hitrost $u(x, t)$ za $x \in D$ ob času $t > 0$. V tem primeru smo fiksirali koordinatni
+  \item \textbf{Eulerjev pristop}: Recimo, da opazujemo neko domeno $\Omega \subseteq \R^3$, skozi katero teče tok.
+  Zanima nas hitrostno polje 
+  \begin{align*}
+  \textbf{u}: \Omega \times \R^+ &\rightarrow \R^3 \\
+  (\bd{x},t) &\mapsto \textbf{u}(\bd{x},t).
+  \end{align*}
+  V tem primeru smo fiksirali koordinatni
   sistem (glede na zemljo).
-  \item \textbf{Lagrangeev pristop}: pri tem pristopu opazujemo s kakšno hitrostjo se delec toka 
-  $x$ premika skozi čas. Označimo $u(t; x_0)$, kjer je $x_0$ začetna pozicija delca in 
-  $u$ hitrost delca ob času $t$. 
+  \item \textbf{Lagrangeev pristop}: Pri tem pristopu opazujemo, s kakšno hitrostjo se delec toka 
+  $\bd{x}$ premika skozi čas. Označimo 
+  \begin{align*}
+    \bd{u}: \R^+& \rightarrow \R^3 \\
+    t &\mapsto \bd{u}(t; \bd{x}_0),
+  \end{align*}
+  kjer je $\bd{x}_0$ začetna pozicija delca in 
+  $\bd{u}$ hitrost delca ob času $t$. $\bd{u}$ je torej hitrost trajektorije delca $\bd{x}$, 
+  tok pa je nabor vseh trajektorij. 
 \end{itemize}
 
-Kateri pristop uporabimo je odvisno lastnost, ki jih želimo analizirati. Eulerjev pristop
-se osredotoči na fiksno domeno in opazujemo kako se lastnosti tekočine spreminjajo v tej skozi čas. 
-Za analizo turbulence in globalnih procesov je ta način boljši, med tem ko analiza po 
-Lagrage-u boljša za analizo mehanike delcev, disperzije in različnih procesov mešanja (difuzija). 
+Kateri pristop uporabimo, je odvisno od lastnosti, ki jih želimo analizirati. Eulerjev pristop
+se osredotoči na fiksno domeno in opazujemo kako se lastnosti tekočine spreminjajo v njej skozi čas. 
+Za analizo turbulence in globalnih procesov je ta način boljši, medtem ko je Lagrabgeeva analiza 
+boljša za analizo mehanike delcev, disperzije in različnih procesov mešanja (difuzija). 
 
-V delu bomo primarno uporabljali Eulerjev-jev pristop, vendar pa nam analiza enega pomaga
-lahko pri analizi drugega. Naj bo $u$ Eulerjevo polje hitrosti na poljubni domeni. Po Lagrangeevem 
-opisu, delec toka ob času $t$ in začeti pozicija $y_0$ ob času $t_0$ označimo z $X(t, y_0)$.
-Pozicija delca je podana z enačbama
+V delu bomo primarno uporabljali Eulerjev-jev pristop, vendar pa nam lahko analiza enega pomaga
+pri analizi drugega. Naj bo $\bd{u}$ Eulerjevo polje hitrosti na poljubni domeni in $X = X(t; \bd{x}_0)$ trajektorija delca 
+po Lagrangeevem opisu ob času $t$ in začetni pozicija $\bd{x}_0$. 
+Zveza med Langrageovo trajektorijo in Eulerjevo hitrostjo je 
 \begin{align}
-&X(t_0, y_0) = y_0 \\
-\frac{\partial}{\partial t} X&(t, y_0) = u(X(t, y_0), t)
+&X(t_0; \bd{x}_0) = \bd{x}_0, \\
+\frac{\dif X}{\dif t}&(t; \bd{x}_0) = \bd{u}(X(t; \bd{x}_0), t).
 \end{align}
-Definiramo Langrageovo polje hitrosti
+Definiramo Langragevo polje hitrosti
 \begin{equation}
-U(t, y_0) = u(X(t, y_0), t).
+U(t; \bd{x}_0) \coloneqq \bd{u}(X(t; \bd{x}_0), t).
 \end{equation}
 Poglejmo kako se izraža pospešek delca
 \begin{align*}
-\frac{\partial }{\partial t} U(t, y_0) &= \frac{\partial}{\partial t} u(X(t, y_0), t) = \\
-&= \Big(\frac{\partial}{\partial t} u(x, t) \Big)_{x = X(t, y_0)} + \frac{\partial}{\partial t} X(t, y_0) \cdot \Big(\text{grad}_x u(x, t) \Big)_{x = X(t, y_0)} = \\
-&= \Big(\frac{\partial}{\partial t} u(x, t) + u(t, y_0) \cdot \text{grad}_x u(x, t) \Big)_{x = X(t, y_0)} = \\
-&= \Big(\frac{D}{Dt} u(x, t) \Big)_{x = X(t, y_0)}
+\frac{\dif}{\dif t} U(t; \bd{x}_0) &= \frac{\partial}{\partial t} \bd{u}(X(t; \bd{x}_0), t) = \\
+&= \frac{\dif}{\dif t} X(t; \bd{x}_0) \cdot \Big(\text{grad}_\bd{x} \bd{u}(\bd{x}, t) \Big)_{\bd{x} = X(t, \bd{x}_0)} + \Big(\frac{\partial}{\partial t} \bd{u}(\bd{x}, t) \Big)_{\bd{x} = X(t, \bd{x}_0)} = \\
+&= \Big(\bd{u}(t; \bd{x}_0) \cdot \text{grad}_\bd{x} \bd{u}(\bd{x}, t) + \frac{\partial}{\partial t} \bd{u}(\bd{x}, t) \Big)_{\bd{x} = X(t, \bd{x}_0)}.
 \end{align*}
+
+\newpage
 \begin{definicija}
-Naj bo $U$ poljubno vektorsko polje. Diferencialni operator 
+Naj bo $\Omega \subset \R^n$ in $\bd{v}: \Omega\times \R^+ \rightarrow \R^n$ vektorsko polje. Diferencialni operator 
+$\frac{D}{D t}: C^1(\Omega \times \R^+, \R^n) \rightarrow C^0(\Omega \times \R^+, \R^n)$ dan s predpisom
 \begin{equation}
-\frac{D}{Dt} = \frac{\partial}{\partial t} + U \cdot \nabla
+\frac{D \bd{u}}{Dt} = \Big(\frac{\partial}{\partial t} + \bd{v} \cdot \nabla_\bd{x}\Big) \bd{u} = \frac{\partial \bd{u}}{\partial t} + (v\cdot \nabla_x) u
 \end{equation}
-se imenuje materialni odvod.
+se imenuje \textbf{materialni odvod}.
 \end{definicija}
+
+Pospešek, zapisan preko materialnega odvoda je 
+\begin{equation}
+\frac{\dif}{\dif t} U(t; \bd{x}_0) = \Big(\frac{D \bd{u}}{Dt}(\bd{x}, t) \Big)_{\bd{x} = X(t; \bd{x}_0)}.
+\end{equation}
 
 Podoben rezultat dobimo, če namesto hitrosti, odvajamo gostoto
 $$
-\frac{\partial }{\partial t} \mathrm{P}(t, y_0) = \Big(\frac{D}{Dt} \rho(x, t) \Big)_{x = X(t, y_0)}.
+\frac{\partial }{\partial t} P(t; \bd{x}_0) = \Big(\frac{D \rho}{Dt}(x, t) \Big)_{\bd{x} = X(t; \bd{x}_0)}.
 $$
 Materialni odvod je fundementalni operator Eulerjevaga pristopa. Vedno, ko nas bo 
 zanimalo kako se neka količina spreminja s časom, nas bo zanimal njen materialni odvod.
 
 \begin{opomba}
-Operator $\nabla$ ni komutativen: $U \cdot \nabla \neq \nabla \cdot U$.
+Operator $\nabla$ ni komutativen. Za vektorsko polje $\bd{v}$ : $\bd{v} \cdot \nabla \neq \nabla \cdot \bd{v}$.
 \end{opomba}
 
 
 \subsection{Ohranitveni zakoni}
 
-S tem razdelkom začnemo matematični opis enega najbolj pomembnih konceptov iz dinamike fluidov (in fizike na splošno), 
-ki so ključni za razumevanje turbulentnih tokov. 
+V tem razdelku začnemo matematični opis enega najbolj pomembnih konceptov dinamike fluidov (in fizike na splošno), 
+ki je ključen za razumevanje turbulentnih tokov. 
 
 \begin{opomba}
-V nadaljevanju bomo izpeljali formule, brez da bi (vsakič) navedli vseh nujnih predpostavk. Na primer 
-običajno bodo domene s katerimi imamo opravka gladke orientabilne mnogoterosti ali vektorsko polje
-$u$, ki bo običajnoi gladko, zato da bomo lahko uporabili Stokesov izrek.
+V nadaljevanju ne bomo navajali vseh potrebnih predpostavk, ki bodo upravičile naše izpeljave. Na primer 
+\begin{itemize}
+  \item Domene s katerimi imamo opravka bodo gladke orientabilne mnogoterosti.
+  \item Vektorske polja bodo gladka, v naslednjem poglavju pa bomo predpostavili, da je 
+  obstaja razvoj v Fourierovo vrsto.
+  \item Menjave vrstnega reda limit bodo potrebno upravičiti, zato bomo zahtevali, da je 
+  vektorsko polje $\bd{u}$ tudi v $L^2$ prostoru.
+\end{itemize}
 \end{opomba}
 
 \subsubsection{Zakon o ohranitvi mase}
-Naj bo $\Delta \subseteq R^3$ omejena, $\partial \Delta$ njen rob in $\rho: \Omega \times [0, \infty] \rightarrow [0, \infty]$ 
+Naj bo $\Omega \subseteq \R^3$ omejena, $\partial \Omega$ njen rob in $\rho: \Omega \times [0, \infty) \rightarrow [0, \infty)$ 
 gostota množice $\Omega$, ki je gladka. Masa $m$ od $\Omega$ je 
-$$
-m = \int_\Omega \rho(x, t) \dif\Omega.
-$$
+\begin{equation}
+  m(\Omega) = \int_\Omega \rho(\bd{x}, t) \dif V.
+\end{equation}
 \begin{center}
 \begin{tikzpicture}
   \draw  plot[smooth, tension=.7] coordinates {(-3.5,0.5) (-3,2.5) (-1,3.5) (1.5,3) (4,3.5) (5,2.5) (5,0.5) (2.5,-2) (0,-0.5) (-3,-2) (-3.5,0.5)};
   \draw[thick, rotate = 30] (-1.3,0.8) ellipse (0.4 and 0.7);
   \filldraw[red, rotate = 30] (-1.3,0.8) circle(2pt) ;
-  \draw[thick, red, rotate = 30, ->] (-1.3,0.8) -- (-3,0.7) node[above, black] {$\mathbf{\vec{u}}$};
+  \draw[thick, red, rotate = 30, ->] (-1.3,0.8) -- (-3,0.7) node[above, black] {$\bd{u}$};
   \node at (1.5,1.5) {$\Omega$};
   \node at (4,4) {$\partial$$\Omega$};
 \end{tikzpicture}
@@ -302,36 +329,66 @@ $$
 Zakon o ohraniti mase pravi, da je količina mase, ki se pretoči v $\Omega$ v določenem času, 
 enaka količini mase, ki se iztoči skozi $\partial\Omega$ tj.
 $$
-\frac{\partial m}{\partial t} = - \int_{\partial \Omega} \rho \dif \vec{S}.
+\frac{\partial m}{\partial t} = - \int_{\partial \Omega} \rho \dif \bd{S}.
 $$
-Ker je normala na $\partial \Omega$ dana z $\vec{u}$, lahko zakon zapišemo kot 
+Ker je normala na $\partial \Omega$ dana z $\bd{u}$, lahko zakon zapišemo kot 
 $$
-\int_\Omega \frac{\partial}{\partial t} \rho(x, t) \dif V = - \int_{\partial \Omega} \rho \vec{u} \dif S.
+\int_\Omega \frac{\partial}{\partial t} \rho(x, t) \dif V = - \int_{\partial \Omega} \rho \bd{u} \dif S.
 $$
-Če uporabimo izrek o divergenci, velja:
+Izrek o divergenci pravi, da je:
 $$
-\int_{\partial \Omega} \rho\vec{u} \dif \vec{S} = \int_{\Omega} \nabla \cdot \rho\vec{u} \dif V
+\int_{\partial \Omega} \rho\bd{u} \dif \bd{u} = \int_{\Omega} \nabla \cdot \rho\bd{u} \dif V
 $$
 Dobimo 
 \begin{align*}
-\int_\Omega \frac{\partial}{\partial t} \rho(x, t) + \nabla \cdot (\rho\vec{u}) \dif V = 0
+\int_\Omega \left(\frac{\partial}{\partial t} \rho(x, t) + \nabla \cdot (\rho\bd{u})\right) \dif V = 0.
 \end{align*}
-Ker enakost velja za vsako domeno $\Omega$ je
+
+Sledeča lema nam bo povedala, da je integrand enak 0.
+
+\begin{lema}
+Naj bo $f: \Omega \subset \R^n \rightarrow R$ zvezna. 
+Če za vsako podmnožico $\Omega' \subset \Omega$ velja 
+$$
+\int_{\Omega'} f(\bd{x}) \dif V = 0,
+$$
+potem je 
+$$
+f(\bd{x}) = 0, \quad \forall \bd{x} \in \Omega.
+$$
+\end{lema}
+
+\begin{dokaz}
+Recimo, da je $f(\bd{x}_0) \neq 0$ za $\bd{x}_0 \in \Omega' \subset \Omega$. Brez škode 
+splošnosti predpostavimo $f(\bd{x}) > 0$. Zaradi 
+zveznosti funkcije $f$ obstaja tak $\delta > 0$, da je 
+$$
+f(\bd{x}) > 0, \quad \forall \bd{x} \in B(\bd{x}_0, \delta) \subset \Omega'.
+$$
+Integriramo nenegativno funkcijo 
+$$
+\int_{\Omega'} f(\bd{x}) \dif V = \int_{B(\bd{x}_0, \delta)} f(\bd{x}) \dif V > 0.
+$$
+To vodi je protislovje, torej je $f(\bd{x}) = 0$.
+\end{dokaz}
+
+
+Ker enakost velja za vsako domeno $\Omega$ iz leme sledi enakost
 \begin{equation}
-\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho\vec{u}) = 0.
+\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho\bd{u}) = 0.
 \end{equation}
 
-(Ali dodam dokaz te lastnosti?)\\
+
 To je diferencialna oblika zakona o ohraniti mase in tej enačbi pravimo \textbf{kontinuitetna enačba}.
-Če je gostota konstantna, tj $\rho(x, t) \equiv c > 0$, potem se kontinuitetna enačba poenostavi
+Če je gostota konstantna, tj. $\rho(x, t) \equiv c > 0$, potem se kontinuitetna enačba poenostavi
 $$
-\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho\vec{u}) = \rho \nabla u = 0 \Longrightarrow \nabla u = 0.
+\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho\bd{u}) = \rho (\nabla \cdot \bd{u}) = 0 \Longrightarrow \nabla \cdot u = 0.
 $$
 \begin{definicija}
 Tok je \textbf{nestisljiv}, če velja 
 \begin{equation}
 \label{ohranitev mase}
-  \nabla u = 0.    
+  \nabla \cdot u = 0.    
 \end{equation}
 \end{definicija}
 
@@ -346,16 +403,16 @@ pravi, da je vsota gibalnih količin ($p$) v zaprtem sistemu konstanten. Če ima
 &\sum_{k=1}^n p_k = \text{const.} \\[1mm]
 &\sum_{k=1}^n \frac{\dif p_k}{\dif t} = 0.
 \end{align*}
-Ker je gibalna količina $p = m v$, lahko ekvivalentno zapišemo
+Gibalna količina je dana z $p = m v$, kar ekvivalentno zapišemo
 \begin{align*}
 \frac{\dif p}{\dif t} = \frac{\dif \,(m v)}{\dif t} &= m\frac{\dif v}{\dif t} = m a = F \Longrightarrow\\[2mm]
 \sum_{k=1}^n F_k &= 0.
 \end{align*}
-To je ravno 1. Newtonov zakon, če upoštevamo še 2. Newtonov zakon:
+To je ravno 1. Newtonov zakon. Ob upoštevamju 2. Newtonov zakon, dobimo obliko:
 \begin{equation}
 \sum_{k=1}^n F_k = m a.
 \end{equation}
-Zapišimo ta zakon za tokove
+Zapišimo ta zakon za tokove, preko materialnega odvoda.
 \begin{align*}
 m a = \rho V \frac{D u}{D t} = \sum_{k=1}^n F_k \\
 \rho \frac{D u}{D t} = \sum_{k=1}^n \frac{F_k}{V}. 
@@ -369,7 +426,7 @@ Pri tokovih se pojavita dve vrsti sil
   \end{enumerate}
   \item Telesne oz. zunanje sile (gravitacija, Corioliosva sila, magnetizem, \dots)
 \end{itemize}
-Sedaj bomo te zapisali s hitrostjo toka $u$, da dobimo enačbo, ki opisuje gibanje le tega.\\
+Zapišimo, zadnjo enačbo preko hitrosti toka $\bd{u}$.\\
 \textbf{Normalna sila .oz tlak:}\\[1mm]
 \begin{center}
 
@@ -407,8 +464,8 @@ Sedaj bomo te zapisali s hitrostjo toka $u$, da dobimo enačbo, ki opisuje giban
 \end{tikzpicture}
 \end{center}
 
-Recimo, da imamo majhno domeno $\Omega$ z volumnom $V = \triangle x \triangle y  \triangle z$.
-Poglejmo. kako se sila izraža v $x$ - smeri, če pridedo sprememe tlaka. Ta je definiran kot $p = \frac{\triangle F}{\triangle A}$, 
+Recimo, da imamo majhno pravokotno domeno z volumnom $V = \triangle x \triangle y  \triangle z$.
+Poglejmo kako se sila izraža v $x$ - smeri, v primeru, ko pride do spremembe tlaka. Ta je definiran kot $p = \frac{\triangle F}{\triangle A}$, 
 kjer sta $\triangle F$ - majhna sprememba sile in $\triangle A$ - majhna sprememba površine. Imamo:
 \begin{align*}
 F_x &= p_1 A_1 - p_2 A_2 = \quad \quad(A_1 = A_2 = A) \\
@@ -419,11 +476,11 @@ Pošljemo $\triangle x$ proti $0$:
 $$
 \frac{F}{V} = \lim_{\triangle x \rightarrow 0 }\frac{F_x}{V} = \lim_{\triangle x \rightarrow 0} \frac{\triangle p}{\triangle x} = \frac{\partial p}{\partial x}
 $$
-Na enak način dobimo v smereh $y$ in $z$.
+Na enak način dobimo c $y$ in $z$ smeri.
 
 \noindent
 \textbf{Tangencialna sila oz. viskoznost:} \\[1mm]
-Viskoznost ima podobno vlogo kot trenje. To je namreč sila med dvema tokovoma različnih
+Viskoznost ima podobno vlogo kot trenje. To je sila med dvema tokovoma različnih
 hitrosti. Te količini pravimo strižna napetost, ki je definirana enako kot tlak, vendar kaže v drugo smer, $\tau = \frac{F}{A}$. \\[2mm]
 \begin{center}
 \begin{tikzpicture}
@@ -464,10 +521,10 @@ hitrosti. Te količini pravimo strižna napetost, ki je definirana enako kot tla
 $$
 \tau_x = \frac{F_x}{A} = \frac{m}{A} \cdot \frac{\triangle u}{\triangle t}\cdot \frac{\triangle y}{\triangle y} = \underbrace{\frac{m}{A} \cdot\frac{\triangle y}{\triangle t}}_{\mu} \cdot\frac{\triangle u}{\triangle y} = \mu \frac{\triangle u}{\triangle y}
 $$
-$\tau_x$ je dinamična viskoznost in odvisna od lastnosti tekočine. 
+$\tau_x$ je dinamična viskoznost, odvisna le od lastnosti tekočine. 
 Ko pošljemo $\triangle y \rightarrow 0$, dobimo
 $$
-\tau = \lim_{\triangle y \rightarrow 0} \tau_x = \lim_{\triangle y \rightarrow 0} \frac{\triangle u}{\triangle y} = \frac{\partial u}{\partial y}
+\tau = \lim_{\triangle y \rightarrow 0} \tau_x = \lim_{\triangle y \rightarrow 0} \mu\frac{\triangle u}{\triangle y} = \mu\frac{\partial u}{\partial y}
 $$
 Naredimo podobno analizo, kot pri tlaku \\
 \begin{center}
@@ -481,7 +538,7 @@ Naredimo podobno analizo, kot pri tlaku \\
   \node at (4.3,0.2) [left] {$\tau_1$};
 \end{tikzpicture}
 \end{center}
-Če sta strižni napetosti različni, imamo neničelni silo na majhnem območju $\Omega = \triangle x \triangle y \triangle z$:
+Če sta strižni napetosti različni, imamo neničelno silo na majhnem območju $\Omega = \triangle x \triangle y \triangle z$:
 \begin{align*}
 F_x &= \tau_2 A_2 - \tau_1 A_1  \quad (A_1 = A_2)\\
 F_x &= \triangle \tau \triangle x \triangle z  \quad \Longrightarrow\\
@@ -489,7 +546,7 @@ F_x &= \triangle \tau \triangle x \triangle z  \quad \Longrightarrow\\
 \end{align*}
 Ponovno pošljemo $\triangle y \rightarrow 0$
 $$
-\frac{F}{V} = \lim_{\triangle y \rightarrow 0} \frac{F_x}{V} = \lim_{\triangle y \rightarrow 0} \frac{\triangle \tau}{\triangle y} = \frac{\partial \tau}{\partial y} = \frac{\partial}{\partial y} \Big(\frac{\mu\partial u}{\partial y} \Big) = \mu \frac{\partial^2 u}{\partial y^2}.
+\frac{F}{V} = \lim_{\triangle y \rightarrow 0} \frac{F_x}{V} = \lim_{\triangle y \rightarrow 0} \frac{\triangle \tau}{\triangle y} = \frac{\partial \tau}{\partial y} = \frac{\partial}{\partial y} \Big(\mu\frac{\partial u}{\partial y} \Big) = \mu \frac{\partial^2 u}{\partial y^2}.
 $$
 Strižno napetost upoštevamo v vseh treh smereh, je
 $$
@@ -2010,13 +2067,126 @@ Dopolnimo izraz $-\frac{r^2}{2\sigma^2} - i\kappa_k r$ do popolnega kvadrata
 \begin{align*}
 -\frac{r^2}{2\sigma^2} - i\kappa_k r &= - \frac{1}{2\sigma^2}(r^2 + 2\sigma^2 i \kappa_k) = \\
 &=-\frac{1}{2\sigma^2} ((r + i\sigma^2 \kappa_k)^2  + \sigma^4 \kappa_k^2) = \\
-&=- \left(\frac{r + i\sigma \kappa_k}{\sqrt{2}}\right)^2 - \frac{1}{2} \sigma^2 \kappa_k^2.
+&=- \left(\frac{r + i\sigma^2 \kappa_k}{\sigma\sqrt{2}}\right)^2 - \frac{1}{2} \sigma^2 \kappa_k^2.
 \end{align*}
 Integral postane 
 \begin{align*}
-  =& \frac{1}{\sqrt{2\pi \sigma^2}} \int_\R e^{-\left(\frac{r + i\sigma \kappa_k}{\sqrt{2}}\right)^2 - \frac{1}{2} \sigma^2 \kappa_k^2} \dif r = \\
+  =& \frac{1}{\sqrt{2\pi \sigma^2}} \int_\R e^{-\left(\frac{r + i\sigma^2 \kappa_k}{\sigma\sqrt{2}}\right)^2 - \frac{1}{2} \sigma^2 \kappa_k^2} \dif r = \\
   =& \frac{1}{\sqrt{2\pi \sigma^2}} e^{ - \frac{1}{2} \sigma^2 \kappa_k^2} \int_\R e^{-\left(\frac{r + i\sigma \kappa_k}{\sqrt{2}}\right)^2} \dif r = \\[2mm]
-  &\text{ uvedemo }\,\, x = \frac{r + i\sigma \kappa_k}{\sqrt{2}} \Longrightarrow \dif x = \frac{1}{\sqrt{2}} \dif r \\[2mm]
-  =& \frac{1}{\sigma \sqrt{\pi}} e^{- \frac{1}{2} \sigma^2 \kappa_k^2} \int_\R e^{-x^2} \dif r = \frac{1}{\sigma} e^{- \frac{1}{2} \sigma^2 \kappa_k^2}
+  &\text{ uvedemo }\,\, x = \frac{r + i\sigma^2 \kappa_k}{\sigma\sqrt{2}} \Longrightarrow \dif x = \frac{1}{\sigma\sqrt{2}} \dif r \\[2mm]
+  =& \frac{1}{\sqrt{\pi}} e^{- \frac{1}{2} \sigma^2 \kappa_k^2} \int_\R e^{-x^2} \dif r = e^{- \frac{1}{2} \sigma^2 \kappa_k^2}
 \end{align*}
+Upoštevamo definicijo $\kappa_k = \frac{2\pi k}{L}$, so potem koeficienti $\overline{c}_k$
+\begin{equation}
+  \overline{a}_k = e^{-\frac{2\pi^2 \sigma^2 k^2}{L^2}} a_k.
+\end{equation}
+Naj bo $N < N_\text{max}$ in poglejmo aproksimacijo
+\begin{equation}
+\overline{u}(x) \approx \tilde{u}(x) = \sum_{k=1 - \frac{N}{2}}^\frac{N}{2} \tilde{a}_k e^{i\kappa_k x},
+\end{equation}
+kjer je največje valovno število $\kappa_r = \kappa_{N/2} = \frac{\pi}{h}$. Razmerje valovnih števil,
+nam da 
+$$
+\frac{\kappa_c}{\kappa_r} = \frac{\frac{\pi}{\Delta}}{\frac{\pi}{h}} = \frac{h}{\Delta}.
+$$
+Koliko moramo skrajšati vrsto $\tilde{u}$, oz. kakšno razmerje $\frac{h}{\Delta}$ izbrati, da 
+dobimo dobro aproksimacijo in kaj sploh pomeni, dobra aproksimacija 
+odgovorimo v naslednjem poglavju. 
+
+\subsubsection{Škatlast filter}
+Poglejmo si še zadnji filter, ki smo ga omenili, to je 
+škatlast filter, za katerega prenosno funkcijo že poznamo. t.j.
+$$
+T(\kappa) = \frac{\sin(\kappa \frac{\Delta}{2})}{\kappa \frac{\Delta}{2}}
+$$
+koeficineti filtriranega polja izraženi preko teh pa so 
+$$
+\overline{a}_k = \frac{\sin(\kappa_k \frac{\Delta}{2})}{\kappa_k \frac{\Delta}{2}} a_k = \frac{\sin(k\pi\frac{\Delta}{L})}{\pi k\frac{\Delta}{L}} a_k .
+$$
+
+
+\section{Energija in spektralna analiza}
+
+V tem poglavju bomo turbulenten tok obravnavali z vidika statiske, 
+vendar se bomo hitro začeli nanašati na Fourierovo analizo, ki 
+se je v prejšnjem poglavju pokazala za zelo uporabno. Ta način 
+modeliranja turbulence je prvi razvil Kolmogorov, ideja za tak 
+opis pa predvsem pride iz kaotičnosti turbulence. Iz tega razloga se 
+privzame, da je hitrostno polje $u$ slučajno. To pomeni, da 
+
+\subsection{Osnovni pojmi}
+
+Spomnimo se nekaj osnovnih pojmov
+
+\begin{definicija}
+Trojici $(\Omega, \mathcal{F}, P)$ pravimo \textbf{verjetnostni prostor}, 
+kjer so $\Omega$ vzorčni prostor, $\mathcal{F}$ sigma algebra in 
+$P$ verjetnostna mera. Preslikava $x: \Omega \rightarrow [0, 1]$ 
+je \textbf{slučajna spremenljivka}, če je je merljiva. 
+\textbf{Slučajni vektor} je preslikava $X: \Omega \rightarrow [0, 1]^n$, 
+za $n\in \N$, kjer so komponente $X_i$ slučajne spremenljivke.
+\end{definicija}
+
+Mi se bomo omejili na primer, ko je $\Omega = \R^4$, $\mathcal{F}$ 
+Lebesguevova sigma algebra, verjetnostna mera $P$ pa ni znana. 
+Dodatno bomo predpostavili, da imamo slučajnost le v prostorskih 
+spremenljivkah, času pa naj bo za tok determinističen. 
+
+\begin{definicija}
+Naj bo $U$ slučajni vektor na verjetnostnem prostoru $(\Omega, \mathcal{F}, P)$. Potem je kumulativna porazdelitve funkcija 
+dana z 
+\begin{equation}
+F(V; x, t) = P(U_i(x, t) < V_i)
+\end{equation}
+za $i = 1, \dots, n$ in $V \in \mathcal{F}$. Porazdelitvena 
+gostota pa je 
+\begin{equation}
+f(V; x, t) = \frac{\partial^n F}{\partial x_1 \dots \partial x_n}(x, t)
+\end{equation}
+\end{definicija}
+
+\begin{opomba}
+Predpostavimo, da je probabilistična mera $P$ dovolj gladka, da je definicija dobra.
+\end{opomba}
+
+\begin{definicija}
+Naj bo $U$ slučajni vektor. Srednja (pričakovana) vrednost je 
+\begin{equation}
+\langle U(x, t) \rangle = \int_{\R^n} V \cdot f(V; x, t) \dif V.
+\end{equation}
+\end{definicija}
+
+$F$ oz. $f$ nepoznamo. V praksi ali teoriji se pogosto se definira različna vrsta povprečja, 
+ki jih je ali lažje obravnavati(prostorsko povprečje) ali lažje izračunati(ensambelsko povprečje).
+V določenih scenarij približna povprečja konvergirajo k pravemu 
+ali celo konvergirajo ena k drugem (ergodična hipoteza). 
+
+Poglejmo si nekaj \textbf{statističnih lastnosti}, ki jih slučajni 
+vektor $U$ lahko prikaže
+\begin{itemize}
+  \item \textbf{Homogenost}: $f(V; x + x_0, t) = f(V; x, t)$ za $x_0 \in \R^3$ t.j. $U$ je 
+  prostorsko invariantna.
+  \item \textbf{Stacionarnost}: $f(V; x, t + t_0) = f(V; x, t)$ za $t>0$ t.j. $U$ je 
+  časovno invariantna. 
+  \item \textbf{Izotropičnost}: $f(V; Rx, t) = f(V; x, t)$ za $R\in O(n)$ in $U$ je homogeno t.j. $U$ je 
+  invariantna za rotacije, zrcaljenja in translacije. 
+\end{itemize} 
+
+Sedaj definiramo količino, ki bo ključna za nadaljno obravnavo 
+energije.
+
+\begin{definicija}
+Naj bo $U$ slučajni vektor. Količini 
+\begin{equation}
+R_{ij}(r, x, t) = \langle u_i(x, t)\cdot u_j(x + r, t)\rangle
+\end{equation}
+pravimo \textbf{dvo-točkovna korelacija}.
+\end{definicija}
+
+Intuitivno na ta količina pove, kako podobno se hitrosti $u_i$ in 
+$u_j$ obnašata t.j. večja, kot bo količina $R_{ij}$ bolj sta si hitrosti 
+podobni (npr. dva žogici v vodnem toku, ki sta zelo blizu bosta imeli podobno pot) oz. 
+manjša kot je korelacija bolj sta si hitrosti različni (npr. dva lista, ki padeta 
+iz drevesa in sta zelo narazen, bosta skoraj gotovo imela zelo različno pot).
+
 \end{document}
