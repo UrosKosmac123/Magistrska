@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.25)  10 MAY 2025 12:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.25)  30 APR 2025 11:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1465,7 +1465,8 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 156.
 Package hyperref Info: Option `unicode' set `true' on input line 156.
 Package hyperref Info: Option `breaklinks' set `true' on input line 156.
 Package hyperref Info: Option `psdextra' set `true' on input line 156.
- (./Kosmač-27232011-2025.aux)
+
+No file Kosmač-27232011-2025.aux.
 \openout1 = `Kosmač-27232011-2025.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 156.
@@ -1488,7 +1489,7 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 156.
 LaTeX Font Info:    ... okay on input line 156.
 Package biblatex Info: Trying to load language 'slovene'...
 Package biblatex Info: ... file 'slovene.lbx' found.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/slovene.lbx
+(/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/slovene.lbx
 File: slovene.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -1497,11 +1498,12 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = `Kosmač-27232011-2025.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'Kosmač-27232011-2025.bbl' found.
- (./Kosmač-27232011-2025.bbl)
+Package biblatex Info: ... file 'Kosmač-27232011-2025.bbl' not found.
+
+No file Kosmač-27232011-2025.bbl.
 Package biblatex Info: Reference section=0 on input line 156.
 Package biblatex Info: Reference segment=0 on input line 156.
- (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count484
 \scratchdimen=\dimen311
@@ -1524,7 +1526,6 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 156.
- (./Kosmač-27232011-2025.out) (./Kosmač-27232011-2025.out)
 \@outlinefile=\write8
 \openout8 = `Kosmač-27232011-2025.out'.
 
@@ -1581,7 +1582,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 156.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 156.
- (./Kosmač-27232011-2025.toc)
+
+No file Kosmač-27232011-2025.toc.
 \tf@toc=\write9
 \openout9 = `Kosmač-27232011-2025.toc'.
 
@@ -1592,6 +1594,13 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [4
 
 ]
+
+LaTeX Warning: Citation 'wyngaard' undefined on input line 156.
+
+
+LaTeX Warning: Empty bibliography on input line 156.
+
+
 
 [5]
 
@@ -1608,22 +1617,31 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 16
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<slike/vrtinci.jpeg, id=230, 1558.82375pt x 1002.74625pt>
+
+LaTeX Warning: Reference `fig:vrtinci' on page 1 undefined on input line 173.
+
+<slike/vrtinci.jpeg, id=64, 1558.82375pt x 1002.74625pt>
 File: slike/vrtinci.jpeg Graphic file (type jpg)
 <use slike/vrtinci.jpeg>
 Package pdftex.def Info: slike/vrtinci.jpeg  used on input line 178.
 (pdftex.def)             Requested size: 202.72522pt x 130.40749pt.
-<slike/vrtinci2.jpeg, id=231, 1734.48pt x 1003.75pt>
+<slike/vrtinci2.jpeg, id=65, 1734.48pt x 1003.75pt>
 File: slike/vrtinci2.jpeg Graphic file (type jpg)
 <use slike/vrtinci2.jpeg>
 Package pdftex.def Info: slike/vrtinci2.jpeg  used on input line 184.
 (pdftex.def)             Requested size: 202.7031pt x 130.30829pt.
-<slike/difus.jpeg, id=234, 1745.52126pt x 1003.75pt>
+
+LaTeX Warning: Reference `fig:difus' on page 1 undefined on input line 195.
+
+
+LaTeX Warning: Reference `fig:difus' on page 1 undefined on input line 196.
+
+<slike/difus.jpeg, id=66, 1745.52126pt x 1003.75pt>
 File: slike/difus.jpeg Graphic file (type jpg)
 <use slike/difus.jpeg>
 Package pdftex.def Info: slike/difus.jpeg  used on input line 205.
 (pdftex.def)             Requested size: 331.65248pt x 190.71448pt.
-<slike/Reynolds.jpeg, id=235, 1237.62375pt x 1003.75pt>
+<slike/Reynolds.jpeg, id=67, 1237.62375pt x 1003.75pt>
 File: slike/Reynolds.jpeg Graphic file (type jpg)
 <use slike/Reynolds.jpeg>
 Package pdftex.def Info: slike/Reynolds.jpeg  used on input line 212.
@@ -1661,152 +1679,1066 @@ Underfull \hbox (badness 10000) in paragraph at lines 531--533
 
 [8]
 
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 644--647
+LaTeX Warning: Reference `NS' on page 9 undefined on input line 604.
 
- []
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                  }
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+                                                  
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-[10]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\text@ ...e {\textdef@ \displaystyle \f@size {#1}}
+                                                  {\textdef@ \textstyle \f@s...
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 776--779
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
- []
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                  }
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+                                                  
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\text@ ...xtstyle \f@size {\firstchoice@false #1}}
+                                                  {\textdef@ \textstyle \sf@...
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-[12]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-[13]
-Overfull \hbox (115.14319pt too wide) detected at line 940
-[]|
- []
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                  }
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+                                                  
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-Overfull \hbox (106.98465pt too wide) detected at line 945
-[]|
- []
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\text@ ...tstyle \sf@size {\firstchoice@false #1}}
+                                                  {\textdef@ \textstyle \ssf...
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                  }
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 993--998
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+                                                  
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
- []
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\text@ ...style \ssf@size {\firstchoice@false #1}}
+                                                  \check@mathfonts }
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 12.0pt on input line 999.
-LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 8.0pt on input line 999.
-LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 6.0pt on input line 999.
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\text@ ...firstchoice@false #1}}\check@mathfonts }
+                                                  
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[15]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[16]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[17]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 1173--1177
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
- []
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[19]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[20]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 1310--1312
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
- []
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[22]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[23]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[24]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing { inserted.
+<to be read again> 
+                   \endgroup 
+l.608 \end{align*}
+                  
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
 
-[25]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[26]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing { inserted.
+<to be read again> 
+                   \endgroup 
+l.608 \end{align*}
+                  
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
 
-[27]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[28]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing { inserted.
+<to be read again> 
+                   \endgroup 
+l.608 \end{align*}
+                  
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
 
-[29]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[30]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 1847--1849
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
- []
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                  }
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+                                                  
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\text@ ...e {\textdef@ \displaystyle \f@size {#1}}
+                                                  {\textdef@ \textstyle \f@s...
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 1902--1905
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
- []
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                  }
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+                                                  
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\text@ ...xtstyle \f@size {\firstchoice@false #1}}
+                                                  {\textdef@ \textstyle \sf@...
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 1937--1940
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
- []
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                  }
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+                                                  
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\text@ ...tstyle \sf@size {\firstchoice@false #1}}
+                                                  {\textdef@ \textstyle \ssf...
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-[34]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-[35]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                  }
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-[36]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+                                                  
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-[37]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\text@ ...style \ssf@size {\firstchoice@false #1}}
+                                                  \check@mathfonts }
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-[38]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\text@ ...firstchoice@false #1}}\check@mathfonts }
+                                                  
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-[39]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Misplaced alignment tab character &.
+\math@cr@@@ ->&
+               \omit \global \advance \row@ \@ne \ifst@rred \nonumber \fi \i...
+l.608 \end{align*}
+                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
-[40]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Misplaced \omit.
+\math@cr@@@ ->&\omit 
+                     \global \advance \row@ \@ne \ifst@rred \nonumber \fi \i...
+l.608 \end{align*}
+                  
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
 
-[41
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Misplaced \cr.
+\math@cr@@@ ... \else \global \@eqnswtrue \fi \cr 
+                                                  
+l.608 \end{align*}
+                  
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
-] (./Kosmač-27232011-2025.aux)
- ***********
-LaTeX2e <2024-11-01> patch level 2
-L3 programming layer <2025-01-18>
- ***********
-Package rerunfilecheck Info: File `Kosmač-27232011-2025.out' has not changed.
-(rerunfilecheck)             Checksum: 9DE0169F7DC7C303899A9B33D7285064;3531.
-Package logreq Info: Writing requests to 'Kosmač-27232011-2025.run.xml'.
-\openout1 = `Kosmač-27232011-2025.run.xml'.
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Misplaced alignment tab character &.
+\@tempa ->\endgroup &
+                     
+l.608 \end{align*}
+                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
- ) 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Misplaced \cr.
+\measure@ ...olumn@ \z@ \add@amps \maxfields@ \cr 
+                                                  }}\restorecounters@ \ifodd...
+l.608 \end{align*}
+                  
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\measure@ ...lumn@ \z@ \add@amps \maxfields@ \cr }
+                                                  }\restorecounters@ \ifodd ...
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+\measure@ ...umn@ \z@ \add@amps \maxfields@ \cr }}
+                                                  \restorecounters@ \ifodd \...
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Incompatible list can't be unboxed.
+\measure@ ...i \fi \setbox \z@ \vbox {\unvbox \z@ 
+                                                  \unpenalty \global \setbox...
+l.608 \end{align*}
+                  
+Sorry, Pandora. (You sneaky devil.)
+I refuse to unbox an \hbox in vertical mode or vice versa.
+And I can't open any boxes in math mode.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing { inserted.
+<to be read again> 
+                   \endgroup 
+l.608 \end{align*}
+                  
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing { inserted.
+<to be read again> 
+                   \endgroup 
+l.608 \end{align*}
+                  
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing { inserted.
+<to be read again> 
+                   \endgroup 
+l.608 \end{align*}
+                  
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.608 \end{align*}
+                  
+I'm guessing that you meant to end an alignment here.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing { inserted.
+<inserted text> 
+                {
+l.608 \end{align*}
+                  
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing { inserted.
+<inserted text> 
+                {
+l.608 \end{align*}
+                  
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Extra }, or forgotten $.
+<recently read> }
+                 
+l.608 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing } inserted.
+<inserted text> 
+                }
+l.608 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608: Missing $ inserted.
+<inserted text> 
+                $
+l.608 \end{align*}
+                  
+(That makes 100 errors; please try again.) 
 Here is how much of TeX's memory you used:
- 40500 strings out of 473190
- 766128 string characters out of 5715800
- 1565557 words of memory out of 5000000
- 62805 multiletter control sequences out of 15000+600000
- 682271 words of font info for 133 fonts, out of 8000000 for 9000
+ 39969 strings out of 473190
+ 756746 string characters out of 5715800
+ 1559270 words of memory out of 5000000
+ 62474 multiletter control sequences out of 15000+600000
+ 666565 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,20n,95p,747b,2495s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
-Output written on Kosmač-27232011-2025.pdf (49 pages, 3167041 bytes).
-PDF statistics:
- 769 PDF objects out of 1000 (max. 8388607)
- 653 compressed objects within 7 object streams
- 221 named destinations out of 1000 (max. 500000)
- 315 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 84i,25n,95p,747b,2495s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:608:  ==> Fatal error occurred, no output PDF file produced!

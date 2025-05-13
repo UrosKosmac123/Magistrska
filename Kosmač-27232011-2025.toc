@@ -16,7 +16,7 @@
 \contentsline {subsubsection}{\numberline {2.1.2}Filtracija}{20}{subsubsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.2}Filtrirani ohranitveni zakoni}{25}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Filtriran zakon o ohranitvi mase}{25}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Filtriran zakon o ohranitvi gibalne količine}{25}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2}Filtriran zakon o ohranitvi gibalne količine}{26}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}Filtriran zakon o ohranitvi vrtinčnosti}{27}{subsubsection.2.2.3}%
 \contentsline {subsubsection}{\numberline {2.2.4}Filtriran zakon o ohranitvi skalarja}{27}{subsubsection.2.2.4}%
 \contentsline {subsubsection}{\numberline {2.2.5}Filtriran materialni odvod}{28}{subsubsection.2.2.5}%
@@ -27,4 +27,5 @@
 \contentsline {subsubsection}{\numberline {2.3.4}Škatlast filter}{37}{subsubsection.2.3.4}%
 \contentsline {section}{\numberline {3}Energija in spektralna analiza}{38}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Osnovni pojmi}{38}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Hipoteze Kolomogorova}{39}{subsection.3.2}%
 \contentsline {section}{Literatura}{41}{section*.9}%
