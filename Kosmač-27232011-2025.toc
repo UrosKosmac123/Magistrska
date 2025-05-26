@@ -27,5 +27,5 @@
 \contentsline {subsubsection}{\numberline {2.3.4}Škatlast filter}{37}{subsubsection.2.3.4}%
 \contentsline {section}{\numberline {3}Energija in spektralna analiza}{38}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Osnovni pojmi}{38}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Hipoteze Kolomogorova}{39}{subsection.3.2}%
-\contentsline {section}{Literatura}{41}{section*.9}%
+\contentsline {subsection}{\numberline {3.2}Hipoteze Kolomogorova}{42}{subsection.3.2}%
+\contentsline {section}{Literatura}{45}{section*.9}%

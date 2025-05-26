@@ -2123,7 +2123,7 @@ Naj bo $\bd{U}$ slučajni vektor na verjetnostnem prostoru $(\Omega, \mathcal{F}
 kjer je $\Omega \subseteq \R^n$, $\mathcal{F} \in \mathcal{P}(\R)$ in $P$ probabilistična mera.
 Kumulativna porazdelitve funkcija je
 \begin{equation}
-F_U(V; x, t) = P(U_i(x, t) < V_i)
+F_\bd{U}(V; x, t) = P(U_1(x, t) < V_1, \dots, U_n(x, t) < V_n)
 \end{equation}
 za $i = 1, \dots, n$ in $V \in \Omega$. Porazdelitvena 
 gostota pa je 
@@ -2137,27 +2137,88 @@ Predpostavimo, da je probabilistična mera $P$ dovolj gladka, da je definicija d
 \end{opomba}
 
 \begin{definicija}
-Naj bo $U$ slučajni vektor. Srednja (pričakovana) vrednost je 
+Naj bo $\bd{U}$ slučajni vektor. Srednja (pričakovana) vrednost je 
 \begin{equation}
 \langle \bd{U}(x, t) \rangle = \int_{\R^n} V \cdot f(V; x, t) \dif V.
 \end{equation}
 \end{definicija}
 
+\begin{definicija}
+Naj bosta $\bd{U}$ in $\bd{V}$ slučajna vektorja. Kovarianca je 
+\begin{equation}
+\text{cov}(\bd{U}, \bd{V}) = \langle (\bd{U} - \langle \bd{U} \rangle)\cdot (\bd{V} - \langle \bd{V} \rangle)^T \rangle
+\end{equation}
+\end{definicija}
+
+\begin{opomba}
+Enakost iz prejšnje definicije z malo računanja lahko prepišemo v 
+\begin{equation}
+\text{cov}(\bd{U}, \bd{V}) = \langle \bd{U}\cdot \bd{V}^T \rangle - \langle \bd{U} \rangle  \langle \bd{V} \rangle^T
+\end{equation}
+\end{opomba}
+
+\noindent
 $F$ oz. $f$ nepoznamo. V praksi ali teoriji se pogosto se definira različna vrsta povprečja, 
-ki jih je ali lažje obravnavati(prostorsko povprečje) ali lažje izračunati(ensambelsko povprečje).
+ki jih je ali lažje obravnavati (prostorsko povprečje) ali lažje izračunati(ensambelsko povprečje).
 V določenih scenarij približna povprečja konvergirajo k pravemu 
 ali celo konvergirajo ena k drugem (ergodična hipoteza). 
 
+\begin{definicija}
+Naj bo $\bd{U}: \R^n \times \R^+ \rightarrow \C^m$ periodična v prvi spremenljivki za $L>0$ t.j. 
+$$
+\forall N\in \Z^n: \,\bd{U}(\bd{x} + L\bd{N}, t) = \bd{U}(\bd{x}, t).
+$$
+Kompleksna Fourierova vrsta preslikave $\bd{U}$ je 
+\begin{equation}
+\bd{U}(\bd{x}, t) = \sum_{\bd{k}\in \Z^{n}} \hat{\bd{u}}(\bd{\text{$\kappa$}}_\bd{k}, t) e^{i\bd{\text{$\kappa$}}_\bd{k} \cdot \bd{x}},
+\end{equation}
+$\bd{\text{$\kappa$}}_\bd{k} = \frac{2\pi}{L} \bd{k}$ in koeficienti $\hat{\bd{u}}_\bd{k}$ dani z 
+\begin{equation}
+\hat{\bd{u}}(\bd{\text{$\kappa$}}_\bd{k}, t) = \frac{1}{L^n} \int_{[0, L]^n} \bd{U}(\bd{x}, t) e^{-i\bd{\text{$\kappa$}}_\bd{k} \cdot \bd{x}} \dif \bd{x}.
+\end{equation}
+\end{definicija}
+
+Če je $\bd{U}$ slučajen, potem lahko $\bd{U}$ razcepimo na 
+povprečen del in turbulenten del 
+\begin{equation}
+\label{Reynoldsov razcep}
+\bd{U}(\bd{x}, t) = \langle \bd{U}(\bd{x}, t) \rangle + \bd{u}(\bd{x}, t).
+\end{equation}
+Če $U$ zapišemo v Fourierovo vrsto, so koeficienti $\bd{a}_k$ slučajni.
+
 Poglejmo si nekaj \textbf{statističnih lastnosti}, ki jih slučajni 
-vektor $U$ lahko prikaže
+vektor $\bd{U}$ lahko prikaže
 \begin{itemize}
-  \item \textbf{Homogenost}: $f(V; x + x_0, t) = f(V; x, t)$ za $x_0 \in \R^3$ t.j. $U$ je 
-  prostorsko invariantna.
-  \item \textbf{Stacionarnost}: $f(V; x, t + t_0) = f(V; x, t)$ za $t>0$ t.j. $U$ je 
+  \item \textbf{Homogenost}: $f(V; x + x_0, t) = f(V; x, t)$ za $x_0 \in \R^3$ t.j. $\bd{U}$ je 
+  translacijsko invariantna.
+  \item \textbf{Stacionarnost}: $f(V; x, t + t_0) = f(V; x, t)$ za $t>0$ t.j. $\bd{U}$ je 
   časovno invariantna. 
-  \item \textbf{Izotropičnost}: $f(V; Rx, t) = f(V; x, t)$ za $R\in O(n)$ in $U$ je homogeno t.j. $U$ je 
+  \item \textbf{Izotropičnost}: $f(V; Rx, t) = f(V; x, t)$ za $R\in O(n)$ in $\bd{U}$ je homogeno t.j. $\bd{U}$ je 
   invariantna za rotacije, zrcaljenja in translacije. 
 \end{itemize} 
+
+\begin{lema}
+\label{homogenost}
+Naj bo slučajni vektor $\bd{U}$ homogen. Potem je pričakovana 
+vrednost $\langle \bd{U} \rangle$ konstantna za $\bd{x}$. 
+\end{lema}
+
+\begin{dokaz}
+Naj za slučajni vektor $\bd{U}$ velja:
+$$\forall \bd{x}_0, \bd{x} \in \R^n: f(V; \bd{x} + \bd{x}_0, t) = f(\bd{V}; \bd{x}, t).$$
+Po definiciji pričakovane vrednosti
+$$
+\langle \bd{U}(\bd{x}, t) \rangle = \int_{\R^n} \bd{V} \cdot f(\bd{V}; \bd{x}, t) \dif \bd{V} = \int_{\R^n} \bd{V} \cdot f(\bd{V}; \bd{x} + \bd{x}_0, t) \dif \bd{V} = \langle \bd{U}(\bd{x} + \bd{x}_0, t) \rangle
+$$
+Ker enakost velja za vsak $\bd{x}_0$ in $\bd{x}$: 
+$$
+\langle \bd{U}(\bd{x}, t) \rangle = \langle \bd{U}(\bd{x} + \bd{x}_0, t) \rangle = \langle \bd{U}(\bd{x}_0 + \bd{x}, t) \rangle = \langle \bd{U}(\bd{x}_0, t) \rangle
+$$
+Fiksiramo $\bd{x}_0$ in trditev sledi.
+\end{dokaz}
+\noindent
+Enostavna posledica trditve je, da za primerno izbran koordinatni sistem,
+lahko za homogene slučajni vektor nastavimo $\langle \bd{U}(\bd{x}, t) \rangle = 0$.
 
 Sedaj definiramo količino, ki bo ključna za nadaljno obravnavo 
 energije.
@@ -2165,7 +2226,7 @@ energije.
 \begin{definicija}
 Naj bo $\bd{U}$ slučajni vektor. Količini 
 \begin{equation}
-R_{ij}(r, x, t) = \langle u_i(x, t)\cdot u_j(x + r, t)\rangle
+R(\bd{r}, \bd{x}, t) = \langle \bd{U}(\bd{x}, t)\cdot \bd{U}^T(\bd{x} + \bd{r}, t)\rangle
 \end{equation}
 pravimo \textbf{dvo-točkovna korelacija}.
 \end{definicija}
@@ -2175,6 +2236,137 @@ $u_j$ obnašata t.j. večja, kot bo količina $R_{ij}$ bolj sta si hitrosti
 podobni (npr. dva žogici v vodnem toku, ki sta zelo blizu bosta imeli podobno pot) oz. 
 manjša kot je korelacija bolj sta si hitrosti različni (npr. dva lista, ki padeta 
 iz drevesa in sta zelo narazen, bosta skoraj gotovo imela zelo različno pot).
+
+\begin{lema}
+Če je $\bd{U}$ homogen slučakni vektor, je
+dvo-točkovna korelacija $R(\bd{r}, \bd{x}, t)$ neodvisna od $\bd{x}$.
+Označimo \\ $R(\bd{r}, \bd{x}, t) = R(\bd{r}, 0, t) = R(\bd{r}, t)$
+\end{lema}
+
+\begin{dokaz}
+Z enakim argumentom, kot v dokazu \ref{homogenost}, dobimo, da je 
+porazdelitvena gostota neodvisna od $\bd{x}$. Zato je tudi produkt 
+slučajnih vektorje $\bd{U}(\bd{x}, t)\cdot \bd{U}^T(\bd{x}, t)$ neodvisen 
+od $\bd{x}$.
+\end{dokaz}
+
+
+Sedaj si poglejmo, kako nam dani koncepti pomagajo pri analizi 
+energije. Naj bo $\bd{U}$  homogen slučajni vektor, periodičen v $L>0$, ki predstavlja naš tok. 
+Lahko predpostavimo, da je $\langle \bd{U}(\bd{x}, t) \rangle = 0$. Naslednja 
+smiselna statistika za analizo je kovarianca oz. če obravnavamo eno 
+slučajno spremenljivko varianca 
+$$
+\text{var}(\bd{U}) = \text{cov}(\bd{U}, \bd{U}) = \langle \bd{U} \bd{U}^T \rangle - \langle \bd{U} \rangle \cdot \langle \bd{U} \rangle^T = \langle \bd{U} \bd{U}^T \rangle
+$$
+Ker je direktna analiza polja \bd{U} težavna, razvijemo \bd{U}
+v Fourierovo vrsto. Ta pristop je uporaben, saj določena valovna 
+števila $\bd{$\kappa$}_\bd{k}$ močneje vplivajo na obnašanje toka, kot 
+druga, in lahko analizo omejimo le na ta. 
+
+\begin{align*}
+&\bd{U}(\bd{x}, t) = \sum_{\bd{k}\in \Z^{n}} \hat{\bd{u}}(\bd{\text{$\kappa$}}_\bd{k}, t) e^{i\bd{\text{$\kappa$}}_\bd{k} \cdot \bd{x}}\\[2mm]
+\Longrightarrow \langle \bd{U} \bd{U}^T\rangle &= \left\langle \left(\sum_{\bd{k}\in \Z^{n}} \hat{\bd{u}}(\bd{\text{$\kappa$}}_\bd{k}, t) e^{i\bd{\text{$\kappa$}}_\bd{k} \cdot \bd{x}}\right) \cdot \left(\sum_{\bd{l}\in \Z^{n}} \hat{\bd{u}}(\bd{\text{$\kappa$}}_\bd{l}, t) e^{i\bd{\text{$\kappa$}}_\bd{l} \cdot \bd{x}}\right)^T \right\rangle = \\
+&= \left\langle \sum_{\bd{k}, \bd{l}\in \Z^{n}} \hat{\bd{u}}(\bd{\text{$\kappa$}}_\bd{k}, t) \hat{\bd{u}}^T(\bd{\text{$\kappa$}}_\bd{l}, t) e^{i(\bd{\text{$\kappa$}}_\bd{k} + \bd{\text{$\kappa$}}_\bd{l})\cdot \bd{x}} \right\rangle = \\
+&=  \sum_{\bd{k}, \bd{l}\in \Z^{n}} \langle \hat{\bd{u}}(\bd{\text{$\kappa$}}_\bd{k}, t) \hat{\bd{u}}^T(\bd{\text{$\kappa$}}_\bd{l}, t) \rangle e^{i(\bd{\text{$\kappa$}}_\bd{k} + \bd{\text{$\kappa$}}_\bd{l})\cdot \bd{x}} 
+\end{align*}
+
+Poenostavimo povprečen člen v vsoti: 
+\begin{align*}
+  \langle \hat{\bd{u}}(\bd{\text{$\kappa$}}_\bd{k}, t) \hat{\bd{u}}^T(\bd{\text{$\kappa$}}_\bd{l}, t) \rangle = \left\langle \left(\frac{1}{L^n} \int_{[0, L]^n} \bd{u}(\bd{x}, t) e^{-i\bd{\text{$\kappa$}}_{\bd{k}}\cdot \bd{x}} \right) \cdot \left(\frac{1}{L^n} \int_{[0, L]^n} \bd{u}(\bd{x}, t) e^{-i\bd{\text{$\kappa$}}_\bd{l} \cdot \bd{x}} \right)^T \right\rangle = 
+\end{align*}
+Ker je $\bd{u}$ zvezna, po Fubinijevem izreku lahko zapišemo 
+\begin{align*}
+= \left\langle \frac{1}{L^{2n}} \int_{[0, L]^{n}} \int_{[0, L]^{2n}} \bd{u}(\bd{x}, t) \cdot \bd{u}^T(\bd{x}', t) e^{-i(\bd{\text{$\kappa$}}_{\bd{k}}\cdot \bd{x} + \bd{\text{$\kappa$}}_{\bd{l}}\cdot \bd{x}')} \dif\bd{x} \dif\bd{x}' \right\rangle
+\end{align*}
+Uvedemo novo neznanko v notranji integral $\bd{x} = \bd{r} + \bd{x}'$ $\Longrightarrow$ $\dif\bd{x} = \dif\bd{r}$, ter operacijo povprečenja lahko premaknemo v integrand, ker 
+je $\bd{u}$ gladko:
+\begin{align*}
+= \frac{1}{L^{2n}} \int_{[0, L]^{n}} \int_{[0, L]^{n} - \bd{x}'} \left\langle\bd{u}(\bd{x}' + \bd{r}, t) \cdot \bd{u}^T(\bd{x}', t)\right\rangle  e^{-i((\bd{\text{$\kappa$}}_{\bd{k}} + \bd{\text{$\kappa$}}_{\bd{l}})\bd{x}' + \bd{\text{$\kappa$}}_{\bd{k}} \cdot \bd{r})} \dif\bd{r} \dif\bd{x}' 
+\end{align*}
+Količina v integrandu je dvo-točkovna korelacija, ki je neodvisna od $\bd{x}'$
+zato lahko preuredimo integral 
+\begin{align*}
+  =& \frac{1}{L^{2n}} \int_{[0, L]^{n}} \int_{[0, L]^{n} - \bd{x}'} R(\bd{r}, t) e^{-i((\bd{\text{$\kappa$}}_{\bd{k}} + \bd{\text{$\kappa$}}_{\bd{l}})\bd{x}' + \bd{\text{$\kappa$}}_{\bd{k}} \cdot \bd{r})} \dif\bd{r} \dif\bd{x}' \\
+  =& \frac{1}{L^{n}} \int_{[0, L]^{n}} e^{-i(\bd{\text{$\kappa$}}_{\bd{k}} + \bd{\text{$\kappa$}}_{\bd{l}})\bd{x}'}\left(\frac{1}{L^n}\int_{[0, L]^{n} - \bd{x}'} R(\bd{r}, t) e^{-i\bd{\text{$\kappa$}}_{\bd{k}} \cdot \bd{r}} \dif\bd{r}\right) \dif\bd{x}'
+\end{align*}
+
+Potrebujemo še eno lemo, ki nam pove, da je notranji integral 
+neodvisen od $\bd{x}'$
+
+\begin{lema}
+Naj bo $\bd{f} \in C([0, L]^n)$ vektorko polje, ki je periodično za $L>0$ in $\bd{a}\in \R^n$. Potem je 
+\begin{equation*}
+\int_{[0, L]^n + \bd{a}}\bd{f}\,(\bd{x}) \dif\bd{x} = \int_{[0, L]^n} \bd{f}\,(\bd{x}) \dif\bd{x}
+\end{equation*} 
+\end{lema}
+
+\begin{dokaz}
+Definiramo funkcijo 
+$$
+g(\bd{a}) \coloneqq \int_{[0, L]^n + \bd{a}}\bd{f}\,(\bd{x}) \dif\bd{x} 
+$$
+Razpišemo integrale po intervalih in izračunamo parcialni odvod
+\begin{align*}
+\frac{\partial g}{\partial a_i}(\bd{a}) = \frac{\partial}{\partial a_i} \int_{a_1}^{L + a_1} \dots \int_{a_i}^{L + a_i} \dots \int_{a_n}^{L + a_n} \bd{f}(x_1, \dots, x_n) \dif x_1 \dots \dif x_i \dots  \dif x_n.
+\end{align*}
+Parcialni odvod lahko zamenjamo z integrali zaradi odvedljivosti \bd{f} in končnosti 
+intervalov, vrstne rede integriranja pa zaradi Fubinijevega izreka 
+\begin{align*}
+  \frac{\partial g}{\partial a_i}(\bd{a}) = \int_{a_1}^{L + a_1} \dots \int_{a_n}^{L + a_n} \left(\frac{\partial}{\partial a_i} \int_{a_i}^{L + a_i} \bd{f}(x_1, \dots, x_n) \dif x_i \right) \dif x_1 \dots \dif x_n.
+\end{align*}
+Notranji integral zapišemo preko primitivne funckije 
+\begin{align*}
+&\frac{\partial}{\partial a_i} \int_{a_i}^{L + a_i} \bd{f}(x_1, \dots, x_n) \dif x_i = \\
+&= \frac{\partial}{\partial a_i} (\bd{F}(x_1, \dots, x_{i-1}, L + a_i, x_{i+1} \dots, x_n) - \bd{F}(x_1, \dots, x_{i-1},  a_i, x_{i+1} \dots, x_n)) = \\
+&= \bd{f}(x_1, \dots, x_{i-1}, L + a_i, x_{i+1} \dots, x_n) - \bd{f}(x_1, \dots, x_{i-1},  a_i, x_{i+1} \dots, x_n) = \\
+&= \bd{f}(x_1, \dots, x_{i-1}, a_i, x_{i+1} \dots, x_n) - \bd{f}(x_1, \dots, x_{i-1},  a_i, x_{i+1} \dots, x_n) = \\
+&= 0,
+\end{align*}
+kjer zadnja enakost sledi iz periodičnosti $\bd{f}$. Ker je odvod funkcije 
+$\bd{g}$ po vseh parcialnih odvodih enak $0$ je $\bd{g}(\bd{a}) = \bd{g}_0 \in \R^n$  
+za vsak $\bd{a} \in \R^n$. Če vstavimo $\bd{a} = \bd{0}$ trditev sledi.
+\end{dokaz}
+Sedaj lahko zaključimo izpeljavo kovarince. Ker je notranji integral po zadnji lemi neodvisen 
+od $\bd{x}'$ dobimo 
+$$
+= \frac{1}{L^{n}} \int_{[0, L]^{n}} e^{-i(\bd{\text{$\kappa$}}_{\bd{k}} + \bd{\text{$\kappa$}}_{\bd{l}})\bd{x}'}\left(\frac{1}{L^n}\int_{[0, L]^{n}} R(\bd{r}, t) e^{-i\bd{\text{$\kappa$}}_{\bd{k}} \cdot \bd{r}} \dif\bd{r}\right) \dif\bd{x}'
+$$
+Ponovno uporabimo Fubinijev izrek 
+\begin{align*}
+&= \left(\frac{1}{L^{n}} \int_{[0, L]^{n}} e^{-i(\bd{\text{$\kappa$}}_{\bd{k}} + \bd{\text{$\kappa$}}_{\bd{l}})\bd{x}'} \dif\bd{x}' \right) \cdot\left(\frac{1}{L^n}\int_{[0, L]^{n}} R(\bd{r}, t) e^{-i\bd{\text{$\kappa$}}_{\bd{k}} \cdot \bd{r}} \dif\bd{r}\right) \\
+&= \hat{R}(\text{\bd{$\kappa$}}_{\bd{k}}, t) \cdot \delta_{(\bd{\text{$\kappa$}}_{\bd{k}} + \bd{\text{$\kappa$}}_{\bd{l}}), 0}
+\end{align*}
+
+Kovarianca se poenostavi 
+\begin{align*}
+\langle \bd{U} \bd{U}^T\rangle &= \sum_{\bd{k}, \bd{l}\in \Z^{n}} \langle \hat{\bd{u}}(\bd{\text{$\kappa$}}_\bd{k}, t) \hat{\bd{u}}^T(\bd{\text{$\kappa$}}_\bd{l}, t) \rangle e^{i(\bd{\text{$\kappa$}}_\bd{k} + \bd{\text{$\kappa$}}_\bd{l})\cdot \bd{x}} = \\
+&= \sum_{\bd{k}, \bd{l}\in \Z^{n}} \hat{R}(\text{\bd{$\kappa$}}_{\bd{k}}, t) \cdot \delta_{(\bd{\text{$\kappa$}}_{\bd{k}} + \bd{\text{$\kappa$}}_{\bd{l}}), 0} e^{i(\bd{\text{$\kappa$}}_\bd{k} + \bd{\text{$\kappa$}}_\bd{k})\cdot \bd{x}} = \\
+&= \sum_{\bd{k}\in \Z^{n}} \hat{R}(\text{\bd{$\kappa$}}_{\bd{k}}, t)
+\end{align*}
+Kovarianca oz. kovariančna matrika vsebuje vse informacije o kinetični energiji toka, 
+v danem valovnem številu.
+$\bd{U}$, zgornja izpeljava pa je pokazala, da je za analizo te energije potrebno obravnavati 
+$\hat{R}$. To je motivacija za naslednjo definicijo, preden jo zapišemo, 
+lahko dobljeni rezultat malo posplošimo. Preko transformacije $\bd{x} = \bd{s} - \frac{L}{2}(1, \dots, 1)$, 
+se integral premakne na simetrične intervale 
+$\left[-\frac{L}{2}, \frac{L}{2}\right]^n$. Limita $L \rightarrow \infty$ izraza je 
+Fourierova tranformacija :
+\begin{align*}
+\lim_{L\rightarrow \infty} \hat{R}(\bd{\text{$\kappa$}}_{\bd{k}}, t) = \frac{1}{(2\pi)^n}\int_{\R^n} \bd{R}(\bd{x}, t) e^{-i\text{\bd{$\kappa$}} \cdot \bd{x}} \dif \bd{x} = \hat{R}(\bd{\text{$\kappa$}}, t).
+\end{align*}
+Prednost uporabe tega zapisa je, da periodičnost ni več potrebna. Čeprav
+v določenih primerih, kjer so domene majhne, ta približek ne bo nujno dober, 
+je za primere atmosfere zalo natančen. Druga prednost tega zapisa je, da je 
+spremenljivka $\bd{\text{$\kappa$}}_{\bd{k}} \rightarrow \bd{\text{$\kappa$}}$
+zvezna in ne diskretna.
+
+\begin{definicija}
+Naj bo $\bd{U}$ slučajni vektor in $\text{\bd{$\kappa$}} \in \R^n$. \bd{Hitrostno-spektralni tenzor} je 
+\begin{equation}
+\Phi(\text{\bd{$\kappa$}}, t) = \frac{1}{(2\pi)^n}\int_{\R^n} {R}(\bd{x}, t) e^{-i\text{\bd{$\kappa$}} \cdot \bd{x}} \dif \bd{x} = \hat{R}(\bd{\text{$\kappa$}}, t)
+\end{equation}
+\end{definicija}
 
 \subsection{Hipoteze Kolomogorova}
 Pionir teorije turbulence je sovjetski matematik Andrej Nikolajevič Kolmogorov. 

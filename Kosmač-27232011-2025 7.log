@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.25)  24 MAY 2025 12:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.25)  18 MAY 2025 19:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1465,7 +1465,8 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 156.
 Package hyperref Info: Option `unicode' set `true' on input line 156.
 Package hyperref Info: Option `breaklinks' set `true' on input line 156.
 Package hyperref Info: Option `psdextra' set `true' on input line 156.
- (./Kosmač-27232011-2025.aux)
+
+No file Kosmač-27232011-2025.aux.
 \openout1 = `Kosmač-27232011-2025.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 156.
@@ -1488,7 +1489,7 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 156.
 LaTeX Font Info:    ... okay on input line 156.
 Package biblatex Info: Trying to load language 'slovene'...
 Package biblatex Info: ... file 'slovene.lbx' found.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/slovene.lbx
+(/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/slovene.lbx
 File: slovene.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -1524,7 +1525,6 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 156.
- (./Kosmač-27232011-2025.out) (./Kosmač-27232011-2025.out)
 \@outlinefile=\write8
 \openout8 = `Kosmač-27232011-2025.out'.
 
@@ -1581,7 +1581,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 156.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 156.
- (./Kosmač-27232011-2025.toc)
+
+No file Kosmač-27232011-2025.toc.
 \tf@toc=\write9
 \openout9 = `Kosmač-27232011-2025.toc'.
 
@@ -1608,22 +1609,31 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 16
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<slike/vrtinci.jpeg, id=230, 1558.82375pt x 1002.74625pt>
+
+LaTeX Warning: Reference `fig:vrtinci' on page 1 undefined on input line 173.
+
+<slike/vrtinci.jpeg, id=69, 1558.82375pt x 1002.74625pt>
 File: slike/vrtinci.jpeg Graphic file (type jpg)
 <use slike/vrtinci.jpeg>
 Package pdftex.def Info: slike/vrtinci.jpeg  used on input line 178.
 (pdftex.def)             Requested size: 202.72522pt x 130.40749pt.
-<slike/vrtinci2.jpeg, id=231, 1734.48pt x 1003.75pt>
+<slike/vrtinci2.jpeg, id=70, 1734.48pt x 1003.75pt>
 File: slike/vrtinci2.jpeg Graphic file (type jpg)
 <use slike/vrtinci2.jpeg>
 Package pdftex.def Info: slike/vrtinci2.jpeg  used on input line 184.
 (pdftex.def)             Requested size: 202.7031pt x 130.30829pt.
-<slike/difus.jpeg, id=234, 1745.52126pt x 1003.75pt>
+
+LaTeX Warning: Reference `fig:difus' on page 1 undefined on input line 195.
+
+
+LaTeX Warning: Reference `fig:difus' on page 1 undefined on input line 196.
+
+<slike/difus.jpeg, id=71, 1745.52126pt x 1003.75pt>
 File: slike/difus.jpeg Graphic file (type jpg)
 <use slike/difus.jpeg>
 Package pdftex.def Info: slike/difus.jpeg  used on input line 205.
 (pdftex.def)             Requested size: 331.65248pt x 190.71448pt.
-<slike/Reynolds.jpeg, id=235, 1237.62375pt x 1003.75pt>
+<slike/Reynolds.jpeg, id=72, 1237.62375pt x 1003.75pt>
 File: slike/Reynolds.jpeg Graphic file (type jpg)
 <use slike/Reynolds.jpeg>
 Package pdftex.def Info: slike/Reynolds.jpeg  used on input line 212.
@@ -1661,6 +1671,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 531--533
 
 [8]
 
+LaTeX Warning: Reference `NS' on page 9 undefined on input line 604.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 9 undefined on input line 620.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 9 undefined on input line 620.
+
+
+
 [9]
 Underfull \hbox (badness 10000) in paragraph at lines 644--647
 
@@ -1669,6 +1689,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 644--647
 
 
 [10]
+
+LaTeX Warning: Reference `lema:1' on page 11 undefined on input line 691.
+
+
+LaTeX Warning: Reference `NS' on page 11 undefined on input line 740.
+
+
 
 [11]
 Underfull \hbox (badness 10000) in paragraph at lines 776--779
@@ -1692,6 +1719,10 @@ Overfull \hbox (106.98465pt too wide) detected at line 945
 
 
 [14]
+
+LaTeX Warning: Reference `Euler NS' on page 15 undefined on input line 995.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 993--998
 
  []
@@ -1706,7 +1737,24 @@ LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
 
 [15]
 
+LaTeX Warning: Reference `hitrost approx' on page 16 undefined on input line 1031.
+
+
+
 [16]
+
+LaTeX Warning: Reference `hitrost approx' on page 17 undefined on input line 1065.
+
+
+LaTeX Warning: Reference `hitrost approx' on page 17 undefined on input line 1065.
+
+
+LaTeX Warning: Reference `hitrost approx' on page 17 undefined on input line 1065.
+
+
+LaTeX Warning: Reference `hitrost approx' on page 17 undefined on input line 1065.
+
+
 
 [17]
 
@@ -1747,9 +1795,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 1310--1312
 [30]
 
 [31]
+
+LaTeX Warning: Reference `izrek:iDFT' on page 32 undefined on input line 1833.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 1847--1849
 
  []
+
+
+LaTeX Warning: Reference `izrek:iDFT' on page 32 undefined on input line 1850.
+
+
+LaTeX Warning: Reference `eq:DFT decomposition' on page 32 undefined on input line 1862.
 
 
 
@@ -1766,10 +1824,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 1937--1940
  []
 
 
+LaTeX Warning: Reference `eq:DFS expantion' on page 34 undefined on input line 1943.
+
+
 
 [34]
 
 [35]
+
+LaTeX Warning: Reference `eq:filterDFT' on page 36 undefined on input line 2042.
+
+
 
 [36]
 
@@ -1778,43 +1843,77 @@ Underfull \hbox (badness 10000) in paragraph at lines 1937--1940
 [38]
 
 [39]
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:2268: Missing $ inserted.
+<inserted text> 
+                $
+l.2268 \subsection
+                  {Hipoteze Kolomogorova}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/Users/uroskosmac/Desktop/Magistrska/Kosmač-27232011-2025.tex:2268: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.2268 \subsection
+                  {Hipoteze Kolomogorova}
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
 
 [40]
 
 [41]
 
-[42]
-
-[43]
-
-[44
+[42
 
 ]
 
-[45] (./Kosmač-27232011-2025.aux)
+[43] [44] (./Kosmač-27232011-2025.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `Kosmač-27232011-2025.out' has not changed.
-(rerunfilecheck)             Checksum: 9DE0169F7DC7C303899A9B33D7285064;3531.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+LaTeX Warning: Temporary extra page added at the end. Rerun to get it removed.
+
+
+Package rerunfilecheck Warning: File `Kosmač-27232011-2025.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Kosmač-27232011-2025.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  9DE0169F7DC7C303899A9B33D7285064;3531.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                Kosmač-27232011-2025
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'Kosmač-27232011-2025.run.xml'.
 \openout1 = `Kosmač-27232011-2025.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40519 strings out of 473190
- 766363 string characters out of 5715800
- 1565630 words of memory out of 5000000
- 62807 multiletter control sequences out of 15000+600000
+ 40467 strings out of 473190
+ 765378 string characters out of 5715800
+ 1564270 words of memory out of 5000000
+ 62769 multiletter control sequences out of 15000+600000
  682271 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,20n,95p,747b,2495s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
-Output written on Kosmač-27232011-2025.pdf (53 pages, 3208912 bytes).
+Output written on Kosmač-27232011-2025.pdf (52 pages, 3195390 bytes).
 PDF statistics:
- 811 PDF objects out of 1000 (max. 8388607)
- 689 compressed objects within 7 object streams
- 238 named destinations out of 1000 (max. 500000)
- 315 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 642 PDF objects out of 1000 (max. 8388607)
+ 531 compressed objects within 6 object streams
+ 232 named destinations out of 1000 (max. 500000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
