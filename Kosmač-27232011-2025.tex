@@ -116,6 +116,7 @@ the content and not the structure of your work.}
 \usepackage{animate}
 \usepackage{tikz-cd}
 \usepackage{quiver}
+\usepackage{nicematrix}
 \usetikzlibrary{quotes,arrows.meta}
 \usetikzlibrary{decorations.pathreplacing} 
 \AtBeginDocument{\hypersetup{pdfborder={0 0 1.1}}}
@@ -2756,6 +2757,11 @@ kjer so vrednosti $b_1, \dots, b_n$ izbrane tako, da velja
 $$
 \prod_{i=1}^{n} [R_i] = \prod_{i=1}^{n} [F_i^{b_i}]
 $$
+in velja pretvorbena lastnost 
+\begin{equation}
+\label{pretvorba}
+\prod_{i=1}^{n} [\hat{R}_i] = \prod_{i=1}^{n} [\hat{F}_i^{b_i}]
+\end{equation}
 \end{definicija}
 
 \begin{opomba}
@@ -2764,53 +2770,157 @@ bazni vektorji za $\mathcal{F}$.
 \end{opomba}
 
 \begin{lema}
-Za pretvorjene enote $\hat{R}_1, \dots \hat{R}_n$ za $x_1, \dots, x_n > 0$ tj. 
-\begin{equation}
-[\hat{R}_i] = \prod_{j=1}^n [(x_j F_j)^{k_{ij}}] = \Big(\prod_{j=1}^n x_j^{k_{ij}}\Big)\cdot \prod_{j=1}^n [F_j^{k_{ij}}] = \Big(\prod_{j=1}^n x_j^{k_{ij}}\Big) \cdot [R_i]
-\end{equation}
-in fizikalno preslikavo 
+\label{lema_pretvorba}
+Če enote $R_1, \dots R_n \in \mathcal{F}$ pretvorimo z $x_1, \dots, x_n > 0$, za 
+fizikalno preslikavo velja 
 $\Phi: \mathcal{F}^n \rightarrow \mathcal{F}$ velja 
 \begin{equation}
-\Phi(\alpha_1 \hat{R}_1, \dots, \alpha_n \hat{R}_n) = \Big(\prod_{i=1}^n x_i^{({\bd{e}_i}^T A)\cdot \bd{b}}\Big)\cdot \Phi(\alpha_1 R_1, \dots, \alpha_n R_n)
+\Phi\Big(\alpha_1\prod_{j=1}^n x_j^{k_{1j}} R_1, \dots, \alpha_n \prod_{j=1}^n x_j^{k_{nj}} R_n\Big) = \Big(\prod_{i=1}^n x_i^{b_i}\Big)\cdot \Phi(\alpha_1 R_1, \dots, \alpha_n R_n)
 \end{equation}
 \end{lema}
 
 \begin{dokaz}
+Za pretvorbo $\hat{R}_i$ velja 
+$$
+[\hat{R}_i] = \prod_{j=1}^n [(x_j F_j)^{k_{ij}}] = \Big(\prod_{j=1}^n x_j^{k_{ij}}\Big)\cdot \prod_{j=1}^n [F_j^{k_{ij}}] = \Big(\prod_{j=1}^n x_j^{k_{ij}}\Big) \cdot [R_i]
+$$
+Poglejmo, kako se transformira $\Phi$:
 \begin{align*}
 \Phi(\alpha_1 \hat{R}_1, \dots, \alpha_n \hat{R}_n) = f(\alpha_1, \dots, \alpha_n) \cdot \prod_{i=1}^n [\hat{R}_i] = 
 \end{align*}
-Ker se pretvorbe enot ohranjajo pri fizikalni preslikavi velja 
-$$
-\prod_{i=1}^{n} [\hat{R}_i] = \prod_{i=1}^{n} [\hat{F}_i^{b_i}], 
-$$
-potem je 
+Ker velja lastnost \ref{pretvorba}, sledi
 \begin{align*}
 &= f(\alpha_1, \dots, \alpha_n) \cdot \prod_{i=1}^n [\hat{R}_i] = f(\alpha_1, \dots, \alpha_n) \cdot \prod_{i=1}^n [\hat{F}_i^{b_i}] = \\
-&= f(\alpha_1, \dots, \alpha_n) \cdot \prod_{i=1}^n [(x_i F_i)_i^{b_i}] = f(\alpha_1, \dots, \alpha_n) \prod_{i=1}^n [x_i^{b_i}] \cdot \prod_{i=1}^n [(x_i F_i)_i^{b_i}]
+&= f(\alpha_1, \dots, \alpha_n) \cdot \prod_{i=1}^n [(x_i F_i)_i^{b_i}] = f(\alpha_1, \dots, \alpha_n) \Big(\prod_{i=1}^n x_i^{b_i}\Big) \cdot \prod_{i=1}^n [F_i^{b_i}] = \\
+&= \prod_{i=1}^n x_i^{b_i} \cdot \Big(f(\alpha_1, \dots, \alpha_n)\cdot \prod_{i=1}^n [F_i^{b_i}] \Big) = \prod_{i=1}^n x_i^{b_i} \cdot \Phi(\alpha_1 R_1, \dots, \alpha_n R_n).
 \end{align*}
 \end{dokaz}
 
-\newpage
-% Sedaj lahko navedemo in dokažemo Buchingham $\pi$ izrek.
+Sedaj lahko navedemo in dokažemo Buchingham $\pi$ izrek.
 
  \begin{izrek}[Buchingham $\pi$]
- Naj bo $f: \mathcal{F}^n \rightarrow \mathcal{F}$ preslikava in 
- $q_1$, \dots, $q_n \in \mathcal{F}$ fizikalne spremenljivke. Recimo, da je fizikalni zakon 
- dan z 
+ Naj bo $\Phi: \mathcal{F}^n \rightarrow \mathcal{F}$ fizikalna preslikava in 
+ $R_1$, \dots, $R_n \in \mathcal{F}$ fizikalne spremenljivke. Naj bo fizikalni zakon dan z 
  \begin{equation}
- f(q_1, \dots, q_n) = 0.
+ \Phi(R_1, \dots, R_n) = 0.
  \end{equation}
- in, da obstaja $k$ neodvisnih fizikalnih količin. Potem obstaja funkcija 
- $F: \mathcal{F}^n \rightarrow \R$ in brezdimenzijske fizikalne spremenljivke 
- $\pi_1$, \dots, $\pi_{n-k} \in \mathcal{F}$, da velja
+ Potem obstaja funkcija 
+ $F: \mathcal{F}^n \rightarrow \mathcal{F}$ in brezdimenzijske fizikalne spremenljivke 
+ $\pi_1$, \dots, $\pi_{n-k} \in \mathcal{F}$ za $k \in \{0, \dots, n-1\}$, da velja
  \begin{equation}
    F(\pi_1, \dots, \pi_{n-k}) = 0.
  \end{equation}
  \end{izrek}
 
-% \begin{dokaz}
-% TBA našel neko zmedo.
-% \end{dokaz}
+\begin{dokaz}
+Brez škode splošnosti lahko za fiksne enote $R_1, \dots, R_n$, namesto funkcije $\Phi$ vzamemo funkcijo 
+$$
+R_1^{c_1} \cdot \ldots R_n^{c_n} \Phi(R_1, \dots, R_n),
+$$
+kjer so koeficienti $c_1, \dots, c_n \in \Z$ izbrani tako, da je 
+nova funkcija brezdimenzijska tj. enote te funkcije so 
+$$
+[F_1^{b_1} \cdot \ldots \cdot F_n^{b_m}] = [F_1^0 \cdot \ldots \cdot F_n^{0}] = [1],
+$$
+oz. $b_1 = \dots = b_m = 0$ za bazne enote $F_i$ funkcije $\Phi$ in $m\in \N$.
+Ker imamo $n$ elementov vektorskega prostora $\mathcal{F}$, obstaja 
+linearno neodvisna podmnožica $\{R_1, \dots, R_r\}$ za $r \leq n$ ali 
+ekvivaletno 
+$$
+R_1^{\lambda_1} \cdot \ldots \cdot R_n^{\lambda_n} = 1 \Longrightarrow \lambda_1 = \dots = \lambda_n = 0.
+$$
+Sedaj lahko za $k > r$ enoto $R_k$ izrazimo kot 
+$$
+R_k = R_1^{d_1}\cdot \ldots \cdot R_r^{d_r}
+$$
+za $d_1, \dots, d_r \in \Z$. Potem je spremenljivka 
+$R_k \cdot R_1^{-d_1}\cdot \ldots \cdot R_r^{-d_r}$ brezdimenzijska 
+in jo lahko zapišemo preko brezdimenzijskih količin $\pi_1^{h_1}, \dots, \pi_{n-r}^{h_{n-r}}$
+$$
+R_k = R_1^{d_1}\cdot \ldots \cdot R_r^{d_r} \cdot \pi_1^{h_1} \cdot \ldots \cdot \pi_{n-r}^{h_{n-r}}
+$$
+za primerno izbrane $h_1, \dots, h_{n-r} \in \Z$. Za neka funkcijo
+$\psi: \mathcal{L} \rightarrow \mathcal{L}$ sedaj velja korespondeca med 
+danimi spremenljivkami 
+$$
+\Phi(R_1, \dots, R_n) = \psi(R_1, \dots, R_r, \pi_1, \dots, \pi_{n-r}).
+$$
+Pokažimo, da je $\psi$ neodvisna od $R_1, \dots, R_r$. Naj bodo 
+$x_1, \dots, x_m > 0$. Potem po lemi \ref{lema_pretvorba} velja 
+\begin{align*}
+\psi\Big(\alpha_1 &\prod_{j=1}^m x_j^{k_{1j}} R_1, \dots, \alpha_r \prod_{j=1}^m x_j^{k_{rj}} R_r, \pi_1, \dots, \pi_{n-r}\Big) = \\
+&= \Big(\prod_{i=1}^m x_i^{b_i}\Big) \psi(\alpha_1 R_1, \dots, \alpha_r R_r, \pi_1, \dots, \pi_{n-r}) = \\
+&= \psi(\alpha_1 R_1, \dots, \alpha_r R_r, \pi_1, \dots, \pi_{n-r}),
+\end{align*}
+kjer zadnja enakost velja, ker smo predpostavili, da je $\Phi$ brezdimenzijska.
+Za zaključek dokaza, moramo pokazati, da lahko vrednosti $x_1, \dots, x_n$
+izberemo tako, da velja 
+$$
+\prod_{j=1}^m x_j^{k_{ij}} = \frac{1}{\alpha_i}, \quad i = 1, \dots, r.
+$$
+Ker so vse vrednosti v izrazu pozitivne, enačbo logaritmeramo 
+$$
+\sum_{j=1}^m k_{ij} \ln{x_j} = - \ln{\alpha_i},  \quad i = 1, \dots, r.
+$$
+oz. v matričnem zapisu 
+\begin{NiceMatrixBlock}[auto-columns-width]
+\[
+\begin{bNiceMatrix}
+k_{11} & k_{12} & \cdots & k_{1m} \\
+k_{21} & k_{22} & \cdots & k_{2m} \\
+\vdots & \vdots & \ddots & \vdots \\
+k_{r1} & k_{r2} & \cdots & k_{rm}
+\end{bNiceMatrix}
+\begin{bNiceMatrix}
+\ln{x_1} \\
+\ln{x_2} \\
+\vdots \\
+\ln{x_m}
+\end{bNiceMatrix}
+=
+-
+\begin{bNiceMatrix}
+\ln{\alpha_1} \\
+\ln{\alpha_2} \\
+\vdots \\
+\ln{\alpha_r}
+\end{bNiceMatrix}.
+\]
+\end{NiceMatrixBlock}
+Vrstice matrike, predstavljajo enote (oz. njihovo potenco), za katere 
+pa smo predpostavili, da je prvih $r$ neodvisnih, zato je ta matrika polnega ranga
+in enačba ima rešitev.
+\end{dokaz}
+
+\begin{opomba}
+Iz izreka lahko izluščimo še malo več. Prezdimenzijske parametre $\pi_1, \dots, \pi_{n-r}$
+lahko določimo na sledeč način. Če zapišemo spremenljivke $R_1, \dots, R_n$ preko 
+baznih spremenljivk $F_1, \dots, F_m$. Iz dokaza smo videli, da je 
+$R_k$ (za $k > r$) odvisen od $R_1^{d_1}, \ldots, R_r^{d_r}$, 
+zato je dovolj da zahtevamo, da je 
+$R_1^{d_1}\cdot \ldots R_r^{d_r}$, neodvisna količina. 
+Vendar to pomeni: 
+\begin{align*}
+[R_1^{d_1}\cdot \ldots R_r^{d_r}] = \prod_{i=1}^m [F^{k_{i1}d_1}\cdot \ldots \cdot F_r^{k_{ir}d_r}] = \prod_{i=1}^m F_i^{k_{i1} d_1 + \dots + k_{ir}d_r},
+\end{align*} 
+kjer želimo, da je eksponent enak $0$. Z drugimi besedami, brezdimenzijske grupe $\pi$, 
+elementi vektorja $v$, ki leži v jedru matrike iz dokaza. Ker pa ima 
+ta matrika, enak rang, kot če vzamemo matriko vseh spremenljivk, je dovolj 
+poiskati jedro le te
+\[
+M =
+\left[
+\begin{array}{cccc}
+  k_{11} & k_{12} & \cdots & k_{1n} \\
+  k_{21} & k_{22} & \cdots & k_{2n} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  k_{m1} & k_{m2} & \cdots & k_{mn}
+\end{array}
+\right]
+\]
+
+Matriki M pravimo \bd{dimenzijska matrika}.
+\end{opomba}
 
 Poglejmo sedaj uporabo izreka. Naj bo Re $>\!\!> 1$ in $\bd{U}$ 
 slučakni vektor. Potem je po prvi podobnostni hipotezi $\bd{U}$

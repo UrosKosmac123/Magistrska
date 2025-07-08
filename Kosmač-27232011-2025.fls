@@ -376,6 +376,12 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libr
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/nicematrix/nicematrix.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/nicematrix/nicematrix.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex

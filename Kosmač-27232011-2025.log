@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.25)  7 JUL 2025 23:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.25)  8 JUL 2025 22:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -956,7 +956,95 @@ Package: quiver 2021/01/11 quiver
 \pgfdecorationsegmentlength=\dimen310
 )
 \tikz@lib@dec@box=\box72
-) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex))
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex))) (/usr/local/texlive/2025/texmf-dist/tex/latex/nicematrix/nicematrix.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
+)
+Package: nicematrix 2025/03/04 v7.1a Enhanced arrays with the help of PGF/TikZ
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen311
+\ar@mcellbox=\box73
+\extrarowheight=\dimen312
+\NC@list=\toks50
+\extratabsurround=\skip88
+\backup@length=\skip89
+\ar@cellbox=\box74
+)
+\g__nicematrix_env_int=\count482
+\g__nicematrix_NiceMatrixBlock_int=\count483
+\g__nicematrix_notes_caption_int=\count484
+\l__nicematrix_columns_width_dim=\dimen313
+\l__nicematrix_col_width_dim=\dimen314
+\g__nicematrix_row_total_int=\count485
+\g__nicematrix_col_total_int=\count486
+\g__nicematrix_last_row_node_int=\count487
+\l__nicematrix_key_nb_rows_int=\count488
+\g__nicematrix_blocks_wd_dim=\dimen315
+\g__nicematrix_blocks_ht_dim=\dimen316
+\g__nicematrix_blocks_dp_dim=\dimen317
+\l__nicematrix_width_dim=\dimen318
+\l__nicematrix_tabular_width_dim=\dimen319
+\l__nicematrix_rule_width_dim=\dimen320
+\l__nicematrix_old_iRow_int=\count489
+\l__nicematrix_old_jCol_int=\count490
+\g__nicematrix_total_X_weight_int=\count491
+\l__nicematrix_X_columns_dim=\dimen321
+\l__nicematrix_x_initial_dim=\dimen322
+\l__nicematrix_y_initial_dim=\dimen323
+\l__nicematrix_x_final_dim=\dimen324
+\l__nicematrix_y_final_dim=\dimen325
+\l__nicematrix_tmpc_dim=\dimen326
+\l__nicematrix_tmpd_dim=\dimen327
+\l__nicematrix_tmpe_dim=\dimen328
+\l__nicematrix_tmpf_dim=\dimen329
+\g__nicematrix_dp_row_zero_dim=\dimen330
+\g__nicematrix_ht_row_zero_dim=\dimen331
+\g__nicematrix_ht_row_one_dim=\dimen332
+\g__nicematrix_dp_ante_last_row_dim=\dimen333
+\g__nicematrix_ht_last_row_dim=\dimen334
+\g__nicematrix_dp_last_row_dim=\dimen335
+\g__nicematrix_width_last_col_dim=\dimen336
+\g__nicematrix_width_first_col_dim=\dimen337
+\l__nicematrix_row_min_int=\count492
+\l__nicematrix_row_max_int=\count493
+\l__nicematrix_col_min_int=\count494
+\l__nicematrix_col_max_int=\count495
+\l__nicematrix_start_int=\count496
+\l__nicematrix_end_int=\count497
+\l__nicematrix_local_start_int=\count498
+\l__nicematrix_local_end_int=\count499
+\g__nicematrix_static_num_of_col_int=\count500
+\l__nicematrix_rounded_corners_dim=\dimen338
+\l__nicematrix_tab_rounded_corners_dim=\dimen339
+\l__nicematrix_offset_dim=\dimen340
+\l__nicematrix_line_width_dim=\dimen341
+\g__nicematrix_block_box_int=\count501
+\l__nicematrix_submatrix_extra_height_dim=\dimen342
+\l__nicematrix_submatrix_left_xshift_dim=\dimen343
+\l__nicematrix_submatrix_right_xshift_dim=\dimen344
+\l__nicematrix_first_row_int=\count502
+\l__nicematrix_first_col_int=\count503
+\l__nicematrix_last_row_int=\count504
+\l__nicematrix_last_col_int=\count505
+\c@tabularnote=\count506
+\g__nicematrix_tabularnote_int=\count507
+\c@nicematrix_draft=\count508
+\l__nicematrix_cell_space_top_limit_dim=\dimen345
+\l__nicematrix_cell_space_bottom_limit_dim=\dimen346
+\l__nicematrix_xdots_inter_dim=\dimen347
+\l__nicematrix_xdots_shorten_start_dim=\dimen348
+\l__nicematrix_xdots_shorten_end_dim=\dimen349
+\l__nicematrix_xdots_radius_dim=\dimen350
+\l__nicematrix_notes_above_space_dim=\dimen351
+\l__nicematrix_left_margin_dim=\dimen352
+\l__nicematrix_right_margin_dim=\dimen353
+\l__nicematrix_extra_left_margin_dim=\dimen354
+\l__nicematrix_extra_right_margin_dim=\dimen355
+\c__nicematrix_max_l_dim=\dimen356
+\l__nicematrix_position_int=\count509
+\l__nicematrix_multiplicity_int=\count510
+\l__nicematrix_brace_yshift_dim=\dimen357
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -966,8 +1054,8 @@ Package csquotes Info: Redefining alias 'default' -> 'slovene'.
 
  (/usr/local/texlive/2025/texmf-dist/tex/latex/pdfx/pdfx.sty
 Package: pdfx 2024/06/24 v1.6.5f PDF/X and PDF/A support (CVR/HTH/RRM/PS)
-\pdfx@minorversion=\count482
-\pdfx@majorversion=\count483
+\pdfx@minorversion=\count511
+\pdfx@majorversion=\count512
  (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifpdf.sty
@@ -980,8 +1068,8 @@ Package: everyshi 2020/11/18 v4.00 EveryShipout Package
 File: l8u-penc.def 2017/06/23 v0.8 Custom LaTeX file, for UTF8 encoded letters and symbols
 LaTeX Info: Composite with undeclared \b in encoding L8U on input line 278.
 )
-\pdfxsafeforxmp@toks=\toks50
-\pdfx@tmptoks=\toks51
+\pdfxsafeforxmp@toks=\toks51
+\pdfx@tmptoks=\toks52
 
 
 Package hyperref Warning: Option `pdftex' has already been used,
@@ -1466,32 +1554,32 @@ Now handling font encoding PU ...
    defining Unicode char U+2423 (decimal 9251)
    defining Unicode char U+FEFF (decimal 65279)
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 158.
-Package hyperref Info: Option `colorlinks' set `true' on input line 158.
-Package hyperref Info: Option `unicode' set `true' on input line 158.
-Package hyperref Info: Option `breaklinks' set `true' on input line 158.
-Package hyperref Info: Option `psdextra' set `true' on input line 158.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 159.
+Package hyperref Info: Option `colorlinks' set `true' on input line 159.
+Package hyperref Info: Option `unicode' set `true' on input line 159.
+Package hyperref Info: Option `breaklinks' set `true' on input line 159.
+Package hyperref Info: Option `psdextra' set `true' on input line 159.
  (./Kosmač-27232011-2025.aux)
 \openout1 = `Kosmač-27232011-2025.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
 Package biblatex Info: Trying to load language 'slovene'...
 Package biblatex Info: ... file 'slovene.lbx' found.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/slovene.lbx
@@ -1505,21 +1593,21 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Kosmač-27232011-2025.bbl' found.
  (./Kosmač-27232011-2025.bbl)
-Package biblatex Info: Reference section=0 on input line 158.
-Package biblatex Info: Reference segment=0 on input line 158.
+Package biblatex Info: Reference section=0 on input line 159.
+Package biblatex Info: Reference segment=0 on input line 159.
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count484
-\scratchdimen=\dimen311
-\scratchbox=\box73
-\nofMPsegments=\count485
-\nofMParguments=\count486
-\everyMPshowfont=\toks52
-\MPscratchCnt=\count487
-\MPscratchDim=\dimen312
-\MPnumerator=\count488
-\makeMPintoPDFobject=\count489
-\everyMPtoPDFconversion=\toks53
+\scratchcounter=\count513
+\scratchdimen=\dimen358
+\scratchbox=\box75
+\nofMPsegments=\count514
+\nofMParguments=\count515
+\everyMPshowfont=\toks53
+\MPscratchCnt=\count516
+\MPscratchDim=\dimen359
+\MPnumerator=\count517
+\makeMPintoPDFobject=\count518
+\everyMPtoPDFconversion=\toks54
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1529,49 +1617,56 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 158.
+Package hyperref Info: Link coloring ON on input line 159.
  (./Kosmač-27232011-2025.out) (./Kosmač-27232011-2025.out)
 \@outlinefile=\write8
 \openout8 = `Kosmač-27232011-2025.out'.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 158.
+\c__nicematrix_shift_Ldots_last_row_dim=\dimen360
+\c__nicematrix_shift_exterior_Vdots_dim=\dimen361
+\c__nicematrix_innersep_middle_dim=\dimen362
+\c@tabularnotesi=\count519
+\enitdp@tabularnotes=\count520
+\c@tabularnotes*i=\count521
+\enitdp@tabularnotes*=\count522
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 159.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 158.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 159.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 158.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 159.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 158.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 159.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 158.
+(Font)              <17.28> on input line 159.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 158.
+(Font)              <12> on input line 159.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 158.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 158.
+(Font)              <10> on input line 159.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 159.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 158.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 159.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 158.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 159.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 158.
+(Font)              <14.4> on input line 159.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 158.
+(Font)              <7> on input line 159.
 
 
 (/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
@@ -1584,9 +1679,9 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 158.
+(Font)              <8> on input line 159.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 158.
+(Font)              <6> on input line 159.
  (./Kosmač-27232011-2025.toc)
 \tf@toc=\write9
 \openout9 = `Kosmač-27232011-2025.toc'.
@@ -1610,29 +1705,29 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [8
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 168.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 169.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 <slike/vrtinci.jpeg, id=240, 1558.82375pt x 1002.74625pt>
 File: slike/vrtinci.jpeg Graphic file (type jpg)
 <use slike/vrtinci.jpeg>
-Package pdftex.def Info: slike/vrtinci.jpeg  used on input line 180.
+Package pdftex.def Info: slike/vrtinci.jpeg  used on input line 181.
 (pdftex.def)             Requested size: 202.72522pt x 130.40749pt.
 <slike/vrtinci2.jpeg, id=241, 1734.48pt x 1003.75pt>
 File: slike/vrtinci2.jpeg Graphic file (type jpg)
 <use slike/vrtinci2.jpeg>
-Package pdftex.def Info: slike/vrtinci2.jpeg  used on input line 186.
+Package pdftex.def Info: slike/vrtinci2.jpeg  used on input line 187.
 (pdftex.def)             Requested size: 202.7031pt x 130.30829pt.
 <slike/difus.jpeg, id=244, 1745.52126pt x 1003.75pt>
 File: slike/difus.jpeg Graphic file (type jpg)
 <use slike/difus.jpeg>
-Package pdftex.def Info: slike/difus.jpeg  used on input line 207.
+Package pdftex.def Info: slike/difus.jpeg  used on input line 208.
 (pdftex.def)             Requested size: 331.65248pt x 190.71448pt.
 <slike/Reynolds.jpeg, id=245, 1237.62375pt x 1003.75pt>
 File: slike/Reynolds.jpeg Graphic file (type jpg)
 <use slike/Reynolds.jpeg>
-Package pdftex.def Info: slike/Reynolds.jpeg  used on input line 214.
+Package pdftex.def Info: slike/Reynolds.jpeg  used on input line 215.
 (pdftex.def)             Requested size: 235.15096pt x 190.71448pt.
 
 
@@ -1643,14 +1738,14 @@ Package pdftex.def Info: slike/Reynolds.jpeg  used on input line 214.
 [3{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 329--330
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
 
  []
 
 
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 431--435
+Underfull \hbox (badness 10000) in paragraph at lines 432--436
 
  []
 
@@ -1659,7 +1754,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 431--435
 [6]
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 533--535
+Underfull \hbox (badness 10000) in paragraph at lines 534--536
 
  []
 
@@ -1668,7 +1763,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 533--535
 [8]
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 646--649
+Underfull \hbox (badness 10000) in paragraph at lines 647--650
 
  []
 
@@ -1677,7 +1772,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 646--649
 [10]
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 778--781
+Underfull \hbox (badness 10000) in paragraph at lines 779--782
 
  []
 
@@ -1686,28 +1781,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 778--781
 [12]
 
 [13]
-Overfull \hbox (115.14319pt too wide) detected at line 942
+Overfull \hbox (115.14319pt too wide) detected at line 943
 []|
  []
 
 
-Overfull \hbox (106.98465pt too wide) detected at line 947
+Overfull \hbox (106.98465pt too wide) detected at line 948
 []|
  []
 
 
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 995--1000
+Underfull \hbox (badness 10000) in paragraph at lines 996--1001
 
  []
 
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1001.
+(Font)              scaled to size 12.0pt on input line 1002.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1001.
+(Font)              scaled to size 8.0pt on input line 1002.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 6.0pt on input line 1001.
+(Font)              scaled to size 6.0pt on input line 1002.
 
 
 [15]
@@ -1717,7 +1812,7 @@ LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
 [17]
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 1175--1179
+Underfull \hbox (badness 10000) in paragraph at lines 1176--1180
 
  []
 
@@ -1728,7 +1823,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1175--1179
 [20]
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 1312--1314
+Underfull \hbox (badness 10000) in paragraph at lines 1313--1315
 
  []
 
@@ -1753,21 +1848,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 1312--1314
 [30]
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 1849--1851
+Underfull \hbox (badness 10000) in paragraph at lines 1850--1852
 
  []
 
 
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1904--1907
+Underfull \hbox (badness 10000) in paragraph at lines 1905--1908
 
  []
 
 
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1939--1942
+Underfull \hbox (badness 10000) in paragraph at lines 1940--1943
 
  []
 
@@ -1804,16 +1899,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 1939--1942
 [48]
 
 [49]
+\g__nicematrix_max_cell_width_dim=\dimen363
+\c@iRow=\count523
+\c@jCol=\count524
+\l__nicematrix_cell_box=\box76
+\l__nicematrix_the_array_box=\box77
+\l__nicematrix_left_delim_dim=\dimen364
+\l__nicematrix_right_delim_dim=\dimen365
+\g__nicematrix_ddots_int=\count525
+\g__nicematrix_iddots_int=\count526
+\g__nicematrix_delta_x_one_dim=\dimen366
+\g__nicematrix_delta_y_one_dim=\dimen367
+\g__nicematrix_delta_x_two_dim=\dimen368
+\g__nicematrix_delta_y_two_dim=\dimen369
+\l__nicematrix_initial_i_int=\count527
+\l__nicematrix_initial_j_int=\count528
+\l__nicematrix_final_i_int=\count529
+\l__nicematrix_final_j_int=\count530
+
 
 [50]
 
 [51]
 
-[52
+[52]
 
-]
+[53
 
-[53] (./Kosmač-27232011-2025.aux)
+] (./Kosmač-27232011-2025.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1825,18 +1938,18 @@ Package logreq Info: Writing requests to 'Kosmač-27232011-2025.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41193 strings out of 473190
- 789162 string characters out of 5715800
- 1587252 words of memory out of 5000000
- 63422 multiletter control sequences out of 15000+600000
+ 44204 strings out of 473190
+ 881462 string characters out of 5715800
+ 1677922 words of memory out of 5000000
+ 66422 multiletter control sequences out of 15000+600000
  690810 words of font info for 135 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,20n,97p,747b,2495s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
-Output written on Kosmač-27232011-2025.pdf (61 pages, 3239081 bytes).
+Output written on Kosmač-27232011-2025.pdf (61 pages, 3242728 bytes).
 PDF statistics:
- 904 PDF objects out of 1000 (max. 8388607)
- 772 compressed objects within 8 object streams
- 276 named destinations out of 1000 (max. 500000)
+ 908 PDF objects out of 1000 (max. 8388607)
+ 776 compressed objects within 8 object streams
+ 277 named destinations out of 1000 (max. 500000)
  331 words of extra memory for PDF output out of 10000 (max. 10000000)
 
