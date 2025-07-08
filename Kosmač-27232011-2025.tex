@@ -114,6 +114,8 @@ the content and not the structure of your work.}
 }
 \usepackage{esdiff}
 \usepackage{animate}
+\usepackage{tikz-cd}
+\usepackage{quiver}
 \usetikzlibrary{quotes,arrows.meta}
 \usetikzlibrary{decorations.pathreplacing} 
 \AtBeginDocument{\hypersetup{pdfborder={0 0 1.1}}}
@@ -2238,8 +2240,9 @@ manjša kot je korelacija bolj sta si hitrosti različni (npr. dva lista, ki pad
 iz drevesa in sta zelo narazen, bosta skoraj gotovo imela zelo različno pot).
 
 \begin{lema}
-Če je $\bd{U}$ homogen slučakni vektor, je
-dvo-točkovna korelacija $R(\bd{r}, \bd{x}, t)$ neodvisna od $\bd{x}$.
+\label{homogenost2}
+Če je $\bd{U}$ homogen slučajni vektor, je
+dvo-točkovna korelacija $R(\bd{r}, \bd{x}, t)$ neodvisna od druge komponente.
 Označimo \\ $R(\bd{r}, \bd{x}, t) = R(\bd{r}, 0, t) = R(\bd{r}, t)$
 \end{lema}
 
@@ -2248,6 +2251,29 @@ Z enakim argumentom, kot v dokazu \ref{homogenost}, dobimo, da je
 porazdelitvena gostota neodvisna od $\bd{x}$. Zato je tudi produkt 
 slučajnih vektorje $\bd{U}(\bd{x}, t)\cdot \bd{U}^T(\bd{x}, t)$ neodvisen 
 od $\bd{x}$.
+\end{dokaz}
+
+\begin{lema}
+\label{dvo_točkovna_korelacija}
+Naj bo $\bd{U}$ slučajni vektor. Za dvo-točkovno korelacijo velja 
+\begin{equation}
+(R(\bd{r}, \bd{x}, t))^T = R(-\bd{r}, \bd{x} + \bd{r}, t). 
+\end{equation}
+Če je $\bd{U}$ homogen, velja 
+\begin{equation}
+(R(\bd{r}, t))^T = R(-\bd{r}, t). 
+\end{equation}
+\end{lema}
+
+\begin{dokaz}
+\begin{align*}
+  R(-\bd{r}, \bd{x} + \bd{r}, t) &= \langle \bd{U}(\bd{x} + \bd{r}, t)\cdot \bd{U}^T((\bd{x} + \bd{r}) - \bd{r}, t)\rangle = \\
+  &= \langle \bd{U}(\bd{x} + \bd{r}, t)\cdot \bd{U}^T(\bd{x}, t)\rangle = \\
+  &= \langle(\bd{U}(\bd{x}, t)\cdot \bd{U}(\bd{x} + \bd{r}, t))^T\rangle =\\
+  &= \langle \bd{U}(\bd{x}, t)\cdot \bd{U}^T(\bd{x} + \bd{r}, t)\rangle^T =\\
+  &= (R(\bd{r}, \bd{x}, t))^T.
+\end{align*}  
+Po prejnji lemi \ref{homogenost2}, druga enakost sledi.
 \end{dokaz}
 
 
@@ -2277,7 +2303,7 @@ Poenostavimo povprečen člen v vsoti:
 \end{align*}
 Ker je $\bd{u}$ zvezna, po Fubinijevem izreku lahko zapišemo 
 \begin{align*}
-= \left\langle \frac{1}{L^{2n}} \int_{[0, L]^{n}} \int_{[0, L]^{2n}} \bd{u}(\bd{x}, t) \cdot \bd{u}^T(\bd{x}', t) e^{-i(\bd{\text{$\kappa$}}_{\bd{k}}\cdot \bd{x} + \bd{\text{$\kappa$}}_{\bd{l}}\cdot \bd{x}')} \dif\bd{x} \dif\bd{x}' \right\rangle
+= \left\langle \frac{1}{L^{2n}} \int_{[0, L]^{n}} \int_{[0, L]^{n}} \bd{u}(\bd{x}, t) \cdot \bd{u}^T(\bd{x}', t) e^{-i(\bd{\text{$\kappa$}}_{\bd{k}}\cdot \bd{x} + \bd{\text{$\kappa$}}_{\bd{l}}\cdot \bd{x}')} \dif\bd{x} \dif\bd{x}' \right\rangle
 \end{align*}
 Uvedemo novo neznanko v notranji integral $\bd{x} = \bd{r} + \bd{x}'$ $\Longrightarrow$ $\dif\bd{x} = \dif\bd{r}$, ter operacijo povprečenja lahko premaknemo v integrand, ker 
 je $\bd{u}$ gladko:
@@ -2368,6 +2394,65 @@ Naj bo $\bd{U}$ slučajni vektor in $\text{\bd{$\kappa$}} \in \R^n$. \bd{Hitrost
 \end{equation}
 \end{definicija}
 
+Poglejmo si nekaj lastnosti hitrostno-spektralnega tenzorja 
+\begin{trditev}
+\label{hitrostno_spektralni_tenzor_lastnosti}
+Naj bo $\text{\bd{$\kappa$}} \in \R^n$ in $\Phi(\text{\bd{$\kappa$}}, t)$ hitrostno spektralni 
+tenzor, prirejen slučajnemu vektorju $\bd{U}$. Potem velja:
+\begin{enumerate}
+  \item[i)] $\Phi(\text{\bd{$\kappa$}}, t) = (\Phi(-\text{\bd{$\kappa$}}, t))^T = (\Phi(\text{\bd{$\kappa$}}, t))^*$
+  \item[ii)] $\Phi(\text{\bd{$\kappa$}}, t)$ je pozitivno semidefiniten, 
+  $\forall \bd{v} \in \R^n: \bd{v}^T \Phi(\text{\bd{$\kappa$}}, t) \bd{v} > 0$.
+  \item[iii)] Če velja $\nabla \cdot \bd{U} = 0$, potem je 
+  $\text{\bd{$\kappa$}}^T \Phi(\text{\bd{$\kappa$}}, t) = \Phi(\text{\bd{$\kappa$}}, t) \text{\bd{$\kappa$}} = 0$.
+\end{enumerate}
+\end{trditev}
+
+\begin{dokaz}
+\begin{enumerate}
+  \item[i)] 
+  \begin{align*}
+  \Phi^*(\text{\bd{$\kappa$}}, t) &= \frac{1}{(2\pi)^n} \Big(\int_{\R^n} {R}(\bd{x}, t) e^{-i\text{\bd{$\kappa$}} \cdot \bd{x}} \dif \bd{x}\Big)^* = \\
+  &= \frac{1}{(2\pi)^n} \int_{\R^n} {R}(\bd{x}, t)^* e^{i\text{\bd{$\kappa$}} \cdot \bd{x}} \dif \bd{x} = \\
+  &= \frac{1}{(2\pi)^n} \int_{\R^n} ({R}(\bd{x}, t))^T e^{i\text{\bd{$\kappa$}} \cdot \bd{x}} \dif \bd{x} = \\
+  &= \frac{1}{(2\pi)^n} \Big(\int_{\R^n} {R}(\bd{x}, t) e^{i\text{\bd{$\kappa$}} \cdot \bd{x}} \dif \bd{x}\Big)^T = \\
+  &= (\Phi(-\text{\bd{$\kappa$}}, t))^T.
+  \end{align*}
+
+  Nadaljujemo iz zadnjih enakosti: 
+  \begin{align*}
+  \Phi^*(\text{\bd{$\kappa$}}, t) &= \frac{1}{(2\pi)^n} \int_{\R^n} ({R}(\bd{x}, t))^T e^{i\text{\bd{$\kappa$}} \cdot \bd{x}}\dif \bd{x} = \\
+  &\stackrel{\ref{dvo_točkovna_korelacija}}{=} \frac{1}{(2\pi)^n} \int_{\R^n} {R}(-\bd{x}, t) e^{i\text{\bd{$\kappa$}} \cdot \bd{x}}\dif \bd{x} = \\
+  &\stackrel{x\rightarrow -x}{=} \frac{1}{(2\pi)^n} \int_{\R^n} {R}(\bd{x}, t) e^{-i\text{\bd{$\kappa$}} \cdot \bd{x}}\dif \bd{x} = \\
+  &= \Phi(\text{\bd{$\kappa$}}, t).
+\end{align*}
+\item[ii)] Naj bo $\bd{v} \in \R^n$. Definiramo $g(\text{\bd{$\kappa$}}) \coloneqq \bd{v} \cdot \hat{\bd{u}}(\text{\bd{$\kappa$}}, t)$.
+Imamo 
+\begin{align*} 
+0 &\leq \langle g^*(\text{\bd{$\kappa$}}) \cdot g(\text{\bd{$\kappa$}}) \rangle = \langle (\bd{v} \cdot \hat{\bd{u}}(\text{\bd{$\kappa$}}, t))^* \cdot (\bd{v} \cdot \hat{\bd{u}}(\text{\bd{$\kappa$}}, t)) \rangle = \\
+&= \langle (\hat{\bd{u}}^*(\text{\bd{$\kappa$}}, t))\cdot (\bd{v}^*\cdot \bd{v}) \cdot \hat{\bd{u}}(\text{\bd{$\kappa$}}, t)) \rangle = \\
+&= \langle (\bd{v}^* \bd{v}) \cdot (\hat{\bd{u}}^*(\text{\bd{$\kappa$}}, t) \cdot \hat{\bd{u}}(\text{\bd{$\kappa$}}, t)) \rangle = \\
+&= (\bd{v}^T \bd{v}) \langle \hat{\bd{u}}^*(\text{\bd{$\kappa$}}, t) \cdot \hat{\bd{u}}(\text{\bd{$\kappa$}}, t) \rangle =
+\end{align*}
+Kot pri izpeljivi kovariančne matrike, je izraz enak 
+\begin{align*}
+= (\bd{v}^T \bd{v}) \cdot \hat{R}(\text{\bd{$\kappa$}}, t) = \bd{v}^T \hat{R}(\text{\bd{$\kappa$}}, t) \bd{v} = \bd{v}^T \Phi(\text{\bd{$\kappa$}}, t) \bd{v} \geq 0.
+\end{align*}
+\item[iii)] Enakost zapišemo v spektralnem protstoru
+\begin{align*}
+  0 = \mathcal{F}(\nabla \cdot \bd{U})(\text{\bd{$\kappa$}}) &= \mathcal{F}\left(\sum_{i=1}^{n} \frac{\partial u_i}{\partial x_i} \right) = \sum_{i=1}^{n} \mathcal{F}\left(\frac{\partial u_i}{\partial x_i} \right)(\text{\bd{$\kappa$}}) = i\sum_{i=1}^{n} \text{\bd{$\kappa$}}_i \hat{u}_i(\text{\bd{$\kappa$}}, t) = \\
+  &= i \text{\bd{$\kappa$}} \cdot \hat{\bd{u}}(\text{\bd{$\kappa$}}, t)
+\end{align*}
+\begin{align*}
+\text{\bd{$\kappa$}}^T \Phi(\text{\bd{$\kappa$}}, t) &= \text{\bd{$\kappa$}}^T \langle \hat{\bd{u}}(\text{\bd{$\kappa$}}, t) \cdot \hat{\bd{u}}^*(\text{\bd{$\kappa$}}, t) \rangle = \langle \text{(\bd{$\kappa$}}^T \bd{u}(\text{\bd{$\kappa$}}, t)) \cdot \hat{\bd{u}}^*(\text{\bd{$\kappa$}}, t) \rangle = 0.
+\end{align*}
+Za drugo enakost, izpeljano transponirano
+\begin{align*}
+0 = (\text{\bd{$\kappa$}}^T \Phi(\text{\bd{$\kappa$}}, t))^T = \Phi^T(\text{\bd{$\kappa$}}, t) \cdot \text{\bd{$\kappa$}} \stackrel{i)}{=} \Phi(-\text{\bd{$\kappa$}}, t) \cdot \text{\bd{$\kappa$}} \stackrel{\text{\bd{$\kappa$}} \rightarrow - \text{\bd{$\kappa$}}}{=}  -\Phi(\text{\bd{$\kappa$}}, t) \cdot \text{\bd{$\kappa$}}.
+\end{align*}
+\end{enumerate}
+\end{dokaz}
+
 \subsection{Hipoteze Kolomogorova}
 Pionir teorije turbulence je sovjetski matematik Andrej Nikolajevič Kolmogorov. 
 Na podlagi opažanj in rezultatov, ki pridejo iz Navier-Stokesovih enačb, je
@@ -2388,7 +2473,7 @@ označimo $f_{\bd{V}}^{(N)}$.
 Slučajna spremenljivka $\bd{V}$ je lokalno homogena na domeni 
 $\Omega \subseteq \R^n$, če za vsak $N\in \N$ in $\bd{y}^{(n)}$, 
 kjer je $n = 1, \dots, N$, velja, da je porazdelitvena gostota 
-$f_\bd{V}^{(N)}$ neodvisna of $\bd{x}^{(0)}$ in $\bd{U}(\bd{x}^{(0)}, t)$.
+$f_\bd{V}^{(N)}$ neodvisna od $\bd{x}^{(0)}$ in $\bd{U}(\bd{x}^{(0)}, t)$.
 \end{definicija}
 
 \begin{definicija}[Lokalna izotropičnost]
@@ -2420,4 +2505,371 @@ kjer je $\eta$ Kolmogorova dolžina, potem je $f_\bd{V}^{(N)}$ enolično
 določena z $\epsilon$.
 \end{enumerate}
 
+\subsection{Energijsko spektralna funkcija}
+
+Do sedaj smo videli pomembnost dvo-točkovne korelacije in kovariance. 
+Zaradi hipoteze o lokalni izotropiji, se lahko pri obravnavi 
+energije turbulentih tokov, omejimo na hitrostno-spektralni tenzor $\Phi(\text{\bd{$\kappa$}}, t)$. 
+Nažalost, tudi če se omejimo na tri dimenzionalen primer, 
+je tenzor daleč on enostavnega. Bomo pa v tem razdelku videli, 
+da nam predpostavka o izotropiji omogoča, da tenzor $\Phi$ zapišemop 
+preko enostavneše funkcije, ki ji pravimo energijsko spektralna funkcija.
+Obliko te, bo pa posledica Kolomogorovih podobnostnih hipotez. 
+
+\begin{definicija}
+Naj bo $\bd{U}$ slučajni vektor, in $\Phi(\text{\bd{$\kappa$}}, t)$ 
+hitrostno-spektralni tenzor, prirejen $\bd{U}$. Potem je \bd{energijsko spektralna funkcija} $E: [0, \infty) \rightarrow \R$, dana
+s predpisom
+\begin{equation}
+E(\kappa, t) = \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \frac{1}{2} \text{tr}(\Phi(\text{\bd{$\kappa$}}, t)) \dif \text{\bd{$\kappa$}}. 
+\end{equation}
+\end{definicija}
+
+Ker je $\Phi$ pozitivno semidefiniten, je $E$ pozitivna funkcija. To hitro sledi, če vzamemo 
+enostki vektor $e_i$ za $i\in \N$:
+$$
+0 \leq e^T_i \Phi(\text{\bd{$\kappa$}}, t) e_i = \Phi_{ii}(\text{\bd{$\kappa$}}, t) \Longrightarrow \text{tr}(\Phi(\text{\bd{$\kappa$}}, t)) \geq 0.
+$$
+
+Funkcija $E$ vsebuje manj informacij, kot $\Phi$, primarno opazimo, 
+da smo izgubili informacijo energije v različnih smereh. Vendar nam intuicija pravi, 
+ker delamo pod predpostavko izotropičnosti, bi morala obstajati relacija med 
+$E$ in $\Phi$. Začnemo z naslednjim izrekom 
+\begin{izrek}
+Naj bo $T: \R^n \rightarrow M_n(\R)$ izotropična tenzorska funkcija. 
+Potem obstaja skalarni funkcija $A, B: [0, \infty) \rightarrow \R$ in razcep 
+funkcije $T$: 
+\begin{equation}
+T(\text{\bd{$\kappa$}}) = A(|\text{\bd{$\kappa$}}|) I + B(|\text{\bd{$\kappa$}}|) \text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T,
+\end{equation}
+\end{izrek}
+
+\begin{dokaz}
+Ne najdem...
+\end{dokaz}
+
+Uporabimo izrek, da dobimo razcep za $\Phi$
+\begin{equation}
+\Phi(\text{\bd{$\kappa$}}, t) = A(|\text{\bd{$\kappa$}}|, t) I + B(|\text{\bd{$\kappa$}}|, t) \text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T,
+\end{equation}
+za $A, B: [0, \infty) \rightarrow \R$ in $t\in \R$. Enakost množimo z 
+$\text{\bd{$\kappa$}}^T$, ter upoštevamo nestisljivostni pogoj \ref{hitrostno_spektralni_tenzor_lastnosti}
+\begin{align*}
+0 = \text{\bd{$\kappa$}}^T \Phi(\text{\bd{$\kappa$}}, t) &= A(|\text{\bd{$\kappa$}}|, t) \text{\bd{$\kappa$}}^T  + B(|\text{\bd{$\kappa$}}|, t) (\text{\bd{$\kappa$}}^T \text{\bd{$\kappa$}}) \text{\bd{$\kappa$}}^T = (A(|\text{\bd{$\kappa$}}|, t)  + B(|\text{\bd{$\kappa$}}|, t) (\text{\bd{$\kappa$}}^T \text{\bd{$\kappa$}})) \text{\bd{$\kappa$}}^T \\
+&\Longrightarrow A(|\text{\bd{$\kappa$}}|, t)  + B(|\text{\bd{$\kappa$}}|, t) (\text{\bd{$\kappa$}}^T \text{\bd{$\kappa$}}) = 0 \\
+&\Longrightarrow A(|\text{\bd{$\kappa$}}|, t) = -B(|\text{\bd{$\kappa$}}|, t) |\text{\bd{$\kappa$}}|^2.
+\end{align*}
+
+Dobili smo zvezo med funkcijama $A$ in $B$. Poiščimo še zvezo med 
+$A$, $B$ in $E$. 
+\begin{align*}
+\text{tr}(\Phi(\text{\bd{$\kappa$}}, t)) &= \text{tr}(A(|\text{\bd{$\kappa$}}|, t) I + B(|\text{\bd{$\kappa$}}|, t) \text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T) = \\
+&= A(|\text{\bd{$\kappa$}}|, t) \text{tr}(I) + B(|\text{\bd{$\kappa$}}|, t) \text{tr}(\text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T) = \\
+&= A(|\text{\bd{$\kappa$}}|, t) n + B(|\text{\bd{$\kappa$}}|, t) |\text{\bd{$\kappa$}}|^2 
+\end{align*}
+
+\begin{align*}
+  \Longrightarrow E(\kappa, t) &= \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \frac{1}{2} \text{tr}(\Phi(\text{\bd{$\kappa$}}, t)) \dif \text{\bd{$\kappa$}} = \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \frac{1}{2} (A(|\text{\bd{$\kappa$}}|, t) n + B(|\text{\bd{$\kappa$}}|, t) |\text{\bd{$\kappa$}}|^2) \dif \text{\bd{$\kappa$}} = \\
+&= \frac{n A(\kappa, t)}{2} \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \dif \text{\bd{$\kappa$}} + \frac{B(\kappa, t) \kappa^2}{2} \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \dif \text{\bd{$\kappa$}} = \\
+&= ({n A(\kappa, t)} + {B(\kappa, t) \kappa^2}) \frac{S_{n-1}(\kappa)}{2} = \\
+&= ({- n B(\kappa, t)}\kappa^2 + {B(\kappa, t) \kappa^2}) \frac{S_{n-1}(\kappa)}{2}
+\end{align*}
+kjer je $S_{n-1}(\kappa)$ volumen $(n-1)$-dimenzionalne krogle z radijem
+$\kappa$ 
+$$
+S_{n-1}(\kappa) = \frac{2\pi^{\frac{n}{2}}}{\Gamma(\frac{n}{2})} \kappa^{n-1}.
+$$
+Iz zadnje izpeljave izrazimo $B$ in vstavimo v $\Phi$
+\begin{align}
+  \Phi(\text{\bd{$\kappa$}}, t) &= A(|\text{\bd{$\kappa$}}|, t) I + B(|\text{\bd{$\kappa$}}|, t) \text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T = \nonumber\\
+  &= B(|\text{\bd{$\kappa$}}|, t) (-|\text{\bd{$\kappa$}}|^2 I + \text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T) = \nonumber\\
+  &= \frac{2E((|\text{\bd{$\kappa$}}|, t))}{|\text{\bd{$\kappa$}}|^2 S_{n-1}(|\text{\bd{$\kappa$}}|)(1-n)} (-|\text{\bd{$\kappa$}}|^2 I + \text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T) = \nonumber\\
+  &= \frac{2E((|\text{\bd{$\kappa$}}|, t))}{S_{n-1}(|\text{\bd{$\kappa$}}|)(n-1)} \Big(I - \frac{1}{|\text{\bd{$\kappa$}}|^2}\text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T\Big) = \nonumber\\
+  &= \frac{2E((|\text{\bd{$\kappa$}}|, t))}{S_{n-1}(|\text{\bd{$\kappa$}}|)(n-1)} P(\text{\bd{$\kappa$}}),
+\label{hitrostno_spektralni_tenzor_izotropija}
+\end{align}
+kjer smo s $P$ označili ortogonalno projekcijo 
+$$
+P(\text{\bd{$\kappa$}}) = I - \frac{1}{|\text{\bd{$\kappa$}}|^2}\text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T.
+$$
+V $3$-dimenzionalnem primeru, dobimo 
+\begin{equation}
+\Phi(\text{\bd{$\kappa$}}, t) = \frac{E(|\text{\bd{$\kappa$}}|)}{4\pi |\text{\bd{$\kappa$}}|^2}P(\text{\bd{$\kappa$}})
+\end{equation}
+
+\subsection{Kolmogorov spekter}
+
+Ker se tenzor $\Phi$ izraža preko količine $E$, se pojavi vprašanje 
+ali lahko določimo $E$? V splošne je odgovor ne, vendar nam v posebnem 
+primeru Kolmogorovi podobnostni hipotezi omogočata, da določimo
+$E$ na pravem območju.
+
+Obstajajo empirične izpeljave te porazdelitve, mi pa se bomo lotili, 
+problema bolj formalno. Naslonili se bomo na izrek Buchingham $\pi$.
+Preden ga navedemo in dokažemo, navedimo nekaj pojmov. 
+
+
+
+%\begin{definicija}
+%Naj bodo $G_i$ grupe in $f_{i} \in \text{Hom}(G_{i-1}, G_{i})$ homomorfizmi za 
+%$i = 1, \dots, n$. Zaporedje 
+%$$
+%G_0 \xlongrightarrow{f_1} G_1 \xlongrightarrow{f_2} \dots \xlongrightarrow{f_{n}} G_n
+%$$
+%je eksaktno, če je $\text{im($f_i$)} = \text{ker}(f_{i+1})$.
+%\end{definicija}
+
+%Poglejmo si $3$ osnovne primere eksaktnih zaporedji
+
+%\begin{primer}
+%Naj bosta $A$ in $B$ grupi ter $f: A \rightarrow B$ homomorfizem.
+% \begin{itemize}
+  % \item Poglejmo zaporedje 
+  % $$
+  % 0 \xlongrightarrow{0} A \xlongrightarrow{f} B,
+  % $$
+  % kjer je $0$ ničelna preslikava. Zaporedje je eksaktno, če je 
+%   ker($f$) = im($0$) = \{0\}. Z drugimi besedami, zaporedje je eksaktno, če je 
+%   $f$ injektivna preslikava.
+%   \item Analogno zaporedje je  
+%   $$
+%   A \xlongrightarrow{f} B \xlongrightarrow{0} 0.
+%   $$
+%   Zaporedje je eksaktno, če je $ \text{im}(f) = \text{ker}(0) = B$. Zaporedje je eksaktno, 
+%   če je $f$ surjektivna.
+%   \item Zadnje zaporedje kombinacija prejšnjih dveh
+%   $$
+%   0 \xlongrightarrow{0} A \xlongrightarrow{f} B \xlongrightarrow{0} 0.
+%   $$
+%   Iz prejšnjih dveh primerov dobimo, da je zaporedje eksaktno, če je 
+%   $f$ surjektivna in injektivna, torej izomorfizem.
+% \end{itemize}
+% \end{primer}
+
+% Spomnimo se še enega osnovnih izreko iz algebre 
+% \begin{izrek}[Izrek o izomorfizmu]
+% Naj bo $f: G \rightarrow G'$ homomorfizem grup. Potem je 
+% $$
+% G/_{\text{ker}(f)} \cong \text{im}(f).
+% $$
+% \end{izrek}
+
+% Naslednji korak, k dokazu Buchingham $\pi$ izreka je, da 
+% formaliziramo koncept enote. 
+
+ \begin{definicija}
+ Naj bodo $1, F_1$, \dots, $F_n$ formalne spremenljivke, ki predstavljajo 
+ osnovne fizikalne enote. Definiramo množico osnovnih $\mathcal{B}$, kot 
+ množico urejenih parov: 
+ $$
+ \mathcal{B} = \{(\alpha_i, F_i) \,|\, i= 1, \dots, n, \, \alpha_i \geq 0\} \cup \{(\alpha_0, 1) \,|\, \alpha_0 \geq 0\}.
+ $$
+
+Bolj intuitivno bomo par označevali kot: $\alpha_i(F_i)\cdot [F_i] = \alpha_i \cdot [F_i]$. 
+Za dane pare definiramo 
+\begin{itemize}
+  \item Množenje dveh osnovnih enot definiramo kot  
+  $$
+  (\alpha_i(F_i)\cdot [F_i]) \cdot (\beta_j(F_j)\cdot [F_j]) = (\alpha_i \beta_j)[F_i F_j].
+  $$
+  \item Enoto za ta produkt označimo z 
+  $$
+  (1, 1) = 1.
+  $$
+  \item ter obrljiv element kot 
+  $$
+  (\alpha_i(F_i)\cdot [F_i])^{-1} = \frac{1}{\alpha_i{(F_i)}} \cdot [F_i^{-1}].
+  $$
+
+\end{itemize}
+
+Potem je $\bd{fizikalen prostor}$ $\mathcal{F}$ enak 
+$$
+\mathcal{F} = \{\alpha \cdot \prod_{i=1}^n [F_i^{k_i}] \,|\, \alpha \geq 0,\, k_i\in \Z\}
+$$
+\end{definicija}
+
+\begin{opomba}
+\begin{itemize}
+ \item Če množimo enake osnovne enote bomo označevali
+  \begin{align*}
+    [\underbrace{F_i \cdot \ldots \cdot F_i}_n] &= [F^n_i] \\
+    [\underbrace{F_i^{-1} \cdot \dots \cdot F_i^{-1}}_n] &= [F^{-n}_{i}]
+  \end{align*}
+\item Splošno enoto iz $\mathcal{F}$ bomo označevali 
+$$
+[F] = \prod_{i=1}^n [F_i^{k}]
+$$
+\end{itemize}
+\end{opomba}
+
+Naslednja trditev, katere dokaz je enostaven in ga izpustimo, vendar je pomemben: 
+
+\begin{trditev}
+Prostor $\mathcal{F}$ opremeljen z operacijo 
+\begin{align*}
+\R \times \mathcal{F} &\rightarrow \mathcal{F} \\
+(\lambda, \alpha[F]) &\mapsto (\lambda \cdot \alpha)[F]
+\end{align*}
+je vektorski prostor nad $\R$.
+\end{trditev}
+
+\begin{primer}
+ Poglejmo si glaven primer, ki predstavljajo fiziko. Naj bodo 
+ $T$ (sekunda), $L$ (meter), $M$ (kilogram), $K$ (kelvin), $N$ (mol), $I$ (amper) in $C$ (kandela).
+ Potem je $\mathcal{F}$ prostor vseh fizikalnih količin
+ $$
+ \mathcal{F} = \{\alpha \cdot [T^{k_1} L^{k_2} M^{k_3} K^{k_4} N^{k_5} I^{k_6} C^{k_7}] \mid i = 1, \dots, 7: k_i \in \Z\}.
+ $$
+ Na primer enota $T^{-2}L^1M^1$ predstavlja silo. Zaradi trditve, lahko 
+ vsako enoto predstavimo, kot vektor v $\Z^7$, torej lahko silo zapišemo kot 
+ $(-2, 1, 1, 0, 0, 0, 0)$
+ \end{primer}
+
+Ključna koncept, ki se bo pojavil pri dokazu izreka je pretvorba enote npr.
+iz metra v centimetre ali iz sekunde v uro. Intuicija nam pravi, da 
+bi naslednja formalna izpeljava morala veljati: naj bodo $x_1, \dots, x_n > 0$ in 
+$\alpha\cdot[F]\in \mathcal{F}$ ter zapišemo $[F_i] = [x_i \hat{F}_i]$
+\begin{align*}
+\alpha \cdot [F] &= \alpha\cdot \prod_{i=1}^n [F_i^{k_i}] = 
+\alpha\cdot \prod_{i=1}^n [(x_i\hat{F}_i)^{k_i}] = 
+\alpha\cdot \prod_{i=1}^n (x_i)^{k_i} [\hat{F}_i^{k_i}] = \\
+&= \underbrace{\Big(\alpha\prod_{i=1}^n x_i^{k_i}\Big)}_{\hat{\alpha}} \cdot \prod_{i=1}^n [\hat{F}^{k_i}] = \hat{\alpha}\cdot [\hat{F}]
+\end{align*}
+
+\begin{definicija}
+Naj bo $\alpha\cdot [F] \in \mathcal{F}$ in $x_1, \dots, x_n > 0$. Potem 
+pretvorbo enot $F_i$ za faktor $x_i$ definiramo kot 
+\begin{equation}
+ \alpha\cdot [F] \rightarrow \Big(\alpha\prod_{i=1}^n x_i^{k_i}\Big)\cdot [F]
+\end{equation}
+\end{definicija}
+
+\begin{definicija}
+Naj bo $f: \R^+ \rightarrow \R^+$ funkcija in $k_1, \dots, k_n \in \Z$.
+Fizikalna preslikava je preslikava dana z 
+\begin{align*}
+\Phi: \mathcal{F}^n &\rightarrow \mathcal{F} \\
+(\alpha_1 R_1, \dots, \alpha_n R_n) &\mapsto f(\alpha, \dots, \alpha_n)\cdot \prod_{i=1}^{n} [F_i^{b_i}],
+\end{align*}
+kjer so vrednosti $b_1, \dots, b_n$ izbrane tako, da velja 
+$$
+\prod_{i=1}^{n} [R_i] = \prod_{i=1}^{n} [F_i^{b_i}]
+$$
+\end{definicija}
+
+\begin{opomba}
+Vrednosti $b_i$ iz definicije so enolično določene, ker so $F_i$ 
+bazni vektorji za $\mathcal{F}$.
+\end{opomba}
+
+\begin{lema}
+Za pretvorjene enote $\hat{R}_1, \dots \hat{R}_n$ za $x_1, \dots, x_n > 0$ tj. 
+\begin{equation}
+[\hat{R}_i] = \prod_{j=1}^n [(x_j F_j)^{k_{ij}}] = \Big(\prod_{j=1}^n x_j^{k_{ij}}\Big)\cdot \prod_{j=1}^n [F_j^{k_{ij}}] = \Big(\prod_{j=1}^n x_j^{k_{ij}}\Big) \cdot [R_i]
+\end{equation}
+in fizikalno preslikavo 
+$\Phi: \mathcal{F}^n \rightarrow \mathcal{F}$ velja 
+\begin{equation}
+\Phi(\alpha_1 \hat{R}_1, \dots, \alpha_n \hat{R}_n) = \Big(\prod_{i=1}^n x_i^{({\bd{e}_i}^T A)\cdot \bd{b}}\Big)\cdot \Phi(\alpha_1 R_1, \dots, \alpha_n R_n)
+\end{equation}
+\end{lema}
+
+\begin{dokaz}
+\begin{align*}
+\Phi(\alpha_1 \hat{R}_1, \dots, \alpha_n \hat{R}_n) = f(\alpha_1, \dots, \alpha_n) \cdot \prod_{i=1}^n [\hat{R}_i] = 
+\end{align*}
+Ker se pretvorbe enot ohranjajo pri fizikalni preslikavi velja 
+$$
+\prod_{i=1}^{n} [\hat{R}_i] = \prod_{i=1}^{n} [\hat{F}_i^{b_i}], 
+$$
+potem je 
+\begin{align*}
+&= f(\alpha_1, \dots, \alpha_n) \cdot \prod_{i=1}^n [\hat{R}_i] = f(\alpha_1, \dots, \alpha_n) \cdot \prod_{i=1}^n [\hat{F}_i^{b_i}] = \\
+&= f(\alpha_1, \dots, \alpha_n) \cdot \prod_{i=1}^n [(x_i F_i)_i^{b_i}] = f(\alpha_1, \dots, \alpha_n) \prod_{i=1}^n [x_i^{b_i}] \cdot \prod_{i=1}^n [(x_i F_i)_i^{b_i}]
+\end{align*}
+\end{dokaz}
+
+\newpage
+% Sedaj lahko navedemo in dokažemo Buchingham $\pi$ izrek.
+
+ \begin{izrek}[Buchingham $\pi$]
+ Naj bo $f: \mathcal{F}^n \rightarrow \mathcal{F}$ preslikava in 
+ $q_1$, \dots, $q_n \in \mathcal{F}$ fizikalne spremenljivke. Recimo, da je fizikalni zakon 
+ dan z 
+ \begin{equation}
+ f(q_1, \dots, q_n) = 0.
+ \end{equation}
+ in, da obstaja $k$ neodvisnih fizikalnih količin. Potem obstaja funkcija 
+ $F: \mathcal{F}^n \rightarrow \R$ in brezdimenzijske fizikalne spremenljivke 
+ $\pi_1$, \dots, $\pi_{n-k} \in \mathcal{F}$, da velja
+ \begin{equation}
+   F(\pi_1, \dots, \pi_{n-k}) = 0.
+ \end{equation}
+ \end{izrek}
+
+% \begin{dokaz}
+% TBA našel neko zmedo.
+% \end{dokaz}
+
+Poglejmo sedaj uporabo izreka. Naj bo Re $>\!\!> 1$ in $\bd{U}$ 
+slučakni vektor. Potem je po prvi podobnostni hipotezi $\bd{U}$
+odvisen le od $\epsilon$ in $\nu$. Ker predpostavimo, da je $\bd{U}$
+izotropen, je tudi energijska spektralna funkcija $E$ odvisna le 
+od $\epsilon$ in $\nu$. Torej obstaja zakon 
+$$
+f(E, \epsilon, \nu, \kappa) = 0
+$$
+za $f:\mathcal{F} \rightarrow \R$. Za $\epsilon$ in $\nu$ že vemo, da imata
+enote $[\epsilon] = [L^2 T^{-3}]$ in $[\nu] = [M^1 L^{-1}T^{-1}]$. Ker je 
+$\kappa = \frac{2\pi}{L}$ pomeni, da je $[\kappa] = [L^{-1}]$.
+Hitrostno-spektralni tenzor $\Phi$ je 
+$$
+\Phi(\text{\bd{$\kappa$}}, t) = \frac{1}{(2\pi)^n} \int_{\R^n} {R}(\bd{x}, t) e^{-i\text{\bd{$\kappa$}} \cdot \bd{x}} \dif \bd{x}.
+$$
+Po definiciji $R$ prestavlja kinetično energijo, torej ima enoto $[L^2T^{-2}]$.
+Eksponetni del integranda je brezdimenzijski, diferencial pa ima enoto $[L^{n}]$. zato je enota
+tenzorja $\Phi$ enaka $[L^2T^{-2}L^n] = [L^{n+2}T^{-2}]$. Iz 
+enačbe \ref{hitrostno_spektralni_tenzor_izotropija} izrazimo enoto za 
+$E$, kar nam da $[L^{n+2} T^{-2} L^{-2}] = [L^n T^{-2}]$. Sedaj lahko 
+zapišemo dimenzijsko matriko $M$ v bazi $\{L, T, M\}$
+\[
+\begin{array}{c|rrrr}
+ & E & \epsilon & \nu & k \\[-3mm]
+\hline
+L & n & 2 & -1 & -1 \\[-3mm]
+T & -2 & -3 & -1 & 0\\[-3mm]
+M & 0 & 0 & 1 & 0 \\
+\end{array}
+\]
+Z malo računanja, dobimo jedro matrike $M$:
+$$
+\operatorname{ker} M = \operatorname{Lin} \left\{ 
+\begin{bmatrix} 
+\\[-17mm]
+3 \\[-5mm]
+-2 \\[-5mm]
+0 \\[-5mm]
+3n - 4 
+\end{bmatrix} 
+\right\}$$
+Število $\pi$-grup je enako $4 - 3 = 1$ in, če vzamemo iz jedra, kar vektor $(3, -2, 0, 3n-4)$,
+dobimo
+$$
+\pi = E^{3} \epsilon^{-2} k^{3n - 4}, 
+$$
+ki zadošča $F(\pi) = 0$, za neko neznano funkcijo $F$. Ker je $\pi$ brezdimenzijska količina,
+oz. konstanta količina, lahko zapišemo
+\begin{equation}
+  E^{3} \epsilon^{-2} k^{3n - 4} = C \in \R,
+\end{equation}
+ali ekvivalentno 
+\begin{equation}
+  E(\kappa) = C \epsilon^{\frac{2}{3}} k^{\frac{4 - 3n}{3}}.
+\end{equation}
+V posebnem za $n=3$ dobimo 
+\begin{equation}
+E(\kappa) = C \epsilon^{\frac{2}{3}} k^{-\frac{5}{3}},
+\end{equation}
+kar je znameniti \textbf{Kolmogorov spekter}.
 \end{document}
