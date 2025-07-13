@@ -58,6 +58,7 @@
 \newlabel{eq:filterDFT}{{2.40}{35}{Diskretna Fourierova analiza}{equation.2.40}{}}
 \newlabel{koef_filter}{{2.41}{35}{Diskretna Fourierova analiza}{equation.2.41}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Valovno preklopni filter}{35}{subsubsection.2.3.2}\protected@file@percent }
+\newlabel{Fourier_število}{{2.42}{36}{Valovno preklopni filter}{equation.2.42}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Gaussov filter}{36}{subsubsection.2.3.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.4}Škatlast filter}{37}{subsubsection.2.3.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Energija in spektralna analiza}{38}{section.3}\protected@file@percent }
@@ -69,10 +70,10 @@
 \newlabel{hitrostno_spektralni_tenzor_lastnosti}{{3.14}{43}{}{definicija.3.14}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Hipoteze Kolomogorova}{44}{subsection.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Energijsko spektralna funkcija}{45}{subsection.3.3}\protected@file@percent }
-\newlabel{hitrostno_spektralni_tenzor_izotropija}{{3.16}{46}{Energijsko spektralna funkcija}{equation.3.16}{}}
+\newlabel{hitrostno_spektralni_tenzor_izotropija}{{3.19}{47}{Energijsko spektralna funkcija}{equation.3.19}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Kolmogorov spekter}{47}{subsection.3.4}\protected@file@percent }
-\newlabel{pretvorba}{{3.19}{48}{}{equation.3.19}{}}
-\newlabel{lema_pretvorba}{{3.26}{49}{}{definicija.3.26}{}}
+\newlabel{pretvorba}{{3.22}{49}{}{equation.3.22}{}}
+\newlabel{lema_pretvorba}{{3.30}{49}{}{definicija.3.30}{}}
 \ExplSyntaxOn \cs_if_free:NT \pgfsyspdfmark {\cs_set_eq:NN \pgfsyspdfmark \@gobblethree }\ExplSyntaxOff 
 \ExplSyntaxOn 
 \char_set_catcode_space:n {32}
@@ -86,78 +87,80 @@
 \char_set_catcode_space:n {32}
 \tl_gset:cn {c__nicematrix_3_tl}{\seq_gset_from_clist:Nn \g__nicematrix_size_seq {1,4,4,1,1,1}}
 \ExplSyntaxOff 
-\pgfsyspdfmark {pgfid7}{11240902}{17323168}
-\pgfsyspdfmark {pgfid8}{11956354}{15660201}
-\pgfsyspdfmark {pgfid9}{12451513}{15660201}
-\pgfsyspdfmark {pgfid10}{14872734}{15660201}
-\pgfsyspdfmark {pgfid11}{17293955}{15660201}
-\pgfsyspdfmark {pgfid12}{19715176}{15660201}
-\pgfsyspdfmark {pgfid13}{11240902}{14947491}
-\pgfsyspdfmark {pgfid14}{11956354}{13284524}
-\pgfsyspdfmark {pgfid15}{12451513}{13284524}
-\pgfsyspdfmark {pgfid16}{14872734}{13284524}
-\pgfsyspdfmark {pgfid17}{17293955}{13284524}
-\pgfsyspdfmark {pgfid18}{19715176}{13284524}
-\pgfsyspdfmark {pgfid19}{11240902}{12571814}
-\pgfsyspdfmark {pgfid20}{12344559}{10908847}
-\pgfsyspdfmark {pgfid21}{12451513}{10908847}
-\pgfsyspdfmark {pgfid22}{14872734}{10908847}
-\pgfsyspdfmark {pgfid23}{17293955}{10908847}
-\pgfsyspdfmark {pgfid24}{19715176}{10908847}
-\pgfsyspdfmark {pgfid25}{11240902}{10196137}
-\pgfsyspdfmark {pgfid26}{11962193}{8533170}
-\pgfsyspdfmark {pgfid27}{12451513}{8533170}
-\pgfsyspdfmark {pgfid28}{14872734}{8533170}
-\pgfsyspdfmark {pgfid29}{17293955}{8533170}
-\pgfsyspdfmark {pgfid30}{19715176}{8533170}
-\pgfsyspdfmark {pgfid31}{11240902}{7820460}
-\pgfsyspdfmark {pgfid32}{11240902}{7820460}
-\pgfsyspdfmark {pgfid33}{13662123}{7820460}
-\pgfsyspdfmark {pgfid34}{16083344}{7820460}
-\pgfsyspdfmark {pgfid35}{18504565}{7820460}
-\pgfsyspdfmark {pgfid36}{20925786}{7820460}
-\pgfsyspdfmark {pgfid37}{21035014}{12348992}
-\pgfsyspdfmark {pgfid39}{21035014}{12348992}
-\pgfsyspdfmark {pgfid40}{21144242}{17323168}
-\pgfsyspdfmark {pgfid41}{21592136}{15660201}
-\pgfsyspdfmark {pgfid42}{22354853}{15660201}
-\pgfsyspdfmark {pgfid43}{21144242}{14947491}
-\pgfsyspdfmark {pgfid44}{21592136}{13284524}
-\pgfsyspdfmark {pgfid45}{22354853}{13284524}
-\pgfsyspdfmark {pgfid46}{21144242}{12571814}
-\pgfsyspdfmark {pgfid47}{22247899}{10908847}
-\pgfsyspdfmark {pgfid48}{22354853}{10908847}
-\pgfsyspdfmark {pgfid49}{21144242}{10196137}
-\pgfsyspdfmark {pgfid50}{21485030}{8533170}
-\pgfsyspdfmark {pgfid51}{22354853}{8533170}
-\pgfsyspdfmark {pgfid52}{21144242}{7820460}
-\pgfsyspdfmark {pgfid53}{21144242}{7820460}
-\pgfsyspdfmark {pgfid54}{23565463}{7820460}
-\pgfsyspdfmark {pgfid55}{25986684}{7820460}
-\pgfsyspdfmark {pgfid56}{23674691}{12348992}
-\pgfsyspdfmark {pgfid58}{23674691}{12348992}
-\pgfsyspdfmark {pgfid59}{25431424}{17323168}
-\pgfsyspdfmark {pgfid60}{25853218}{15660201}
-\pgfsyspdfmark {pgfid61}{26642035}{15660201}
-\pgfsyspdfmark {pgfid62}{25431424}{14947491}
-\pgfsyspdfmark {pgfid63}{25853218}{13284524}
-\pgfsyspdfmark {pgfid64}{26642035}{13284524}
-\pgfsyspdfmark {pgfid65}{25431424}{12571814}
-\pgfsyspdfmark {pgfid66}{26535081}{10908847}
-\pgfsyspdfmark {pgfid67}{26642035}{10908847}
-\pgfsyspdfmark {pgfid68}{25431424}{10196137}
-\pgfsyspdfmark {pgfid69}{25859057}{8533170}
-\pgfsyspdfmark {pgfid70}{26642035}{8533170}
-\pgfsyspdfmark {pgfid71}{25431424}{7820460}
-\pgfsyspdfmark {pgfid72}{25431424}{7820460}
-\pgfsyspdfmark {pgfid73}{27852645}{7820460}
-\pgfsyspdfmark {pgfid74}{30273866}{7820460}
-\pgfsyspdfmark {pgfid75}{27961873}{12348992}
-\pgfsyspdfmark {pgfid77}{27961873}{12348992}
+\pgfsyspdfmark {pgfid7}{11240902}{36418463}
+\pgfsyspdfmark {pgfid8}{11956354}{34755496}
+\pgfsyspdfmark {pgfid9}{12451513}{34755496}
+\pgfsyspdfmark {pgfid10}{14872734}{34755496}
+\pgfsyspdfmark {pgfid11}{17293955}{34755496}
+\pgfsyspdfmark {pgfid12}{19715176}{34755496}
+\pgfsyspdfmark {pgfid13}{11240902}{34042786}
+\pgfsyspdfmark {pgfid14}{11956354}{32379819}
+\pgfsyspdfmark {pgfid15}{12451513}{32379819}
+\pgfsyspdfmark {pgfid16}{14872734}{32379819}
+\pgfsyspdfmark {pgfid17}{17293955}{32379819}
+\pgfsyspdfmark {pgfid18}{19715176}{32379819}
+\pgfsyspdfmark {pgfid19}{11240902}{31667109}
+\pgfsyspdfmark {pgfid20}{12344559}{30004142}
+\pgfsyspdfmark {pgfid21}{12451513}{30004142}
+\pgfsyspdfmark {pgfid22}{14872734}{30004142}
+\pgfsyspdfmark {pgfid23}{17293955}{30004142}
+\pgfsyspdfmark {pgfid24}{19715176}{30004142}
+\pgfsyspdfmark {pgfid25}{11240902}{29291432}
+\pgfsyspdfmark {pgfid26}{11962193}{27628465}
+\pgfsyspdfmark {pgfid27}{12451513}{27628465}
+\pgfsyspdfmark {pgfid28}{14872734}{27628465}
+\pgfsyspdfmark {pgfid29}{17293955}{27628465}
+\pgfsyspdfmark {pgfid30}{19715176}{27628465}
+\pgfsyspdfmark {pgfid31}{11240902}{26915755}
+\pgfsyspdfmark {pgfid32}{11240902}{26915755}
+\pgfsyspdfmark {pgfid33}{13662123}{26915755}
+\pgfsyspdfmark {pgfid34}{16083344}{26915755}
+\pgfsyspdfmark {pgfid35}{18504565}{26915755}
+\pgfsyspdfmark {pgfid36}{20925786}{26915755}
+\pgfsyspdfmark {pgfid37}{21035014}{31444287}
+\pgfsyspdfmark {pgfid39}{21035014}{31444287}
+\pgfsyspdfmark {pgfid40}{21144242}{36418463}
+\pgfsyspdfmark {pgfid41}{21592136}{34755496}
+\pgfsyspdfmark {pgfid42}{22354853}{34755496}
+\pgfsyspdfmark {pgfid43}{21144242}{34042786}
+\pgfsyspdfmark {pgfid44}{21592136}{32379819}
+\pgfsyspdfmark {pgfid45}{22354853}{32379819}
+\pgfsyspdfmark {pgfid46}{21144242}{31667109}
+\pgfsyspdfmark {pgfid47}{22247899}{30004142}
+\pgfsyspdfmark {pgfid48}{22354853}{30004142}
+\pgfsyspdfmark {pgfid49}{21144242}{29291432}
+\pgfsyspdfmark {pgfid50}{21485030}{27628465}
+\pgfsyspdfmark {pgfid51}{22354853}{27628465}
+\pgfsyspdfmark {pgfid52}{21144242}{26915755}
+\pgfsyspdfmark {pgfid53}{21144242}{26915755}
+\pgfsyspdfmark {pgfid54}{23565463}{26915755}
+\pgfsyspdfmark {pgfid55}{25986684}{26915755}
+\pgfsyspdfmark {pgfid56}{23674691}{31444287}
+\pgfsyspdfmark {pgfid58}{23674691}{31444287}
+\pgfsyspdfmark {pgfid59}{25431424}{36418463}
+\pgfsyspdfmark {pgfid60}{25853218}{34755496}
+\pgfsyspdfmark {pgfid61}{26642035}{34755496}
+\pgfsyspdfmark {pgfid62}{25431424}{34042786}
+\pgfsyspdfmark {pgfid63}{25853218}{32379819}
+\pgfsyspdfmark {pgfid64}{26642035}{32379819}
+\pgfsyspdfmark {pgfid65}{25431424}{31667109}
+\pgfsyspdfmark {pgfid66}{26535081}{30004142}
+\pgfsyspdfmark {pgfid67}{26642035}{30004142}
+\pgfsyspdfmark {pgfid68}{25431424}{29291432}
+\pgfsyspdfmark {pgfid69}{25859057}{27628465}
+\pgfsyspdfmark {pgfid70}{26642035}{27628465}
+\pgfsyspdfmark {pgfid71}{25431424}{26915755}
+\pgfsyspdfmark {pgfid72}{25431424}{26915755}
+\pgfsyspdfmark {pgfid73}{27852645}{26915755}
+\pgfsyspdfmark {pgfid74}{30273866}{26915755}
+\pgfsyspdfmark {pgfid75}{27961873}{31444287}
+\pgfsyspdfmark {pgfid77}{27961873}{31444287}
 \ExplSyntaxOn 
 \cs_gset:cpn {__nicematrix_max_cell_width_1}{26.9449pt}
 \ExplSyntaxOff 
-\@writefile{toc}{\contentsline {section}{Literatura}{53}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Napake filtriranih polj}{53}{subsection.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Modeliranje majhnih skal in problem zaprtja}{56}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Literatura}{57}{section*.9}\protected@file@percent }
 \abx@aux@read@bbl@mdfivesum{FBA887D60FF4056006D5291175292110}
 \abx@aux@defaultrefcontext{0}{wyngaard}{nty/global//global/global/global}
-\gdef \@abspage@last{61}
+\gdef \@abspage@last{65}

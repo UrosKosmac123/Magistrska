@@ -2021,6 +2021,7 @@ $$
 $$
 in Fourierova vrsta filtriranega polja 
 \begin{equation}
+\label{Fourier_število}
 \overline{u}(x) = \sum_{k = 1 - \frac{1}{2}N}^{\frac{1}{2}N} a_n e^{i\kappa x}.
 \end{equation}
 
@@ -2522,15 +2523,51 @@ Naj bo $\bd{U}$ slučajni vektor, in $\Phi(\text{\bd{$\kappa$}}, t)$
 hitrostno-spektralni tenzor, prirejen $\bd{U}$. Potem je \bd{energijsko spektralna funkcija} $E: [0, \infty) \rightarrow \R$, dana
 s predpisom
 \begin{equation}
-E(\kappa, t) = \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \frac{1}{2} \text{tr}(\Phi(\text{\bd{$\kappa$}}, t)) \dif \text{\bd{$\kappa$}}. 
+E(\kappa, t) = \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \frac{1}{2} \text{tr}(\Phi(\text{\bd{$\kappa$}}, t)) \dif \text{\bd{$\kappa$}}
+\end{equation}
+in enodimenzionalna spekralna funkcija enaka 
+\begin{equation}
+E_{ij}^k (\bd{\text{$\kappa$}} \cdot \bd{e}_k) = \frac{1}{\pi} \int_\R R_{ij}(r\bd{e}_k) e^{-i(\bd{\text{$\kappa$}} \cdot \bd{e}_k)r} \dif r.
 \end{equation}
 \end{definicija}
 
-Ker je $\Phi$ pozitivno semidefiniten, je $E$ pozitivna funkcija. To hitro sledi, če vzamemo 
+\begin{opomba}
+  \hfill
+\begin{itemize}
+\item Ker je $\Phi$ pozitivno semidefiniten, je $E$ pozitivna funkcija. To hitro sledi, če vzamemo 
 enostki vektor $e_i$ za $i\in \N$:
 $$
 0 \leq e^T_i \Phi(\text{\bd{$\kappa$}}, t) e_i = \Phi_{ii}(\text{\bd{$\kappa$}}, t) \Longrightarrow \text{tr}(\Phi(\text{\bd{$\kappa$}}, t)) \geq 0.
 $$
+\item $E_{ij}^k$ je povezana s $\Phi$ preko 
+$$
+E^k_{ii}(\bd{\text{$\kappa$}} \cdot \bd{e}_k) = 2 \int_{\R^{n-1}} \Phi_{ii}(\bd{\text{$\kappa$}}) \dif \hat{\bd{\text{$\kappa$}}_k},
+$$
+kjer je $ \dif \hat{\bd{\text{$\kappa$}}_k} = \dif \kappa_1 \dots \dif \kappa_{k-1} \dif \kappa_{k+1} \dots \dif \kappa_{n}$
+\end{itemize}
+\end{opomba}
+
+Navedimo še dve definiciji, ki sta pomembni pri obravnavi energije 
+turbulentnih tokov in nam, da razlog za obravnavo tenzorja $\Phi$
+
+\begin{definicija}
+\textbf{Turbulentna kinetična energija} je funkcija $k:\R^+ \rightarrow \R^+$ dana s predpisom
+\begin{equation}
+k(t) = \frac{1}{2} \text{tr}(R(0, t)) = \frac{1}{2} \sum_{i=1}^{n} \langle u^2(0, t) \rangle = \int_{0}^\infty E(\kappa, t) \dif \bd{\text{$\kappa$}}
+\end{equation}
+\end{definicija}
+
+\begin{definicija}
+\bd{Viskozna disipativnost} je funkcija $\epsilon: \R^+ \rightarrow \R^+$ dana s predpisom
+\begin{equation}
+\epsilon(t) = \int_{\R^n} \nu |\bd{\text{$\kappa$}}|^2 \text{tr}(\Phi(\bd{\text{$\kappa$}}, t)) \dif \bd{\text{$\kappa$}}.
+\end{equation}
+\end{definicija}
+
+\begin{opomba}
+Da se preveriti, da ta definicija viskozne disipativnosti sovpada s tisto iz 
+prvega poglavja.
+\end{opomba}
 
 Funkcija $E$ vsebuje manj informacij, kot $\Phi$, primarno opazimo, 
 da smo izgubili informacijo energije v različnih smereh. Vendar nam intuicija pravi, 
@@ -2573,9 +2610,9 @@ $A$, $B$ in $E$.
   \Longrightarrow E(\kappa, t) &= \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \frac{1}{2} \text{tr}(\Phi(\text{\bd{$\kappa$}}, t)) \dif \text{\bd{$\kappa$}} = \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \frac{1}{2} (A(|\text{\bd{$\kappa$}}|, t) n + B(|\text{\bd{$\kappa$}}|, t) |\text{\bd{$\kappa$}}|^2) \dif \text{\bd{$\kappa$}} = \\
 &= \frac{n A(\kappa, t)}{2} \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \dif \text{\bd{$\kappa$}} + \frac{B(\kappa, t) \kappa^2}{2} \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \dif \text{\bd{$\kappa$}} = \\
 &= ({n A(\kappa, t)} + {B(\kappa, t) \kappa^2}) \frac{S_{n-1}(\kappa)}{2} = \\
-&= ({- n B(\kappa, t)}\kappa^2 + {B(\kappa, t) \kappa^2}) \frac{S_{n-1}(\kappa)}{2}
+&= ({- n B(\kappa, t)}\kappa^2 + {B(\kappa, t) \kappa^2}) \frac{S_{n-1}(\kappa)}{2},
 \end{align*}
-kjer je $S_{n-1}(\kappa)$ volumen $(n-1)$-dimenzionalne krogle z radijem
+kjer je $S_{n-1}(\kappa)$ površina $n-1$-dimenzionalne krogle z radijem
 $\kappa$ 
 $$
 S_{n-1}(\kappa) = \frac{2\pi^{\frac{n}{2}}}{\Gamma(\frac{n}{2})} \kappa^{n-1}.
@@ -2966,20 +3003,211 @@ $$
 Število $\pi$-grup je enako $4 - 3 = 1$ in, če vzamemo iz jedra, kar vektor $(3, -2, 0, 3n-4)$,
 dobimo
 $$
-\pi = E^{3} \epsilon^{-2} k^{3n - 4}, 
+\pi = E^{3} \epsilon^{-2} \kappa^{3n - 4}, 
 $$
 ki zadošča $F(\pi) = 0$, za neko neznano funkcijo $F$. Ker je $\pi$ brezdimenzijska količina,
 oz. konstanta količina, lahko zapišemo
 \begin{equation}
-  E^{3} \epsilon^{-2} k^{3n - 4} = C \in \R,
+  E^{3} \epsilon^{-2} \kappa^{3n - 4} = C \in \R,
 \end{equation}
 ali ekvivalentno 
 \begin{equation}
-  E(\kappa) = C \epsilon^{\frac{2}{3}} k^{\frac{4 - 3n}{3}}.
+  E(\kappa) = C \epsilon^{\frac{2}{3}} \kappa^{\frac{4 - 3n}{3}}.
 \end{equation}
 V posebnem za $n=3$ dobimo 
 \begin{equation}
-E(\kappa) = C \epsilon^{\frac{2}{3}} k^{-\frac{5}{3}},
+E(\kappa) = C \epsilon^{\frac{2}{3}} \kappa^{-\frac{5}{3}},
 \end{equation}
 kar je znameniti \textbf{Kolmogorov spekter}.
+
+\subsection{Napake filtriranih polj}
+
+Koncepte, ki smo jih spoznali v tem in prejšpnjem poglavju bomo 
+uporabili, da ocenimo kako "dobra" je rešitev filtriranih enačb.
+
+\begin{definicija}
+Naj bo $\bd{U}$ slučajni vektor. \bd{Filtrirana dvo-točkovno korelacija}
+je 
+\begin{equation}
+\overline{R}(\bd{x},\bd{r},t) = \langle \overline{\bd{U}}(\bd{x}, t) \cdot \overline{\bd{U}}^T(\bd{x} + \bd{r}, t) \rangle
+\end{equation} 
+in \bd{filtrirana energijsko spektralna funkcija $\overline{E}$} 
+\begin{equation}
+\overline{E}(\kappa, t) = \oint_{|\bd{\text{$\kappa$}}| = \kappa} \frac{1}{2} \text{tr}(\hat{\overline{R}}(\bd{\text{$\kappa$}, t})) \dif \bd{\text{$\kappa$}},
+\end{equation}
+kjer $\hat{\cdot}$ označuje Fourierovo tranformacijo.
+\end{definicija}
+
+\begin{opomba}
+\hfill
+\begin{itemize}
+  \item Definicija je filtrirane spektralne funkcije je identična kot nefiltrirane 
+  le da je slučajni vektor filtriran.
+  \item Kot $R$ je tudi $\overline{R}$ neodvisna od $x$, zato ga bomo izpuščali.
+\end{itemize}
+\end{opomba}
+
+\begin{lema}
+Naj bo $\bd{U}$ homogen slučajni vektor in $G$ filtracijska funkcija. Velja: 
+\begin{equation}
+\overline{E}(\kappa, t) = |\hat{G}(\kappa)|^2 E(\kappa, t).
+\end{equation}
+\end{lema}
+
+\begin{dokaz}
+Ker je sled tr aditivna je dovolj preveriti le za primer, ko je 
+$\bd{U}$ enodimenzionalen. Označimo ga z $u$ in sledimo definiciji 
+in uporabimo lastnost invariance $R$ v prvi komponenti
+\begin{align*}
+\overline{R}(\bd{x}, \bd{r}, t) &= \langle \overline{u}(x + r) \overline{u}(x) \rangle = \\
+&= \Big\langle\int_\R \int_\R G(y) G(z) u(x+r-y, t) u(x-z, t) \dif y \dif z\Big\rangle = \\
+&= \int_\R \int_\R G(y) G(z) \langle u(x+r-y, t) u(x-z, t) \rangle \dif y \dif z = \\
+&\stackrel{x \rightarrow x + z}{=} \int_\R \int_\R G(y) G(z) \langle u(x+r+z-y, t) u(x, t) \rangle \dif y \dif z = \\
+&= \int_\R \int_\R G(y) G(z) R(r+z-y, t) \dif y \dif z
+\end{align*}
+
+\begin{align*}
+\overline{E}(\kappa, t) &= \frac{1}{\pi} \int_\R \overline{R}(r, t) e^{-i\kappa r} \dif r = \\
+&= \frac{1}{\pi}\int_{\R} \int_{\R} \int_\R G(y) G(z) R(r+z-y,t) e^{-i\kappa r} \dif y \dif z \dif r = \\
+&= \frac{1}{\pi}\int_{\R} \int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) R(r+z-y,t) e^{-i\kappa(r+z-y)} \dif y \dif z \dif r = 
+\end{align*}
+po Fubinijevev izreku lahko zamenjamo vrstne rede integracije: 
+\begin{align*}
+\frac{1}{\pi}\int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) \Big(\int_{\R} R(r+z-y,t) e^{-i\kappa(r+z-y)} \dif r \Big) \dif y \dif z =
+\end{align*}
+z uvedbo neznanke $r + z - y = s$ $\Longrightarrow$ $\dif r = \dif s$ dobimo invarianco notranjega integrala od
+spremenljivk $z$ in $y$
+\begin{align*}
+&= \int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) \Big(\frac{1}{\pi}\int_{\R} R(s,t) e^{-i\kappa s} \dif s \Big) \dif y \dif z = \\
+&= E(\kappa, t) \int_\R (G(y) e^{-i\kappa y}\dif y) \overline{\int_{\R} (G(z) e^{-i\kappa z} \dif z)}  = \\
+&= E(\kappa, t) G(\kappa) \overline{G}(\kappa) = \\
+&= |G(\kappa)|^2 E(\kappa, t).
+\end{align*}
+\end{dokaz}
+
+Najprej si bomo pogledali enodimenzionalni primer, za katerega bomo
+potrebovali poseben primer enodimenzionlne spektralne funkcije. Le-to pa moramo 
+povezati z $E(\kappa)$, katere porazdelitev poznamo (označevali bomo $\bd{\text{$\kappa$}}^2 = \kappa^2$). Iz prejšnjih razdelkov vemo 
+naslednje: 
+\begin{align*}
+E_{ij}^k(\kappa_k) &= 2 \int_{\R^{n-1}}\Phi_{ij}(\bd{\text{$\kappa$}}) \dif \hat{\bd{\text{$\kappa$}}} = \\
+&\stackrel{\ref{hitrostno_spektralni_tenzor_izotropija}}{=} \frac{2\Gamma\big(\frac{n}{2}\big)}{(n-1)\pi^\frac{n}{2}} \int_{\R^{n-1}} \frac{E(\kappa)}{\kappa^{n-1}}\Big(1 - \frac{\kappa_i \kappa_j}{\kappa^2}\Big)\dif \hat{\bd{\text{$\kappa_k$}}} = \\
+&\stackrel{i=j=k}{=} \frac{2\Gamma\big(\frac{n}{2}\big)}{(n-1)\pi^\frac{n}{2}} \int_{\R^{n-1}} \frac{E(\kappa, t)}{\kappa^{n-1}}\Big(1 - \frac{\kappa_k^2}{\kappa^2}\Big)\dif \hat{\bd{\text{$\kappa_k$}}} = 
+\end{align*}
+Zapišemo 
+$$
+\kappa_r^2 = \kappa^2 - \kappa_k^2 = \kappa_1^2 + \dots + \kappa_{k-1}^2 + \kappa_{k+1}^2 + \dots + \kappa_n^2
+$$
+in uvedemo sferične koordinate 
+\begin{align*}
+\kappa_1 =& \,\,r\cos(\phi_1) \\
+\vdots &\\
+\kappa_{k-1} =& \,\,r\sin(\phi_{1}) \cdots \sin(\phi_{k-3}) \cos(\phi_{k-2})\\
+\kappa_{k+1} =& \,\,r\sin(\phi_{1}) \cdots \sin(\phi_{k-2}) \cos(\phi_{k-1})\\
+\vdots &\\
+\kappa_{n-1} =& \,\,r\sin(\phi_{1}) \cdots \sin(\phi_{n-3}) \cos(\phi_{n-2})\\
+\kappa_{n} =& \,\,r\sin(\phi_{1}) \cdots \sin(\phi_{n-3}) \sin(\phi_{n-2})
+\end{align*}
+Diferencial je enak 
+\begin{align*}
+\dif \hat{\bd{\text{$\kappa_k$}}} &= \Big(r^{n-2} \prod_{i=1}^{n-3} \sin^{n-2-i}{\phi_i}\Big) \dif r \dif \phi_1 \dots \phi_{n-2} = \\
+&= r^{n-2} \dif r \dif \Omega_{n-2}.
+\end{align*}
+Integral se transformira kot
+\begin{align*}
+= \frac{2\Gamma\big(\frac{n}{2}\big)}{(n-1)\pi^\frac{n}{2}} \int_{0}^\infty \int_{0}^{2\pi} \int_{[0,\pi]^{n-3}}\frac{E(\sqrt{\kappa_k^2 + r^2})}{(\kappa_k^2 + r^2)^{(n-1)/2}}\Big(1 - \frac{\kappa_k^2}{(\kappa_k^2 + r^2)}\Big) r^{n-2} \dif r \dif \Omega_{n-2}.
+\end{align*}
+Integral po kotih $\phi_i$ za $i = 1, \dots, n-2$ nam da volumen $n-1$ sfere, kar
+označimo z $S_{n-1}$:
+\begin{align*}
+&= \frac{2 \Gamma\big(\frac{n}{2}\big) S_{n-1}}{(n-1)\pi^\frac{n}{2}} \int_{0}^\infty \frac{E(\sqrt{\kappa_k^2 + r^2})}{(\kappa_k^2 + r^2)^{(n-1)/2}}\Big(1 - \frac{\kappa_k^2}{(\kappa_k^2 + r^2)}\Big) r^{n-2} \dif r = \\
+&= \frac{2}{n-1} \int_{0}^\infty \frac{E(\sqrt{\kappa_k^2 + r^2})}{(\kappa_k^2 + r^2)^{(n-1)/2}}\cdot\Big(\frac{r^n}{\kappa_k^2 + r^2}\Big) \dif r = 
+\end{align*}
+uvedemo novo neznanko $\kappa = \sqrt{\kappa_k^2 + r^2} \Longrightarrow \dif \kappa = \frac{r}{\sqrt{\kappa}} \dif r$: 
+\begin{align*}
+= \frac{2}{n-1} \int_{|\kappa_k|}^{\infty} \frac{E(\kappa)}{\kappa^{n}}\cdot (\kappa^2 - \kappa_k^2)^{(n-1)/2} \dif \kappa = 
+\end{align*}
+Privzamemo predpostavke hipotez Kolmogorova in vstavimo Kolmogorov spekter: 
+\begin{align*}
+= \frac{2}{n-1} C \epsilon^{2/3} \int_{|\kappa_k|}^{\infty} \frac{\kappa^{-5/3}}{\kappa^{n}}\cdot (\kappa^2 - \kappa_k^2)^{(n-1)/2} \dif \kappa.
+\end{align*}
+Integral lahko eksplicitno izračunamo preko Gamma funkcije, vendar 
+bo za naše potrebe dovolj za primer $n=3$
+$$
+= \frac{18}{55} C \epsilon^{2/3} \kappa_k^{-5/3}
+$$
+
+Sedaj si poglejmo prvi pravi primer 
+\begin{primer}
+Naj bo dana $G(x) = \sqrt{\frac{6}{\pi \kappa_c^2}}\cdot e^\frac{-6x^2}{\kappa_c^2}$ filtracijska funkcija 
+za $\kappa_c > 0$ valovno število, da velja \ref{Fourier_število} in $u$ homogeno enodimenzionalno hitrostno polje. Poglejmo koliko polja $\frac{\dif \overline{u}}{\dif x}$
+lahko razrešimo. Ker za Fourierovo tranformacijo velja
+$$
+\widehat{\frac{\dif \overline{u}(x, t)}{\dif x}} = i\kappa \widehat{\overline{u}(\kappa, t)}
+$$
+je spekter od $\frac{\dif \overline{u}}{\dif x}$ enak 
+$$
+\kappa^2 \overline{E}(\kappa, t).
+$$
+Po zadnji lemi imamo 
+$$
+\kappa^2 \overline{E}(\kappa, t) = \kappa^2 |\hat{G}(\kappa)|^2 E(\kappa, t).
+$$
+Znana formula za Fourierovo transformacijo Gaussove funkcije nam da
+$$
+|\hat{G}(\kappa)|^2 = e^{-\frac{\pi^2 \kappa^2}{12\kappa_c^2}}
+$$
+in celoten spekter enak 
+$$
+\kappa^2 \overline{E}(\kappa, t) = \frac{18}{55} C\epsilon^{2/3} \kappa^{1/3} e^{-\frac{\pi^2 \kappa^2}{12\kappa_c^2}}
+$$
+Sedaj izberemo $\kappa_r$, da je $u$ predstavljen s Fourierovo vrsto 
+do željene natančnosti. Potem je količina turbulentna energija, ki jo lahko 
+predstavimo enako 
+\begin{align*}
+\frac{\int_{0}^{\kappa_r} \kappa^2 \overline{E}(\kappa, t)\dif \kappa}{\int_{0}^{\infty} \kappa^2 \overline{E}(\kappa, t)\dif \kappa} = \frac{\bigint_0^{\kappa_r} \kappa^{1/3} e^{-\frac{\pi^2 \kappa^2}{12\kappa_c^2}}\dif \kappa}{\bigint_{0}^{\infty} \kappa^{1/3} e^{-\frac{\pi^2 \kappa^2}{12\kappa_c^2}}\dif \kappa} = 
+\frac{\bigint_0^{(\pi^2/12)(\kappa_r/\kappa_c)^2} t^{-1/3} e^{-t}\dif \kappa}{\bigint_{0}^{\infty} \kappa^{1/3} e^{-t}\dif \kappa} = P\Big(\frac{\kappa_r}{\kappa_c}\Big).
+\end{align*}
+Dve standardni izbiri za kvocient $\frac{\kappa_r}{\kappa_c}$ sta $\frac{1}{2}$ in $1$.
+Dobimo vrednosti $P\Big(\frac{1}{2}\Big) \approx 0.98$ in 
+$P(1) \approx 0.72$. To pomeni, da je prva izbira za $26\%$ boljša, 
+vedar potrebujemo približno 16x več točk.
+\end{primer}
+
+\begin{primer}
+Kinetična energija rezidulnega polja je 
+$$
+k_r = \int_{0}^{\infty} (1 - \hat{G}^2(\kappa)) E(\kappa) \dif \kappa.
+$$
+Recimo, da uporabimo valovno preklopni $T_c$ filter za $\kappa_c = \frac{\pi}{\delta}$ in naj veljajo
+predpostavke hipotez Kolmogorova, ter označimo dolžino domene, ki opazujemo z $L$. 
+Poglejmo kolikšen del hitrostnega polja razrešimo sedaj. \\
+
+Ocena za celotno kinetično energijo $k = L^\frac{2}{3} \epsilon^\frac{2}{3}$. 
+Za filter $T_c$ se $k_r$ izrazi kot 
+$$
+k_r = \int_{\kappa_c}^{\infty} E(\kappa) \dif \kappa. 
+$$
+Uporabimo Kolmogorov spekter: 
+\begin{align*}
+k_r &= \int_{\kappa_c}^{\infty} E(\kappa) \dif \kappa = \int_{\kappa_c}^{\infty} C \epsilon^{\frac{2}{3}} \kappa^{-\frac{5}{3}} \dif \kappa = \\
+&= C \epsilon^{\frac{2}{3}} \Big(- \frac{3}{2} \kappa^{-\frac{2}{3}}\Big)\Big|_{\kappa_c}^\infty = \frac{3}{2} C \epsilon^{\frac{2}{3}}\kappa_c^{-\frac{2}{3}}.
+\end{align*}
+Kvocient količin je 
+\begin{align*}
+\frac{k_r}{k} = \frac{\frac{3}{2} C \epsilon^{\frac{2}{3}}\kappa_c^{-\frac{2}{3}}}{L^\frac{2}{3} \epsilon^\frac{2}{3}} = 
+\frac{3}{2}C (\kappa_c L)^{-\frac{2}{3}}.
+\end{align*}
+Ena standarna izbira za $\kappa_c$ je, da velja $\kappa_c L = \Big(\frac{15}{2}C\Big)^\frac{3}{2} \approx 38$, 
+kar nam da 
+$$
+\frac{k_r}{k} \approx 0.2.
+$$
+Z drugimi besedami, približno $80\%$ celotne energije lahko razrešimo 
+za dan filter v tridimenzionalnem primeru.
+\end{primer}
+
+\section{Modeliranje majhnih skal in problem zaprtja}
+
+
 \end{document}

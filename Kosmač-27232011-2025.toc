@@ -30,4 +30,6 @@
 \contentsline {subsection}{\numberline {3.2}Hipoteze Kolomogorova}{44}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Energijsko spektralna funkcija}{45}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Kolmogorov spekter}{47}{subsection.3.4}%
-\contentsline {section}{Literatura}{53}{section*.9}%
+\contentsline {subsection}{\numberline {3.5}Napake filtriranih polj}{53}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Modeliranje majhnih skal in problem zaprtja}{56}{section.4}%
+\contentsline {section}{Literatura}{57}{section*.9}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.25)  8 JUL 2025 22:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.25)  13 JUL 2025 20:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1709,22 +1709,22 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 16
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<slike/vrtinci.jpeg, id=240, 1558.82375pt x 1002.74625pt>
+<slike/vrtinci.jpeg, id=250, 1558.82375pt x 1002.74625pt>
 File: slike/vrtinci.jpeg Graphic file (type jpg)
 <use slike/vrtinci.jpeg>
 Package pdftex.def Info: slike/vrtinci.jpeg  used on input line 181.
 (pdftex.def)             Requested size: 202.72522pt x 130.40749pt.
-<slike/vrtinci2.jpeg, id=241, 1734.48pt x 1003.75pt>
+<slike/vrtinci2.jpeg, id=251, 1734.48pt x 1003.75pt>
 File: slike/vrtinci2.jpeg Graphic file (type jpg)
 <use slike/vrtinci2.jpeg>
 Package pdftex.def Info: slike/vrtinci2.jpeg  used on input line 187.
 (pdftex.def)             Requested size: 202.7031pt x 130.30829pt.
-<slike/difus.jpeg, id=244, 1745.52126pt x 1003.75pt>
+<slike/difus.jpeg, id=254, 1745.52126pt x 1003.75pt>
 File: slike/difus.jpeg Graphic file (type jpg)
 <use slike/difus.jpeg>
 Package pdftex.def Info: slike/difus.jpeg  used on input line 208.
 (pdftex.def)             Requested size: 331.65248pt x 190.71448pt.
-<slike/Reynolds.jpeg, id=245, 1237.62375pt x 1003.75pt>
+<slike/Reynolds.jpeg, id=255, 1237.62375pt x 1003.75pt>
 File: slike/Reynolds.jpeg Graphic file (type jpg)
 <use slike/Reynolds.jpeg>
 Package pdftex.def Info: slike/Reynolds.jpeg  used on input line 215.
@@ -1899,6 +1899,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1940--1943
 [48]
 
 [49]
+
+[50]
 \g__nicematrix_max_cell_width_dim=\dimen363
 \c@iRow=\count523
 \c@jCol=\count524
@@ -1918,13 +1920,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 1940--1943
 \l__nicematrix_final_j_int=\count530
 
 
-[50]
-
 [51]
 
 [52]
 
-[53
+[53]
+
+[54]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <24.88> on input line 3170.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <20.74> on input line 3170.
+LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
+(Font)              scaled to size 24.88pt on input line 3170.
+LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
+(Font)              scaled to size 20.74pt on input line 3170.
+LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
+(Font)              scaled to size 17.28pt on input line 3170.
+
+
+[55]
+Underfull \hbox (badness 10000) in paragraph at lines 3181--3185
+
+ []
+
+
+
+[56]
+
+[57
 
 ] (./Kosmač-27232011-2025.aux)
  ***********
@@ -1932,24 +1956,24 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `Kosmač-27232011-2025.out' has not changed.
-(rerunfilecheck)             Checksum: 41F42C2704CABD62D38354E97D8BE513;3686.
+(rerunfilecheck)             Checksum: 3355407E1262B54E89555A917BA016F0;3857.
 Package logreq Info: Writing requests to 'Kosmač-27232011-2025.run.xml'.
 \openout1 = `Kosmač-27232011-2025.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44204 strings out of 473190
- 881462 string characters out of 5715800
- 1677922 words of memory out of 5000000
- 66422 multiletter control sequences out of 15000+600000
- 690810 words of font info for 135 fonts, out of 8000000 for 9000
+ 44249 strings out of 473190
+ 882139 string characters out of 5715800
+ 1677023 words of memory out of 5000000
+ 66446 multiletter control sequences out of 15000+600000
+ 705999 words of font info for 152 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,20n,97p,747b,2495s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
-Output written on Kosmač-27232011-2025.pdf (61 pages, 3242728 bytes).
+Output written on Kosmač-27232011-2025.pdf (65 pages, 3261292 bytes).
 PDF statistics:
- 908 PDF objects out of 1000 (max. 8388607)
- 776 compressed objects within 8 object streams
- 277 named destinations out of 1000 (max. 500000)
- 331 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 961 PDF objects out of 1000 (max. 8388607)
+ 823 compressed objects within 9 object streams
+ 298 named destinations out of 1000 (max. 500000)
+ 347 words of extra memory for PDF output out of 10000 (max. 10000000)
 
