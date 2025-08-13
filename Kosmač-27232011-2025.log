@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.25)  13 JUL 2025 20:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.25)  13 AUG 2025 22:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -790,6 +790,39 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/bigints/bigints.sty
 Package: bigints 2010/02/15 Writing big integrals
 Package bigints Info: This is Bigints by Merciadri Luca. on input line 5.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/yhmath/yhmath.sty
+Package: yhmath 2020/03/17 v1.6
+\symyhlargesymbols=\mathgroup6
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 29.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 30.
+LaTeX Font Info:    Redeclaring math symbol \braceld on input line 48.
+LaTeX Font Info:    Redeclaring math symbol \bracerd on input line 49.
+LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 50.
+LaTeX Font Info:    Redeclaring math symbol \braceru on input line 51.
+LaTeX Font Info:    Redeclaring math delimiter \lmoustache on input line 53.
+LaTeX Font Info:    Redeclaring math delimiter \rmoustache on input line 55.
+LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 57.
+LaTeX Font Info:    Redeclaring math delimiter \Arrowvert on input line 59.
+LaTeX Font Info:    Redeclaring math delimiter \Vert on input line 61.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 63.
+LaTeX Font Info:    Redeclaring math delimiter \uparrow on input line 65.
+LaTeX Font Info:    Redeclaring math delimiter \downarrow on input line 67.
+LaTeX Font Info:    Redeclaring math delimiter \updownarrow on input line 69.
+LaTeX Font Info:    Redeclaring math delimiter \Uparrow on input line 71.
+LaTeX Font Info:    Redeclaring math delimiter \Downarrow on input line 73.
+LaTeX Font Info:    Redeclaring math delimiter \Updownarrow on input line 75.
+LaTeX Font Info:    Redeclaring math delimiter \backslash on input line 79.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 81.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 83.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 85.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 87.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 89.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 91.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 93.
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 95.
+LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 97.
+LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 99.
+LaTeX Font Info:    Redeclaring math delimiter \bracevert on input line 101.
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
  (/usr/local/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
@@ -877,14 +910,14 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \Hy@SectionHShift=\skip87
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
-\symrsfs=\mathgroup6
+\symrsfs=\mathgroup7
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/mathalpha/mathalpha.sty
 Package: mathalpha 2025/01/17 - 1.145mathalpha (License LPPL) Michael Sharpe
  `mathalpha' v1.145, 2025/01/17, a renaming of mathalfa (msharpe)
 LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `bold'
 (Font)                  U/BOONDOX-scro/m/n --> U/BOONDOX-scro/b/n on input line 963.
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 114.
+Package hyperref Info: Option `colorlinks' set `true' on input line 122.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/esdiff/esdiff.sty
 Package: esdiff 
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/animate/animate.sty
@@ -897,10 +930,10 @@ Package: pdfbase 2024/09/16 v0.59 driver independent access to low-level PDF fea
 \g_pbs_oc_int=\count467
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/zref/zref-abspage.sty
 Package: zref-abspage 2023-09-14 v2.35 Module abspage for zref (HO)
- (/usr/local/texlive/2025/texmf-dist/tex/latex/zref/zref-base.sty
-Package: zref-base 2023-09-14 v2.35 Module base for zref (HO)
 
-(/usr/local/texlive/2025/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/zref/zref-base.sty
+Package: zref-base 2023-09-14 v2.35 Module base for zref (HO)
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
@@ -1554,32 +1587,32 @@ Now handling font encoding PU ...
    defining Unicode char U+2423 (decimal 9251)
    defining Unicode char U+FEFF (decimal 65279)
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 159.
-Package hyperref Info: Option `colorlinks' set `true' on input line 159.
-Package hyperref Info: Option `unicode' set `true' on input line 159.
-Package hyperref Info: Option `breaklinks' set `true' on input line 159.
-Package hyperref Info: Option `psdextra' set `true' on input line 159.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 167.
+Package hyperref Info: Option `colorlinks' set `true' on input line 167.
+Package hyperref Info: Option `unicode' set `true' on input line 167.
+Package hyperref Info: Option `breaklinks' set `true' on input line 167.
+Package hyperref Info: Option `psdextra' set `true' on input line 167.
  (./Kosma훾-27232011-2025.aux)
 \openout1 = `Kosma훾-27232011-2025.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
 Package biblatex Info: Trying to load language 'slovene'...
 Package biblatex Info: ... file 'slovene.lbx' found.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/slovene.lbx
@@ -1593,8 +1626,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Kosma훾-27232011-2025.bbl' found.
  (./Kosma훾-27232011-2025.bbl)
-Package biblatex Info: Reference section=0 on input line 159.
-Package biblatex Info: Reference segment=0 on input line 159.
+Package biblatex Info: Reference section=0 on input line 167.
+Package biblatex Info: Reference segment=0 on input line 167.
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count513
@@ -1617,7 +1650,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 159.
+Package hyperref Info: Link coloring ON on input line 167.
  (./Kosma훾-27232011-2025.out) (./Kosma훾-27232011-2025.out)
 \@outlinefile=\write8
 \openout8 = `Kosma훾-27232011-2025.out'.
@@ -1629,44 +1662,49 @@ Package hyperref Info: Link coloring ON on input line 159.
 \enitdp@tabularnotes=\count520
 \c@tabularnotes*i=\count521
 \enitdp@tabularnotes*=\count522
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 159.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 167.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 159.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 167.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 159.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 167.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 159.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 167.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 159.
+(Font)              <17.28> on input line 167.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 159.
+(Font)              <12> on input line 167.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 159.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 159.
+(Font)              <10> on input line 167.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 167.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 159.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 167.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 159.
+LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 167.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/yhmath/OMXyhex.fd
+File: OMXyhex.fd 
+File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 167.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 159.
+(Font)              <14.4> on input line 167.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 159.
+(Font)              <7> on input line 167.
 
 
 (/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
@@ -1679,55 +1717,69 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 159.
+(Font)              <8> on input line 167.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 159.
+(Font)              <6> on input line 167.
  (./Kosma훾-27232011-2025.toc)
 \tf@toc=\write9
 \openout9 = `Kosma훾-27232011-2025.toc'.
 
 
 
-[3]
+[3{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
 
 [4
 
 ]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 167.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Overfull \hbox (17.54521pt too wide) in paragraph at lines 167--167
+\T1/lmr/m/n/12 19. 7. 2025], do-sto-pno na [][]$\T1/lmtt/m/n/12 https : / / web . stanford . edu / group / ctr / ResBriefs97 /|
+ []
+
+
+Overfull \hbox (5.70221pt too wide) in paragraph at lines 167--167
+\T1/lmr/m/n/12 19. 7. 2025], do-sto-pno na [][]$\T1/lmtt/m/n/12 https : / / wias -[] berlin . de / people / john / BETREUUNG /|
+ []
+
+
 
 [5]
 
-[6
+[6]
 
-]
+[7
 
-[7{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
 
 [8
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 169.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 177.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<slike/vrtinci.jpeg, id=250, 1558.82375pt x 1002.74625pt>
+<slike/vrtinci.jpeg, id=311, 1558.82375pt x 1002.74625pt>
 File: slike/vrtinci.jpeg Graphic file (type jpg)
 <use slike/vrtinci.jpeg>
-Package pdftex.def Info: slike/vrtinci.jpeg  used on input line 181.
+Package pdftex.def Info: slike/vrtinci.jpeg  used on input line 189.
 (pdftex.def)             Requested size: 202.72522pt x 130.40749pt.
-<slike/vrtinci2.jpeg, id=251, 1734.48pt x 1003.75pt>
+<slike/vrtinci2.jpeg, id=312, 1734.48pt x 1003.75pt>
 File: slike/vrtinci2.jpeg Graphic file (type jpg)
 <use slike/vrtinci2.jpeg>
-Package pdftex.def Info: slike/vrtinci2.jpeg  used on input line 187.
+Package pdftex.def Info: slike/vrtinci2.jpeg  used on input line 195.
 (pdftex.def)             Requested size: 202.7031pt x 130.30829pt.
-<slike/difus.jpeg, id=254, 1745.52126pt x 1003.75pt>
+<slike/difus.jpeg, id=315, 1745.52126pt x 1003.75pt>
 File: slike/difus.jpeg Graphic file (type jpg)
 <use slike/difus.jpeg>
-Package pdftex.def Info: slike/difus.jpeg  used on input line 208.
+Package pdftex.def Info: slike/difus.jpeg  used on input line 216.
 (pdftex.def)             Requested size: 331.65248pt x 190.71448pt.
-<slike/Reynolds.jpeg, id=255, 1237.62375pt x 1003.75pt>
+<slike/Reynolds.jpeg, id=316, 1237.62375pt x 1003.75pt>
 File: slike/Reynolds.jpeg Graphic file (type jpg)
 <use slike/Reynolds.jpeg>
-Package pdftex.def Info: slike/Reynolds.jpeg  used on input line 215.
+Package pdftex.def Info: slike/Reynolds.jpeg  used on input line 223.
 (pdftex.def)             Requested size: 235.15096pt x 190.71448pt.
 
 
@@ -1735,17 +1787,17 @@ Package pdftex.def Info: slike/Reynolds.jpeg  used on input line 215.
 
 [2 <./slike/difus.jpeg> <./slike/Reynolds.jpeg>]
 
-[3{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+[3]
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 330--331
+[4{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
 
  []
 
 
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 432--436
+Underfull \hbox (badness 10000) in paragraph at lines 440--444
 
  []
 
@@ -1754,7 +1806,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 432--436
 [6]
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 534--536
+Underfull \hbox (badness 10000) in paragraph at lines 542--544
 
  []
 
@@ -1763,7 +1815,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 534--536
 [8]
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 647--650
+Underfull \hbox (badness 10000) in paragraph at lines 655--658
 
  []
 
@@ -1772,7 +1824,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 647--650
 [10]
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 779--782
+Underfull \hbox (badness 10000) in paragraph at lines 787--790
 
  []
 
@@ -1781,28 +1833,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 779--782
 [12]
 
 [13]
-Overfull \hbox (115.14319pt too wide) detected at line 943
+Overfull \hbox (113.97644pt too wide) detected at line 951
 []|
  []
 
 
-Overfull \hbox (106.98465pt too wide) detected at line 948
+Overfull \hbox (106.20682pt too wide) detected at line 956
 []|
  []
 
 
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 996--1001
+Underfull \hbox (badness 10000) in paragraph at lines 1004--1009
 
  []
 
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1002.
+(Font)              scaled to size 12.0pt on input line 1010.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1002.
+(Font)              scaled to size 8.0pt on input line 1010.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 6.0pt on input line 1002.
+(Font)              scaled to size 6.0pt on input line 1010.
 
 
 [15]
@@ -1810,9 +1862,14 @@ LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
 [16]
 
 [17]
+Overfull \hbox (13.04037pt too wide) in paragraph at lines 1104--1110
+\T1/lmr/m/n/12 V za-klju즟u za-dnjega po-glavja smo vi-deli, da je ne-po-sre-dno re-쾒-va-nje Navier-Stokesovih|
+ []
+
+
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 1176--1180
+Underfull \hbox (badness 10000) in paragraph at lines 1183--1187
 
  []
 
@@ -1823,7 +1880,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1176--1180
 [20]
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 1313--1315
+Underfull \hbox (badness 10000) in paragraph at lines 1322--1324
 
  []
 
@@ -1848,21 +1905,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 1313--1315
 [30]
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 1850--1852
+Underfull \hbox (badness 10000) in paragraph at lines 1859--1861
 
  []
 
 
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1905--1908
+Underfull \hbox (badness 10000) in paragraph at lines 1914--1917
 
  []
 
 
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1940--1943
+Underfull \hbox (badness 10000) in paragraph at lines 1949--1952
 
  []
 
@@ -1928,19 +1985,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 1940--1943
 
 [54]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <24.88> on input line 3170.
+(Font)              <24.88> on input line 3185.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 3170.
+(Font)              <20.74> on input line 3185.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 24.88pt on input line 3170.
+(Font)              scaled to size 24.88pt on input line 3185.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 20.74pt on input line 3170.
+(Font)              scaled to size 20.74pt on input line 3185.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 17.28pt on input line 3170.
+(Font)              scaled to size 17.28pt on input line 3185.
 
 
 [55]
-Underfull \hbox (badness 10000) in paragraph at lines 3181--3185
+Underfull \hbox (badness 10000) in paragraph at lines 3196--3200
 
  []
 
@@ -1948,7 +2005,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 3181--3185
 
 [56]
 
-[57
+[57]
+
+[58]
+
+[59]
+
+[60]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3448.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 3448.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3448.
+
+
+
+[61]
+<slike/Smag.jpg, id=893, 316.18124pt x 188.705pt>
+File: slike/Smag.jpg Graphic file (type jpg)
+<use slike/Smag.jpg>
+Package pdftex.def Info: slike/Smag.jpg  used on input line 3524.
+(pdftex.def)             Requested size: 142.28024pt x 84.91646pt.
+
+
+[62 <./slike/Smag.jpg>]
+
+[63]
+
+[64]
+
+[65]
+
+[66]
+Overfull \hbox (30.6104pt too wide) in paragraph at lines 3722--3722
+\T1/lmtt/m/n/12 chemphys . bouchbinder / files / uploads / Courses / 2023 / HW / Q1 -[] TensorsAnalysis -[]|
+ []
+
+
+Overfull \hbox (12.3289pt too wide) in paragraph at lines 3722--3722
+\T1/lmr/m/n/12 19. 7. 2025], do-sto-pno na [][]$\T1/lmtt/m/n/12 https : / / web . stanford . edu / group / ctr / ResBriefs97 /|
+ []
+
+
+Overfull \hbox (0.4859pt too wide) in paragraph at lines 3722--3722
+\T1/lmr/m/n/12 19. 7. 2025], do-sto-pno na [][]$\T1/lmtt/m/n/12 https : / / wias -[] berlin . de / people / john / BETREUUNG /|
+ []
+
+
+
+[67
 
 ] (./Kosma훾-27232011-2025.aux)
  ***********
@@ -1956,24 +2067,24 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `Kosma훾-27232011-2025.out' has not changed.
-(rerunfilecheck)             Checksum: 3355407E1262B54E89555A917BA016F0;3857.
+(rerunfilecheck)             Checksum: E0FFD0F4DCF90B273B15D961D2296981;4605.
 Package logreq Info: Writing requests to 'Kosma훾-27232011-2025.run.xml'.
 \openout1 = `Kosma훾-27232011-2025.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44249 strings out of 473190
- 882139 string characters out of 5715800
- 1677023 words of memory out of 5000000
- 66446 multiletter control sequences out of 15000+600000
- 705999 words of font info for 152 fonts, out of 8000000 for 9000
+ 44492 strings out of 473190
+ 887197 string characters out of 5715800
+ 1679472 words of memory out of 5000000
+ 66613 multiletter control sequences out of 15000+600000
+ 718732 words of font info for 173 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,20n,97p,747b,2495s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
-Output written on Kosma훾-27232011-2025.pdf (65 pages, 3261292 bytes).
+ 84i,20n,97p,747b,3230s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/yhmath/yhcmex.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
+Output written on Kosma훾-27232011-2025.pdf (75 pages, 3386674 bytes).
 PDF statistics:
- 961 PDF objects out of 1000 (max. 8388607)
- 823 compressed objects within 9 object streams
- 298 named destinations out of 1000 (max. 500000)
- 347 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1145 PDF objects out of 1200 (max. 8388607)
+ 986 compressed objects within 10 object streams
+ 357 named destinations out of 1000 (max. 500000)
+ 384 words of extra memory for PDF output out of 10000 (max. 10000000)
 

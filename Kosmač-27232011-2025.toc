@@ -31,5 +31,9 @@
 \contentsline {subsection}{\numberline {3.3}Energijsko spektralna funkcija}{45}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Kolmogorov spekter}{47}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Napake filtriranih polj}{53}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Modeliranje majhnih skal in problem zaprtja}{56}{section.4}%
-\contentsline {section}{Literatura}{57}{section*.9}%
+\contentsline {section}{\numberline {4}Modeliranje majhnih skal in problem zaprtja}{57}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Modeliranje z invariantami in posledice}{57}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Boussinesqova aproksimacija in modeliranje tenzorja $\tau ^R$}{61}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Model Smagorinskega}{64}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Dinamični model Smagorinskega}{64}{subsubsection.4.2.2}%
+\contentsline {section}{Literatura}{67}{section*.10}%

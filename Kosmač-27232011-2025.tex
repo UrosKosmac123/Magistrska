@@ -13,7 +13,7 @@
 \avtor{Uroš Kosmač}
 
 % - naslov dela v slovenščini
-\naslov{Turbulence v atmosferi in Large eddy simulacije}
+\naslov{Turbulence in simulacije velikih turbulentnih vrtincev}
 
 % - naslov dela v angleščini
 \title{Atmospheric turbulence and Large eddy simulations}
@@ -70,10 +70,17 @@ the content and not the structure of your work.}
 % le citirana. V tem razdelku literature ne oštevilčimo po svoje, ampak uporabljamo
 % ukaz \vnosliterature, v katerega vpišemo citat
   \vnosliterature{wyngaard}
-  %\vnosliterature{lebedev2009introduction}
-  %\vnosliterature{gurtin1982introduction}
-  %\vnosliterature{zienkiewicz2000finite}
-  %\vnosliterature{STtemplate}
+  \vnosliterature{pope}
+  \vnosliterature{buckingham}
+  \vnosliterature{silvestrini}
+  \vnosliterature{invariance}
+  \vnosliterature{Barbi}
+  \vnosliterature{anderson}
+  \vnosliterature{Spieg}
+  \vnosliterature{tensor}
+  \vnosliterature{rosler}
+  \vnosliterature{dina}
+  \vnosliterature{foias}
 }
 
 % - ime datoteke z viri (vključno s končnico .bib), če uporabljate BibTeX
@@ -103,6 +110,7 @@ the content and not the structure of your work.}
 \usepackage{adjustbox}
 \usepackage{setspace}
 \usepackage{bigints}
+\usepackage{yhmath}
 \usepackage{hyperref}
 \usepackage{caption}
 \usepackage{mathrsfs}
@@ -1093,14 +1101,14 @@ na primer $R_t \sim 1000$, torej $N \sim 10^\frac{27}{4} \sim 10^7$, kar še ved
 \newpage
 \section{Large eddy simulacije}
 
-Nakoncu zadnjega poglavja smo videli, da je neposredno reševanje Navier-Stokesovih enačb 
-za velike vrtince oz. tri dimenzionalno turbulentno gibanje tokov, neučinkovito. V tem poglavju 
+V zaključku zadnjega poglavja smo videli, da je neposredno reševanje Navier-Stokesovih enačb 
+za velike turbulentne vrtince oz. tri dimenzionalno turbulentno gibanje tokov, neučinkovito. V tem poglavju 
 bomo spoznali orodja, s katerimi bomo enačbe, ki opisujejo dane tokove, priredili na tak
-način, da bomo lahko bolj učinkovito rešili enačba. Simulacije velikih vrtincev (eng. 
-Large eddy simulations) oz. LES razdelimo na štiri korake 
+način, da bomo lahko bolj učinkovito rešili enačbe. Simulacije velikih turbulentnih vrtincev (eng. 
+Large eddy simulations oz. LES) razdelimo na štiri korake 
 \begin{enumerate}
 \item[i)] Spoznali bomo koncept povprečenja in kako tok razcepimo na dva dela: 
-povprečni del in spremenljivi del. Povprečni del bo predstavljal hitrostno polje 
+povprečni del in spremenljivi/turbulentni del. Povprečni del bo predstavljal hitrostno polje 
 velikih vrtincev. Osredotočili se bomo na posebno vrsto povprečja, to je filtracija.
 \item[ii)] Preko filtracije Navier-Stokesovih enačb dobimo nove enačbe, ki jih bomo 
 uporabili za numerično reševanje. 
@@ -1110,7 +1118,7 @@ novih členov.
 \item[iv)] Numerično rešimo zaprt sistem enačb, ki opisuje tok.
 \end{enumerate}
 
-To je najbolj splošen pristop, je pa pomembno navesti, da obstaja več podvrst LES, 
+To je najbolj splošen pristop, je pa pomembno navesti, da obstaja več podvrst teh vrst simulacij, 
 ki so odvisne od kompleksnosti in velikosti območja, ki ga obravnavamo.
 
 \subsection{Povprečja}
@@ -1118,16 +1126,15 @@ ki so odvisne od kompleksnosti in velikosti območja, ki ga obravnavamo.
 Vse odvisne spremenljivke, hitrost, vrtinčnost, tlak, temperatura \dots, so turbulentne.
 Intuitivno to pomeni, da so v prostoru neenakomerno porazdeljene in v vsaki točki v 
 opazovanem območju kaotično oscilirajo. Zaradi naključnega obnašanja je pogosto smiselno turbulenco 
-analizirati z vidika statistike. V delu se temu ne bomo posvetili, omenimo zaradi 
-povprečja, ki temelji na več ponovitvah istega poskusa. \\
+analizirati z vidika statistike. Več o tem pogledu na turbulenco bomo povedali v $3$. poglavju \\
 Ideja za povprečji je, da hitrostno polje $\bd{U}(\bd{x}, t)$ razcepimo na povprečni del $\overline{\bd{U}}(\bd{x}, t)$ in 
-oscilirajoči del $\bd{u}(\bd{x}, t)$.
+oscilirajoči/turbulentni del $\bd{u}'(\bd{x}, t)$.
 \begin{equation}
-\bd{U}(\bd{x}, t) = \overline{\bd{U}}(\bd{x},t) + \bd{u}(\bd{x}, t).
+\bd{U}(\bd{x}, t) = \overline{\bd{U}}(\bd{x},t) + \bd{u}'(\bd{x}, t).
 \end{equation}
 Temu razcepu pravimo Reynoldsov razcep.
 
-Zapišimo nekaj lastnosti, ki jih želimo od povprečji. Naj bosta $\bd{U}$ in $\bd{V}$ dva tokova in 
+Zapišimo nekaj lastnosti, ki jih želimo od povprečij. Naj bosta $\bd{U}$ in $\bd{V}$ dva tokova in 
 $\alpha, \beta \in \R$:
 \begin{enumerate}
   \item[i)] Linearnost: 
@@ -1162,8 +1169,8 @@ za naš končni rezultat vzamemo povprečje vseh rezultatov. To je ideja za ansa
 povprečenjem.
 
 Turbulenca predstavlja naša odstopanja ali šum oz. kaotičen del.
-Ker se pri zelo majhnih začetnih pogojih, tok lahko zelo spremeni, nam vsaka ponovitev 
-poskusa, da novo rešitev. Vsaka taka rešitev je lahko zelo drugačna od prejšnje in naslednje. 
+Ker se pri zelo majhnih spremembah začetnih pogojev, tok lahko zelo spremeni, nam vsaka ponovitev 
+poskusa da novo rešitev. Vsaka taka rešitev je lahko zelo drugačna od prejšnje in naslednje. 
 Tem ponovitvam pravimo realizacije in označimo $\bd{U}(x, t; \alpha)$, za $\alpha \in \N$
 realizacijsko število. 
 \begin{definicija}
@@ -1173,10 +1180,10 @@ Ansambelsko povprečje toka $\bd{U}$ je
 \end{equation}
 \end{definicija}
 
-Bolj formalno, na $\bd{U}(\bd{x}, t;\alpha)$ gledamo kot slučajni vektor, in zaporedje 
-$\bd{U}(\bd{x}, t; 1)$, $\bd{U}(\bd{x}, t; 2)$ \dots, $\bd{U}(\bd{x}, t;n)$ je zaporedje neodvisno, enako porazdeljenih 
-slučajnih vektorjev. Pričakovana vrednost $E(\bd{U}_i) = \mu$ za vsak $i\in\N$, zato je po 
-zakonu velikih števil, ansambelsko povprečje konvergentno.\\
+Bolj formalno na $\bd{U}(\bd{x}, t;\alpha)$ gledamo kot na slučajni vektor ter na zaporedje 
+$\bd{U}(\bd{x}, t; 1)$, $\bd{U}(\bd{x}, t; 2)$ \dots, $\bd{U}(\bd{x}, t;n)$ kot na zaporedje neodvisno, enako porazdeljenih 
+slučajnih vektorjev. Pričakovana vrednost $E(\bd{U}_i(\bd{x}, t; \alpha)) = \mu(\bd{x}, t)$ za vsak $i\in\N$, zato je po 
+zakonu velikih števil ansambelsko povprečje konvergentno.\\
 
 Ansambelsko povprečje zadošča vsem lastnostim $i) - vi)$ zato je temelj za \\
 Reynoldsovo-povprečene Navier-Stokesove simulacije (RANS). Omenimo še dve povprečji: 
@@ -1206,9 +1213,9 @@ $$
 $$
 Če slučajna spremenljivka $\bd{U}$ oz. hitrostno polje v našem primeru, zadošča obema lastnostima, 
 pravimo, da je $\bd{U}$ \textbf{ergodično}. V računski dinamiki fluidov se pogosto predpostavi, da je turbulenca ergodična. 
-Temu pravimo ergodična hipoteza. Zato ne obstaja dokaz, vendar mnoge numerične simulacije in eksperimenti hipotezo potrjujejo. \\
+Temu pravimo ergodična hipoteza. Zanjo ne obstaja dokaz, vendar mnoge numerične simulacije in eksperimenti hipotezo potrjujejo. \\
 Ergodičnost se predpostavi, saj je računanje ansambelskega povprečja težavno, ker potrebujemo 
-veliko poskusov za njegov izračun, med tem, ko je prostorsko ali časovno povprečje dokaj 
+veliko poskusov za njegov izračun, medtem ko je prostorsko ali časovno povprečje dokaj 
 enostavno.
 
 \subsubsection{Filtracija}
@@ -1216,14 +1223,15 @@ enostavno.
 Sedaj se bomo resno posvetili filtraciji, ki je posebna vrsta povprečja.
 \begin{definicija}
 Naj bo $\bd{U}: \R^d\times \R^+ \rightarrow \R^3$ vektorsko polje in $G: \R^d\times \R^d \rightarrow \R$.
-Potem je filter polja $\bd{U}$, polje filtrirano polje $\overline{\bd{U}}$
+Potem je filter polja $\bd{U}$, filtrirano polje $\overline{\bd{U}}$
 \begin{equation}
 \overline{\bd{U}}(x, t) = \int_{\R^d} G(r, x)\bd{U}(x-r, t) \dif r.
 \end{equation}
 Funkciji $G$ pravimo filtracijska funkcija in zadošča normalizacijskem pogoju 
-$$
+\begin{equation}
+\label{renormal}
 \int_{\R^d} G(r, x) \dif r = 1.
-$$
+\end{equation}
 \end{definicija}
 
 \begin{definicija}
@@ -1246,7 +1254,8 @@ $$ \overline{\bd{u}'} \neq 0.$$
 \end{opomba}
 
 \begin{trditev}
-Filtracija zadošča lasnostim $i), ii)$ in kumutarnju z časovnim odvodom. Če je filtracijska funkcija $G$ homogeno, velja lasnost $vi)$.
+Filtracija zadošča lastnostim $i), ii)$ in komutiranju z časovnim odvodom. 
+Če je filtracijska funkcija $G$ homogena, velja lastnost $vi)$.
 \end{trditev}
 
 \begin{proof}
@@ -1274,8 +1283,8 @@ Filtracija zadošča lasnostim $i), ii)$ in kumutarnju z časovnim odvodom. Če 
   &= \overline{\frac{\dif \bd{U}}{\dif t}}.
   \end{align*}
 
-  Odvajamo še po času in predpostavimo, da lahko zamenjamo vrstni red odvajanja in integracije 
-  (kateri pogoji so smiselni, da je to izpolnjejo ali si isti kot pri zgornjem izračunu?) 
+  Odvajamo še po prostorski spremenljivki in predpostavimo, da lahko zamenjamo vrstni red odvajanja in integracije 
+  (kateri pogoji so smiselni, da je to izpolnjejo ali si isti kot pri zgornjem izračunu? $G$ in $\bd{U}$ odvedljivi) 
   \begin{align*}
   \frac{\!\!\dif}{\dif x_i} \overline{\bd{U}}(x, t) &= \frac{\dif}{\dif x_i} \int_{\R^d} G(r, x) \bd{U}(x-r, t) \dif r = \\
   &=  \int_{\R^d} \frac{\dif}{\dif x_i} (G(r, x) \bd{U}(x-r, t)) \dif r = \\
@@ -1292,7 +1301,7 @@ Filtracija zadošča lasnostim $i), ii)$ in kumutarnju z časovnim odvodom. Če 
 \begin{opomba}
   \hfill
 \begin{itemize}
-  \item Ker je $\bd{U}$ vektor, integral deluje po komponentah, zato tudi Fourierova tranformacija deluje po komponentah. 
+  \item Ker je $\bd{U}$ vektor, integral deluje po komponentah, zato tudi Fourierova transformacija deluje po komponentah. 
   \item V dokazu smo uporabili dejstvo 
   $$ \mathcal{F}(f')(\omega) =  i\omega \mathcal{F}(f)(\omega). $$
 \end{itemize}
@@ -1301,7 +1310,7 @@ Filtracija zadošča lasnostim $i), ii)$ in kumutarnju z časovnim odvodom. Če 
 \noindent
 Poglejmo si dva filtra, ki se pogosto uporabljata. Primera si bomo pogledali v eni dimenziji, 
 kar se enostavno  posploši v višje dimenzije. Od sedaj naprej bomo predpostavili, da je 
-$G$ homogeno tj. $G(r, x) = G(r)$. Matematično, je filter sedaj konvolucija, kar običajno 
+$G$ homogena tj. $G(r, x) = G(r)$. Matematično je filter sedaj konvolucija, kar običajno 
 zapišemo
 \begin{equation}
 \overline{\bd{U}}(x, t) = (\bd{U} * G)(x, t).
@@ -1317,10 +1326,10 @@ Iz konvolucijskega izreka dobimo
 \textbf{Valovni preklopni filter:} \\
 Pokazali smo, da filter zadošča lastnostim $i), ii)$ in $vi)$. Ali lahko za pravo izbiro 
 $G$ dodatno zadostimo še kateri od ostalih lastnosti? Zaradi linearnosti filtra, nam 
-ostaneta le dve lastnosti: Indempotentnost in pravilo produkta. Pravilo produkta bo
+ostaneta le dve lastnosti: Indempotentnost in pravilo produkta. Pravilu produkta bo
 zadoščeno, če bo za pravo funkcijo $G$, integral multiplikativen. Take funkcije sicer 
 obstajajo, vedar so zelo raznolike in običajno nimajo fizikalnega pomena. Torej nam ostane 
-le indempotentnost. Poglejmo, kako se izraža $\overline{\overline{{U}}}$ preko konvolucije:
+le idempotentnost. Poglejmo, kako se izraža $\overline{\overline{{U}}}$ preko konvolucije:
 \begin{align*}
 \overline{\overline{{U}}}(x, t) &= \int_{\R} G(r) \overline{{U}}(x - r, t) \dif r = \\
 &= \int_{\R} G(r) \int_{\R} G(s) {U}(x-r-s, t) \dif s \dif r = \\
@@ -1350,7 +1359,7 @@ Kot prej je $\hat{G}$ Fourierova transformiranka funkcije $G$
 $$
 \hat{G}(\kappa) = \int_{\R^d} G(r) e^{-i\kappa r} \dif r
 $$
-in preko inverzne Fourierove tranformacije dobimo
+in preko inverzne Fourierove transformacije dobimo
 $$
 G(x) = \frac{1}{2\pi} \int_{\R^d} \hat{G}(\kappa) e^{i\kappa x} \dif \kappa.
 $$
@@ -1370,7 +1379,7 @@ Primerjamo koeficiente vrst
 $$
 T^2(\kappa_n) = T(\kappa_n), \quad n\in \Z
 $$
-kar se ujema z dosedaj ugotovljenim. Ta je izpeljava pomembna ker uvede količino 
+kar se ujema z dosedaj ugotovljenim. Ta izpeljava je pomembna, ker uvede količino 
 $\kappa_n$, ki jo imenujemo $n$-to valovno število. To bo ključno za razreševanje 
 polja $\overline{U}$ na diskretni množici (kar je potrebno za numerično modeliranje).
 Definiramo nizko-prehodno prenosno funkcijo
@@ -1396,7 +1405,7 @@ G(x) = \frac{\sin(\kappa_c x)}{\pi x}.
 \end{equation}
 \end{definicija}
 \noindent
-To lahko enostavno posplošimo na poljubno dimenzijo 
+Rezultat lahko enostavno posplošimo na poljubno dimenzijo:
 \begin{definicija}
 Za $n\in \N$ definiramo $n$-dimenzionalni valovno preklopno filtracijsko 
 funkcijo $G_n$
@@ -1407,7 +1416,7 @@ G_n(x) = \prod_{i=1}^n G(x_i) =\prod_{i=1}^n \frac{\sin(\kappa_c x_i)}{\pi x_i}.
 
 
 \begin{opomba}
-Lahko tudi definiramo visoko-prehodno prenosno funkcijo
+Definiramo lahko tudi visoko-prehodno prenosno funkcijo:
 $$
 T_c(\kappa)=\left\{\begin{array}{l}
   1 ;\,\, |\kappa| \geq \kappa_c \\
@@ -1420,12 +1429,12 @@ vendar v tem filtracijska funkcija ne obstaja.
 
 \noindent
 \textbf{Škatlast filter:}\\
-Nekoliko bolj naravna filtracijska funkcija, ki nas spomne prostorsko povprečje je 
-škatlasta funkcija 
+Nekoliko bolj naravna filtracijska funkcija, ki spomne na prostorsko povprečje, je 
+škatlasta funkcija:
 \begin{definicija}
 Naj bodo $\Delta > 0$. Škatlasta funkcija je 
 \begin{equation}
-G(x)= \begin{cases}\frac{1}{\Delta} & ; x \in\left[-\frac{\Delta}{2}, \frac{\Delta}{2}\right] \\ 0 & ; \text { sicer }\end{cases}
+G(x)= \begin{cases}\frac{1}{\Delta} & ; x \in\left[-\frac{\Delta}{2}, \frac{\Delta}{2}\right] \\ 0 & ; \text { sicer. }\end{cases}
 \end{equation}
 \end{definicija}
 
@@ -1435,18 +1444,18 @@ T(\kappa) = \frac{\sin(\kappa \frac{\Delta}{2})}{\kappa \frac{\Delta}{2}}.
 $$
 Navedimo še večdimenzionalno škatlasto funkcijo
 \begin{definicija}
-Naj bodo $\Delta_1, \dots, \Delta_n > 0$. $n$-dimenzionalna
+Naj bo $\Delta_1, \dots, \Delta_n > 0$. $n$-dimenzionalna
 škatlasta funkcija je 
 \begin{equation}
-  G(x_1, \dots, x_n)= \begin{cases}\frac{1}{\prod_{i=1}^{n}\Delta_i} & ; x_i \in\left[-\frac{\Delta_i}{2}, \frac{\Delta_i}{2}\right] \\ 0 & ; \text { sicer }\end{cases}
+  G(x_1, \dots, x_n)= \begin{cases}\frac{1}{\prod_{i=1}^{n}\Delta_i} & ; x_i \in\left[-\frac{\Delta_i}{2}, \frac{\Delta_i}{2}\right] \\ 0 & ; \text { sicer. }\end{cases}
 \end{equation}  
 \end{definicija}
 
 \begin{opomba}
   \hfill
   \begin{itemize}
-    \item Temu filtri se tudi pravi lokalno povprečje.
-    \item V literaturi se občasno pojavi tudi nekoliko drugačna definicija. kjer 
+    \item Drugo ime za ta filter je lokalno povprečje.
+    \item V literaturi se občasno pojavi tudi nekoliko drugačna definicija, kjer 
     se integrira po krogli namesto po kvadratu.
   \end{itemize}
   \end{opomba}
@@ -1454,13 +1463,13 @@ Naj bodo $\Delta_1, \dots, \Delta_n > 0$. $n$-dimenzionalna
 
 \noindent
 \textbf{Gaussov filter}:
-Poglejmo filtracijsko funkcijo, ki se razlikuje od prejšnij dveh primerov v dveh pogledih.
-Za filtracijsko funkcijo vzamemo Gaussovo funkcijo, ki za razliko od prejšnji dveh 
-primeov zvezna in pomembneje pozitivna
+Poglejmo filtracijsko funkcijo, ki se razlikuje od prejšnjih dveh primerov v dveh pogledih.
+Za filtracijsko funkcijo vzamemo Gaussovo funkcijo, ki je za razliko od prejšnji dveh 
+primeov zvezna in še pomembneje pozitivna.
 \begin{definicija}
 Naj bo $\sigma > 0$. Gaussov filter je filter dan z Gaussovo funkcijo 
 \begin{equation}
-G(x_1, \dots, x_n) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{x^2}{2\sigma^2}}.
+G(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{x^2}{2\sigma^2}}.
 \end{equation}
 oz. $n$-dimenzionalni Gaussov filter je dan z 
 \begin{equation}
@@ -1474,7 +1483,7 @@ G(x_1, \dots, x_n) = \frac{1}{(2\pi \sigma^2)^{n/2}} e^{-\frac{1}{2\sigma^2}(x_1
 Sedaj je čas, da uporabimo filter na enačbah, ki jih želimo numerično rešiti. V 
 razdelku bomo predpostavili, da je filtracijska funkcija homogena, saj bomo potrebovali 
 lastnost komutiranja filtra z odvajanjem. Do nadaljnega bomo dodatno predpostavili, 
-da je $G$ poljubna, kasneje ko se bomo posvetili natančnejši analizi, jo bomo specificirali.
+da je $G$ poljubna, kasneje, ko se bomo posvetili natančnejši analizi, jo bomo specificirali.
 
 \subsubsection{Filtriran zakon o ohranitvi mase}
 
@@ -1483,7 +1492,7 @@ $$
 \nabla\cdot \bd{U} = \sum_{i=1}^3 \frac{\partial \bd{U}}{\partial x_i} = \bd{0}.
 $$
 \noindent
-Filtrirana enačba 
+Filtrirana enačba:
 \begin{align*}
 \overline{\nabla\cdot \bd{U}}= \overline{\sum_{i=1}^3 \frac{\partial \bd{U}}{\partial x_i}} = 
 \sum_{i=1}^3 \frac{\partial \overline{\bd{U}}}{\partial x_i} = \nabla\cdot \overline{\bd{U}} = 0.
@@ -1503,7 +1512,7 @@ $$
 
 \noindent
 Preden enačbo filtriramo, jo bomo preoblikovali, da se znebimo nelinearnega člena ($\bd{U}\cdot \nabla)\bd{U}$.
-Najprej ga razpišemo, po komponentah 
+Najprej ga razpišemo po komponentah 
 \renewcommand{\arraystretch}{2.5} % default is 1
 \[
 (\bd{U} \cdot \nabla) \bd{U} =
@@ -1513,7 +1522,7 @@ U_1 \dfrac{\partial U_2}{\partial x_1} + U_2 \dfrac{\partial U_2}{\partial x_2} 
 U_1 \dfrac{\partial U_3}{\partial x_1} + U_2 \dfrac{\partial U_3}{\partial x_2} + U_3 \dfrac{\partial U_3}{\partial x_3}
 \end{pmatrix} = \Big[\sum_{k=1}^3 U_k \frac{\partial U_j}{\partial x_k}\Big]_j
 \]
-in pogledamo kako se odvod produkta izraža 
+in pogledamo kako se izraža odvod produkta
 $$
 \sum_{k=1}^3 \frac{\partial}{\partial x_k} (U_k U_j) = \sum_{k=1}^3 \Big(U_k\frac{\partial U_j}{\partial x_k}
 + U_j\frac{\partial U_k}{\partial x_k}\Big) = (\bd{U}\cdot \nabla)\bd{U} + (\underbrace{\nabla\cdot \bd{U}}_{\substack{\text{ohranitev}\\{\text{mase}}\\=0}}) \bd{U}
@@ -1529,15 +1538,15 @@ kjer je $\odot$ Hadamardov produkt oz. produkt po komponentah
 \[
 A \odot B = \left[ a_j \cdot b_j \right]_j.
 \]
-Ta zapis ni najbolj praktičen, zato bomo Navier-Stokesovo enačbo filtrerali po komponentah.
+Ta zapis ni najbolj praktičen, zato bomo Navier-Stokesovo enačbo filtrirali po komponentah.
 Za $j\in \{1, 2, 3\}$ imamo 
 \begin{align*}
-\frac{\partial U_j}{\partial t} + \nabla\cdot(U_j U) = -\frac{1}{\rho} \frac{\partial p}{\partial x_j} + \nu\nabla^2 U_j + f_j.
+\frac{\partial U_j}{\partial t} + \nabla\cdot(U_j \bd{U}) = -\frac{1}{\rho} \frac{\partial p}{\partial x_j} + \nu\nabla^2 U_j + f_j.
 \end{align*}
 
 Filtriramo enačbo, kjer upoštevamo, da filtracija komutira z odvajanjem:
 \begin{align*}
-  \frac{\partial \overline{U}_j}{\partial t} + \nabla\cdot(\overline{U_j U}) = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_j} + \nu\nabla^2 \overline{U}_j + \overline{f}_j.
+  \frac{\partial \overline{U}_j}{\partial t} + \nabla\cdot(\overline{U_j \bd{U}}) = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_j} + \nu\nabla^2 \overline{U}_j + \overline{f}_j.
 \end{align*}
 Enačbo lahko zapišemo še bolj kompaktno, če uporabimo Einsteinovo konvencijo 
 $$
@@ -1557,8 +1566,8 @@ $$
 Podobno kot pri Navier-Stokesovih enačbah, bomo prepisali nelinearna člena v bolj primerno 
 obliko
 \begin{align*}
-(U \cdot \nabla) \omega = \Big[\sum_{k=1}^3 U_k \frac{\partial \omega_j}{\partial x_k}\Big]_j\\
-(\omega \cdot \nabla) U= \Big[\sum_{k=1}^3 \omega_k \frac{\partial U_j}{\partial x_k}\Big]_j.
+(\bd{U} \cdot \nabla) \text{\bd{$\omega$}} = \Big[\sum_{k=1}^3 U_k \frac{\partial \omega_j}{\partial x_k}\Big]_j\\
+(\text{\bd{$\omega$}} \cdot \nabla) \bd{U} = \Big[\sum_{k=1}^3 \omega_k \frac{\partial U_j}{\partial x_k}\Big]_j.
 \end{align*}
 Fiksiramo komponento $j\in\{1, 2, 3\}$ in pogledamo odvod produkta komponent vrtinčnosti in hitrostnega polja:
 \begin{align*}
@@ -1589,8 +1598,8 @@ Zakon:
 $$
 \frac{\partial c}{\partial t} + \bd{U}\cdot\nabla c = \gamma \nabla^2 c.
 $$
-V tem primeru bo filtracija enostavna, saj lahko zaradi ohranitva mase, polje $U$ 
-potegnemo znotraj gradienta in upoštevamo linearnos filtracije. \\
+V tem primeru bo filtracija enostavna, saj lahko zaradi ohranitve mase, polje $U$ 
+potegnemo znotraj gradienta in upoštevamo linearnost filtracije. \\
 Filtriran zakon:
 \begin{equation}
 \frac{\partial \overline{c}}{\partial t} + \nabla \cdot (\overline{c\bd{U}}) = \gamma \nabla^2 \overline{c}.
@@ -1600,10 +1609,10 @@ Filtriran zakon:
 
 Izpeljane enačbe smo sicer prevedli na enačbe primernejše za modeliranje (pomen filtra bomo 
 pokazali v naslednjem razdelku), vendar če, na primer, primerjamo filtrirano in 
-ne filtrirano Navier-Stokesovo enačbo, sta enačbi fundementalno drugačni, saj imamo 
+ne filtrirano Navier-Stokesovo enačbo, sta enačbi fundamentalno drugačni, saj imamo 
 v drugem členu v enem primeru odvod skalarja $\overline{U_i U_j}$ v drugem pa odvod produkta 
 skalarjev $U_i U_j$. Radi bi torej v filtrirani enačbi uvedli člen $\overline{U_i} \cdot \overline{U_j}$.
-Vendar pa se pojavi problem, saj $\overline{U_i}\overline{U_j} - \overline{U_i U_j}$. 
+Vendar pa se pojavi problem, saj $\overline{U_i}\overline{U_j} - \overline{U_i U_j} \neq 0$. 
 \begin{definicija}
 Naj bo $\bd{U}$ vektorsko polje in $\overline{\bd{U}}$ njena filtracija. Količini 
 \begin{equation}
@@ -1614,7 +1623,7 @@ pravimo \textbf{rezidualni napetostni tenzor}.
 
 Iz definicije tenzorja $\tau^R$ se naravno pojavita dodatni definiciji
 \begin{definicija}
-Rezidualna kinetična energija je 
+\bd{Rezidualna oz. turbulentna kinetična energija} je 
 \begin{equation}
 k_r = \frac{1}{2} \tau_{ii}^R = \frac{1}{2}\text{tr}(\tau^R).
 \end{equation}
@@ -1644,13 +1653,13 @@ Zapišemo filtrirano Navier-Stokesovo enačbo preko teh definicij
 Zapišemo še preko $\tau^\text{anizo}$ tenzorja:
 \begin{align*}
 &-\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_j} - \frac{\partial \tau_{ij}^R}{\partial x_i}+ \nu \frac{\partial^2 \overline{U}_j}{\partial x_i \partial x_i} + \overline{f}_j = \\[1mm]
-&-\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_j} - \frac{\partial (\tau^\text{izo} + \tau^\text{anizo}) }{\partial x_i}+ \nu \frac{\partial^2 \overline{U}_j}{\partial x_i \partial x_i} + \overline{f}_j = \\[1mm]
-&-\frac{1}{\rho} \frac{\partial (\overline{p} + \rho\tau^\text{izo})}{\partial x_j} - \frac{\partial \tau^\text{anizo} }{\partial x_i}+ \nu \frac{\partial^2 \overline{U}_j}{\partial x_i \partial x_i} + \overline{f}_j \\[2mm]
+&-\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_j} - \frac{\partial (\tau^\text{izo}_{ij} + \tau^\text{anizo}_{ij}) }{\partial x_i}+ \nu \frac{\partial^2 \overline{U}_j}{\partial x_i \partial x_i} + \overline{f}_j = \\[1mm]
+&-\frac{1}{\rho} \frac{\partial (\overline{p} + \rho\tau^\text{izo}_{ij})}{\partial x_j} - \frac{\partial \tau^\text{anizo}_{ij} }{\partial x_i}+ \nu \frac{\partial^2 \overline{U}_j}{\partial x_i \partial x_i} + \overline{f}_j \\[2mm]
 &\Longrightarrow 
 \frac{\partial \overline{U}_j}{\partial t} + \frac{\partial \overline{U_i}\, \overline{U_j}}{\partial x_i} = -\frac{1}{\rho} \frac{\partial \overline{P}}{\partial x_j} 
 - \frac{\partial \tau_{ij}^\text{anizo}}{\partial x_i}+ \nu \frac{\partial^2 \overline{U}_j}{\partial x_i \partial x_i} + \overline{f}_j,
 \end{align*}
-kjer je $\overline{P} = \overline{p} + \rho\tau^\text{izo}$ modiciran filtriran tlak 
+kjer je $\overline{P} = \overline{p} + \rho\tau^\text{izo}$ modificiran filtriran tlak 
 (zakaj se ga uvede?). Iz te enačbe je jasno kako definirati filtrirani materialni odvod 
 \begin{definicija}
 Filtriran materialni odvod za vektorsko polje $\bd{U}$ in $\Omega \subseteq \R^n$ je preslikava 
@@ -1662,14 +1671,14 @@ $\frac{\overline{D}}{\overline{D}t}: C^1(\Omega) \rightarrow C^0(\Omega)$ dana s
 
 \subsection{Razreševanje filtriranih polj}
 
-Sedaj bomo videli, zakaj smo uvedli filtrirane enačbe, saj če 
-trenutno primerjamo z nefiltriranimi enačbami nevidimo bistvene razlike.
+Sedaj bomo videli, zakaj je smiselno uvesti filtrirane enačbe, saj 
+direktna primerjava z nefiltriranimi enačbami ne pokaže bistvene razlike.
 
 Omejimo, se na enodomenzionalni primer polja $u$ in interval $[0, L)$, 
 $L > 0$. Če polje $u$ evalviramo na $N \in \N$ točkah, nas zanima 
 kolikšen mora biti velik korah $h = \frac{L}{N}$, da lahko primerno aproksimiramo 
 polje $u$ in določimo željene informacije (ekvivaletno lahko fiksiramo 
-korak in določamo število točk $N$)? \\
+korak in določamo število točk $N$). \\
 Na to uprašanje bomo odgovorili z uporabo diskretne Fourierove analize. 
 
 \subsubsection{Diskretna Fourierova analiza}
@@ -1712,7 +1721,7 @@ U^{-1}(U(x_n)) = u(x_n) = U(U^{-1}(x_n)).
   &= \frac{1}{N}\sum_{k=0}^{N-1} \sum_{j=0}^{N-1} u(x_j) e^{\frac{-2\pi i k(n - j)}{N}} = 
 \end{align*}
 
-Označimo $x = e^{\frac{2\pi i (n-j)}{N}}$ in zamenjamo vrstni red seštevanja v 
+Označimo $x = e^{\frac{-2\pi i (n-j)}{N}}$ in zamenjamo vrstni red seštevanja v 
 zadnji enakosti 
 \begin{align*}
 =& \frac{1}{N}\sum_{j=0}^{N-1} u(x_j)\sum_{k=0}^{N-1} x^k .
@@ -1742,7 +1751,7 @@ poenostavimo
 \begin{align*}
   =& \frac{1}{N}\sum_{j=0}^{N-1} u(x_j)\sum_{k=0}^{N-1} x^k = \sum_{j=0}^{N-1} u(x_j) \delta_{jn} = u(x_n). 
 \end{align*}
-Enak način dokažemo tudi drugo enakost.
+Na enak način dokažemo tudi drugo enakost.
 \end{dokaz}
 
 Poglejmo si še nekaj pomebnih lasnotsti diskretne Fourierove transformacije
@@ -1758,7 +1767,7 @@ $t, n \in \{0, 1, \dots, N-1\}$. Potem veljajo naslednje lastnosti:
   \begin{equation}
   \sum_{k=t}^{N-1 + t} u(x_k) e^{\frac{-2\pi i k n}{N}} = \sum_{k=0}^{N-1} u(x_k) e^{\frac{-2\pi i k n}{N}}.
 \end{equation}
-  \item[iii)] Prostorski premik: tranformiranka funkcije $u(x - t)$ je
+  \item[iii)] Prostorski premik: transformiranka funkcije $u(x - t)$ je
   \begin{equation}
   U^s(x_n) = U(x_n)e^{\frac{-2\pi k m t}{N}} .
 \end{equation}
@@ -1766,7 +1775,7 @@ $t, n \in \{0, 1, \dots, N-1\}$. Potem veljajo naslednje lastnosti:
   \begin{equation}
     \overline{U(x_n)} = U(x_{N-n}).
   \end{equation}
-  \item[v)] Plancherel izrek:
+  \item[v)] Plancherel-ov izrek:
   \begin{equation}
     \sum_{k=0}^{N-1} |u(x_k)|^2 = \frac{1}{N}\sum_{n=0}^{N-1} |U(x_k)|^2.
   \end{equation}
@@ -1805,7 +1814,7 @@ $$
 $$
 
 \item[iii)] 
-Označimo tranformiranko od $u(x-t)$ s $U^s$. Potem je 
+Označimo transformiranko od $u(x-t)$ s $U^s$. Potem je 
   \begin{align*}
     U^s(x_{n}) &= \sum_{k=0}^{N-1} u(x_{k-t}) e^{\frac{-2k \pi i n}{N}} = \\
     &= \sum_{k=-t}^{N-1-t} u(x_{k}) e^{\frac{-2(k+t) \pi i n}{N}} = \\
@@ -1847,7 +1856,7 @@ Dokaz sedaj hitro sledi
 \end{enumerate}
 \end{dokaz}
 
-Poglejmo sedaj si poglejmo nekaj posledic dokazanih lastnosti in malo 
+Poglejmo si nekaj posledic dokazanih lastnosti in malo 
 širšo sliko našega cilja. \\
 
 Očitna ampak močna posledica izreka \ref{izrek:iDFT} je, da lahko 
@@ -1873,8 +1882,8 @@ u(x_n) = \sum_{k=0}^{N-1} a_k e^{i\kappa_k x_n},
 kjer je $\kappa_k = \frac{2\pi k}{L}$ valovna število ali frekvenca.
 To število smo že srečali, ko smo govorili o valovnem preklopnem 
 filtru, ki se bo pokazalo, da je ključno pri velikosti koraka $h$ 
-za numerično reševanje filtriranih enačb. Še zadnjno spremembo, ki 
-jo opravimo je, da zamaknemo vrsto, da bo (čim bolj) simetrična okoli ničle. 
+za numerično reševanje filtriranih enačb. Zadnja sprememba ki 
+jo opravimo je, da premaknemo indeks seštevanja vrste na tak način, da bo vrst (čim bolj) simetrična okoli ničle. 
 Po lastnosti $iii)$ lahko zamaknemo indeks seštevanja $k$ za $N/2 - 1$, pri 
 predpostavki, da je $N$ sodo število
 \begin{equation}
@@ -1884,7 +1893,7 @@ u(x_n) = \sum_{k=1-\frac{N}{2}}^{\frac{N}{2}} a_k e^{i\kappa_k x_n}.
 
 V praksi se DFS uporablja, ker Fourierovo transformacijo in 
 Fourierovo vrsto le redko kdaj lahko izračunamo analitično.
-Izkaže se, da pri obravnavanih lahko to naredimo točno 
+Izkaže se, da v pravem kontekstu enačimo Fourierovo vrsto in diskretno Fourierovo vrsto
 \begin{izrek}
 Naj bo $u: [0, L] \rightarrow \R$ periodična funkcija s periodo $N\in \N$, katere Fourierov 
 razvoj obstaja. Potem je 
@@ -1906,14 +1915,14 @@ $$
 in ločimo na dva primera: \\
 \begin{enumerate}
   \item[i)] Naj bo $b_k = 0$ za $|\kappa_k| \geq \kappa_{\text{max}}$, kjer je 
-  $\omega_{\text{max}} = \omega_{N/2}$. Potem je vsota indeksirana od 
-  $-(\frac{1}{2} - 1)$ do $\frac{1}{2}N - 1$
+  $\kappa_{\text{max}} = \kappa_{N/2}$. Potem je vsota indeksirana od 
+  $-(\frac{1}{2}N - 1)$ do $\frac{1}{2}N - 1$
   $$
   u(x_n) = \sum_{k=1-\frac{N}{2}}^{\frac{N}{2}-1} b_k e^{i\kappa_k x_n}
   $$
   in je očitno, da so $b_k = c_k$. 
   \item[ii)] Poglejmo si sedaj splošen primer, brez omejitve na koeficiente 
-  $c_k$. Naj bo $k \in \{-(\frac{1}{2}N - 1), \dots (\frac{1}{2}N - 1)\}$. 
+  $b_k$. Naj bo $k \in \{-(\frac{1}{2}N - 1), \dots (\frac{1}{2}N - 1)\}$. 
   Po osnovnem izreku o deljenju, poljuben indeks zapišemo kot
   $k + mN$ za $m\in \Z$. Valovno število za ta indeks je 
   $$
@@ -1924,7 +1933,7 @@ in ločimo na dva primera: \\
   e^{i \kappa_{k + mN} x_n} =  e^{i \kappa_{k} x_n}  e^{2mi\kappa_{\text{max}} x_n} = 
   e^{i\kappa_k x_m} e^{2\pi i k m} = e^{i\kappa_k x_m}
   $$
-  Potem se Fourierova vrsta zreducira na 
+  Potem se Fourierova vrsta reducira na 
   \begin{align*}
   u(x_n) &= \sum_{k=-\infty}^{\infty} b_k e^{i\kappa_k x_n} = \\
          &= \sum_{m=-\infty}^{\infty} \Big(\sum_{k=1-\frac{N}{2}}^{\frac{N}{2}-1} b_{k+mN} e^{i\kappa_{k+mN} x_n}\Big) =\\ 
@@ -1964,7 +1973,7 @@ Ker delamo s filtriranimi polji, poglejmo še Fourierovo vrsto filtriranega polj
 \label{eq:filterDFT}
 \overline{u}(x) = \sum_{k=1-\frac{N_{\text{max}}}{2}}^{\frac{N_\text{max}}{2}} \overline{a}_k e^{i\kappa_k x}.
 \end{equation}
-Da poišemo zvezo med koeficienti $a_n$ in $\overline{a}_n$, filtriramo polje $u$
+Da poiščemo zvezo med koeficienti $a_n$ in $\overline{a}_n$, filtriramo polje $u$
 \begin{align*}
 \overline{u}(x) &= \overline{\sum_{k=1-\frac{N_{\text{max}}}{2}}^{\frac{N_\text{max}}{2}} a_k e^{i\kappa_k x}} = \\
 &= \sum_{k=1-\frac{N_{\text{max}}}{2}}^{\frac{N_\text{max}}{2}} a_k \overline{e^{i\kappa_k x}} = \\ 
@@ -1983,7 +1992,7 @@ za konkretne filtre v eni dimenziji.
 
 \begin{opomba}
 Nauk razdelka, je da lahko polje $u$ točno predstavimo, z končnim naborom 
-vrednosti oz. od neke točke naprej, ne bo dobili nič boljši rezultat, če 
+vrednosti oz. od neke točke naprej, ne dobimo nič bolj natančen rezultat, če 
 uporabimo več funkcijskih vrednosti.
 \end{opomba}
 
@@ -2006,7 +2015,7 @@ Koeficienti $\overline{a_k}$ so enaki
 $$
 \overline{a}_k=\begin{cases}
   a_k ;\,\, |\kappa_k| \leq \kappa_c \\
-  0 \,\,;\,\,\, |\kappa_k| > \kappa_c
+  0 \,\,;\,\,\, |\kappa_k| > \kappa_c.
 \end{cases}
 $$
 Zapišemo pogoje preko vrednosti $N$
@@ -2035,11 +2044,11 @@ označimo z $\Delta$.
 \noindent
 Sedaj se prvič vidi bistvo filtracije. Vemo, da za neko število 
 $N\in \N$, lahko $u$ točno predstavimo, vendar je to pogosto neučinkovito, 
-saj, prostorska in časovna zahtevnost zelo hitro rasteta. Če pa izberemo
+saj prostorska in časovna zahtevnost zelo hitro rasteta. Če pa izberemo
 $\kappa_c$ primerno majhen, se število členov v vsoti zmanjša.
 Sicer rešitev zgubi natančnost, vendar pa pridobimo na učinkovitosti reševanja. 
-Kako izbrati mejo (v tem primeru $\kappa_c$) t.j. kako natačno želimo, 
-da naša rešitev je in koliko pridobimo na učinkovitosti, bo tema naslednjega poglavja.
+Kako izbrati mejo (v tem primeru $\kappa_c$) t.j. kako natačno želimo 
+rešitev in koliko pridobimo na učinkovitosti, bo tema naslednjega poglavja.
 
 \subsubsection{Gaussov filter}
 
@@ -2097,12 +2106,12 @@ $$
 
 \section{Energija in spektralna analiza}
 
-V tem poglavju bomo turbulenten tok obravnavali z vidika statiske, 
+V tem poglavju bomo turbulenten tok obravnavali z vidika statistike, 
 vendar se bomo hitro začeli nanašati na Fourierovo analizo, ki 
 se je v prejšnjem poglavju pokazala za zelo uporabno. Ta način 
 modeliranja turbulence je prvi razvil Kolmogorov, ideja za tak 
 opis pa predvsem pride iz kaotičnosti turbulence. Iz tega razloga se 
-privzame, da je hitrostno polje $u$ slučajno. To pomeni, da 
+privzame, da je hitrostno polje $\bd{u}$ slučajno. 
 
 \subsection{Osnovni pojmi}
 
@@ -2110,17 +2119,17 @@ Spomnimo se nekaj osnovnih pojmov
 
 \begin{definicija}
 Trojici $(\Omega, \mathcal{F}, P)$ pravimo \textbf{verjetnostni prostor}, 
-kjer so $\Omega$ vzorčni prostor, $\mathcal{F}$ sigma algebra in 
+kjer je $\Omega$ vzorčni prostor, $\mathcal{F}$ sigma algebra in 
 $P$ verjetnostna mera. Preslikava $x: \Omega \rightarrow [0, 1]$ 
-je \textbf{slučajna spremenljivka}, če je je merljiva. 
-\textbf{Slučajni vektor} je preslikava $X: \Omega \rightarrow [0, 1]^n$, 
+je \textbf{slučajna spremenljivka}, če je merljiva glede na $\mathcal{F}$. 
+\textbf{Slučajni vektor} je preslikava $\bd{X}: \Omega \rightarrow [0, 1]^n$, 
 za $n\in \N$, kjer so komponente $X_i$ slučajne spremenljivke.
 \end{definicija}
 
 Mi se bomo omejili na primer, ko je $\Omega = \R^4$, $\mathcal{F}$ 
 Lebesguevova sigma algebra, verjetnostna mera $P$ pa ni znana. 
 Dodatno bomo predpostavili, da imamo slučajnost le v prostorskih 
-spremenljivkah, času pa naj bo za tok determinističen. 
+spremenljivkah, čas pa naj bo za tok determinističen. 
 
 \begin{definicija}
 Naj bo $\bd{U}$ slučajni vektor na verjetnostnem prostoru $(\Omega, \mathcal{F}, P)$,
@@ -2132,7 +2141,7 @@ F_\bd{U}(V; x, t) = P(U_1(x, t) < V_1, \dots, U_n(x, t) < V_n)
 za $i = 1, \dots, n$ in $V \in \Omega$. Porazdelitvena 
 gostota pa je 
 \begin{equation}
-f_U(V; x, t) = \frac{\partial^n F}{\partial x_1 \dots \partial x_n}(x, t)
+f_\bd{U}(V; x, t) = \frac{\partial^n F}{\partial x_1 \dots \partial x_n}(x, t)
 \end{equation}
 \end{definicija}
 
@@ -2162,9 +2171,9 @@ Enakost iz prejšnje definicije z malo računanja lahko prepišemo v
 \end{opomba}
 
 \noindent
-$F$ oz. $f$ nepoznamo. V praksi ali teoriji se pogosto se definira različna vrsta povprečja, 
-ki jih je ali lažje obravnavati (prostorsko povprečje) ali lažje izračunati(ensambelsko povprečje).
-V določenih scenarij približna povprečja konvergirajo k pravemu 
+$F$ oz. $f$ nepoznamo. V praksi ali teoriji se pogosto definira različne vrste povprečji, 
+ki jih je ali lažje obravnavati (prostorsko povprečje) ali lažje izračunatin(ensambelsko povprečje).
+V določenih scenarijih približna povprečja konvergirajo k pravemu 
 ali celo konvergirajo ena k drugem (ergodična hipoteza). 
 
 \begin{definicija}
@@ -2182,13 +2191,19 @@ $\bd{\text{$\kappa$}}_\bd{k} = \frac{2\pi}{L} \bd{k}$ in koeficienti $\hat{\bd{u
 \end{equation}
 \end{definicija}
 
-Če je $\bd{U}$ slučajen, potem lahko $\bd{U}$ razcepimo na 
-povprečen del in turbulenten del 
+
+\begin{definicija}
+Za slučajen $\bd{U}$, definiramo turbulenten del toka $\bd{U}$
+\begin{equation}
+\bd{u}(\bd{x}, t) \coloneqq \bd{U}(\bd{x}, t) -  \langle \bd{U}(\bd{x}, t) \rangle
+\end{equation}
+oz. razcep $\bd{U}$ na povprečen in turbulenten del
 \begin{equation}
 \label{Reynoldsov razcep}
 \bd{U}(\bd{x}, t) = \langle \bd{U}(\bd{x}, t) \rangle + \bd{u}(\bd{x}, t).
 \end{equation}
-Če $U$ zapišemo v Fourierovo vrsto, so koeficienti $\bd{a}_k$ slučajni.
+\end{definicija}
+Če $\bd{U}$ zapišemo v Fourierovo vrsto, so koeficienti $\bd{a}_k$ slučajni.
 
 Poglejmo si nekaj \textbf{statističnih lastnosti}, ki jih slučajni 
 vektor $\bd{U}$ lahko prikaže
@@ -2204,7 +2219,7 @@ vektor $\bd{U}$ lahko prikaže
 \begin{lema}
 \label{homogenost}
 Naj bo slučajni vektor $\bd{U}$ homogen. Potem je pričakovana 
-vrednost $\langle \bd{U} \rangle$ konstantna za $\bd{x}$. 
+vrednost $\langle \bd{U} \rangle$ neodvisna od $\bd{x}$. 
 \end{lema}
 
 \begin{dokaz}
@@ -2222,7 +2237,7 @@ Fiksiramo $\bd{x}_0$ in trditev sledi.
 \end{dokaz}
 \noindent
 Enostavna posledica trditve je, da za primerno izbran koordinatni sistem,
-lahko za homogene slučajni vektor nastavimo $\langle \bd{U}(\bd{x}, t) \rangle = 0$.
+lahko za homogen slučajni vektor nastavimo $\langle \bd{U}(\bd{x}, t) \rangle = 0$.
 
 Sedaj definiramo količino, ki bo ključna za nadaljno obravnavo 
 energije.
@@ -2235,9 +2250,9 @@ R(\bd{r}, \bd{x}, t) = \langle \bd{U}(\bd{x}, t)\cdot \bd{U}^T(\bd{x} + \bd{r}, 
 pravimo \textbf{dvo-točkovna korelacija}.
 \end{definicija}
 
-Intuitivno na ta količina pove, kako podobno se hitrosti $u_i$ in 
+Intuitivno ta količina pove, kako podobno se hitrosti $u_i$ in 
 $u_j$ obnašata t.j. večja, kot bo količina $R_{ij}$ bolj sta si hitrosti 
-podobni (npr. dva žogici v vodnem toku, ki sta zelo blizu bosta imeli podobno pot) oz. 
+podobni (npr. dva žogici v vodnem toku, ki sta zelo blizu imata podobno pot) oz. 
 manjša kot je korelacija bolj sta si hitrosti različni (npr. dva lista, ki padeta 
 iz drevesa in sta zelo narazen, bosta skoraj gotovo imela zelo različno pot).
 
@@ -2379,7 +2394,7 @@ $\hat{R}$. To je motivacija za naslednjo definicijo, preden jo zapišemo,
 lahko dobljeni rezultat malo posplošimo. Preko transformacije $\bd{x} = \bd{s} - \frac{L}{2}(1, \dots, 1)$, 
 se integral premakne na simetrične intervale 
 $\left[-\frac{L}{2}, \frac{L}{2}\right]^n$. Limita $L \rightarrow \infty$ izraza je 
-Fourierova tranformacija :
+Fourierova transformacija :
 \begin{align*}
 \lim_{L\rightarrow \infty} \hat{R}(\bd{\text{$\kappa$}}_{\bd{k}}, t) = \frac{1}{(2\pi)^n}\int_{\R^n} \bd{R}(\bd{x}, t) e^{-i\text{\bd{$\kappa$}} \cdot \bd{x}} \dif \bd{x} = \hat{R}(\bd{\text{$\kappa$}}, t).
 \end{align*}
@@ -3035,7 +3050,7 @@ in \bd{filtrirana energijsko spektralna funkcija $\overline{E}$}
 \begin{equation}
 \overline{E}(\kappa, t) = \oint_{|\bd{\text{$\kappa$}}| = \kappa} \frac{1}{2} \text{tr}(\hat{\overline{R}}(\bd{\text{$\kappa$}, t})) \dif \bd{\text{$\kappa$}},
 \end{equation}
-kjer $\hat{\cdot}$ označuje Fourierovo tranformacijo.
+kjer $\hat{\cdot}$ označuje Fourierovo transformacijo.
 \end{definicija}
 
 \begin{opomba}
@@ -3141,7 +3156,7 @@ Sedaj si poglejmo prvi pravi primer
 \begin{primer}
 Naj bo dana $G(x) = \sqrt{\frac{6}{\pi \kappa_c^2}}\cdot e^\frac{-6x^2}{\kappa_c^2}$ filtracijska funkcija 
 za $\kappa_c > 0$ valovno število, da velja \ref{Fourier_število} in $u$ homogeno enodimenzionalno hitrostno polje. Poglejmo koliko polja $\frac{\dif \overline{u}}{\dif x}$
-lahko razrešimo. Ker za Fourierovo tranformacijo velja
+lahko razrešimo. Ker za Fourierovo transformacijo velja
 $$
 \widehat{\frac{\dif \overline{u}(x, t)}{\dif x}} = i\kappa \widehat{\overline{u}(\kappa, t)}
 $$
@@ -3207,7 +3222,501 @@ Z drugimi besedami, približno $80\%$ celotne energije lahko razrešimo
 za dan filter v tridimenzionalnem primeru.
 \end{primer}
 
+\newpage
 \section{Modeliranje majhnih skal in problem zaprtja}
+V tem poglaju se vrnemo nazaj na filtrirane Navier-Stokevove enačbe: 
+\begin{align*}
+  \nabla\cdot\overline{\bd{U}} = \frac{\partial \overline{U}_j}{\partial x_j} &= 0\\[2mm]
+  \frac{\partial \overline{U}_j}{\partial t} + \frac{\partial \overline{U_i}\, \overline{U_j}}{\partial x_i} = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_j}& 
+- \frac{\partial \tau_{ij}^{R}}{\partial x_i}+ \nu \frac{\partial^2 \overline{U}_j}{\partial x_i \partial x_i} + \overline{f}_j,
+\end{align*}
+za $j=1, 2, 3$ in $\tau_{ij}^R = \overline{U_i U_j} - \overline{U_i} \,\overline{U_j}$. 
+Pri reševanju te enačbe pa hitro naletimo na problem. Člen $\overline{U_i U_j}$ 
+je nepoznan, saj sistem rešujemo za $\overline{U}$, ki pa mi direktno vezana na $\overline{U_i U_j}$. 
+To pomeni, da imamo več neznanih količin, kot imamo enačb. Iz linearne algebre 
+vemo, da za linearne sisteme redko kdaj pričakujemo enolično rešitev, 
+običajno pa jih je neskočno. Takemu problemu pravimo \bd{problem zaprtja}.
+Zato moramo poskati model oz. aproksimacijo za $\tau{ij}^R$, ki nam bo problem 
+zaprl. Rešitev bomo iskali v obliki 
+\begin{equation}
+\tau_{ij}^R = F(\overline{U}), 
+\end{equation}
+za funkcional $F: C(\R^3) \rightarrow \R$. Ne moremo pričakovti, da 
+bo $F$ enolično določen, vendar pa lahko na podlagi Navier-Stokesovih enačb zahtevamo/želimo,
+da zadošča določenim lastnostim. Te lastnoti bodo invariante Navier-Stokevih enačb.
+
+\subsection{Modeliranje z invariantami in posledice}
+
+V tem razdelku bomo pogledali, kaj so invariante Navier-Stokesovih 
+enačb, ki nam bodo dale neke vrst kriterij oz. potreben pogoj, ki 
+mu bo moral model zadoščati. Več kot imamo pogojev, ki jim model 
+ne zadošča, slabši je model.
+
+\begin{definicija}
+Naj bo $\bd{u}: \Omega \subseteq \R^n \rightarrow \R^m$ vektorsko polje 
+in $\mathcal{T}:C(\R^n) \rightarrow C(\R^n)$. Pravimo, da je $\bd{u}$
+\bd{invariantna za $\mathcal{T}$}, če velja
+\begin{equation}
+\mathcal{T}(\bd{u}) = \bd{u(\bd{x}})
+\end{equation}
+\end{definicija}
+
+\begin{definicija}
+Naj bo $\bd{u}: \Omega \subseteq \R^n \rightarrow \R$ in 
+$F: \R^{n^k} \times \R^{n^{k-1}} \cdots \R^n \times \R \times \Omega \rightarrow \R$. 
+Pravimo, da je parcialna diferencialna enačba 
+$$
+F(D^k u, D^{k-1}u, \dots, D u, u, x) = 0,
+$$
+za parcialni diferencialni operator $D$, \bd{invariantna za $\mathcal{T}$}, če za 
+vsako rešitev enačbe velja, da je tudi $T(u(\bd{x}))$ rešitev.
+\end{definicija}
+
+\begin{trditev}
+Naj bo $\bd{u}: \R^n \times \R^+ \rightarrow \R^n$ rešitev Navier-Stokesove enačbe. 
+Potem ima naslednje invariante: 
+\begin{enumerate}
+  \item[i)] Časovna invarianca: za $a\in \R$: $$\mathcal{T}: (t, \bd{x}, \bd{u}, p, \nu) \mapsto (t + a, \bd{x}, \bd{u}, p, \nu)$$
+  \item[ii)] Rotacijska invarianca: za $R \in SO(n)$: $$\mathcal{T}: (t, \bd{x}, \bd{u}, p, \nu) \mapsto (t, R\bd{x}, R\bd{u}, p, \nu)$$
+  \item[iii)] Invarianca zrcaljenja: $$ \mathcal{T}: (t, \bd{x}, \bd{u}, p, \nu) \mapsto (t, \Lambda\bd{x}, \Lambda \bd{u}, p, \nu)$$
+  za 
+
+\[ \begin{bmatrix}
+   \iota_1 & 0 & \cdots & 0 \\
+   0 & \iota_2 & \cdots & 0 \\
+   \vdots  & \vdots  &  & \vdots  \\
+   0 & 0 & \cdots & \iota_n
+ \end{bmatrix} \]
+
+ kjer so $\iota_i = \pm 1$ za $i = 1, \dots n$.
+  \item[iv)] Posplošena Galileova invarianca: naj bo $\hat{\bd{x}}: \R^+ \rightarrow \R^n$ dvakrat zvezno odvedljiva. Potem je 
+  $$\mathcal{T}: (t, \bd{x}, \bd{u}, p, \nu) \mapsto \big(t, \bd{x} + \hat{\bd{x}}, \bd{u} + \frac{\dif \hat{\bd{x}}}{\dif t}, p - \bd{x} \cdot \frac{\dif^{\,2} \hat{\bd{x}}}{\dif t^2}, \nu\big)$$
+  \item[v)] Invarianca raztezanja: naj bo $\gamma\in \R$: 
+  $$\mathcal{T}: (t, \bd{x}, \bd{u}, p, \nu) \mapsto \big(\gamma^2 t, \gamma\bd{x}, \frac{1}{\gamma} \bd{u}, \frac{1}{\gamma^2} p, \nu\big)$$
+  \item[vi)] Tlačna invarianca: za $\varphi(t) \in C(\R^+)$: 
+  $$\mathcal{T}: (t, \bd{x}, \bd{u}, p, \nu) \mapsto (t, \bd{x}, \bd{u}, p + \varphi(t), \nu) $$
+\end{enumerate}
+\end{trditev}
+
+\begin{dokaz}[Skica dokaza:]
+Poglejmo si prvi dve točki, ostale sledijo na podoben način:
+\begin{enumerate}
+  \item[i)] Ker velja $$\frac{\partial}{\partial t} (\bd{u}(\bd{x}, t + a)) = \frac{\partial \bd{u}(\bd{x}, t + a)}{\partial t},$$ časovna invarianca sledi.
+  \item[ii)] Naj bo $R\in SO(n)$. Definiramo $\bd{v}(\bd{x}, t) = R^T \bd{u}(R\bd{x}, t)$ in vstavimo v 
+  Navier-Stokesovo enačbo 
+  \begin{align*}
+  \frac{\partial \bd{v}}{\partial t} + (\bd{v}\cdot \nabla)\bd{v} &= -\frac{1}{\rho} \nabla p + \nu \Delta \bd{v} \\
+  R^T \frac{\partial \bd{u}}{\partial t}(R\bd{x}, t) + R^T (\bd{u}(\bd{x}, t)\cdot \nabla)\bd{u}(R\bd{x}, t) &= -\frac{1}{\rho} R^T \nabla p(Q\bd{x}, t) + R^T \Delta \bd{u}(R\bd{x}, t) \\
+  \frac{\partial \bd{u}}{\partial t}(R\bd{x}, t) + (\bd{u}(\bd{x}, t)\cdot \nabla)\bd{u}(R\bd{x}, t) &= -\frac{1}{\rho} \nabla p(Q\bd{x}, t) + \Delta \bd{u}(R\bd{x}, t).
+  \end{align*}
+\end{enumerate}
+\end{dokaz}
+
+Preden se lotimo modeliranja tenzorja $\tau_{ij}^R$, si poglejmo še invariante filtriranih enačb, 
+saj apriori ni razloga, da se zgoraj naštete invariante prenesejo na filtrirane enačbe. 
+Razdelimo rezultate na tri dele:
+\begin{lema}
+Naj bo $\bd{u}$ rešitev Navier-Stokesove enačbe. Potem je filtrirana Navier-Stokesova enačba 
+invariantna za splošno Galileovo transformacijo, če za filtacijsko funkcijo $G$ velja 
+$$
+G(\bd{r}, \bd{x}) = G(\bd{r} - \bd{x})
+$$
+\end{lema}
+
+\begin{dokaz}
+   Naj bo $\overline{\bd{u}}$ filtrirano polje, ki zadošča filtrirani Navier-Stokesovi enačbi.
+  Če želimo, da zadošča splošni Galileovi transformaciji, mora veljati 
+  $$
+  \overline{\bd{u}}(\bd{x} + \hat{\bd{x}}, t) = \overline{\bd{u}}(\bd{x}, t) + \frac{\dif \hat{\bd{x}}}{\dif t}.
+  $$
+  Po definiciji filtracije zapišemo
+  \begin{align*}
+  \int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} + \hat{\bd{x}} - \bd{r}, t) \dif \bd{r} = \int_{\R^n} G(\bd{r}, \bd{x}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r} + \frac{\dif \hat{\bd{x}}}{\dif t} .
+  \end{align*}
+  Ker je $\bd{u}$ rešitev Navier-Stokesove enačbe je invariantna za Galileova transformacijo lahko poenostavimo 
+  \begin{align*}
+    &\int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} + \hat{\bd{x}} - \bd{r}, t) \dif \bd{r} = \\
+    =& \int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \Big(\bd{u}(\bd{x} - \bd{r}, t) + \frac{\dif \hat{\bd{x}}}{\dif t} \Big)\dif \bd{r} \\
+    =& \int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}  + \int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \frac{\dif \hat{\bd{x}}}{\dif t} \dif \bd{r}\\
+    \stackrel{\ref{renormal}}{=}& \int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}  + \frac{\dif \hat{\bd{x}}}{\dif t}\\[2mm]
+    &\Longrightarrow \int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r} = \int_{\R^n} G(\bd{r}, \bd{x}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}\\
+    &\Longrightarrow  \int_{\R^n} (G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) - G(\bd{r}, \bd{x})) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r} = 0\\[2mm]
+    &\Longrightarrow \forall \bd{x}, \hat{\bd{x}}, \bd{r} \in \R^n: G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) = G(\bd{r}, \bd{x})
+  \end{align*}
+  Sledi rezultat: 
+  $$
+  \forall \bd{x}, \bd{r} \in \R^n: G(\bd{r}, \bd{x}) = G(\bd{r} - \bd{x}, \bd{x} - \bd{x}) = G(\bd{r} - \bd{x}, 0)
+  $$
+\end{dokaz}
+
+\begin{lema}
+  Naj bo $\bd{u}$ rešitev Navier-Stokesove enačbe. Potem je filtrirana Navier-Stokesova enačba 
+  invariantna za splošno Galileovo transformacijo in rotacije, če za filtacijsko funkcijo $G$ velja 
+  $$
+  G(\bd{r}, \bd{x}) = G(|\bd{r} - \bd{x}|)
+  $$
+\end{lema}
+
+\begin{dokaz}
+Iz prejšnje leme vemo, da velja $G(\bd{r}, \bd{x}) = G(\bd{r} - \bd{x})$. Dodatno zahtevamo 
+$$
+\overline{\bd{u}}(R\bd{x}, t) = R \overline{\bd{u}}(\bd{x}, t)
+$$
+za $R\in SO(n)$. Postopamo kot pri dokazu prejšnje lema 
+$$\int_{\R^n} G(\bd{r} - R\bd{x}) \bd{u}(R\bd{x} - \bd{r}, t)\dif \bd{r} = R \int_{\R^n} G(\bd{r}, \bd{x}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}$$
+V levo stran enakosti uvedemo spremenljivko $\bd{r} = R \bd{s} \Longrightarrow \dif \bd{r} = |\det{R}| \dif \bd{s} = \dif \bd{s}$
+\begin{align*}
+&\int_{\R^n} G(\bd{r} - R\bd{x}) \bd{u}(R\bd{x} - \bd{r}, t)\dif \bd{r} = \int_{\R^n} G(R\bd{s} - R\bd{x}) \bd{u}(R\bd{x} - R\bd{s}, t)\dif \bd{s} = \\
+\stackrel{ii)}{=} &\int_{\R^n} G(R\bd{s} - R\bd{x}) R\bd{u}(\bd{x} - \bd{s}, t)\dif \bd{s} = R\int_{\R^n} G(R\bd{s} - R\bd{x}) \bd{u}(\bd{x} - \bd{s}, r)\dif \bd{s}\\[2mm]
+&\Longrightarrow \int_{\R^n} G(\bd{r} - \bd{x}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r} = \int_{\R^n} G(R(\bd{r} - \bd{x})) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}
+\end{align*}
+\begin{align*}
+\Longrightarrow \forall \bd{r}, \bd{x}\in \R^n: G(\bd{r} - \bd{x}) = G(R(\bd{r} - \bd{x})).
+\end{align*}
+Ker zahtevamo rotacijsko invarianco funkcije $G$, mora biti radialna, torej:\\ $G(\bd{r}, \bd{x}) = G(|\bd{r} - \bd{x}|)$.
+\end{dokaz}
+
+\begin{lema}
+Naj bo $\bd{u}$ rešitev Navier-Stokesove enačbe. Potem je filtrirana Navier-Stokesova enačba 
+invariantna za splošno Galileovo transformacijo, rotacije in raztezanja, če je filtacijska funkcija $G$ oblike
+$$
+G(\bd{r}, \bd{x}) = A||\bd{r} - \bd{x}||^a
+$$
+za $A, a\in \R$.
+\end{lema}
+
+\begin{dokaz}
+Sledimo istemu postopku kot pri dokazu prejšnjih dveh lem, da dobimo funkcijsko relacijo za $G$
+$$
+\lambda\in \R.\, \forall\bd{r}, \bd{x}\in \R^n: G(\gamma||\bd{r} - \bd{x}||) = \lambda G(||\bd{r} - \bd{x}||)
+$$
+Bolj splošno, bomo rešili 
+$$
+\forall \gamma\in \R.\, \exists \lambda(\gamma)\in \R.\, \forall \bd{x}\in \R^n: G(\gamma \bd{x}) = \lambda(\gamma) G(\bd{x}).
+$$
+Predpostavimo, da je $G$ odvedljiva in odvajamo po parametru $\gamma$:
+$$
+(\nabla G)(\gamma \bd{x}) \cdot \bd{x} = \frac{\dif \lambda}{\dif \gamma} G(\bd{x}).
+$$
+Ker enakost velja za vsak $\lambda \in \R$, vzamemo $\lambda = 1$ in označimo $a = \frac{\dif \lambda}{\dif \gamma}(1)$:
+$$
+\nabla G(\bd{x}) \cdot \bd{x} = a G(\bd{x})
+$$
+oz. zapisano po komponentah linearni parcialno diferencilno enačbo 1. reda
+$$
+x_1\frac{\partial G}{\partial x_1} + \dots + x_n\frac{\partial G}{\partial x_n} = aG.
+$$
+Enačbo rešimo z metodo karakteristik: nastavimo karakteristični sistem 
+\begin{align*}
+\dot{x}_1 =&\,\, x_1 \\
+\!\!\!\!\vdots \\
+\dot{x}_n = &\,\, x_n \\
+\dot{G} =&\,\, aG,
+\end{align*}
+katerega rešitev je 
+\begin{align*}
+x_i(t, s) &= A_i(s) e^t \Longrightarrow e^t = \frac{x_i(t, s)}{A_i(s)}\\
+G(t, s) &= B(s) e^{at} \Longrightarrow G(x_i) = \Big(\frac{B}{A_i^a}\Big) x_i^a.
+\end{align*}
+Ker zadnja enakost velja za vsak $i=1,\dots, n$, lahko splošno rešitev zapišemo, kot 
+$$
+G(\bd{x}) = C ||\bd{x}||^a, \quad C\in \R.
+$$
+S tem smo pokazali, da je filtracijska funkcija oblike 
+$$
+G(\bd{r}, \bd{x}) = C||\bd{r} - \bd{x}||^a.
+$$
+(za razmisliti dve stvari, domena integriranja postane sfera, nisem ziher zakaj in 
+določitev konstate $C$ preko normalizacijskega pogoja, vendar ne razumem zakaj je $\frac{a+3}{4\pi l^{a+3}} $
+za $l$ velikost sfere)
+\end{dokaz}
+
+Posledica, ki je ne bomo dokzali, vendar ga ni težko preveriti
+
+\begin{posledica}
+Filtracijska funkcija 
+$$
+G(\bd{r}, \bd{x}) = C||\bd{r} - \bd{x}||^a.
+$$
+zadošča vsem invariantam $i) - vi)$.
+\end{posledica}
+
+Čeprav je rezultat teoretično zanimiv, v praksi ni nujno tako. Izkaže se, da veliko 
+metod ne temelji na eksplicitni uporabi filtracijske funkcije ampak se v celoti osredotočijo 
+na modeliranje tenzorja $\tau_{ij}^R$, kar si bomo pogledali v naslednjem razdelku. 
+
+\subsection{Boussinesqova aproksimacija in modeliranje tenzorja $\tau^R$}
+
+Poglejmo si sledečo skico
+\begin{center}
+  \begin{tikzpicture}
+    % Draw horizontal blue lines of different lengths
+    \draw[thick, blue] (0,2) -- (4,2);
+    \draw[thick, blue] (0,1.5) -- (3.5,1.5);
+    \draw[thick, blue] (0,1) -- (3,1);
+    \draw[thick, blue] (0,0.5) -- (2.5,0.5);
+    \draw[thick, blue] (0,0) -- (2,0);
+    
+    % Add atoms as small circles
+    \filldraw[black] (1.5,0.25) circle(2pt) node[below] {};
+    \filldraw[black] (2,0.75) circle(2pt) node[below] {};
+    \filldraw[black] (1,1.25) circle(2pt) node[below] {};
+    \filldraw[black] (0.5,1.75) circle(2pt) node[below] {};
+    
+    % Add arrows for the motion of atoms
+    \draw[->, thick] (1.5,0.25) -- (1,0.2);
+    \draw[->, thick] (2,0.75) -- (2.5,1);
+    \draw[->, thick] (1,1.25) -- (0.7,0.9);
+    \draw[->, thick] (0.5,1.75) -- (1,2);
+    
+    % Add a small red square
+    \draw[red] (2.5,1.2) rectangle +(0.2,0.2);
+    
+    
+    \draw[red] (6.5,0.7) rectangle +(1,1);
+    \draw[->, thick, blue] (6.5,0.6) -- (7,0.6);
+    \draw[->, thick, blue] (6.5,1.8) -- (7.5,1.8);
+    \node at (0.5, -0.5, 0) {$u$};
+  
+    % Add labels
+    \node at (7.3,2.1) [left] {$u_{x2}$};
+    \node at (7.3,0.2) [left] {$u_{x1}$};
+  \end{tikzpicture}
+  \end{center}
+
+Opazujemo gibanje hitrosti $u$ v $x$-smeri na majhnem delcu volumna. Recimo, da je $u_{x1} < u_{x2}$, 
+za hitrosti $u_{x1}$ in $u_{x2}$ na spodnji in zgornji stranici volumna, ki ju označimo $\triangle A_y$
+in razdaljo med stranicama $\triangle y$. Intuitivno lahko privzamemo, da velja 
+$$
+\triangle F_x = F_{x_2} - F_{x_1} \propto \frac{(u_{x2} - u_{x1})\triangle A_y}{\triangle y} = \frac{\triangle u_x\triangle A_y}{\triangle y}.
+$$
+Koeficient sorazmernosti imenujemo dinamična viskoznost $\mu$. Potem je strižna napetost 
+v smeri $x$ zaradi razlike sil v $y$ smeri enaka
+$$
+\tau_{yx} = \lim_{\triangle y \rightarrow 0} \frac{\triangle F_x}{\triangle A_y} = 
+\lim_{\triangle y \rightarrow 0} \mu \frac{\triangle u_x \triangle A_y}{\triangle y\triangle A_y} = 
+\lim_{\triangle y \rightarrow 0} \mu \frac{\triangle u_x}{\triangle y} = \mu \frac{\partial u_x}{\partial y}.
+$$
+Intuitivno nam ta količina pove, da je sprememba hitrosti v $x$ smeri, prinese majhno spremembo hitrosto v $y$
+smeri. Postopek, lahko ponovimo v vse tri smeri, kar nam da $9$ komponent, tako imenovanega 
+strižnega tenzorja $\tau$. To količino bomo povezali s tenzorjem $\tau_{ij}^R$ preko 
+Boussinesqove hipoteze. Za začetek bomo namesto filtracije $\overline{\,\,\cdot\,\,}$ uporabili 
+statistično povprečje $\langle\,\, \cdot \,\,\rangle$ iz 3. poglavja. Tenzor $\tau_{ij}^R$ je 
+enak 
+$$
+\tau_{ij}^R = \langle U_i U_j \rangle - \langle U_i \rangle \langle U_j \rangle.
+$$
+Vstavimo z zgornjo enakost Reynoldsov razcep $U_i = \langle U_i \rangle + u_i'$: 
+\begin{align*}
+\tau_{ij}^R &= \langle (\langle U_i \rangle + u_i')(\langle U_j \rangle + u_j') \rangle - \langle \langle U_i \rangle + u_i' \rangle \langle \langle U_j \rangle + u_j' \rangle = \\
+&= \langle \langle U_i \rangle \langle U_j \rangle + u_i' u_j' + \langle U_i \rangle u_j' + \langle U_j \rangle u_i' \rangle - (\langle\langle U_i \rangle\rangle +\langle u_i,'\rangle) \cdot (\langle\langle U_j \rangle\rangle + \langle u_j,'\rangle) = \\[2mm]
+&= \langle U_i\rangle \langle U_j \rangle + \langle u_i' u_j' \rangle - \langle U_i \rangle \langle U_j \rangle - \langle u_i' \rangle \langle u_j' \rangle = \\
+&= \langle u_i' u_j' \rangle
+\end{align*}
+
+Naredimo podobno povezavo, kot pri strižni napetosti. V enodimenzionalnem primeru se 
+se tok $\bd{U}$ premika v smeri($x$-smeri) povprečja toka $\langle U_x \rangle$. Ker pa se na 
+nivoju majhnih delcev pojavijo razlike v hitrostih na zgornji in spodnji strani majhne domene, 
+bo to povzročilo gibanje v $y$-smeri. 
+
+\begin{figure}[h]
+  \centering
+\includegraphics[scale=0.45]{slike/Smag.jpg}
+\caption{Gibanje hitrejših delcev(rdeče območje) inducira gibanje počasnejših delcev(modro območje), kar označuje prenos 
+gibalne količine oz. gibanje hitrosti v $y$ smeri.}
+\label{fig:reynolds}
+\end{figure}
+
+Ker gibanje, ki odstopa od povprečja, pričakujemo, da je povezano z turbulentnim
+gibanjem toka, \bd{Boussinesqova hipoteza oz. aproksimacija} pravi, da je 
+\begin{equation}
+-\tau_{ij} = -\langle u_i' u_j'\rangle = \nu_t \frac{\partial \langle U_i\rangle}{\partial x_j} = \tau_{ij}^R,
+\end{equation}
+kjer običajno $i=x$, $j=y$, $k=z$ in $\frac{\partial}{\partial x} = \frac{\partial}{\partial x_i}$, $\frac{\partial}{\partial y} = \frac{\partial}{\partial x_j}$ in 
+$\frac{\partial}{\partial z} = \frac{\partial}{\partial x_k}$. Konstanta $\nu_t>0$ se imenuje \bd{turbulentna viskoznost}, 
+ki jo prav tako treba modelirati. Poglejmo, kako ta model razširiti v višje dimenzije. 
+Začeli smo s primerom, ko gibanje toka poteka v $x$-smeri, če pa 
+pogledamo strižno napetost v $y$-smeri:
+$$
+-\langle u_j' u_i' \rangle = \nu_t \frac{\partial \langle U_j\rangle}{\partial x}.
+$$
+Ker očitno velja $\langle u_i' u_j' \rangle = \langle u_j' u_i' \rangle$, enačbi seštejemo in 
+dobimo $2$-dimenzionalen primer: 
+\begin{equation}
+\label{eq:2dmodel}
+-\langle u_i' u_j' \rangle = \nu_t \Big(\frac{\partial \langle U_i\rangle}{\partial y} + \frac{\partial \langle U_j\rangle}{\partial x}\Big).
+\end{equation}
+\begin{opomba}
+Ta postopek ne deluje če predpostavimo nestisljivostni pogoj. 
+Če v prejšnjem primeru vzamemo $i=j$:
+$$
+-\langle u_i' u_i' \rangle = 2\nu_t \frac{\partial \langle U_i\rangle}{\partial x_i}
+$$
+in člene seštejemo 
+$$
+-\sum_{i=1}^n \langle u_i' u_i' \rangle = 2\nu_t \sum_{i=1}^n \frac{\partial \langle U_i\rangle}{\partial x_i} = 2\nu_t \nabla\cdot \langle U\rangle = 0.
+$$
+Ker je leva stran neničelna (saj tok ne miruje), dobimo protisloven rezultat.
+\end{opomba}
+Za splošno dimenzijo vzamemo za model tenzorja $\langle u_i' u_j' \rangle$
+\begin{equation}
+- \langle u_i' u_j' \rangle = \nu_t \Big(\frac{\partial\langle U_i\rangle}{\partial x_j} + \frac{\partial\langle U_j\rangle}{\partial x_i}
+- \frac{1}{3} \sum_{k=1}^n \frac{\partial\langle U_k\rangle}{\partial x_k}\delta_{ij}\Big) - \frac{2}{3}k\delta_{ij},
+\end{equation}
+kjer je 
+$$k = \sum_{i=1}^n \langle u_i' u_i' \rangle$$ 
+turbulentna kinetična energija. V vektorski obliki je model enak:
+\begin{equation}
+-\langle \bd{u}' \bd{u}'^T \rangle = \nu_t \Big(\nabla\langle \bd{U}\rangle + (\nabla\langle \bd{U}\rangle)^T - \frac{1}{3}(\nabla\cdot\langle \bd{U}\rangle)I\Big) - \frac{2}{3}kI,
+\end{equation}
+Ni težko preveriti, da ta model ni v protislovju z stisljivostnim pogojem iz opombe.
+
+Ta model smo uvedli na podlagi Reynoldsovvega razcepa, ki 
+pa ima sicer lastnosti, ki so bolj prikladne za obravnavo 
+tenzorja $\tau_{ij}^R$, vendar pa nam da podlago, da nastavimo 
+model v primeru filtracije. 
+
+\begin{definicija}
+Model \bd{turbuletne viskoznosti} za $\nu_t > 0$ je 
+\begin{equation}
+\tau_{ij}^R = -\nu_t \Big(\frac{\partial \overline{U}_i}{\partial x_j} + \frac{\partial \overline{U}_j}{\partial x_i}
+- \frac{1}{3} \sum_{k=1}^n \frac{\partial \overline{U}_k}{\partial x_k}\delta_{ij}\Big) - \frac{2}{3}k\delta_{ij},
+\end{equation}
+oz. zapis preko anizotropnega rezidualnega napetostnega tenzorja
+\begin{equation}
+\tau_{ij}^{\text{anizo}} = -\nu_t \Big(\frac{\partial \overline{U}_i}{\partial x_j} + \frac{\partial \overline{U}_j}{\partial x_i}
+- \frac{1}{3} \sum_{k=1}^n \frac{\partial \overline{U}_k}{\partial x_k}\delta_{ij}\Big).
+\end{equation}
+\end{definicija}
+
+\begin{opomba}
+  \hfill 
+\begin{itemize}
+  \item Sedaj vidimo, zakaj smo v drugem poglavju uvedli definicijo 
+  anizotropnega tenzorja $\tau_{ij}^{\text{anizo}}$. Predstavlja popravek, 
+  za model turbulentne viskoznosti.
+  \item V primeru nestisljivostnega toka, se model glasi 
+  $$
+  \tau_{ij}^{\text{anizo}} = -\nu_t \Big(\frac{\partial \overline{U}_i}{\partial x_j} + \frac{\partial \overline{U}_j}{\partial x_i}\Big) = -\nu_t \overline{S}_{ij}.
+  $$
+\end{itemize}
+\end{opomba}
+
+Poglejmo si nekaj standardnih modelov oz. izbir $\nu_t$
+\subsubsection{Model Smagorinskega} 
+
+To je prvi model simulacije velikih turbulentnih vrtincev, ki 
+ga je leta 1963 predlagal ameriški meterolog Joseph Smagorinsky.
+Podlaga za izpeljavo $\nu_t$ je dimenzijska analiza. Enota za $\nu_t$ je
+$$
+[\nu_t] = \frac{[m^2]}{[s]} = \frac{[m]}{[s]} \times [m] = [U_0] \times [l_0].
+$$
+Imamo oceno $\nu_t \sim U_0 l_0$, za neznano hitrost $U_0$ in $l_0$.
+Smagorinsky je domneval, ker je model odvisen od tenzorja $\overline{S}_{ij}$, da je 
+proporcionalen z velikostjo tega tenzorja, tj. $U_0 \sim \sqrt{S_{ij} S_{ij}}$.
+Ker se enote ne ujemajo dodamo izrazu dolžino $l_0$ in normalizacijsko konstanto $\sqrt{2}$.
+Torej je $U_0 = l_0\sqrt{2 S_{ij} S_{ij}}$. 
+Kakšna pa bi bila smiselna izbira za $l_0$? Ker nam filtracija 
+odstrani vse vrtince manjše od filterske dolžine $\Delta$. Torej lahko 
+pričakujemo $l_0 = C_s \Delta$ za $C_s\in (0, 1)$. Shockney Lilly je leta $1967$
+izračunal zelo dobro oceno za $C_s$, ki je enaka 
+$$
+C_s = \frac{1}{\pi} \Big(\frac{2}{3C}\Big)^\frac{3}{4} \approx 0.17.
+$$
+Za model Smagorinskega velja, da zadošča vsem invariancam iz prejšnjega razdelka
+z izjemo invariance raztezanja, kar nam namiguje, da je model dober. 
+
+\subsubsection{Dinamični model Smagorinskega}
+
+Naslednji model je variacija modela Smagorinskega. Ideja je da 
+filtrirane Navier-Stokesove enačbe filtriramo ponovno z novo homogeno
+filtracijsko funkcijo, ter da novo konstanto parametrizarmo, da je odvisna od $\bd{x}$ in $t$
+tj. $C = C(\bd{x}, t)$. Označimo drugo filtracijo z $\widehat{\,\,\cdot\,\,}$.
+Filtriramo filtrirano Navier-Stokesovo enačbo 
+$$
+\frac{\partial \widehat{\overline{U}_j}}{\partial t} + \frac{\partial \widehat{\overline{U_i}\, \overline{U_j}}}{\partial x_i} = -\frac{1}{\rho} \frac{\partial \hat{\overline{P}}}{\partial x_j} 
+- \frac{\partial \mathbb{K}_{ij}^R}{\partial x_i}+ \nu \frac{\partial^2 \widehat{\overline{U}}_j}{\partial x_i \partial x_i} + \hat{\overline{f}}_j,
+$$
+kjer je nov rezidualni tenzor enak $\mathbb{K}_{ij}^R = \widehat{\tau_{ij}^\text{anizo}} = \widehat{\overline{U_i U_j}} - \widehat{\overline{U_i}} \widehat{\overline{U_j}}$.
+Pomembna količina, ki jo definiramo je Germanova identite 
+$$
+\mathbb{L}_{ij} = \mathbb{K}_{ij} - \widehat{\tau_{ij}^\text{anizo}} = \widehat{\overline{U_i} \,\overline{U_j}} - \widehat{\overline{U_i}}\, \widehat{\overline{U_j}}.
+$$
+Pomebnost tenzorja $\mathbb{L}$ se bo pokazala kmalu, saj je 
+odvisna od iskanih količin $\overline{U_i}$. 
+Model Smagorinskega za dvojno filtrirano Navier-Stokesovo enačbo je
+$$
+\mathbb{K}_{ij}^\text{anizo} = \mathbb{K}_{ij}^R - \frac{1}{3} \text{tr}(\mathbb{K}_{ij}^R) \delta_{ij} = C_s(\bd{x}, t) \widehat{\Delta}^2 (2 \widehat{\overline{S_{ij}}} \,\widehat{\overline{S_{ij}}})^\frac{1}{2} \,\widehat{\overline{S_{ij}}},
+$$
+za filtersko dolžino $\widehat{\Delta}$ druge filtracije, 
+med tem ko je model Smagorinskega za prvotni problem
+$$
+\tau_{ij}^\text{anizo} = C_s(\bd{x}, t) \Delta^2 (2 \overline{S_{ij}} \,\overline{S_{ij}})^\frac{1}{2} \,\overline{S_{ij}}.
+$$
+Da dobimo enačbo za $\widehat{C_s}$, uporabimo aproksimacijo 
+$$
+\widehat{\tau_{ij}^\text{anizo}} \approx C_s(\bd{x}, t) \Delta^2 (\widehat{2 \overline{S_{ij}} \,\overline{S_{ij}})^\frac{1}{2} \,\overline{S_{ij}}}.
+$$
+Enakost velja, če je $C_s(\bd{x}, t)$ neodvisna od $\bd{x}$. 
+Iščemo funckijo $C(\bd{x}, t)$ da bo 
+\begin{align*}
+\mathbb{L}_{ij}^\text{anizo} = \mathbb{K}_{ij}^\text{anizo} - \widehat{\tau_{ij}^\text{anizo}}.
+\end{align*}
+Ekvivalentno zapišemo 
+\begin{align*}
+\mathbb{L}_{ij} - \frac{1}{3}\text{tr}(\mathbb{L}) \delta_{ij} &= \mathbb{K}_{ij} - \frac{1}{3}\text{tr}(\mathbb{K}) \delta_{ij} - \widehat{\tau_{ij}^\text{anizo}} \approx \\
+&= C_s(\bd{x}, t)(\widehat{\Delta}^2 (2 \widehat{\overline{S_{ij}}} \,\widehat{\overline{S_{ij}}})^\frac{1}{2} \,\widehat{\overline{S_{ij}}} - \Delta^2 \widehat{(2 \overline{S_{ij}} \,\overline{S_{ij}})^\frac{1}{2} \,\overline{S_{ij}}}) = \\
+&= C_s(\bd{x}, t)\mathbb{M}_{ij},
+\end{align*}
+za 
+$$
+\mathbb{M}_{ij} \coloneqq \widehat{\Delta}^2 (2 \widehat{\overline{S_{ij}}} \,\widehat{\overline{S_{ij}}})^\frac{1}{2} \,\widehat{\overline{S_{ij}}} - \Delta^2 \widehat{(2 \overline{S_{ij}} \,\overline{S_{ij}})^\frac{1}{2} \,\overline{S_{ij}}}.
+$$
+Ta sistem je preddoločen za $C_s$, zato ga lahko le redko kdaj rešimo točno.
+Rešitev iščemo po metodi najmanjših kvadratov, da minimiziramo napako
+$$
+Q = \sum_{i,j=1}^n \Big(\mathbb{L}_{ij} - \frac{1}{3}\text{tr}(\mathbb{L}) \delta_{ij} + C_s(\bd{x}, t)\mathbb{M}_{ij}\Big)^2.
+$$
+Odvajamo izraz po $C_s$:
+\begin{align*}
+  \frac{\partial Q}{\partial C_s} &= \sum_{i,j=1}^n 2\mathbb{M}_{ij}\Big(\mathbb{L}_{ij} - \frac{1}{3}\text{tr}(\mathbb{L}) \delta_{ij} + C_s(\bd{x}, t)\mathbb{M}_{ij}\Big) =\\
+  &= \sum_{i,j=1}^n \Big(2\mathbb{M}_{ij} \mathbb{L}_{ij} - \frac{2}{3} \text{tr}({\mathbb{L}}) \mathbb{M}_{ii} + 2C_s \mathbb{M}_{ij} \mathbb{M}_{ij}\Big)= \\
+  &= 2\sum_{i,j=1}^n \mathbb{M}_{ij} \mathbb{L}_{ij} + 2C_s \sum_{i,j=1}^n \mathbb{M}_{ij} \mathbb{M}_{ij} - \frac{2}{3} \text{tr}({\mathbb{L}}) \text{tr}(\mathbb{M}) = 0.
+\end{align*}
+Če upoštevamo nestisljivostni pogoj: 
+
+\begin{align*}
+\text{tr}(\overline{S}) &= 2\sum_{i=1}^n \frac{\partial \overline{U}_i}{\partial x_i} = \nabla \cdot \overline{U} = 0 \\
+&\Longrightarrow \text{tr}(\widehat{\overline{S}}) = 0 \\
+&\Longrightarrow \text{tr}(\mathbb{M}) = 0
+\end{align*}
+
+Funkcija $C_s(\bd{x}, t)$, ki minimizira $Q$ je 
+\begin{equation}
+C_s(\bd{x}, t) = - \frac{\sum_{i,j=1}^n \mathbb{M}_{ij} \mathbb{L}_{ij}}{\sum_{i,j=1}^n \mathbb{M}_{ij} \mathbb{M}_{ij}}(\bd{x}, t).
+\end{equation}
+Da je to res minimum, preverimo, da je drugi odvod pozitiven: 
+$$
+\frac{\partial^2 Q}{\partial C_s^2} = 2\sum_{i,j=1}^n \mathbb{M}_{ij} \mathbb{M}_{ij} > 0.
+$$
+Modelu, ki smo ga izpeljali, pravimo \bd{dinamični model Smagorinskega} in zadošča vsem invariantam Navier-Stokesove enačbe.
+Sedaj naštejemo še nekaj več modelov brez natačnejše analize 
+\begin{itemize}
+  \item Gradientni model:
+  $$
+  \tau_{ij}^\text{anizo} = -\frac{\Delta^2}{12} J_{\overline{\bd{U}}} J_{\overline{\bd{U}}}^T,
+  $$
+  kjer je $J$ Jacobijeva matrika.
+  \item Taylorjev model:
+  $$
+  \tau_{ij}^r = -\frac{\Delta^2}{12} J_{\overline{\bd{U}}} J_{\overline{\bd{U}}}^T + \Delta^2 \sqrt{2\overline{S_{ij}}\,\overline{S_{ij}}}\,\, \overline{S_{ij}}
+  $$
+  \item Racionalni model:
+  $$
+  \tau_{ij}^r = -\frac{\Delta^2}{12} G*(J_{\overline{\bd{U}}} J_{\overline{\bd{U}}}^T) + \Delta^2 \sqrt{2\overline{S_{ij}}\,\overline{S_{ij}}}\,\, \overline{S_{ij}}
+  $$
+  za Gaussovo filtracijsko funkcijo $G$.
+\end{itemize}
 
 
 \end{document}
