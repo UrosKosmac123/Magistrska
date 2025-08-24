@@ -2254,13 +2254,13 @@ Intuitivno ta količina pove, kako podobno se hitrosti $u_i$ in
 $u_j$ obnašata t.j. večja, kot bo količina $R_{ij}$ bolj sta si hitrosti 
 podobni (npr. dva žogici v vodnem toku, ki sta zelo blizu imata podobno pot) oz. 
 manjša kot je korelacija bolj sta si hitrosti različni (npr. dva lista, ki padeta 
-iz drevesa in sta zelo narazen, bosta skoraj gotovo imela zelo različno pot).
+iz drevesa ki sta zelo narazen, bosta skoraj gotovo imela zelo različno pot).
 
 \begin{lema}
 \label{homogenost2}
 Če je $\bd{U}$ homogen slučajni vektor, je
 dvo-točkovna korelacija $R(\bd{r}, \bd{x}, t)$ neodvisna od druge komponente.
-Označimo \\ $R(\bd{r}, \bd{x}, t) = R(\bd{r}, 0, t) = R(\bd{r}, t)$
+Označimo $R(\bd{r}, \bd{x}, t) = R(\bd{r}, 0, t) = R(\bd{r}, t)$
 \end{lema}
 
 \begin{dokaz}
@@ -2297,8 +2297,8 @@ Po prejnji lemi \ref{homogenost2}, druga enakost sledi.
 Sedaj si poglejmo, kako nam dani koncepti pomagajo pri analizi 
 energije. Naj bo $\bd{U}$  homogen slučajni vektor, periodičen v $L>0$, ki predstavlja naš tok. 
 Lahko predpostavimo, da je $\langle \bd{U}(\bd{x}, t) \rangle = 0$. Naslednja 
-smiselna statistika za analizo je kovarianca oz. če obravnavamo eno 
-slučajno spremenljivko varianca 
+smiselna statistika za analizo je kovarianca oz. če obravnavamo en 
+slučajen vektor varianca 
 $$
 \text{var}(\bd{U}) = \text{cov}(\bd{U}, \bd{U}) = \langle \bd{U} \bd{U}^T \rangle - \langle \bd{U} \rangle \cdot \langle \bd{U} \rangle^T = \langle \bd{U} \bd{U}^T \rangle
 $$
@@ -2322,8 +2322,8 @@ Ker je $\bd{u}$ zvezna, po Fubinijevem izreku lahko zapišemo
 \begin{align*}
 = \left\langle \frac{1}{L^{2n}} \int_{[0, L]^{n}} \int_{[0, L]^{n}} \bd{u}(\bd{x}, t) \cdot \bd{u}^T(\bd{x}', t) e^{-i(\bd{\text{$\kappa$}}_{\bd{k}}\cdot \bd{x} + \bd{\text{$\kappa$}}_{\bd{l}}\cdot \bd{x}')} \dif\bd{x} \dif\bd{x}' \right\rangle
 \end{align*}
-Uvedemo novo neznanko v notranji integral $\bd{x} = \bd{r} + \bd{x}'$ $\Longrightarrow$ $\dif\bd{x} = \dif\bd{r}$, ter operacijo povprečenja lahko premaknemo v integrand, ker 
-je $\bd{u}$ gladko:
+Uvedemo novo neznanko v notranji integral $\bd{x} = \bd{r} + \bd{x}'$ $\Longrightarrow$ $\dif\bd{x} = \dif\bd{r}$, ter operacijo povprečenja premaknemo v integrand, ker 
+je $\bd{u}$ gladka:
 \begin{align*}
 = \frac{1}{L^{2n}} \int_{[0, L]^{n}} \int_{[0, L]^{n} - \bd{x}'} \left\langle\bd{u}(\bd{x}' + \bd{r}, t) \cdot \bd{u}^T(\bd{x}', t)\right\rangle  e^{-i((\bd{\text{$\kappa$}}_{\bd{k}} + \bd{\text{$\kappa$}}_{\bd{l}})\bd{x}' + \bd{\text{$\kappa$}}_{\bd{k}} \cdot \bd{r})} \dif\bd{r} \dif\bd{x}' 
 \end{align*}
@@ -2338,7 +2338,8 @@ Potrebujemo še eno lemo, ki nam pove, da je notranji integral
 neodvisen od $\bd{x}'$
 
 \begin{lema}
-Naj bo $\bd{f} \in C([0, L]^n)$ vektorko polje, ki je periodično za $L>0$ in $\bd{a}\in \R^n$. Potem je 
+Naj bo $\bd{f} \in C([0, L]^n)$ vektorko polje, ki je periodično za 
+$L>0$ in $\bd{a}\in \R^n$. Potem je 
 \begin{equation*}
 \int_{[0, L]^n + \bd{a}}\bd{f}\,(\bd{x}) \dif\bd{x} = \int_{[0, L]^n} \bd{f}\,(\bd{x}) \dif\bd{x}
 \end{equation*} 
@@ -2347,7 +2348,7 @@ Naj bo $\bd{f} \in C([0, L]^n)$ vektorko polje, ki je periodično za $L>0$ in $\
 \begin{dokaz}
 Definiramo funkcijo 
 $$
-g(\bd{a}) \coloneqq \int_{[0, L]^n + \bd{a}}\bd{f}\,(\bd{x}) \dif\bd{x} 
+g(\bd{a}) \coloneqq \int_{[0, L]^n + \bd{a}}\bd{f}\,(\bd{x}) \dif\bd{x}.
 $$
 Razpišemo integrale po intervalih in izračunamo parcialni odvod
 \begin{align*}
@@ -2389,7 +2390,7 @@ Kovarianca se poenostavi
 \end{align*}
 Kovarianca oz. kovariančna matrika vsebuje vse informacije o kinetični energiji toka, 
 v danem valovnem številu.
-$\bd{U}$, zgornja izpeljava pa je pokazala, da je za analizo te energije potrebno obravnavati 
+Zgornja izpeljava pa je pokazala, da je za analizo te energije dovolj obravnavati 
 $\hat{R}$. To je motivacija za naslednjo definicijo, preden jo zapišemo, 
 lahko dobljeni rezultat malo posplošimo. Preko transformacije $\bd{x} = \bd{s} - \frac{L}{2}(1, \dots, 1)$, 
 se integral premakne na simetrične intervale 
@@ -2400,7 +2401,7 @@ Fourierova transformacija :
 \end{align*}
 Prednost uporabe tega zapisa je, da periodičnost ni več potrebna. Čeprav
 v določenih primerih, kjer so domene majhne, ta približek ne bo nujno dober, 
-je za primere atmosfere zalo natančen. Druga prednost tega zapisa je, da je 
+je za primere atmosfere dovolj natančen. Druga prednost tega zapisa je, da je 
 spremenljivka $\bd{\text{$\kappa$}}_{\bd{k}} \rightarrow \bd{\text{$\kappa$}}$
 zvezna in ne diskretna.
 
@@ -2426,6 +2427,7 @@ tenzor, prirejen slučajnemu vektorju $\bd{U}$. Potem velja:
 \end{trditev}
 
 \begin{dokaz}
+\hfill
 \begin{enumerate}
   \item[i)] 
   \begin{align*}
@@ -2528,19 +2530,19 @@ Do sedaj smo videli pomembnost dvo-točkovne korelacije in kovariance.
 Zaradi hipoteze o lokalni izotropiji, se lahko pri obravnavi 
 energije turbulentih tokov, omejimo na hitrostno-spektralni tenzor $\Phi(\text{\bd{$\kappa$}}, t)$. 
 Nažalost, tudi če se omejimo na tri dimenzionalen primer, 
-je tenzor daleč on enostavnega. Bomo pa v tem razdelku videli, 
+je tenzor vse prej kot enostaven. V tem razdelku bomo pokazali, 
 da nam predpostavka o izotropiji omogoča, da tenzor $\Phi$ zapišemop 
 preko enostavneše funkcije, ki ji pravimo energijsko spektralna funkcija.
-Obliko te, bo pa posledica Kolomogorovih podobnostnih hipotez. 
+Obliko te, bo sledila iz Kolomogorovih podobnostnih hipotez. 
 
 \begin{definicija}
-Naj bo $\bd{U}$ slučajni vektor, in $\Phi(\text{\bd{$\kappa$}}, t)$ 
+Naj bo $\bd{U}$ slučajni vektor in $\Phi(\text{\bd{$\kappa$}}, t)$ 
 hitrostno-spektralni tenzor, prirejen $\bd{U}$. Potem je \bd{energijsko spektralna funkcija} $E: [0, \infty) \rightarrow \R$, dana
 s predpisom
 \begin{equation}
 E(\kappa, t) = \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \frac{1}{2} \text{tr}(\Phi(\text{\bd{$\kappa$}}, t)) \dif \text{\bd{$\kappa$}}
 \end{equation}
-in enodimenzionalna spekralna funkcija enaka 
+in enodimenzionalna spektralna funkcija enaka 
 \begin{equation}
 E_{ij}^k (\bd{\text{$\kappa$}} \cdot \bd{e}_k) = \frac{1}{\pi} \int_\R R_{ij}(r\bd{e}_k) e^{-i(\bd{\text{$\kappa$}} \cdot \bd{e}_k)r} \dif r.
 \end{equation}
@@ -2556,19 +2558,19 @@ $$
 $$
 \item $E_{ij}^k$ je povezana s $\Phi$ preko 
 $$
-E^k_{ii}(\bd{\text{$\kappa$}} \cdot \bd{e}_k) = 2 \int_{\R^{n-1}} \Phi_{ii}(\bd{\text{$\kappa$}}) \dif \hat{\bd{\text{$\kappa$}}_k},
+E^k_{ij}(\bd{\text{$\kappa$}} \cdot \bd{e}_k) = 2 \int_{\R^{n-1}} \Phi_{ij}(\bd{\text{$\kappa$}}) \dif \hat{\bd{\text{$\kappa$}}_k},
 $$
 kjer je $ \dif \hat{\bd{\text{$\kappa$}}_k} = \dif \kappa_1 \dots \dif \kappa_{k-1} \dif \kappa_{k+1} \dots \dif \kappa_{n}$
 \end{itemize}
 \end{opomba}
 
 Navedimo še dve definiciji, ki sta pomembni pri obravnavi energije 
-turbulentnih tokov in nam, da razlog za obravnavo tenzorja $\Phi$
+turbulentnih tokov in utemeljita zakaj je obravnava tenzorja $\Phi$ smiselna.
 
 \begin{definicija}
 \textbf{Turbulentna kinetična energija} je funkcija $k:\R^+ \rightarrow \R^+$ dana s predpisom
 \begin{equation}
-k(t) = \frac{1}{2} \text{tr}(R(0, t)) = \frac{1}{2} \sum_{i=1}^{n} \langle u^2(0, t) \rangle = \int_{0}^\infty E(\kappa, t) \dif \bd{\text{$\kappa$}}
+k(t) = \frac{1}{2} \text{tr}(R(0, t)) = \frac{1}{2} \sum_{i=1}^{n} \langle u^2(0, t) \rangle = \int_{0}^\infty E(\kappa, t) \dif \kappa.
 \end{equation}
 \end{definicija}
 
@@ -2627,7 +2629,7 @@ $A$, $B$ in $E$.
 &= ({n A(\kappa, t)} + {B(\kappa, t) \kappa^2}) \frac{S_{n-1}(\kappa)}{2} = \\
 &= ({- n B(\kappa, t)}\kappa^2 + {B(\kappa, t) \kappa^2}) \frac{S_{n-1}(\kappa)}{2},
 \end{align*}
-kjer je $S_{n-1}(\kappa)$ površina $n-1$-dimenzionalne krogle z radijem
+kjer je $S_{n-1}(\kappa)$ površina $(n-1)$-dimenzionalne krogle z radijem
 $\kappa$ 
 $$
 S_{n-1}(\kappa) = \frac{2\pi^{\frac{n}{2}}}{\Gamma(\frac{n}{2})} \kappa^{n-1}.
@@ -2641,7 +2643,7 @@ Iz zadnje izpeljave izrazimo $B$ in vstavimo v $\Phi$
   &= \frac{2E((|\text{\bd{$\kappa$}}|, t))}{S_{n-1}(|\text{\bd{$\kappa$}}|)(n-1)} P(\text{\bd{$\kappa$}}),
 \label{hitrostno_spektralni_tenzor_izotropija}
 \end{align}
-kjer smo s $P$ označili ortogonalno projekcijo 
+kjer smo s $P$ označili ortogonalni projektor 
 $$
 P(\text{\bd{$\kappa$}}) = I - \frac{1}{|\text{\bd{$\kappa$}}|^2}\text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T.
 $$
@@ -2657,7 +2659,7 @@ ali lahko določimo $E$? V splošne je odgovor ne, vendar nam v posebnem
 primeru Kolmogorovi podobnostni hipotezi omogočata, da določimo
 $E$ na pravem območju.
 
-Obstajajo empirične izpeljave te porazdelitve, mi pa se bomo lotili, 
+Obstajajo empirične izpeljave te porazdelitve, mi pa se bomo lotili 
 problema bolj formalno. Naslonili se bomo na izrek Buchingham $\pi$.
 Preden ga navedemo in dokažemo, navedimo nekaj pojmov. 
 
@@ -2712,7 +2714,7 @@ Preden ga navedemo in dokažemo, navedimo nekaj pojmov.
 
  \begin{definicija}
  Naj bodo $1, F_1$, \dots, $F_n$ formalne spremenljivke, ki predstavljajo 
- osnovne fizikalne enote. Definiramo množico osnovnih $\mathcal{B}$, kot 
+ osnovne fizikalne enote. Definiramo množico osnovnih enot $\mathcal{B}$, kot 
  množico urejenih parov: 
  $$
  \mathcal{B} = \{(\alpha_i, F_i) \,|\, i= 1, \dots, n, \, \alpha_i \geq 0\} \cup \{(\alpha_0, 1) \,|\, \alpha_0 \geq 0\}.
@@ -2729,7 +2731,7 @@ Za dane pare definiramo
   $$
   (1, 1) = 1.
   $$
-  \item ter obrljiv element kot 
+  \item Obrljiv element kot 
   $$
   (\alpha_i(F_i)\cdot [F_i])^{-1} = \frac{1}{\alpha_i{(F_i)}} \cdot [F_i^{-1}].
   $$
@@ -2743,6 +2745,7 @@ $$
 \end{definicija}
 
 \begin{opomba}
+\hfill
 \begin{itemize}
  \item Če množimo enake osnovne enote bomo označevali
   \begin{align*}
@@ -2756,6 +2759,10 @@ $$
 \end{itemize}
 \end{opomba}
 
+\begin{definicija}
+Enota $\alpha\cdot[F] \in \mathcal{F}$ je brezdimenzijska, če je $[F] = 1$.
+\end{definicija}
+
 Naslednja trditev, katere dokaz je enostaven in ga izpustimo, vendar je pomemben: 
 
 \begin{trditev}
@@ -2764,7 +2771,7 @@ Prostor $\mathcal{F}$ opremeljen z operacijo
 \R \times \mathcal{F} &\rightarrow \mathcal{F} \\
 (\lambda, \alpha[F]) &\mapsto (\lambda \cdot \alpha)[F]
 \end{align*}
-je vektorski prostor nad $\R$.
+je vektorski prostor nad $\R$, ki je izomorfen 
 \end{trditev}
 
 \begin{primer}
@@ -2772,11 +2779,11 @@ je vektorski prostor nad $\R$.
  $T$ (sekunda), $L$ (meter), $M$ (kilogram), $K$ (kelvin), $N$ (mol), $I$ (amper) in $C$ (kandela).
  Potem je $\mathcal{F}$ prostor vseh fizikalnih količin
  $$
- \mathcal{F} = \{\alpha \cdot [T^{k_1} L^{k_2} M^{k_3} K^{k_4} N^{k_5} I^{k_6} C^{k_7}] \mid i = 1, \dots, 7: k_i \in \Z\}.
+ \mathcal{F} = \{\alpha \cdot [T^{k_1} L^{k_2} M^{k_3} K^{k_4} N^{k_5} I^{k_6} C^{k_7}] \mid i = 1, \dots, 7 \text{ in } k_i \in \Z\}.
  $$
  Na primer enota $T^{-2}L^1M^1$ predstavlja silo. Zaradi trditve, lahko 
  vsako enoto predstavimo, kot vektor v $\Z^7$, torej lahko silo zapišemo kot 
- $(-2, 1, 1, 0, 0, 0, 0)$
+ $(-2, 1, 1, 0, 0, 0, 0)$ oz. $1N$ kot $1 \cdot (-2, 1, 1, 0, 0, 0, 0)$.
  \end{primer}
 
 Ključna koncept, ki se bo pojavil pri dokazu izreka je pretvorba enote npr.
