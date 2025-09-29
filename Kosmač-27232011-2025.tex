@@ -4246,5 +4246,277 @@ Sedaj naštejemo še nekaj več modelov brez natačnejše analize
   za Gaussovo filtracijsko funkcijo $G$.
 \end{itemize}
 
+\section{Model MicroHH}
+
+V zadnjem poglaju se posvetimo konkretnemu računalniškem modelu 
+MicroHH in rezultatom, ki nam jih simulacija vrne. Rezultate 
+simulacije smo primerjali z rezultati 
+meteorološkega modela Aladin. Med tem ko se MicroHH uporablja 
+primarno za razreševanje majhnih skal pri visoki ločljivosti, 
+Aladin da napovedi na veliko večji domeni, vendar pri manjši 
+ločljivosti. Druga ključna razlika je, da je MicroHH narejen 
+primarno za analiranje turbulence preko direktnih numeričnih 
+simulacij ali simulacij preko velikih turbulentnih vrtincev, med tem 
+ko ima Aladin precej širšo vlogo, primarno napovedovanje vremenskih 
+razmer.
+
+\subsection{Domena, časovni korak, začetni in robni pogoji}
+
+Obravnavamo dve domeni: prva je Planica v času smučarskih skokov, druga 
+pa Ljubljansko barje. Bolj natančno, velikost 
+domene določimo tako, da se odločimo za velikost ene celice in 
+število celic, ki pokrijejo naš prostor. V našem primeru, ker so lastnosti 
+turbulence lokalne kot sta disipativnost in difuzivnost, želimo 
+izbrati čim manjše celice. Velikost doline, ki jo obravnavamo je 
+$x = 14.08$km, $y = 17.92$km in $z = 7.04$km. Velikost celic smo izbrali
+$x_c=40$m, $y_c=40$m in $z_c=20$m. Število točk v smereh $x$, $y$ in $z$ je 
+\begin{align*}
+n_x = \frac{x}{x_c} = 352, \\
+n_y = \frac{y}{y_c} = 448, \\
+n_z = \frac{z}{z_c} = 352.
+\end{align*}
+
+Za Ljubljasnko barje smo izbrali domeno velikosti $x= 10.88$km, 
+$y = 11.52$km, in $z = 5.12$km. Velikost celic je enaka kot v primeru Planice.
+
+V primeru Planice je čas opazovanja se začne ob 7.00 zjutraj in konča ob 10.00, 
+zato je časovni interval opazovanj tri ure oz. rešitve iščemo na 
+intervalu $[0, 10800]$ ($3h = 10800$s). Za Ljubljansko barje je čas
+opazovanja med 5.00 in 10.00, torej $[0, 18000]$.
+Čas opazovanja na barju je 
+
+Začetne hitrosti vetrov $u(x, 0)$, $v(x, 0)$ in $w(x, 0)$ so enake 
+vrednostim v modelu Aladin pri istem času. 
+Model uporablja Dirichletove robne pogoje, kjer na robovih domene nastavimo 
+konstante vrednosti.
+
+Integracija poteka, po časovnih korakih največje velikosti $\dif t_{\text{max}} = 2$, vendar pa časovni 
+korak ni fiksen ampak se zaradi želje po konvergenci spreminja. Pogoju s
+katerem časovni korak prilagajamo pravimo 
+CFL(Courant-Friedrichs-Lewy) število. Ponazorimo, ga na posebnem 
+primeru enodimenzionalne Navier-Stokesove enačbe, ki ji tudi pravimo 
+Burger-jeva enačba
+$$
+\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = 0.
+$$
+Če enačbo diskretiziramo z metodo končnih diferenc na ekspliciten način, dobimo:
+\begin{align*}
+\frac{u_k^{n+1} - u_k^{n}}{\Delta t} + \frac{u_{k-1}^{n} - u_{k-1}^{n}}{\Delta t} = 0.
+\end{align*}
+Tu indeks $n$ označuje časovni korak, med tem ko indeks $k$ označuje prostorski korak (v $x$ smeri).
+Ker nas zanima gibanje v času izrazimo $u_i^{n+1}$:
+$$
+u_k^{n+1} = u_k^{n} - u\frac{u \Delta t}{\Delta x}(u_{k}^{n} - u_{k-1}^{n}).
+$$
+Količini $\frac{u \Delta t}{\Delta x}$ pravimo število CFL in ga bomo 
+tudi označevali na enak način. Če lahko to ocenimo na tak način, da
+nam zagotovi konvergenco iteracije, nam bo to povedalo kako velik 
+časovni korak lahko naredimo, da bo metoda konvergentna.
+Za oceno uporabimo razvoj v Fourierovo vrsto. Običajno je pri analizi
+ napake večina členov vrste zanemarljiva, zato lahko namesto celotne 
+ vrste obravnavamo le, za po velikosti največji člen 
+ $A^n e^{i\kappa k}$, za nek $n\in \mathbb{N}$ in valovno število 
+ $\kappa$. Vstavimo v rekurzivno enačbo $u_k^n = A^n e^{i\kappa k}$
+\begin{align*}
+A^{n+1} e^{i\kappa k} &= A^n e^{i\kappa k} - CFL (A^n e^{i\kappa k} - A^n e^{i\kappa (k-1)}) \\
+A^{n+1} &= A^n - CFL (A^n - A^n e^{-i\kappa}) \\ 
+\frac{A^{n+1}}{A^n} &= 1 - CFL(1 - e^{-i\kappa}).
+\end{align*}
+Vrednost $A^n$ je amplituda pri danem valovnem številu v $n$-tem časovnem koraku. Če želimo, da je naša rešitev $u$ obstaja mora veljati $\Big|\frac{A^{n+1}}{A^n}\Big| \leq 1$. Da dobimo CFL pogoj, moramo rešiti ali usaj oceniti neenačbo 
+$$
+|1 - CFL(1 - e^{-i\kappa})| \leq 1. 
+$$
+Označimo $z = 1 - e^{-i\kappa}$. Neenakost kvadriramo in upoštevamo dejstvo, da je 
+$z+\overline{z} = |z|^2$:
+\begin{align*}
+  |1 - CFL z|^2 &\leq 1 \\
+  (1 - CFL\cdot z)(1- CFL\cdot \overline{z}) &\leq 1 \\
+  1 - CFL(z + \overline{z}) + CFL^2 |z|^2 &\leq 1 \\
+  - CFL|z|^2 + CFL^2 |z|^2 &\leq 0 \\
+  |z|^2 CFL(CFL - 1)&\leq 0.
+\end{align*}
+Če je $z \neq 0$ (kar je res za skoraj vsak $\kappa \in [0, 2\pi)$), sledi da 
+so dopustne vrednosti CFL na intervalu $[0, 1]$. Podobna analiza 
+za Navier-Stokesove enačbe je precej bolj zahtevna. Vendar pa rezultati
+kažejo, da je največja smiselna vrednost $CFL = 1$, običajno pa se giblje okoli $0.3$.
+Metoda s katero rešujemo enačbe je Runge-Kutta metoda $4$. reda.
+
+\subsection{Fizika modela}
+\subsubsection{Enačbe modela}
+MicroHH je bolj sofisticiran model, kot je predstavljen v delu. Osnova je sicer enaka, vendar smo v MicroHH simulaciji vključili še ostale fizikalne količine, ki vplivajo na vremensko napoved oz. na obnašanje vetra. Primarno so to nek vsiljen veter, vlaga zraka, termodinamika, sevanje sonca ter mikrofiziko, kar je primarno vpliv snega in ledu, ki se lahko pojavita. Enačbe samo naštejemo, saj bi izpeljevanje vseh zakon potrebovalo predstaviti vso fizikalno podlago, kar bi bilo zamudno. Začnemo z znanim zakonom, t.j. zakon o ohranitvi mase 
+$$
+\nabla \cdot \textbf{U} = 0.
+$$
+Naslednji zakoni, ki jih sicer že poznamo kot zakon o ohranitvi skalarja in gibalne količine, bosta zaradi uvedbe vlage nekoliko drugačna. 
+Termodinamična enakost, ki uvede temperaturo pod vplivom vlage 
+$\theta_v$ in se imenuje virtualna potencialna temoeratura je 
+\begin{equation}
+\frac{\theta_v'}{\theta_{v0}} = - \frac{\rho'}{\rho_0},
+\end{equation}
+kjer so $\theta_v'$ perturbacijska virtualna potencialna temperatura, $\rho'$ perturbacijska gostota, $\rho_0 = \rho_0(z)$ referenčna gostota in $\theta_{v0}$ referenčna virtualna potencialna temperatura.
+
+Zakon o ohranitvi gibalne količine se glasi:
+\begin{equation}
+\frac{\partial \textbf{U}}{\partial t} + (\textbf{U} \cdot \nabla)\textbf{U} = -\frac{1}{\rho_0}\nabla p' + \nu \nabla^2 \textbf{U} + \frac{\theta_v'}{\theta_{v0}} \textbf{e}_3 + \tau^{\text{anizo.}} + \textbf{F},
+\end{equation}
+kjer je edina razlika s prvotnimi enačbami, člen virtualne temperature
+in tlak zamenjamo s perturbacijskim tlakom. Enačbo reušujemo v tri dimenzionalnem prostoru, 
+torej $n=3$ oz. tri enačbe. 
+
+Zakon o ohranitvi skalarja se za skalar $\phi$ glasi:
+\begin{equation}
+\frac{\partial \phi}{\partial t} + \frac{1}{\rho_0}\nabla \cdot (\rho_0 \phi\textbf{U}) = \gamma \nabla^2 \phi
+\end{equation}
+V našem primeru imamo dve glavni skalarni količini: (potencialna) 
+temperatura $T$ in vlaga $q$. Enačbi sta: 
+\begin{equation}
+  \frac{\partial T}{\partial t} + \mathbf{U}\cdot\nabla T
+   = \kappa_T \nabla^2 T + S_T, 
+\end{equation}
+za $\kappa_T$ - toplotno difuzivnost in $S_T$ - vir toplote npr. sevanje, 
+ter 
+\begin{equation}
+  \frac{\partial q}{\partial t} + \mathbf{u}\cdot\nabla q
+   = \kappa_q \nabla^2 q + S_q
+\end{equation}
+za $\kappa_q$ - vlažna difuzivnost in $S_q$ - vir vlage npr. kondenzacija, evaporacija.
+Za konec dodamo še enačbo stanja oz. tlačna enačba:
+\begin{equation}
+    p = \rho R_d T_v,
+\end{equation}
+kjer je $R_d$ specifična plinska konstanta za suhi zrak in $T_v$ virtualna temperatura, dana
+z $T_v = T \left( 1 + 0.61 q_v - q_l \right)$, kjer sta $q_v$ specifična vlaga in 
+$q_l$ vlaga v oblakih.
+
+\subsubsection{Sevanje}
+
+Upoštevamo tako \text{kratkovalovno sončno sevanje} kot tudi \text{dolgovalovno sevanje}, ki ga oddajajo tla in oblaki. 
+Za opis interakcije med oblaki in sevanjem uporabimo \textbf{GCSS-parametrizacijo}, ki je preprosta, a računsko hitra. 
+Takšna parametrizacija omogoča zajem glavnih povratnih vplivov med oblaki in sevanjem.
+
+\subsubsection{Mikrofizika oblakov}
+
+Za opis pretvorb med različnimi agregatnimi stanji vode 
+(vodna para, kapljice, dež, sneg, led) uporabljamo 
+\textbf{enomomentno shemo za led}. Shema parametrizira glavne 
+mikrofizikalne procese, kot so kondenzacija, evaporacija, zmrzovanje, 
+taljenje in avtokonverzija med kapljicami in dežnimi kapljami.
+
+\subsubsection{Zgornji blažilni sloj}
+
+V zgornjem delu domene dodamo \textbf{blažilni sloj} (angl. \emph{buffer layer}),
+ki postopoma duši vertikalna gibanja. Ta pristop preprečuje, da bi se 
+gravitacijski valovi, ki dosežejo zgornjo mejo domene, nefizikalno 
+odbijali nazaj navzdol. Na ta način so gibanja v notranjosti domene 
+nedotaknjena, v zgornjih nivojih pa se valovna energija postopoma 
+absorbira.
+
+\subsection{Rezultati simulacij}
+
+Za zaključek predstavimo nekaj rezultatov simulacij, ki smo jih izvedli z modelom MicroHH.
+Najprej poglejmo naši domeni oz. orografiji:
+\begin{figure}[h!]
+  \centering
+  % Planica
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{rezultati/dem_planica.png}
+    \caption{Orografija Planice.}
+    \label{fig:planica}
+  \end{subfigure}\hfill
+  % Ljubljansko barje
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{rezultati/barje_dem.png}
+    \caption{Orografija Ljubljanskega barja.}
+    \label{fig:barje}
+  \end{subfigure}
+  \label{fig:orography_sidebyside}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  % Planica
+  \begin{subfigure}[b]{1\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{rezultati/tv_barje_long_3.pdf}
+    \caption{Graf virtualne temperature $T$ v odvisnoti od višine, kjer smo 
+    rezultat dobili ob času 8.00.}
+    \label{fig:planica}
+  \end{subfigure}\hfill
+  % Ljubljansko barje
+  \begin{subfigure}[b]{1\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{rezultati/tv_barje_long_4.pdf}
+    \caption{Graf virtualne temperature $T$ v odvisnoti od višine, kjer smo 
+    rezultat dobili ob času 9.00.}
+    \label{fig:barje}
+  \end{subfigure}
+  \label{fig:orography_sidebyside}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  % Planica
+  \begin{subfigure}[b]{1\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{rezultati/rh_barje_long_3.pdf}
+    \caption{Graf vlage $q$ v odvisnoti od višine, kjer smo 
+    rezultat dobili ob času 8.00.}
+    \label{fig:planica}
+  \end{subfigure}\hfill
+  % Ljubljansko barje
+  \begin{subfigure}[b]{1\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{rezultati/rh_barje_long_4.pdf}
+    \caption{Graf vlage $q$ v odvisnoti od višine, kjer smo 
+    rezultat dobili ob času 9.00.}
+    \label{fig:barje}
+  \end{subfigure}
+  \label{fig:orography_sidebyside}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  % Planica
+  \begin{subfigure}[b]{1\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{rezultati/u_planica_long_3.pdf}
+    \caption{Graf hitrosti vetra $x$-komponente $u$ v odvisnoti od višine, kjer smo 
+    rezultat dobili ob času 9.00.}
+    \label{fig:planica}
+  \end{subfigure}\hfill
+  % Ljubljansko barje
+  \begin{subfigure}[b]{1\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{rezultati/u_planica_long_4.pdf} 
+    \caption{Graf hitrosti vetra $x$-komponente $u$ v odvisnoti od višine, kjer smo 
+    rezultat dobili ob času 10.00.}
+    \label{fig:barje}
+  \end{subfigure}
+  \label{fig:orography_sidebyside}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  % Planica
+  \begin{subfigure}[b]{1\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{rezultati/v_planica_long_3.pdf}
+    \caption{Graf hitrosti vetra $y$-komponente $v$ v odvisnoti od višine, kjer smo 
+    rezultat dobili ob času 9.00.}
+    \label{fig:planica}
+  \end{subfigure}\hfill
+  % Ljubljansko barje
+  \begin{subfigure}[b]{1\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{rezultati/v_planica_long_4.pdf} 
+    \caption{Graf hitrosti vetra $y$-komponente $v$ v odvisnoti od višine, kjer smo 
+    rezultat dobili ob času 10.00.}
+    \label{fig:barje}
+  \end{subfigure}
+  \label{fig:orography_sidebyside}
+\end{figure}
+
 
 \end{document}
