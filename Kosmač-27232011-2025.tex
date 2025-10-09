@@ -4265,13 +4265,25 @@ razmer.
 
 \subsection{Fizika modela}
 \subsubsection{Enačbe modela}
-MicroHH je bolj sofisticiran model, kot je predstavljen v delu. Osnova je sicer enaka, vendar smo v MicroHH simulaciji vključili še ostale fizikalne količine, ki vplivajo na vremensko napoved oz. na obnašanje vetra. Primarno so to nek vsiljen veter, vlaga zraka, termodinamika, sevanje sonca ter mikrofiziko, kar je primarno vpliv snega in ledu, ki se lahko pojavita. Enačbe samo naštejemo, saj bi izpeljevanje vseh zakon potrebovalo predstaviti vso fizikalno podlago, kar bi bilo zamudno. Začnemo z znanim zakonom, t.j. zakon o ohranitvi mase 
+MicroHH je bolj sofisticiran model, kot je predstavljen v delu. Osnova
+je sicer enaka, vendar smo v MicroHH simulaciji vključili še ostale 
+fizikalne količine, ki vplivajo na vremensko napoved oz. na obnašanje 
+vetra. 
+MicroHH napoveduje stanje ozračja z numeričnim reševanjem enačb 
+(Runge-Kutta 4. reda) za veter v $x$ in $y$ smeri (komponenti $u$ in $v$), potencialno temperaturo, 
+vlago in tlak, ki jih dobimo iz ohranitvenih zakonov (referenca na 
+poglavje z ohranitvenimi zakoni), vendar zapisanih v (drugi) 
+Boussinesqovi aproksimaciji, pri kateri predpostavimo da je gostota 
+konstantna, razen v členih, ki opisujejo vzgon. Enačbe le naštejemo, 
+saj bi izpeljevanje vseh zakon potrebovalo predstaviti vso fizikalno 
+podlago, kar bi bilo zamudno. Začnemo z znanim zakonom, t.j. zakon o 
+ohranitvi mase 
 $$
 \nabla \cdot \textbf{U} = 0.
 $$
 Naslednji zakoni, ki jih sicer že poznamo kot zakon o ohranitvi skalarja in gibalne količine, bosta zaradi uvedbe vlage nekoliko drugačna. 
 Termodinamična enakost, ki uvede temperaturo pod vplivom vlage 
-$\theta_v$ in se imenuje virtualna potencialna temoeratura je 
+$\theta_v$ in se imenuje virtualna potencialna temperatura je 
 \begin{equation}
 \frac{\theta_v'}{\theta_{v0}} = - \frac{\rho'}{\rho_0},
 \end{equation}
@@ -4331,7 +4343,12 @@ ki postopoma duši vertikalna gibanja. Ta pristop preprečuje, da bi se
 gravitacijski valovi, ki dosežejo zgornjo mejo domene, nefizikalno 
 odbijali nazaj navzdol. Na ta način so gibanja v notranjosti domene 
 nedotaknjena, v zgornjih nivojih pa se valovna energija postopoma 
-absorbira.
+absorbira. Teorijo površinskih slojev (kar vključuje tudi blažilni sloj) sta 
+bolj podrobno obravnavala A.S. Monin in A.M. Obukhov. Njuna podobnostna teorija
+je empirična metoda, ki opisuje univerzalne povezave med 
+brezdimenzijskimi spremenljivkami tekočin, osnovana na 
+Buckingham Pi izreku (referenca na poglavje) in opisuje 
+povprečen tok in temparaturo v povrišnskem sloju.
 
 \subsection{Domena, časovni korak, začetni in robni pogoji}
 
@@ -4378,35 +4395,46 @@ Za oceno uporabimo razvoj v Fourierovo vrsto. Običajno je pri analizi
  $A^n e^{i\kappa k}$, za nek $n\in \mathbb{N}$ in valovno število 
  $\kappa$. Vstavimo v rekurzivno enačbo $u_k^n = A^n e^{i\kappa k}$
 \begin{align*}
-A^{n+1} e^{i\kappa k} &= A^n e^{i\kappa k} - CFL (A^n e^{i\kappa k} - A^n e^{i\kappa (k-1)}) \\
-A^{n+1} &= A^n - CFL (A^n - A^n e^{-i\kappa}) \\ 
-\frac{A^{n+1}}{A^n} &= 1 - CFL(1 - e^{-i\kappa}).
+A^{n+1} e^{i\kappa k} &= A^n e^{i\kappa k} - \text{CFL} (A^n e^{i\kappa k} - A^n e^{i\kappa (k-1)}) \\
+A^{n+1} &= A^n - \text{CFL} (A^n - A^n e^{-i\kappa}) \\ 
+\frac{A^{n+1}}{A^n} &= 1 - \text{CFL}(1 - e^{-i\kappa}).
 \end{align*}
 Vrednost $A^n$ je amplituda pri danem valovnem številu v $n$-tem časovnem koraku. Če želimo, da je naša rešitev $u$ obstaja mora veljati $\Big|\frac{A^{n+1}}{A^n}\Big| \leq 1$. Da dobimo CFL pogoj, moramo rešiti ali usaj oceniti neenačbo 
 $$
-|1 - CFL(1 - e^{-i\kappa})| \leq 1. 
+|1 - \text{CFL}(1 - e^{-i\kappa})| \leq 1. 
 $$
 Označimo $z = 1 - e^{-i\kappa}$. Neenakost kvadriramo in upoštevamo dejstvo, da je 
 $z+\overline{z} = |z|^2$:
 \begin{align*}
-  |1 - CFL z|^2 &\leq 1 \\
-  (1 - CFL\cdot z)(1- CFL\cdot \overline{z}) &\leq 1 \\
-  1 - CFL(z + \overline{z}) + CFL^2 |z|^2 &\leq 1 \\
-  - CFL|z|^2 + CFL^2 |z|^2 &\leq 0 \\
-  |z|^2 CFL(CFL - 1)&\leq 0.
+  |1 - \text{CFL} z|^2 &\leq 1 \\
+  (1 - \text{CFL}\cdot z)(1- \text{CFL}\cdot \overline{z}) &\leq 1 \\
+  1 - \text{CFL}(z + \overline{z}) + \text{CFL}^2 |z|^2 &\leq 1 \\
+  - \text{CFL}|z|^2 + \text{CFL}^2 |z|^2 &\leq 0 \\
+  |z|^2 \text{CFL}(\text{CFL} - 1)&\leq 0.
 \end{align*}
 Če je $z \neq 0$ (kar je res za skoraj vsak $\kappa \in [0, 2\pi)$), sledi da 
 so dopustne vrednosti CFL na intervalu $[0, 1]$. Podobna analiza 
 za Navier-Stokesove enačbe je precej bolj zahtevna. Vendar pa rezultati
-kažejo, da je največja smiselna vrednost $CFL = 1$, običajno pa se giblje okoli $0.3$.
+kažejo, da je največja smiselna vrednost $\text{CFL} = 1$, običajno pa se giblje okoli $0.3$.
 Metoda s katero rešujemo enačbe je Runge-Kutta metoda $4$. reda.
 
 
 \subsection{Rezultati simulacij}
 
 Za zaključek predstavimo nekaj rezultatov simulacij, ki smo jih izvedli z modelom MicroHH.
-Obravnavamo dve domeni: prva je Planica v času smučarskih skokov na dan 27.3.2025 od 9.00 do 13.00, druga 
-pa Ljubljansko barje od 5.00 do 10.00. Ker so lastnosti 
+Obravnavamo dve domeni: prva je Planica v času smučarskih skokov na dan 27.3.2025 od 5.00 do 11.00, druga 
+pa Ljubljansko barje od 5.00 do 10.00. Z drugimi besedami 
+MicroHH zaženemo iz Aladinovih polj ob 6h zjutraj po lokalnem času in naredimo 5 urno napoved.
+
+V planiški dolini je splošen veter v višinah 
+(~1000m nad tlemi) izrazit severovzhodnik, pri tleh
+pa prihaja do izrazitih mešanj in oblivanj reliefa, 
+posledica česar je bila tudi sunkovitost vetra na 
+skakalnici  in obrat smeri vetra na lokaciji 
+(jugozahodnik) (numeričnih podatkov nimamo, ustna 
+komunikacija z vodjem meteorološke podpore na prireditvi).
+
+Ker so lastnosti 
 turbulence lokalne kot sta disipativnost in difuzivnost, želimo 
 izbrati čim manjše celice.
 
@@ -4451,15 +4479,22 @@ n_z = \frac{z}{z_c} = 256.
 Za Ljubljansko barje je čas opazovanja med 5.00 in 10.00, torej $[0, 18000]$.
 Rezultate izračunali v točki, kjer se nahaja senzor. 
 \begin{opomba}
-Na sliki orografije opazimo, da imamo zelo izrazito uniformno območje. 
-To je umetno narejeno, tako, da smo nastavili robne vrednosti na minimlno vrednost celotne 
-območja. Razlog za to je torusna predstavitev domene. Ker indetificimo nasprotno 
-ležeče stranice, morajo biti robne vrednosti enake, saj bi v nasprotnem primeru
-nastale velike skoke v vrednostih na robovih oz. nezveznoti, kar bi pokvarilo rezultate.
+\hfill
+\begin{itemize}
+  \item Na sliki orografije opazimo, da imamo zelo izrazito uniformno območje. 
+  To je umetno narejeno, tako, da smo nastavili robne vrednosti na minimlno vrednost celotne 
+  območja. Razlog za to je torusna predstavitev domene. Ker indetificimo nasprotno 
+  ležeče stranice, morajo biti robne vrednosti enake, saj bi v nasprotnem primeru
+  nastale velike skoke v vrednostih na robovih oz. nezveznoti, kar bi pokvarilo rezultate.
+\item Za domeno smo izbrali število točk, ki na prvi pogled izgledajo popolnoma naključno, 
+vendar ni popolnoma tako. Velikostni red teh števil je omejen z zmogljivostjo računalnika.
+Za sama števila pa opazimo, da so vsa deljiva s 8, razlog za to je, da smo lahko 
+paralelno računanje razdelili na 8 jeder.
+\end{itemize}
 \end{opomba}
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.9\textwidth]{rezultati/tv_barje_long_3.pdf}
+  \includegraphics[width=0.9\textwidth]{rezultati/barje_sodar_tv_345.pdf}
   \caption{Graf virtualne temperature $T$ v odvisnoti od višine, kjer smo 
   rezultat dobili ob času 8.00.}
   \label{fig:barje_T3}
@@ -4467,7 +4502,7 @@ nastale velike skoke v vrednostih na robovih oz. nezveznoti, kar bi pokvarilo re
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.9\textwidth]{rezultati/tv_barje_long_4.pdf}
+  \includegraphics[width=0.9\textwidth]{rezultati/tv_barje_long_5.pdf}
   \caption{Graf virtualne temperature $T$ v odvisnoti od višine, kjer smo 
   rezultat dobili ob času 9.00.}
   \label{fig:barje_T4}
@@ -4475,7 +4510,7 @@ nastale velike skoke v vrednostih na robovih oz. nezveznoti, kar bi pokvarilo re
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.9\textwidth]{rezultati/tv_barje_long_5.pdf}
+  \includegraphics[width=0.9\textwidth]{rezultati/rh_barje_long_5.pdf}
   \caption{Graf virtualne temperature $T$ v odvisnoti od višine, kjer smo 
   rezultat dobili ob času 10.00.}
   \label{fig:barje_T5}
@@ -4483,54 +4518,80 @@ nastale velike skoke v vrednostih na robovih oz. nezveznoti, kar bi pokvarilo re
 
 Kaj lahko sklepamo iz grafov \ref{fig:barje_T3}, \ref{fig:barje_T4} in \ref{fig:barje_T5}?
 \begin{itemize}
-  \item Rezultati modela Microhh se po $3$h in $4$h precej bolje ujemajo z meritvami kot rezultati modela Aladin, 
-  med tem, ko se po $5$h rezultati modela Aladin ujemajo bolje z meritvami.
-  Možna razlaga zakaj pride do sprememba ujemanja je, v začetni fazi simulacije.
-  Ker so začetni pogoji za virtualno temperaturo konstantni z vrednostjo $285$K,
-  potrebuje model nekaj časa, da se prilagodi meritvam.  
-  \item Kaj pa fizikalno pokažejo meritve in simulacija? Temperatura se s časom 
-  dviga, kar je pričakovano, saj je čas opazovanja med 5.00 in 10.00, torej
-  v času, ko sonce že močno greje ozračje. 
-  \item Na grafu \ref{fig:barje_T4} opazimo da pride do izrazite spremembe,
-  na višini okoli $400$m. Temu pojavu pravimo \textbf{temperaturna inverzija}, kar 
-  pomeni, da temperatura raste z višino na nekem območju. 
+  \item Na podlagi meritev z napravo \textbf{SODAR}\footnote{SODAR (Sonic Detection and Ranging) je akustični sistem, ki z merjenjem Dopplerjevega premika zvočnih valov omogoča določanje vertikalnih profilov vetra in turbulence v nižjih plasteh atmosfere.} 
+  (\autoref{fig:barje_T3}), ki jih izvaja \textbf{Agencija Republike Slovenije za okolje (ARSO)} na območju \textbf{Ljubljanskega barja}, 
+  je bila dne \textbf{4. septembra 2025} zaznana pozno poletna situacija z značilnim vertikalnim profilom vetra in temperature. 
+  
+  Analiza kaže na prisotnost \textbf{relativno šibke talne inverzije}\footnote{Talna (radiacijska) inverzija je plast zraka pri tleh, kjer se temperatura z višinjo povečuje namesto znižuje. Nastane zaradi nočnega ohlajanja tal in s tem spodnjih plasti zraka.} 
+  v višinskem pasu med približno \textbf{300 in 400~m nad tlemi} ter 
+  \textbf{zmerne subsidenčne inverzije}\footnote{Subsidenčna inverzija nastane zaradi spuščanja zračnih mas iz višjih plasti atmosfere (subsidence), pri čemer se zrak segreva adiabatsko in tvori stabilen sloj, ki zavira navpično gibanje.} 
+  med \textbf{500 in 700~m}. 
+  V celotnem atmosferskem stolpcu so bili vetrovi zelo šibki. 
+  
+  V spodnjih plasteh ozračja je v {jutranjem času (med 7.00 in 8.00)} prišlo do pojava \textbf{megle}, 
+  ki se je po sončnem vzhodu hitro razkrojila. 
+  V višjih plasteh se je že okoli {10. ure} vzpostavil \textbf{adiabatni temperaturni profil}\footnote{Adiabatni temperaturni profil je razmerje med temperaturo in višino, ki ga določa adiabatno spreminjanje temperature zraka brez izmenjave toplote z okolico. V praksi to pomeni, da se ozračje zaradi mešanja približa stanju, kjer je temperatura v skladu z adiabatskim gradientom.}, 
+  kar nakazuje na \textbf{intenzivno turbulentno mešanje} 
+  V najnižjih plasteh ozračja je bila takrat še prisotna šibka ostanek talne inverzije, 
+  ki se je popolnoma razkrojila po {10. uri} (ni prikazano na sliki).
+  
+ \item Na podlagi rezultatov (slika \ref{fig:barje_T4}) je razvidno, da je pri tleh še vedno prisotna 
+\textbf{šibka talna inverzija}, medtem ko je v višjih plasteh ozračja že vzpostavljena 
+\textbf{premešana plast}, ki je posledica {sončnega ogrevanja površja} in s tem povezanega 
+\textbf{konvektivnega mešanja}. 
+Na višini približno \textbf{600~m} se pojavlja še ena \textbf{inverzna plast}. 
+
+Oba numerična modela to zgornjo inverzno plast {realistično reproducirata}, 
+prav tako je v obeh primerih opazno ustrezno mešanje v spodnjem delu atmosfere. 
+Model {ALADIN}\footnote{ALADIN (Aire Limitée Adaptation dynamique Développement InterNational) je regionalni numerični vremenski model, ki ga uporablja tudi ARSO za operativne vremenske napovedi.} 
+kaže popolnoma {premešan zrak vse do tal}, medtem ko model 
+{MicroHH} ohranja prisotnost \textbf{talne inverzije}. 
+Poleg tega se pri modelu MicroHH kaže, da {robni pogoj na tleh} 
+po določenem času (nastavljen ob {5:00}) \textbf{ni več ustrezen}, saj ga med napovedjo ni mogoče spreminjati. 
+
+\item Pri analizi \textbf{relativne vlage} (slika \ref{fig:barje_T5}) ob isti uri je ponovno opazna težava, povezana s 
+{konstantnim spodnjim robnim pogojem} pri tleh, kar povzroča 
+{presežek vsebovanosti vlage v najnižjih plasteh ozračja}. 
+
+Pri modelu {MicroHH} se jasno vidi značilen 
+{»zob« v profilu relativne vlage} na višini približno {350~m}, 
+kjer relativna vlaga dosega okoli {80~\%}. 
+Ta značilnost nakazuje, da je model na tej višini \textbf{razvil meglo}, 
+ki se ob analiziranem času že {postopoma razkraja}. 
+
+V višjih plasteh ozračja (med {400 in 700~m}) je lepo razviden 
+{profil vlage}, značilen za {adiabatno mešanje}, 
+saj je {relativna vlaga v tem sloju skoraj konstantna}(odstopanje za nekaj procentov je zelo majhno). 
+
+V primeru modela {ALADIN} 
+se megla \textbf{ni razvila}, kar je pričakovano, saj je šlo za {zelo tanko plast} 
+z visoko občutljivostjo na začetne pogoje. 
+Poleg tega je v tem modelu {mešanje vlage izrazito šibkejše} kot v simulaciji z MicroHH. 
+
+  %\item Rezultati modela Microhh se po $3$h in $4$h precej bolje ujemajo z meritvami kot rezultati modela Aladin, 
+  %med tem, ko se po $5$h rezultati modela Aladin ujemajo bolje z meritvami.
+  %Možna razlaga zakaj pride do sprememba ujemanja je, v začetni fazi simulacije.
+  %Ker so začetni pogoji za virtualno temperaturo konstantni z vrednostjo $285$K,
+  %potrebuje model nekaj časa, da se prilagodi meritvam.  
+  %\item Kaj pa fizikalno pokažejo meritve in simulacija? Temperatura se s časom 
+  %dviga, kar je pričakovano, saj je čas opazovanja med 5.00 in 10.00, torej
+  %v času, ko sonce že močno greje ozračje. 
+  %\item Na grafu \ref{fig:barje_T4} opazimo da pride do izrazite spremembe,
+  %na višini okoli $400$m. Temu pojavu pravimo \textbf{temperaturna inverzija}, kar 
+  %pomeni, da temperatura raste z višino na nekem območju. 
 \end{itemize}
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.95\textwidth]{rezultati/rh_barje_long_3.pdf}
-  \caption{Graf vlage $q$ v odvisnoti od višine, kjer smo 
-  rezultat dobili ob času 8.00.}
-  \label{fig:barje_q3}
-\end{figure}
+%\begin{itemize}
+%  \item Nažalost za vlago nimamo meritev, zato lahko le primerjamo rezultate modelov in 
+%  opažanjem iz tistega dne. Kljub pomankanju meritev vidimo, da imata modela 
+%  podone rezultate, kar je dober znak.
+%  \item Megla se pojavi, ko je ozračje nasičeno z vlago, kar pomeni, da je relativna vlaga blizu $100\%$, 
+%  vendar pa se v praksi izkaže, da se megla pojavi že pri relativni vlagi okoli $85\%$. Čeprav, 
+%  nam začetni pogoji modela Microhh, nekoliko pokvarijo rezultate, kljub temu 
+%  modela napovesta meglo, kar se izkaže, da je bilo tudi res tisti dan.
+%\end{itemize}
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.95\textwidth]{rezultati/rh_barje_long_4.pdf}
-  \caption{Graf vlage $q$ v odvisnoti od višine, kjer smo 
-  rezultat dobili ob času 9.00.}
-  \label{fig:barje_q4}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.95\textwidth]{rezultati/rh_barje_long_5.pdf}
-  \caption{Graf vlage $q$ v odvisnoti od višine, kjer smo 
-  rezultat dobili ob času 10.00.}
-  \label{fig:barje_q5}
-\end{figure}
-
-
-\begin{itemize}
-  \item Nažalost za vlago nimamo meritev, zato lahko le primerjamo rezultate modelov in 
-  opažanjem iz tistega dne. Kljub pomankanju meritev vidimo, da imata modela 
-  podone rezultate, kar je dober znak.
-  \item Megla se pojavi, ko je ozračje nasičeno z vlago, kar pomeni, da je relativna vlaga blizu $100\%$, 
-  vendar pa se v praksi izkaže, da se megla pojavi že pri relativni vlagi okoli $85\%$. Čeprav, 
-  nam začetni pogoji modela Microhh, nekoliko pokvarijo rezultate, kljub temu 
-  modela napovesta meglo, kar se izkaže, da je bilo tudi res tisti dan.
-\end{itemize}
-
+\newpage
 \subsubsection{Planica}
 
 Velikost doline, ki jo obravnavamo je 
@@ -4544,17 +4605,29 @@ n_z = \frac{z}{z_c} = 352.
 
 \begin{figure}[h!]
   \centering
-  \begin{subfigure}[b]{1\textwidth}
-    \centering
-    \includegraphics[width=0.48\textwidth]{rezultati/dem_planica.png}
-    \caption{Orografija Ljubljanskega barja.}
-  \end{subfigure}\hfill
   \begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{rezultati/dem_planica2.jpeg}
-    \caption{Z oražno barvo je označena Zgornja Savska doloina, z rdečo Sodar senzor, 
-    z zeleno dolina Tamar z rdečo pa Rateče.}
+      \centering
+      \includegraphics[width=\textwidth]{rezultati/dem_planica.png}
+      %\caption{Orografija planiške doline.}
+      \label{fig:dem_planica}
   \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{rezultati/dem_planica2.jpeg}
+      \label{fig:dem_planica2}
+  \end{subfigure}
+  \caption{Z oranžno barvo je označena Zgornja Savska dolina, z rdečo položaj SODAR senzorja, 
+      z zeleno dolina Tamar, z rdečo pa naselje Rateče.}
+  \label{fig:planica_combined}
+\end{figure}
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\textwidth]{rezultati/v_yz_5.pdf}
+  \caption{Graf hitrosti vetra $y$-komponente $v$ v odvisnoti od višine, kjer opazujemo 
+  prerez v $y-z$ ravnini, kjer je $x$ konstantno.}
 \end{figure}
 
 \newpage
@@ -4569,10 +4642,13 @@ zato je časovni interval opazovanj pet ur oz. rešitve iščemo na intervalu $[
     \includegraphics[width=\textwidth]{rezultati/u_planica_long_3.pdf}
     \caption{Graf hitrosti vetra $x$-komponente $u$ v odvisnoti od višine, kjer smo 
     rezultat dobili ob času 9.00.}
+    \label{fig:planica_T3}
     %\label{fig:planica}
   \end{subfigure}\hfill
   % Ljubljansko barje
   \begin{subfigure}[b]{1\textwidth}
+    \caption{Graph of wind speed $x$-component $u$ as a function of height, obtained at 10:00.}
+    \label{fig:planica_T4}
     \centering
     \includegraphics[width=\textwidth]{rezultati/u_planica_long_4.pdf} 
     \caption{Graf hitrosti vetra $x$-komponente $u$ v odvisnoti od višine, kjer smo 
@@ -4583,36 +4659,83 @@ zato je časovni interval opazovanj pet ur oz. rešitve iščemo na intervalu $[
 \end{figure}
 
 \newpage
+%\begin{figure}[h!]
+%  \centering
+  % Planica
+%  \begin{subfigure}[b]{1\textwidth}
+%    \centering
+%    \includegraphics[width=\textwidth]{rezultati/u_planica_long_5.pdf}
+%    \caption{Graf hitrosti vetra $y$-komponente $v$ v odvisnoti od višine, kjer smo 
+%    rezultat dobili ob času 9.00.}
+    %\label{fig:planica}
+%  \end{subfigure}\hfill
+  % Ljubljansko barje
+%  \begin{subfigure}[b]{1\textwidth}
+%    \centering
+%    \includegraphics[width=\textwidth]{rezultati/v_planica_long_5.pdf} 
+%    \caption{Graf hitrosti vetra $y$-komponente $v$ v odvisnoti od višine, kjer smo 
+%    rezultat dobili ob času 10.00.}
+    %\label{fig:barje}
+%  \end{subfigure}
+  %\label{fig:orography_sidebyside}
+%\end{figure}
+%\newpage
+
 \begin{figure}[h!]
   \centering
-  % Planica
-  \begin{subfigure}[b]{1\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{rezultati/v_planica_long_3.pdf}
-    \caption{Graf hitrosti vetra $y$-komponente $v$ v odvisnoti od višine, kjer smo 
-    rezultat dobili ob času 9.00.}
-    %\label{fig:planica}
-  \end{subfigure}\hfill
-  % Ljubljansko barje
-  \begin{subfigure}[b]{1\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{rezultati/v_planica_long_4.pdf} 
-    \caption{Graf hitrosti vetra $y$-komponente $v$ v odvisnoti od višine, kjer smo 
-    rezultat dobili ob času 10.00.}
-    %\label{fig:barje}
-  \end{subfigure}
-  %\label{fig:orography_sidebyside}
+  \includegraphics[width=0.9\textwidth]{rezultati/tv_planica_long_5.pdf}
+  \caption{Graf hitrosti vetra $y$-komponente $v$ v odvisnoti od višine, kjer opazujemo 
+  prerez v $y-z$ ravnini, kjer je $x$ konstantno. \label{fig:planica_vy}}
 \end{figure}
-\newpage
+
 
 Kaj lahko sklepamo iz grafov hitrosti vetra?
+
 \begin{itemize}
-\item Ponovno nimamo meritev za tisti dan (oz. so neuporabne), vendare pa ponovno opazimo 
-podobno obnašanje modelov.
-\item Iz opažanj vemo, da je ob času tekmo močan jugo-vzhodni veter, kar pomeni 
-pomeni, da je druga komponenta vetra negativna tj. $v < 0$ in $|v| >> 0$, kar se ujema 
-z grafoma za hitrost $v$.
+  \item Model MicroHH smo zagnali iz začetnih polj modela ALADIN ob \(6{:}00\) po lokalnem času in izvedli \(5\)-urno napoved.
+  \item Zgodnja pomladanska situacija v alpski
+   dolini dne \(27.\,3.\,2025\), ob času tekmovanja na 
+   Planiški dolini, je bila zaznamovana z izrazitim 
+   severovzhodnim vetrom v višinah 
+   (približno \(1000\,\mathrm{m}\) nad tlemi). V 
+   spodnjih plasteh ozračja je prihajalo do intenzivnega 
+   mešanja in oblivanja reliefa, kar je povzročilo 
+   sunkovitost vetra na skakalnici ter obrat smeri vetra 
+   na sami lokaciji (v smer jugozahodnika). Numeričnih 
+   meritev za ta primer nimamo; opis temelji na ustni 
+   komunikaciji z vodjem meteorološke podpore na 
+   prireditvi.
+   \item Pri obeh modelih (sliki \ref{fig:planica_T3}, \ref{fig:planica_T4}) je v višinah prisoten izrazit 
+   splošni severovzhodni veter (tako komponenti \(u\) 
+   kot \(v\) sta negativni). V spodnjih plasteh ozračja 
+   pa pride v modelu {MicroHH} do obrata smeri 
+   vetra, ki piha jugozahodno oziroma skoraj južno, kar 
+   se ujema z dejanskim potekom vetra med tekmovanjem. 
+   Podobno je opazno iz vertikalnega preseka komponent 
+   vetra v smeri zahod–vzhod (rdeča označuje veter v 
+   smeri severa). Prav tako se opazi prisotnost 
+   blažilnem-območja na vrhu domene {MicroHH} 
+   (od \(5500\,\mathrm{m}\) do \(7000\,\mathrm{m}\)). 
+   Model {ALADIN} ohranja splošno smer vetra tudi 
+    v dnu doline, kar ni v skladu z dejanskimi opazovanji.
+  \item Iz slike \ref{fig:planica_vy} je v v obeh primerih nad \(1300\,\mathrm{m}\) 
+  profil temperature adiabaten, kar kaže, da je zrak 
+  dobro premešan (posledica močnega vetra v višinah). 
+  V modelu {ALADIN} se mešanje nadaljuje vse do 
+  tal, medtem ko se v modelu {MicroHH} v spodnjih
+  plasteh doline začenja nabirati relativno hladen zrak,
+  kar je bolj realističen prikaz, saj nakazuje manjše 
+  mešanje.
+
 \end{itemize}
+
+%\begin{itemize}
+%\item Ponovno nimamo meritev za tisti dan (oz. so neuporabne), vendare pa ponovno opazimo 
+%podobno obnašanje modelov.
+%\item Iz opažanj vemo, da je ob času tekmo močan jugo-vzhodni veter, kar pomeni 
+%pomeni, da je druga komponenta vetra negativna tj. $v < 0$ in $|v| >> 0$, kar se ujema 
+%z grafoma za hitrost $v$.
+%\end{itemize}
 
 
 
