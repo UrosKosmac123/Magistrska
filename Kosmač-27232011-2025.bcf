@@ -2397,6 +2397,9 @@
     <bcf:citekey order="10" intorder="10" nocite="1">rosler</bcf:citekey>
     <bcf:citekey order="11" intorder="11" nocite="1">dina</bcf:citekey>
     <bcf:citekey order="12" intorder="12" nocite="1">foias</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">krueger2016gcss</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">tomita2008microphysics</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">monin1954most</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

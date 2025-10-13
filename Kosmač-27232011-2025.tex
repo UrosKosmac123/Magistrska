@@ -177,14 +177,14 @@ vprašanja, ki se nanašajo nanjo, še vedno ne znamo odgovoriti. Že vprašanje
 univerzalnega odgovora. So pa opažanja in eksperimenti pokazali, da lahko turbulence
 karakteriziramo z določenimi lastnostmi. To so:
 \begin{itemize}
-\item \textbf{Kaotičnost}: Turbulentni tok je kaotičen oz. nepredvidljiv. To pomeni, če
+\item \textbf{Kaotičnost}: Turbulentni tok je kaotičen oz. nepredvidljiv. Torej, če
 začetno stanje toka malo spremenimo (spremenimo hitrost, tlak ...), bo končno stanje popolnoma
 drugačno, kot pred spremembo. Zato je v praksi zelo težko deterministično napovedati dogajanje.
 Teoretično lahko izpeljemo Navier-Stokesove enačbe, ki opisujejo gibanje vseh tokov, tudi turbulentnih,
 vendar pa je njihovo reševanje zelo zahtevno tudi v posebnih primerih (že sam obstoj rešitev je 
 odprto vprašanje).
 \item \textbf{Vrtinci različnih velikosti}: Turbulenten tok je sestavljen iz vrtincev (eddies). Lahko so zelo
-različnih velikosti, kar je razvidno iz slike \ref{fig:vrtinci}
+različnih velikosti, kar je razvidno iz slike \ref{fig:vrtinci}.
 \begin{figure}[h!]
   \centering
   \begin{subfigure}{.5\textwidth}
@@ -200,24 +200,24 @@ različnih velikosti, kar je razvidno iz slike \ref{fig:vrtinci}
     %\label{fig:sub2}
   \end{subfigure}
   \caption{Leva slika prikazuje velike vrtince, ki se pojavijo v atmosferi planeta Jupitra in 
-  imajo lahko premer več $1000$ kilometrov, medtem ko desna slika prikazuje turbulenco
+  imajo lahko premer več tisoč kilometrov, medtem ko desna slika prikazuje turbulenco
   zraka v sobi, kjer se tok zraka prikaže s pomočjo laserja in lahko vidimo vrtince velikosti nekaj mikrometrov.} 
   \label{fig:vrtinci}
   \end{figure}
 \item \textbf{Difuzivnost}: Zanimiva lastnost turbuletnega toka je difuzivnost. To pomeni, da se energija in gibalna količina
 preneseta po celotnem toku. Osborne Reynolds (1842 - 1912) je postavil eksperiment, ki prikazuje to lastnost. Vidna je
-na sliki \ref{fig:difus}
-\item \textbf{Reynoldsovo število}: Podoben eksperiment, kot na sliki \ref{fig:difus} nam da enostaven kriterij, ki mu turbulenca zadošča.
+na sliki \ref{fig:difus}.
+\item \textbf{Reynoldsovo število}: Podoben eksperiment, kot na sliki \ref{fig:difus}, nam da enostaven kriterij, ki mu turbulenca zadošča.
 Večja kot je dolžina cevi $L$, ali večja kot je hitrost toka $u$, prej bo prišlo do turbulence. Po drugi strani pa večja kot je
 viskoznost tekočine $\nu$, manj verjetno bo, da pride do turbulence. To zapišemo preko brezdimenzijske 
 konstante $Re = \frac{uL}{\nu}$. Do turbulence pride pri velikih Reynoldsovih številih, običajno pri $Re \geq 5000$.
 \item \textbf{Disipativnost}: To je proces prenosa energije iz večjih vrtincev v manjše vrtince, dokler ta ne 
-začne izhajati iz tekočine kot toplota. To pomeni, če hočemo imeti turbulenten tok oz. ga ohranjati,
-moramo dosledno sistemu dodajati energijo.
+začne izhajati iz tekočine kot toplota. To pomeni, če želimo doseči turbulenten tok oz. ga ohranjati,
+moramo dosledno sistemu dovajati energijo.
 \begin{figure}[h!]
   \centering
 \includegraphics[scale=0.19]{slike/difus.jpeg}
-\caption{V cev polno vode spustimo tok barve. Slika je sestavljena iz treh delov: a) del ni turbulenten zato se barva zelo malo razprši,
+\caption{V cev polno vode spustimo tok barve. Slika je sestavljena iz treh delov: a) del ni turbulenten, zato se barva zelo malo razprši,
 b) del je v vmesnem stanju, kjer se že kažejo znaki difuzije in c) del, kjer je tok turbulenten in se barva razširi po celotni cevi.}
 \label{fig:difus}
 \end{figure}
@@ -229,11 +229,10 @@ ko pa se Reynoldsovo število veča (parameter $L$ se veča), tok postane turbul
 \end{figure}
 \end{itemize}
 
-V delu se bom predvsem osredotočil na turbulenco v atmosferi, kjer je obravnava določenih enačb
+V delu se bomo predvsem osredotočil na turbulenco v atmosferi, kjer je obravnava določenih enačb
 gibanja in fizikalnih količin nekoliko drugačna, kot pri drugih vrstah turbulence (kot so naprimer turbulence tekočin).
-Omejili se bomo na prostor $\R^3$, čeprav bi lahko določene koncepte 
-obravnavali v višjih dimenzijah, vendar nam za naše potrebe to ne bo 
-prineslo veliko praktične vrednosti.
+Omejili se bomo na prostor $\R^3$, čeprav bomo določene koncepte 
+obravnavali v višjih dimenzijah.
 V splošnem se kakršenkoli tok obravanava na enega od sledečih načinov:
 \begin{itemize}
   \item \textbf{Eulerjev pristop}: Recimo, da opazujemo neko domeno $\Omega \subseteq \R^3$, skozi katero teče tok.
@@ -250,7 +249,7 @@ V splošnem se kakršenkoli tok obravanava na enega od sledečih načinov:
     \bd{X}: \R^+& \rightarrow \R^3 \\
     t \mapsto&\,\, \bd{X}(t; \bd{x}_0),
   \end{align*}
-  kjer je $\bd{x}_0$ začetna pozicija delca in 
+  kjer je $\bd{x}_0$ začetni položaj delca in 
   velja $\bd{X}(t_0; \bd{x}_0) = \bd{x}_0$.  
   Z drugimi besedami $\bd{X}$ je trajektorija delca, ki se premika skozi čas, tok pa je nabor vseh trajektorij.
 \end{itemize}
@@ -260,7 +259,7 @@ se osredotoči na fiksno domeno in opazujemo kako se lastnosti tekočine spremin
 Za analizo turbulence in globalnih procesov je ta način boljši, medtem ko je Lagrangeva analiza 
 boljša za analizo mehanike delcev, disperzije in različnih procesov mešanja (difuzija). 
 
-V delu bomo primarno uporabljali Eulerjev-jev pristop, vendar pa nam lahko analiza enega pomaga
+V delu bomo primarno uporabljali Eulerjev pristop, vendar pa nam lahko analiza enega pomaga
 pri analizi drugega. Naj bo $\bd{u}$ Eulerjevo polje hitrosti na poljubni domeni in $X = X(t; \bd{x}_0)$ trajektorija delca 
 po Lagrangevem opisu ob času $t$ in začetni poziciji $\bd{x}_0$. 
 Zveza med Lagrangeovo trajektorijo in Eulerjevo hitrostjo je 
@@ -273,9 +272,9 @@ Definiramo Lagrangevo polje hitrosti
 \begin{equation}
 U(t; \bd{x}_0) \coloneqq \bd{u}(X(t; \bd{x}_0), t).
 \end{equation}
-Poglejmo kako se izraža pospešek delca
+Poglejmo, kako se izraža pospešek delca
 \begin{align*}
-\frac{\dif}{\dif t} U(t; \bd{x}_0) &= \frac{\partial}{\partial t} \bd{u}(X(t; \bd{x}_0), t) = \\
+\frac{\dif U}{\dif t}(t; \bd{x}_0) &= \frac{\partial}{\partial t} \bd{u}(X(t; \bd{x}_0), t) = \\
 &= \frac{\dif}{\dif t} X(t; \bd{x}_0) \cdot \Big(\text{grad}_\bd{x} \bd{u}(\bd{x}, t) \Big)_{\bd{x} = X(t, \bd{x}_0)} + \Big(\frac{\partial}{\partial t} \bd{u}(\bd{x}, t) \Big)_{\bd{x} = X(t, \bd{x}_0)} = \\
 &= \Big(\bd{u}(t; \bd{x}_0) \cdot \text{grad}_\bd{x} \bd{u}(\bd{x}, t) + \frac{\partial}{\partial t} \bd{u}(\bd{x}, t) \Big)_{\bd{x} = X(t, \bd{x}_0)}.
 \end{align*}
@@ -283,60 +282,61 @@ Poglejmo kako se izraža pospešek delca
 \newpage
 \begin{definicija}
 Naj bo $\Omega \subset \R^n$ in $\bd{v}: \Omega\times \R^+ \rightarrow \R^n$ vektorsko polje. Diferencialni operator 
-$\frac{D}{D t}: C^1(\Omega \times \R^+, \R^n) \rightarrow C^0(\Omega \times \R^+, \R^n)$ dan s predpisom
+$\frac{D}{D t}: C^1(\Omega \times \R^+, \R^n) \rightarrow C^0(\Omega \times \R^+, \R^n)$, dan s predpisom
 \begin{equation}
-\frac{D \bd{u}}{Dt} = \Big(\frac{\partial}{\partial t} + \bd{v} \cdot \nabla_\bd{x}\Big) \bd{u} = \frac{\partial \bd{u}}{\partial t} + (v\cdot \nabla_x) u
+\frac{D \bd{u}}{Dt} = \Big(\frac{\partial}{\partial t} + \bd{v} \cdot \nabla_\bd{x}\Big) \bd{u} = \frac{\partial \bd{u}}{\partial t} + (\bd{v}\cdot \nabla_\bd{x}) \bd{u}
 \end{equation}
 se imenuje \textbf{materialni odvod}.
 \end{definicija}
 
-Pospešek, zapisan preko materialnega odvoda je 
+Pospešek, zapisan preko materialnega odvoda, je 
 \begin{equation}
 \frac{\dif}{\dif t} U(t; \bd{x}_0) = \Big(\frac{D \bd{u}}{Dt}(\bd{x}, t) \Big)_{\bd{x} = X(t; \bd{x}_0)}.
 \end{equation}
 
-Podoben rezultat dobimo, če namesto hitrosti, odvajamo gostoto ($\rho$)
+Podoben rezultat dobimo, če namesto hitrosti, odvajamo gostoto $\rho$
 \begin{equation}
 \frac{\dif }{\dif t} \rho(t; \bd{x}_0) = \Big(\frac{D \rho}{Dt}(x, t) \Big)_{\bd{x} = X(t; \bd{x}_0)}.
 \end{equation}
 Materialni odvod je fundamentalni operator Eulerjevega pristopa. Vedno, ko nas bo 
-zanimalo kako se neka količina spreminja s časom, nas bo zanimal njen materialni odvod.
+zanimalo, kako se neka količina spreminja s časom, nas bo zanimal njen materialni odvod.
 
 \begin{opomba}
-Operator $\nabla$ ni komutativen. Za vektorsko polje $\bd{v}$ : $\bd{v} \cdot \nabla \neq \nabla \cdot \bd{v}$.
+Operator $\nabla$ ni komutativen. Za vektorsko polje $\bd{v}$ je v splošnem $\bd{v} \cdot \nabla \neq \nabla \cdot \bd{v}$.
 \end{opomba}
 
 
 \subsection{Ohranitveni zakoni}
+\label{sec:ohranitveni-zakoni}
 
 V tem razdelku začnemo matematični opis ohranitvenih zakonov, enega najpomembnejših konceptov dinamike fluidov (in fizike na splošno), 
 ki je ključen za razumevanje turbulentnih tokov. 
 
 \begin{opomba}
-V nadaljevanju ne bomo navajali vseh potrebnih predpostavk, ki bodo upravičile naše izpeljave. Na primer 
+V nadaljevanju ne bomo navajali vseh potrebnih predpostavk, ki bodo upravičile naše izpeljave. Na primer:
 \begin{itemize}
-  \item Domene, s katerimi bomo imeli opravka, bodo gladke orientabilne mnogoterosti.
-  \item Vektorska polja bodo gladka, v naslednjem poglavju pa bomo predpostavili, da 
+  \item domene, s katerimi bomo imeli opravka, bodo gladke orientabilne mnogoterosti.
+  \item vektorska polja bodo gladka, v naslednjem poglavju pa bomo predpostavili, da 
   obstaja razvoj v Fourierovo vrsto.
-  \item Menjave vrstnega reda limit bo potrebno upravičiti, zato bomo zahtevali, da je 
-  vektorsko polje $\bd{u}$ tudi v $L^2$ prostoru.
+  \item menjave vrstnega reda limit bo potrebno upravičiti, zato bomo zahtevali, da je 
+  vektorsko polje $\bd{u}$ tudi v $L^2(\mu)$ prostoru.
 \end{itemize}
 \end{opomba}
 
-Ohranivene zakone lahko izpeljemo na dva načina. Prvi je pristop je bolj fizikalen 
-z obravnavo z uporabo znanih zakonov kot so $2$. Newtonov zakon, drugi pristop, ki je povsem matematičen,
+Ohranitvene zakone lahko izpeljemo na dva načina. Prvi pristop je bolj fizikalen 
+z uporabo znanih zakonov kot je drugi Newtonov zakon, drugi pristop, ki je povsem matematičen,
 pa je preko uporabe Reynoldsovega transportnega izreka. Kot smo namignili, bomo uporabili drugi 
 pristop. 
 
 \begin{izrek}
-
+\label{transport}
 Naj bo $\Omega(t) \subset \mathbb{R}^n$ volumen, odvisen od časa, 
 definiran kot 
 $$
 \Omega(t) \coloneqq \{\varphi(\bd{x}, t) \,|\, \bd{x} \in \Omega_0\},
 $$
 za $\varphi \in C^1(\R^n \times [0, \infty])$ in $\Omega_0 \subset \R^n$.
-Naj bo $\mathbf{n}(\mathbf{x},t)$ enotska normala, ki kaže iz volumna $V(t)$.  
+Naj bo $\mathbf{n}(\mathbf{x},t)$ enotska normala, ki kaže iz volumna $\Omega(t)$.  
 Za preslikavo $\phi \in C^1(\R^n \times [0, \infty), \R^m)$ velja:
 
 \begin{equation}
@@ -351,7 +351,7 @@ kjer je $\bd{u}:\R^n \rightarrow \R^n$ preslikava za katero velja
 \end{izrek}
 
 \begin{opomba}
-Pogoj na preslikavo $\bd{u}$ je analogen pogoju \eqref{eq:euler-lagrange}.
+Pogoj za preslikavo $\bd{u}$ je analogen pogoju \eqref{eq:euler-lagrange}.
 \end{opomba}
 
 \begin{dokaz}
@@ -367,7 +367,7 @@ Odvajamo po času
 \begin{align*}
 \frac{\partial}{\partial t} \Big(\int_{\Omega(t)} \phi(\mathbf{x},t)\, dV\Big) = \frac{\partial}{\partial t} \Big(\int_{\Omega_0} \phi(\varphi({\mathbf{x}},t), t) |\det{J_\varphi(\bd{x}, t)}| \, dV \Big).
 \end{align*}
-Ker je $\Omega_0$ omejeno območje neodvisno od $t$, lahko odvod premaknemo 
+Ker je $\Omega_0$ omejeno območje, neodvisno od $t$, odvajamo pod integralom
 znotraj integrala
 \begin{align*}
 \frac{\partial}{\partial t} \Big(\int_{\Omega(t)} \phi(\mathbf{x},t)\, dV\Big) &= \int_{\Omega_0} \frac{\partial}{\partial t} \Big(\phi(\varphi({\mathbf{x}},t), t) |\det{J_\varphi(\bd{x}, t)}|\Big) \, dV = \\
@@ -384,7 +384,7 @@ Odvod Jacobijeve matrike je:
 &= \sum_{k=1}^n \frac{\partial u_i}{\partial \varphi_k}(\varphi(\bd{x}, t), t) \frac{\partial \varphi_k}{\partial x_j}(\bd{x}, t) = \\
 &= \sum_{k=1}^n A_{ik} J_{kj},
 \end{align*}
-kjer je $A_{ik} = \frac{\partial u_i(\varphi(\bd{x}, t), t)}{\partial \varphi_k}$. Torej je 
+kjer je $A_{ik} = \frac{\partial u_i}{\partial \varphi_k}(\varphi(\bd{x}, t), t)$. Torej je 
 $$
 \frac{\partial}{\partial t} J_\varphi(\bd{x}, t) = A J_\varphi(\bd{x}, t).
 $$
@@ -396,23 +396,23 @@ Sledi:
 &= |\det{J_\varphi(\bd{x}, t)}| \sum_{k=1}^{n} \frac{\partial u_k}{\partial \varphi_k}(\varphi(\bd{x}, t), t) = \\
 &= |\det{J_\varphi(\bd{x}, t)}| (\nabla_\varphi \cdot \bd{u}(\varphi(\bd{x}, t), t)).
 \end{align*}
-Vstavimo v integral:
+Vstavimo v integral in dobimo:
 \begin{align*}
 \frac{\partial}{\partial t} \Big(\int_{\Omega(t)} \phi(\mathbf{x},t)\, dV\Big) &= \\
 =\int_{\Omega_0} \Big(\frac{D \phi}{D t}&(\varphi(\bd{x}, t), t) + \phi(\varphi({\mathbf{x}},t), t)(\nabla_\varphi \cdot \bd{u}(\varphi(\bd{x}, t), t)) \Big) |\det{J_\varphi(\bd{x}, t)}| \, dV =\\
-= \int_{\Omega(t)} \frac{D \phi}{D t}&(\bd{x}, t) + \phi(\bd{x},t)(\nabla_\varphi \cdot \bd{u}(\bd{x}, t)) dV = 
+= \int_{\Omega(t)} \frac{D \phi}{D t}&(\bd{x}, t) + \phi(\bd{x},t)(\nabla_\varphi \cdot \bd{u}(\bd{x}, t)) dV.
 \end{align*}
-Zaradi preglednosti izpustimo argumente preslikav
+Zaradi preglednosti izpustimo argumente preslikav in nadaljujemo
 \begin{align*}
-&= \int_{\Omega(t)} \frac{D \phi}{D t} + \phi(\nabla_\varphi \cdot \bd{u}) \dif V = \\
-&= \int_{\Omega(t)} \frac{\partial \phi}{\partial t} + (\bd{u} \cdot \nabla_\varphi) \phi + \phi(\nabla_\varphi \cdot \bd{u}) \dif V = \\
-&= \int_{\Omega(t)} \frac{\partial \phi}{\partial t} + \nabla_\varphi \cdot (\phi \otimes \bd{u}) \dif V.
+&\int_{\Omega(t)} \frac{D \phi}{D t} + \phi(\nabla_\varphi \cdot \bd{u}) \dif V = \\
+= &\int_{\Omega(t)} \frac{\partial \phi}{\partial t} + (\bd{u} \cdot \nabla_\varphi) \phi + \phi(\nabla_\varphi \cdot \bd{u}) \dif V = \\
+= &\int_{\Omega(t)} \frac{\partial \phi}{\partial t} + \nabla_\varphi \cdot (\phi \otimes \bd{u}) \dif V.
 \end{align*}
 Tukaj operacija $\otimes$ označuje diadični produkt $a\otimes b = [a_i b_j]_{ij}$ in divergenca 
 tega produkta je definirana kot $\nabla \cdot (a \otimes b) = [\sum_{j=1}^n \frac{\partial}{\partial x_j} (a_i b_j)]_i$.
 Po izreku o divergenci je
 \begin{align*}
-= \int_{\Omega(t)} \frac{\partial \phi}{\partial t} \dif V + \int_{\partial\Omega(t)} (\phi \otimes \bd{u}) \cdot \bd{n} \dif A.
+  \int_{\Omega(t)} \frac{\partial \phi}{\partial t} + \nabla_\varphi \cdot (\phi \otimes \bd{u}) \dif V = \int_{\Omega(t)} \frac{\partial \phi}{\partial t} \dif V + \int_{\partial\Omega(t)} (\phi \otimes \bd{u}) \cdot \bd{n} \dif A =
 \end{align*}
 Iz lastnosti diadičnega produkta $(\phi \otimes \bd{u}) \cdot \bd{n} = \phi (\bd{u} \cdot \bd{n})$ sledi: 
 \begin{align*}
@@ -424,22 +424,22 @@ Sedaj s pomočjo dokazanega izreka lahko izpeljemo ohranitvene zakone za tekoči
 
 \subsection{Ohranitvena enačba} 
 
-Naj bo $\Omega(t) \subseteq \R^n$ in $\bd{f}: \Omega(t) \times [0, \infty) \rightarrow [0, \infty)$
-količina, ki nas zanima kako se ohranja. Definiramo 
+Naj bo $\Omega(t) \subseteq \R^n$ kot v izreku in $\bd{f}: \Omega(t) \times [0, \infty) \rightarrow \R^m$
+poljubna količina, ki nas zanima kako se ohranja. Definiramo 
 \begin{equation}
-F(t) = \int_{\Omega(t)} \bd{f}(\bd{x}, t) \dif V.
+\bd{F}(t) = \int_{\Omega(t)} \bd{f}(\bd{x}, t) \dif V.
 \end{equation}
-Definiramo dodatno količino $\bd{\text{$\gamma$}}(\bd{x}, t)$ kot 
+Definiramo dodatno količino $\bd{\text{$\gamma$}}$ kot 
 \begin{equation}
 \bd{\text{$\gamma$}}(\bd{x}, t) = \sum_{i=1}^n \frac{\partial f_i}{\partial t}(\bd{x}, t) ,
 \end{equation}
 kjer so $\frac{\partial f_i}{\partial t}$ spremembe količine $\bd{f}$ znotraj domene $\Omega(t)$.
-Pozitivnim spremembam pravimo pritoko, negativnimi pa odtoki.
+Pozitivnim spremembam pravimo pritoki, negativnimi pa odtoki.
 
 \begin{primer}
   Enostaven primer, ki pokaže pomen količine $\bd{\text{$\gamma$}}$. Pri zgornji luknji imamo pritok 
-  mase (tekočine) in v tem primeru je $\gamma_{p} > 0$, med tem, ko imamo v spodnji luknji odtok
-  mase (tekočine) in je $\gamma_{0} > 0$. Celotni $\gamma$ je razlika $\gamma = \gamma_p - \gamma_0$.\\
+  mase (tekočine) in v tem primeru je $\gamma_{p} > 0$. V spodnji luknji masa
+  (tekočina) odteka in je $\gamma_{o} > 0$. Celotni $\gamma$ je razlika $\gamma = \gamma_p - \gamma_o$.\\
   \begin{center}
   \begin{tikzpicture}[scale=1.2]
   
@@ -470,7 +470,9 @@ Pozitivnim spremembam pravimo pritoko, negativnimi pa odtoki.
     
     % Labels
     \node at (3,5.3) {Pritok};
-    \node at (3.5,-1) {Oddtok};
+    \node at (2.5,3.7) {$\gamma_p$};
+    \node at (3.1,-1.2) {Oddtok};
+    \node at (2.5,-0.5) {$\gamma_o$};
     %\node at (3.9,3.5) {Top outflow};
     
     % H explanation
@@ -479,9 +481,9 @@ Pozitivnim spremembam pravimo pritoko, negativnimi pa odtoki.
   \end{center}
 \end{primer}
 
-Spremembo količine $F$ lahko izrazimo preko $\gamma$ kot 
+Spremembo količine $F$ lahko izrazimo preko \bd{\text{$\gamma$}} kot 
 \begin{equation}
-\frac{\dif F}{\dif t} = \int_{\Omega(t)} \bd{\text{$\gamma$}}(\bd{x}, t) \dif V
+\frac{\dif \bd{F}}{\dif t} = \int_{\Omega(t)} \bd{\text{$\gamma$}}(\bd{x}, t) \dif V
 \end{equation}
  oz. 
 \begin{equation}
@@ -491,7 +493,7 @@ Po Reynoldsovem transportnem izreku je
 \begin{equation}
 \int_{\Omega(t)} \frac{\partial \bd{f}}{\partial t}(\bd{x}, t) \dif V + \int_{\partial \Omega(t)} \bd{f}(\bd{x}, t) (\bd{u}(\bd{x}, t) \cdot \bd{n}(\bd{x}, t)) \dif A = \int_{\Omega(t)} \bd{\text{$\gamma$}}(\bd{x}, t) \dif V.
 \end{equation}
-Enačbo lahko s pomočjo izreka o divergenci zapišemo preko diadičnega produkta kot pri dokazu izreka 
+Enačbo lahko s pomočjo izreka o divergenci zapišemo preko diadičnega produkta kot v dokazu izreka \ref{transport}
 \begin{equation}
 \int_{\Omega(t)} \frac{\partial \bd{f}}{\partial t} + \nabla \cdot (\bd{f} \otimes \bd{u}) \dif V = \int_{\Omega(t)} \bd{\text{$\gamma$}} \dif V.
 \end{equation}
@@ -510,15 +512,15 @@ $$
 \end{lema}
 
 \begin{dokaz}
-Recimo, da je $f(\bd{x}_0) \neq 0$ za $\bd{x}_0 \in \Omega' \subset \Omega$. Brez škode 
+Recimo, da je $f(\bd{x}_0) \neq 0$ za $\bd{x}_0 \in \Omega$. Brez škode 
 splošnosti predpostavimo $f(\bd{x}_0) > 0$. Zaradi 
 zveznosti funkcije $f$ obstaja tak $\delta > 0$, da je 
 $$
-f(\bd{x}) > 0, \quad \forall \bd{x} \in B(\bd{x}_0, \delta) \subset \Omega'.
+\forall \bd{x} \in B(\bd{x}_0, \delta):\, f(\bd{x}) > 0.
 $$
-Integriramo nenegativno funkcijo 
+Integriramo pozitivno funkcijo 
 $$
-\int_{\Omega'} f(\bd{x}) \dif V = \int_{B(\bd{x}_0, \delta)} f(\bd{x}) \dif V > 0.
+0 = \int_{B(\bd{x}_0, \delta)} f(\bd{x}) \dif V > 0.
 $$
 To vodi je protislovje, torej je $f(\bd{x}) = 0$.
 \end{dokaz}
@@ -532,10 +534,10 @@ Ker enakost velja za vsako domeno $\Omega(t)$, po lemi \ref{lema:1} sledi:
 
 Sedaj zadnji rezultat uporabimo na konktretnih fizikalnih količinah. 
 Začnemo z zakonom o ohranitvi mase. Naj bo $\rho: \Omega \times [0, \infty) \rightarrow [0, \infty)$
-gostota domene $\Omega$. Vzamemo $\phi = \rho$ in nastavimo $\gamma = 0$, saj se 
+gostota domene $\Omega$. Vzamemo $\bd{f} = \rho$ in nastavimo $\bd{\text{$\gamma$}} = 0$, saj se 
 masa 
 $$
-m(t)_\Omega = \int_\Omega \rho(\bd{x}, t) \dif V
+m(t)= \int_\Omega \rho(\bd{x}, t) \dif V
 $$
 ne ustvari in ne uniči. Dobimo 
 \begin{equation}
@@ -577,14 +579,14 @@ Dobimo
 &\frac{\partial \rho}{\partial t} + \frac{\partial \bd{u}}{\partial t}+ (\nabla \cdot \bd{u}) \rho \bd{u} + (\rho \bd{u} \cdot \nabla) \bd{u} = \bd{F} \\
 &\rho \Big(\frac{\partial \bd{u}}{\partial t} + (\bd{u} \cdot \nabla) \bd{u}\Big) + \bd{u} \Big(\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho\bd{u}) \Big) = \bd{F}.
 \end{align*}
-Ko kontinuitetni enačbi, drugi člen enačbe enak nič. Zapišemo preko 
-materilnega odvoda prvi člen, kar nam da 
+Po kontinuitetni enačbi je drugi člen enačbe enak nič. Prvi člen zapišemo preko 
+materialnega odvoda, kar nam da 
 \begin{equation}
 \rho \frac{D \bd{u}}{D t} = \bd{F}.
 \end{equation}
-Ta rezultat je analogen 2. Newtonovemu zakonu, kjer je masa zamenjana z gostoto in pospešek z materialnim odvodom hitrosti.
-Podajmo še klasfifikacijo sil, ki delujejo na tekočino. Sile delimo na zunanje ali telesne sile, 
-ki delujejo na celotno telo. Primer teh so sila teže, elektromagnetna sila, 
+Ta rezultat je analogen drugemu Newtonovemu zakonu, kjer je masa zamenjana z gostoto in pospešek z materialnim odvodom hitrosti.
+Podajmo še klasifikacijo sil, ki delujejo na tekočino. Sile delimo na zunanje ali telesne sile, 
+to so sile, ki delujejo na celotno telo. Primer teh so sila teže, elektromagnetna sila, 
 Corioliosova sila ... Označevali jih bomo s $\rho \bd{f}_b$. 
 
 Druga vrsta sil so površinske sile, ki delujejo na rob območja. 
@@ -3752,7 +3754,6 @@ Z drugimi besedami, približno $80\%$ celotne energije lahko razrešimo
 za dan filter v tridimenzionalnem primeru.
 \end{primer}
 
-\newpage
 \section{Modeliranje majhnih skal in problem zaprtja}
 V tem poglaju se vrnemo nazaj na filtrirane Navier-Stokevove enačbe: 
 \begin{align*}
@@ -4251,14 +4252,14 @@ Sedaj naštejemo še nekaj več modelov brez natačnejše analize
 
 \section{Model MicroHH}
 
-V zadnjem poglaju se posvetimo konkretnemu računalniškem modelu 
+V zadnjem poglavju se posvetimo konkretnemu računalniškem modelu 
 MicroHH in rezultatom, ki nam jih simulacija vrne. Rezultate 
 simulacije smo primerjali z rezultati 
 meteorološkega modela Aladin. Med tem ko se MicroHH uporablja 
 primarno za razreševanje majhnih skal pri visoki ločljivosti, 
 Aladin da napovedi na veliko večji domeni, vendar pri manjši 
 ločljivosti. Druga ključna razlika je, da je MicroHH narejen 
-primarno za analiranje turbulence preko direktnih numeričnih 
+primarno za analiziranje turbulence preko direktnih numeričnih 
 simulacij ali simulacij preko velikih turbulentnih vrtincev, med tem 
 ko ima Aladin precej širšo vlogo, primarno napovedovanje vremenskih 
 razmer.
@@ -4270,69 +4271,65 @@ je sicer enaka, vendar smo v MicroHH simulaciji vključili še ostale
 fizikalne količine, ki vplivajo na vremensko napoved oz. na obnašanje 
 vetra. 
 MicroHH napoveduje stanje ozračja z numeričnim reševanjem enačb 
-(Runge-Kutta 4. reda) za veter v $x$ in $y$ smeri (komponenti $u$ in $v$), potencialno temperaturo, 
-vlago in tlak, ki jih dobimo iz ohranitvenih zakonov (referenca na 
-poglavje z ohranitvenimi zakoni), vendar zapisanih v (drugi) 
+(z metodo Runge-Kutta 4. reda) za veter v $x$ in $y$ smeri (komponenti $u$ in $v$), virtualno potencialno temperaturo, 
+vlago in tlak, ki jih dobimo iz ohranitvenih zakonov (\ref{sec:ohranitveni-zakoni}), vendar zapisanih v (drugi) 
 Boussinesqovi aproksimaciji, pri kateri predpostavimo da je gostota 
 konstantna, razen v členih, ki opisujejo vzgon. Enačbe le naštejemo, 
-saj bi izpeljevanje vseh zakon potrebovalo predstaviti vso fizikalno 
+saj bi za izpeljevanje vseh zakonov potrebovali predstaviti vso fizikalno 
 podlago, kar bi bilo zamudno. Začnemo z znanim zakonom, t.j. zakon o 
 ohranitvi mase 
 $$
 \nabla \cdot \textbf{U} = 0.
 $$
-Naslednji zakoni, ki jih sicer že poznamo kot zakon o ohranitvi skalarja in gibalne količine, bosta zaradi uvedbe vlage nekoliko drugačna. 
-Termodinamična enakost, ki uvede temperaturo pod vplivom vlage 
-$\theta_v$ in se imenuje virtualna potencialna temperatura je 
+Naslednji zakoni, ki jih sicer že poznamo kot so ohranitev skalarja in
+gibalne količine, bodo zaradi Boussinesqove aproksimacije in uvedbe vlage nekoliko drugačni. 
+Enačba stanje pod vplivom Boussinesqove aproksimacije uvede temperaturo v odvisnosti od vlage je 
 \begin{equation}
 \frac{\theta_v'}{\theta_{v0}} = - \frac{\rho'}{\rho_0},
 \end{equation}
-kjer so $\theta_v'$ perturbacijska virtualna potencialna temperatura, $\rho'$ perturbacijska gostota, $\rho_0 = \rho_0(z)$ referenčna gostota in $\theta_{v0}$ referenčna virtualna potencialna temperatura.
+kjer so $\theta_v$ virtualna potencialna temperatura, $\theta_v'$ 
+perturbacijska virtualna potencialna temperatura, $\rho'$ 
+perturbacijska gostota, $\rho_0 = \rho_0(z)$ referenčna gostota in 
+$\theta_{v0}$ referenčna virtualna potencialna temperatura.
 
 Zakon o ohranitvi gibalne količine se glasi:
 \begin{equation}
+\label{eq:gibalna}
 \frac{\partial \textbf{U}}{\partial t} + (\textbf{U} \cdot \nabla)\textbf{U} = -\frac{1}{\rho_0}\nabla p' + \nu \nabla^2 \textbf{U} + \frac{\theta_v'}{\theta_{v0}} \textbf{e}_3 + \tau^{\text{anizo.}} + \textbf{F},
 \end{equation}
-kjer je edina razlika s prvotnimi enačbami, člen virtualne temperature
-in tlak zamenjamo s perturbacijskim tlakom. Enačbo reušujemo v tri dimenzionalnem prostoru, 
+kjer je edina razlika s prvotnimi enačbami v 3. členu na desni strani, ki opicuje vzgon,
+ter, da je tlak v enačbi \eqref{eq:gibalna} perturbacijski tlak. Enačbo rešujemo v tri dimenzionalnem prostoru, 
 torej $n=3$ oz. tri enačbe. 
 
 Zakon o ohranitvi skalarja se za skalar $\phi$ glasi:
 \begin{equation}
 \frac{\partial \phi}{\partial t} + \frac{1}{\rho_0}\nabla \cdot (\rho_0 \phi\textbf{U}) = \gamma \nabla^2 \phi
 \end{equation}
-V našem primeru imamo dve glavni skalarni količini: (potencialna) 
-temperatura $T$ in vlaga $q$. Enačbi sta: 
+V našem primeru imamo dve glavni skalarni količini: virtualna potencialna
+temperatura $\theta_v$ in vlaga $q$. Enačbi sta: 
 \begin{equation}
-  \frac{\partial T}{\partial t} + \mathbf{U}\cdot\nabla T
-   = \kappa_T \nabla^2 T + S_T, 
+  \frac{\partial \theta_v}{\partial t} + \mathbf{U}\cdot\nabla \theta_v
+   = \kappa_{\theta_v} \nabla^2 T + S_{\theta_v}, 
 \end{equation}
-za $\kappa_T$ - toplotno difuzivnost in $S_T$ - vir toplote npr. sevanje, 
+za $\kappa_{\theta_v}$ - toplotno difuzivnost in $S_{\theta_v}$ - vir toplote npr. sevanje, 
 ter 
 \begin{equation}
   \frac{\partial q}{\partial t} + \mathbf{u}\cdot\nabla q
    = \kappa_q \nabla^2 q + S_q
 \end{equation}
 za $\kappa_q$ - vlažna difuzivnost in $S_q$ - vir vlage npr. kondenzacija, evaporacija.
-Za konec dodamo še enačbo stanja oz. tlačna enačba:
-\begin{equation}
-    p = \rho R_d T_v,
-\end{equation}
-kjer je $R_d$ specifična plinska konstanta za suhi zrak in $T_v$ virtualna temperatura, dana
-z $T_v = T \left( 1 + 0.61 q_v - q_l \right)$, kjer sta $q_v$ specifična vlaga in 
-$q_l$ vlaga v oblakih.
 
 \subsubsection{Sevanje}
 
 Upoštevamo tako \text{kratkovalovno sončno sevanje} kot tudi \text{dolgovalovno sevanje}, ki ga oddajajo tla in oblaki. 
-Za opis interakcije med oblaki in sevanjem uporabimo \textbf{GCSS-parametrizacijo}, ki je preprosta, a računsko hitra. 
+Za opis interakcije med oblaki in sevanjem uporabimo \textbf{GCSS-parametrizacijo}\cite{krueger2016gcss}, ki je preprosta, a računsko hitra. 
 Takšna parametrizacija omogoča zajem glavnih povratnih vplivov med oblaki in sevanjem.
 
 \subsubsection{Mikrofizika oblakov}
 
 Za opis pretvorb med različnimi agregatnimi stanji vode 
 (vodna para, kapljice, dež, sneg, led) uporabljamo 
-\textbf{enomomentno shemo za led}. Shema parametrizira glavne 
+\textbf{enomomentno shemo za led}\cite{tomita2008microphysics}. Shema parametrizira glavne 
 mikrofizikalne procese, kot so kondenzacija, evaporacija, zmrzovanje, 
 taljenje in avtokonverzija med kapljicami in dežnimi kapljami.
 
@@ -4343,12 +4340,15 @@ ki postopoma duši vertikalna gibanja. Ta pristop preprečuje, da bi se
 gravitacijski valovi, ki dosežejo zgornjo mejo domene, nefizikalno 
 odbijali nazaj navzdol. Na ta način so gibanja v notranjosti domene 
 nedotaknjena, v zgornjih nivojih pa se valovna energija postopoma 
-absorbira. Teorijo površinskih slojev (kar vključuje tudi blažilni sloj) sta 
-bolj podrobno obravnavala A.S. Monin in A.M. Obukhov. Njuna podobnostna teorija
+absorbira.
+
+\subsubsection{Površinski sloj}
+Za opis obnašanja površinskih slojev se uporablja teorijo, ki sta jo bolj podrobno razvila A.S. 
+Monin in A.M. Obukhov\cite{monin1954most} (MOST - Monin-Obukhov similarity theory). Njuna podobnostna teorija
 je empirična metoda, ki opisuje univerzalne povezave med 
 brezdimenzijskimi spremenljivkami tekočin, osnovana na 
 Buckingham Pi izreku (referenca na poglavje) in opisuje 
-povprečen tok in temparaturo v povrišnskem sloju.
+povprečen tok in temperaturo v povrišnskem sloju.
 
 \subsection{Domena, časovni korak, začetni in robni pogoji}
 
@@ -4358,19 +4358,31 @@ $x-y$ domeno predstavimo s torusom. Topološko je torus, dan
 kot kvocient 
 $$\mathbb{T}^2 = \mathbb{R}^2 / {a\Z \times b\Z},$$ 
 za $a, b > 0$. To pomeni, da torus dobimo tako, da ravnino razdelimo 
-na pravokotnike velikosti $a \times b$ in zlepimo oz. indetificiramo
+na pravokotnike velikosti $a \times b$ in zlepimo oz. iden
+tificiramo
 nasprotne robove. To implicira periodične robne pogoje v $x$ in $y$ smeri.
 Prednost tega pogleda je, da je uporaba Fourierove analize bolj enostavna.
 
-Začetne pogoji so hitrosti vetrov $u(x, 0)$, $v(x, 0)$ in $w(x, 0)$ enake 
-vrednostim v modelu Aladin ob istem času. 
-Model uporablja Neumanove robne pogoje, kjer na robovih domene nastavimo 
-konstante vrednosti.
+Začetne pogoje za MicroHH nastavimo na vrednosti enake vrednostim 
+v modelu Aladin ob istem času. Pogoje nastavimo za horizontalne 
+hitrosti vetra $u(x,y,z,0)$, $v(x,y,z,0)$ ter virtualno potencialno 
+temperaturo in vlago $\theta_v(x,y,z,0)$ in $q(x,y,z,0)$. Začetno 
+vertikalno komponento vetra $w(x,y,z,0)$ nastavimo na $0$.
 
-Integracija poteka, po časovnih korakih največje velikosti $\dif t_{\text{max}} = 2$, vendar pa časovni 
-korak ni fiksen ampak se zaradi želje po konvergenci spreminja. Pogoju s
+Za robni pogoj na površini (tleh) nastavimo virtualno potencialno
+temperaturo in vlago $\theta_v(x,y,0,0)$, $q(x,y,0,0)$ na vrednosti 
+iz Aladinovih površinskih polj, ki pa se v modelu za površino 
+MOST prevedejo v pogoje za tokove temperature in vlage, kar 
+pomeni, da imamo za spodnje robne pogoje Neumannove pogoje, 
+kjer na robu predpišemo konstantni odvod. Za komponente vetra 
+nastavimo robne pogoje na t.i. "free-slip" pogoje, kar pomeni da 
+je komponenta hitrosti normalna na površino enaka 0, v tangentni
+smeri pa privzamemo, da ni trenja.
+
+Integracija poteka po časovnih korakih največje velikosti $\dif t_{\text{max}} = 2$, vendar pa časovni 
+korak ni fiksen, ampak se zaradi želje po konvergenci spreminja. Pogoju s
 katerem časovni korak prilagajamo pravimo 
-CFL(Courant-Friedrichs-Lewy) število. Ponazorimo, ga na posebnem 
+CFL(Courant-Friedrichs-Lewy) število. Ponazorimo ga na posebnem 
 primeru enodimenzionalne Navier-Stokesove enačbe, ki ji tudi pravimo 
 Burger-jeva enačba
 $$
@@ -4416,44 +4428,133 @@ $z+\overline{z} = |z|^2$:
 so dopustne vrednosti CFL na intervalu $[0, 1]$. Podobna analiza 
 za Navier-Stokesove enačbe je precej bolj zahtevna. Vendar pa rezultati
 kažejo, da je največja smiselna vrednost $\text{CFL} = 1$, običajno pa se giblje okoli $0.3$.
-Metoda s katero rešujemo enačbe je Runge-Kutta metoda $4$. reda.
 
 
 \subsection{Rezultati simulacij}
 
 Za zaključek predstavimo nekaj rezultatov simulacij, ki smo jih izvedli z modelom MicroHH.
-Obravnavamo dve domeni: prva je Planica v času smučarskih skokov na dan 27.3.2025 od 5.00 do 11.00, druga 
-pa Ljubljansko barje od 5.00 do 10.00. Z drugimi besedami 
-MicroHH zaženemo iz Aladinovih polj ob 6h zjutraj po lokalnem času in naredimo 5 urno napoved.
+Napoved MicroHH smo izračunali za dva primera - prvi primer je 
+izračunan na domeni okrog skakalnice v Planici ob času smučarskih
+skokov, drugi primer pa je na domeni okrog ljubljanskega Barja v 
+jutranjih urah ko se je tam pojavila megla.
 
-V planiški dolini je splošen veter v višinah 
-(~1000m nad tlemi) izrazit severovzhodnik, pri tleh
-pa prihaja do izrazitih mešanj in oblivanj reliefa, 
-posledica česar je bila tudi sunkovitost vetra na 
-skakalnici  in obrat smeri vetra na lokaciji 
-(jugozahodnik) (numeričnih podatkov nimamo, ustna 
-komunikacija z vodjem meteorološke podpore na prireditvi).
-
-Ker so lastnosti 
-turbulence lokalne kot sta disipativnost in difuzivnost, želimo 
+Ker so lastnosti turbulence (disipativnost in difuzivnost) lokalne, želimo 
 izbrati čim manjše celice.
 
-Preden se posvetimo rezultatom, navedimo nekaj splošnih napotkov: 
+\subsubsection{Planica}
+Zgodnja pomladanska situacija v alpski
+dolini dne \(27.\,3.\,2025\), ob času tekmovanja na 
+Planiški dolini, je bila zaznamovana z izrazitim 
+severovzhodnim vetrom v višinah 
+(približno \(1000\,\mathrm{m}\) nad tlemi). V 
+spodnjih plasteh ozračja je prihajalo do intenzivnega 
+mešanja in oblivanja reliefa, kar je povzročilo 
+sunkovitost vetra na skakalnici ter obrat smeri vetra 
+na sami lokaciji (v smer jugozahodnika). Numeričnih 
+meritev za ta primer nimamo; opis temelji na ustni 
+komunikaciji z vodjem meteorološke podpore na 
+prireditvi.
+
+Velikost doline, ki jo obravnavamo je 
+$x = 14.08$km, $y = 17.92$km in $z = 7.04$km. Velikost celic smo izbrali
+$x_c=40$m, $y_c=40$m in $z_c=20$m. Število točk v smereh $x$, $y$ in $z$ je 
+\begin{align*}
+n_x = \frac{x}{x_c} = 352, \\
+n_y = \frac{y}{y_c} = 448, \\
+n_z = \frac{z}{z_c} = 352.
+\end{align*}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{rezultati/planica_orografija.pdf}
+  \caption{Orografija na domeni za simulacijo Planica. Z rumeno barvo je označena dolina Tamar, z rdečo lokacija skakalnice v Planici, z oranžno pa Zgornjesavska dolina.}
+  \label{fig:planica_combined}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\textwidth]{rezultati/v_yz_5.pdf}
+  \caption{Prečni prerez $y$ komponente hitrosti vetra v $x-z$ ravnini ob 11:00, kjer je $y$ konstanten in je izbran na zemljepisni širini skakalnice v Planici.
+  Z rdečo barvo je označena Planica.
+  }
+  \label{fig:planica}
+\end{figure}
+
+\begin{opomba}
+  \hfill
+  \begin{itemize}
+    \item Na sliki orografije \ref{fig:planica} opazimo, da imamo zelo izrazito uniformno območje. 
+    To je umetno narejeno, tako, da smo nastavili robne vrednosti na minimlno vrednost celotne 
+    območja. Razlog za to je torusna predstavitev domene. Ker indetificimo nasprotno 
+    ležeče stranice, morajo biti robne vrednosti enake, saj bi v nasprotnem primeru
+    nastale velike skoke v vrednostih na robovih oz. nezveznoti, kar bi pokvarilo rezultate.
+  \item Za domeno smo izbrali število točk, ki na prvi pogled izgledajo popolnoma naključno, 
+  vendar ni popolnoma tako. Velikostni red teh števil je omejen z zmogljivostjo računalnika.
+  Za sama števila pa opazimo, da so vsa deljiva s 8, razlog za to je, da smo lahko 
+  paralelno računanje razdelili na 8 jeder.
+  \end{itemize}
+\end{opomba}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{rezultati/u_planica_long_5.pdf}
+  \caption{Višinska profila $x$ komponente hitrosti vetra iz modelov Microhh in Aladin ob 11:00, na mestu skakalnice v Planici.}
+  \label{fig:planica_T3}
+\end{figure}
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\textwidth]{rezultati/v_planica_long_5.pdf}
+  \caption{Višinska profila $y$ komponente hitrosti vetra iz modelov Microhh in Aladin ob 11:00, na mestu skakalnice v Planici.}
+  \label{fig:planica_T4}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\textwidth]{rezultati/tv_planica_long_5.pdf}
+  \caption{Višinska profila virtualne temperature iz modelov Microhh Aladin ob 11.00, na mestu skakalnice v Planici \label{fig:planica_uy}}
+  \label{fig:planica_vy}
+\end{figure}
+
+
+Kaj lahko sklepamo iz grafov hitrosti vetra?
+
 \begin{itemize}
-  \item Modre pike na grafih predstavljajo meritve s sodar senzorjem. 
-  Postavljeni so na različnih višinah med $300$m in $600$m. 
-  \item Črtasta modra krivulja predstavlja rezultate modela Aladin po $3$ ali $4$
-  urah simulacije.
-  \item Polna modra krivulja predstavlja rezultate modela Microhh po $3$ ali $4$
-  urah simulacije.
+  \item Model MicroHH smo zagnali iz začetnih polj modela ALADIN ob \(6{:}00\) po lokalnem času in izvedli \(5\)-urno napoved.
+   \item Pri obeh modelih (sliki \ref{fig:planica_T3}, \ref{fig:planica_T4}) je v višinah prisoten izrazit 
+   splošni severovzhodni veter (tako komponenti \(u\) 
+   kot \(v\) sta negativni). V spodnjih plasteh ozračja 
+   pa pride v modelu {MicroHH} do obrata smeri 
+   vetra, ki piha jugozahodno oziroma skoraj južno, kar 
+   se ujema z dejanskim potekom vetra med tekmovanjem. 
+   Podobno je opazno iz vertikalnega preseka komponent 
+   vetra v smeri zahod-vzhod (rdeča označuje veter v 
+   smeri severa). Prav tako se opazi prisotnost 
+   blažilnem-območja na vrhu domene {MicroHH} 
+   (od \(5500\,\mathrm{m}\) do \(7000\,\mathrm{m}\)). 
+   Model {ALADIN} ohranja splošno smer vetra tudi 
+    v dnu doline, kar ni v skladu z dejanskimi opazovanji.
+  \item Iz slike \ref{fig:planica_vy} je v v obeh primerih nad \(1300\,\mathrm{m}\) 
+  profil temperature adiabaten, kar kaže, da je zrak 
+  dobro premešan (posledica močnega vetra v višinah). 
+  V modelu {ALADIN} se mešanje nadaljuje vse do 
+  tal, medtem ko se v modelu {MicroHH} v spodnjih
+  plasteh doline začenja nabirati relativno hladen zrak,
+  kar je bolj realističen prikaz, saj nakazuje manjše 
+  mešanje.
+
 \end{itemize}
 
-
+\newpage
 \subsubsection{Ljubljansko barje}
 
-Za Ljubljasnko barje smo izbrali domeno velikosti $x= 10.88$km, 
-$y = 11.52$km, in $z = 5.12$km. Velikost celic je enaka kot v primeru Planice.
-Velikost celic smo izbrali
+Na podlagi meritev z napravo \textbf{SODAR}\footnote{SODAR (Sonic Detection and Ranging) je akustični sistem, ki z merjenjem Dopplerjevega premika zvočnih valov omogoča določanje vertikalnih profilov vetra in turbulence v nižjih plasteh atmosfere.} 
+(\ref{fig:barje_T3}), ki jih izvaja \textbf{Agencija Republike Slovenije za okolje (ARSO)} na območju \textbf{Ljubljanskega barja}, 
+je bila dne \textbf{4. septembra 2025} zaznana pozno poletna situacija z značilnim vertikalnim profilom vetra in temperature.
+
+Izbrali smo domeno velikosti $x= 10.88$km, 
+$y = 11.52$km, in $z = 5.12$km. Velikost celic smo izbrali
 $x_c=40$m, $y_c=40$m in $z_c=20$m. Število točk v smereh $x$, $y$ in $z$ je 
 \begin{align*}
 n_x = \frac{x}{x_c} = 272 , \\
@@ -4463,48 +4564,25 @@ n_z = \frac{z}{z_c} = 256.
 
 \begin{figure}[h!]
   \centering
-  \begin{subfigure}[b]{1\textwidth}
-    \centering
-    \includegraphics[width=0.48\textwidth]{rezultati/barje_dem.png}
-    \caption{Orografija Ljubljanskega barja.}
-  \end{subfigure}\hfill
-  \begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{rezultati/barje_dem2.jpeg}
-    \caption{Z oražno barvo je označena Šmarna gora, z rdečo pa Sodar senzor.}
-  \end{subfigure}
-  %\label{fig:orography_sidebyside}
+  \includegraphics[width=\textwidth]{rezultati/barje_orografija.pdf}
+  \caption{Z oranžno barvo je označena Zgornja Savska dolina, z rdečo položaj SODAR senzorja, 
+      z zeleno dolina Tamar, z rdečo pa naselje Rateče.}
+  \label{fig:barje_combined}
 \end{figure}
 
-Za Ljubljansko barje je čas opazovanja med 5.00 in 10.00, torej $[0, 18000]$.
-Rezultate izračunali v točki, kjer se nahaja senzor. 
-\begin{opomba}
-\hfill
-\begin{itemize}
-  \item Na sliki orografije opazimo, da imamo zelo izrazito uniformno območje. 
-  To je umetno narejeno, tako, da smo nastavili robne vrednosti na minimlno vrednost celotne 
-  območja. Razlog za to je torusna predstavitev domene. Ker indetificimo nasprotno 
-  ležeče stranice, morajo biti robne vrednosti enake, saj bi v nasprotnem primeru
-  nastale velike skoke v vrednostih na robovih oz. nezveznoti, kar bi pokvarilo rezultate.
-\item Za domeno smo izbrali število točk, ki na prvi pogled izgledajo popolnoma naključno, 
-vendar ni popolnoma tako. Velikostni red teh števil je omejen z zmogljivostjo računalnika.
-Za sama števila pa opazimo, da so vsa deljiva s 8, razlog za to je, da smo lahko 
-paralelno računanje razdelili na 8 jeder.
-\end{itemize}
-\end{opomba}
+Za Ljubljansko barje je čas napovedi med 5.00 in 10.00, torej $[0, 18000]$ sekund.
+Rezultate izračunamo v točki, kjer se nahaja senzor. 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.9\textwidth]{rezultati/barje_sodar_tv_345.pdf}
-  \caption{Graf virtualne temperature $T$ v odvisnoti od višine, kjer smo 
-  rezultat dobili ob času 8.00.}
+  \caption{Višinski profili virtualne temperature iz SODAR meritev ob 8.00, 9.00 in 10.00.}
   \label{fig:barje_T3}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.9\textwidth]{rezultati/tv_barje_long_5.pdf}
-  \caption{Graf virtualne temperature $T$ v odvisnoti od višine, kjer smo 
-  rezultat dobili ob času 9.00.}
+  \caption{Višinski profil virtualne temperature iz SODAR meritev, modela Microhh in modela Aladin ob 10.00 na mestu SODAR merilnika.}
   \label{fig:barje_T4}
 \end{figure}
 
@@ -4518,11 +4596,8 @@ paralelno računanje razdelili na 8 jeder.
 
 Kaj lahko sklepamo iz grafov \ref{fig:barje_T3}, \ref{fig:barje_T4} in \ref{fig:barje_T5}?
 \begin{itemize}
-  \item Na podlagi meritev z napravo \textbf{SODAR}\footnote{SODAR (Sonic Detection and Ranging) je akustični sistem, ki z merjenjem Dopplerjevega premika zvočnih valov omogoča določanje vertikalnih profilov vetra in turbulence v nižjih plasteh atmosfere.} 
-  (\autoref{fig:barje_T3}), ki jih izvaja \textbf{Agencija Republike Slovenije za okolje (ARSO)} na območju \textbf{Ljubljanskega barja}, 
-  je bila dne \textbf{4. septembra 2025} zaznana pozno poletna situacija z značilnim vertikalnim profilom vetra in temperature. 
-  
-  Analiza kaže na prisotnost \textbf{relativno šibke talne inverzije}\footnote{Talna (radiacijska) inverzija je plast zraka pri tleh, kjer se temperatura z višinjo povečuje namesto znižuje. Nastane zaradi nočnega ohlajanja tal in s tem spodnjih plasti zraka.} 
+  \item 
+  Analiza kaže na prisotnost \textbf{relativno šibke talne inverzije}\footnote{Talna (radiacijska) inverzija je plast zraka pri tleh, kjer se temperatura z višino povečuje namesto znižuje. Nastane zaradi nočnega ohlajanja tal in s tem spodnjih plasti zraka.} 
   v višinskem pasu med približno \textbf{300 in 400~m nad tlemi} ter 
   \textbf{zmerne subsidenčne inverzije}\footnote{Subsidenčna inverzija nastane zaradi spuščanja zračnih mas iz višjih plasti atmosfere (subsidence), pri čemer se zrak segreva adiabatsko in tvori stabilen sloj, ki zavira navpično gibanje.} 
   med \textbf{500 in 700~m}. 
@@ -4567,176 +4642,6 @@ V primeru modela {ALADIN}
 se megla \textbf{ni razvila}, kar je pričakovano, saj je šlo za {zelo tanko plast} 
 z visoko občutljivostjo na začetne pogoje. 
 Poleg tega je v tem modelu {mešanje vlage izrazito šibkejše} kot v simulaciji z MicroHH. 
-
-  %\item Rezultati modela Microhh se po $3$h in $4$h precej bolje ujemajo z meritvami kot rezultati modela Aladin, 
-  %med tem, ko se po $5$h rezultati modela Aladin ujemajo bolje z meritvami.
-  %Možna razlaga zakaj pride do sprememba ujemanja je, v začetni fazi simulacije.
-  %Ker so začetni pogoji za virtualno temperaturo konstantni z vrednostjo $285$K,
-  %potrebuje model nekaj časa, da se prilagodi meritvam.  
-  %\item Kaj pa fizikalno pokažejo meritve in simulacija? Temperatura se s časom 
-  %dviga, kar je pričakovano, saj je čas opazovanja med 5.00 in 10.00, torej
-  %v času, ko sonce že močno greje ozračje. 
-  %\item Na grafu \ref{fig:barje_T4} opazimo da pride do izrazite spremembe,
-  %na višini okoli $400$m. Temu pojavu pravimo \textbf{temperaturna inverzija}, kar 
-  %pomeni, da temperatura raste z višino na nekem območju. 
 \end{itemize}
-
-%\begin{itemize}
-%  \item Nažalost za vlago nimamo meritev, zato lahko le primerjamo rezultate modelov in 
-%  opažanjem iz tistega dne. Kljub pomankanju meritev vidimo, da imata modela 
-%  podone rezultate, kar je dober znak.
-%  \item Megla se pojavi, ko je ozračje nasičeno z vlago, kar pomeni, da je relativna vlaga blizu $100\%$, 
-%  vendar pa se v praksi izkaže, da se megla pojavi že pri relativni vlagi okoli $85\%$. Čeprav, 
-%  nam začetni pogoji modela Microhh, nekoliko pokvarijo rezultate, kljub temu 
-%  modela napovesta meglo, kar se izkaže, da je bilo tudi res tisti dan.
-%\end{itemize}
-
-\newpage
-\subsubsection{Planica}
-
-Velikost doline, ki jo obravnavamo je 
-$x = 14.08$km, $y = 17.92$km in $z = 7.04$km. Velikost celic smo izbrali
-$x_c=40$m, $y_c=40$m in $z_c=20$m. Število točk v smereh $x$, $y$ in $z$ je 
-\begin{align*}
-n_x = \frac{x}{x_c} = 352, \\
-n_y = \frac{y}{y_c} = 448, \\
-n_z = \frac{z}{z_c} = 352.
-\end{align*}
-
-\begin{figure}[h!]
-  \centering
-  \begin{subfigure}[b]{0.48\textwidth}
-      \centering
-      \includegraphics[width=\textwidth]{rezultati/dem_planica.png}
-      %\caption{Orografija planiške doline.}
-      \label{fig:dem_planica}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.48\textwidth}
-      \centering
-      \includegraphics[width=\textwidth]{rezultati/dem_planica2.jpeg}
-      \label{fig:dem_planica2}
-  \end{subfigure}
-  \caption{Z oranžno barvo je označena Zgornja Savska dolina, z rdečo položaj SODAR senzorja, 
-      z zeleno dolina Tamar, z rdečo pa naselje Rateče.}
-  \label{fig:planica_combined}
-\end{figure}
-
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.9\textwidth]{rezultati/v_yz_5.pdf}
-  \caption{Graf hitrosti vetra $y$-komponente $v$ v odvisnoti od višine, kjer opazujemo 
-  prerez v $y-z$ ravnini, kjer je $x$ konstantno.}
-\end{figure}
-
-\newpage
-V primeru Planice je čas opazovanja se začne ob 7.00 zjutraj in konča ob 12.00, 
-zato je časovni interval opazovanj pet ur oz. rešitve iščemo na intervalu $[0, 10800]$.
-
-\begin{figure}[h!]
-  \centering
-  % Planica
-  \begin{subfigure}[b]{1\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{rezultati/u_planica_long_3.pdf}
-    \caption{Graf hitrosti vetra $x$-komponente $u$ v odvisnoti od višine, kjer smo 
-    rezultat dobili ob času 9.00.}
-    \label{fig:planica_T3}
-    %\label{fig:planica}
-  \end{subfigure}\hfill
-  % Ljubljansko barje
-  \begin{subfigure}[b]{1\textwidth}
-    \caption{Graph of wind speed $x$-component $u$ as a function of height, obtained at 10:00.}
-    \label{fig:planica_T4}
-    \centering
-    \includegraphics[width=\textwidth]{rezultati/u_planica_long_4.pdf} 
-    \caption{Graf hitrosti vetra $x$-komponente $u$ v odvisnoti od višine, kjer smo 
-    rezultat dobili ob času 10.00.}
-    %\label{fig:barje}
-  \end{subfigure}
-  %\label{fig:orography_sidebyside}
-\end{figure}
-
-\newpage
-%\begin{figure}[h!]
-%  \centering
-  % Planica
-%  \begin{subfigure}[b]{1\textwidth}
-%    \centering
-%    \includegraphics[width=\textwidth]{rezultati/u_planica_long_5.pdf}
-%    \caption{Graf hitrosti vetra $y$-komponente $v$ v odvisnoti od višine, kjer smo 
-%    rezultat dobili ob času 9.00.}
-    %\label{fig:planica}
-%  \end{subfigure}\hfill
-  % Ljubljansko barje
-%  \begin{subfigure}[b]{1\textwidth}
-%    \centering
-%    \includegraphics[width=\textwidth]{rezultati/v_planica_long_5.pdf} 
-%    \caption{Graf hitrosti vetra $y$-komponente $v$ v odvisnoti od višine, kjer smo 
-%    rezultat dobili ob času 10.00.}
-    %\label{fig:barje}
-%  \end{subfigure}
-  %\label{fig:orography_sidebyside}
-%\end{figure}
-%\newpage
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.9\textwidth]{rezultati/tv_planica_long_5.pdf}
-  \caption{Graf hitrosti vetra $y$-komponente $v$ v odvisnoti od višine, kjer opazujemo 
-  prerez v $y-z$ ravnini, kjer je $x$ konstantno. \label{fig:planica_vy}}
-\end{figure}
-
-
-Kaj lahko sklepamo iz grafov hitrosti vetra?
-
-\begin{itemize}
-  \item Model MicroHH smo zagnali iz začetnih polj modela ALADIN ob \(6{:}00\) po lokalnem času in izvedli \(5\)-urno napoved.
-  \item Zgodnja pomladanska situacija v alpski
-   dolini dne \(27.\,3.\,2025\), ob času tekmovanja na 
-   Planiški dolini, je bila zaznamovana z izrazitim 
-   severovzhodnim vetrom v višinah 
-   (približno \(1000\,\mathrm{m}\) nad tlemi). V 
-   spodnjih plasteh ozračja je prihajalo do intenzivnega 
-   mešanja in oblivanja reliefa, kar je povzročilo 
-   sunkovitost vetra na skakalnici ter obrat smeri vetra 
-   na sami lokaciji (v smer jugozahodnika). Numeričnih 
-   meritev za ta primer nimamo; opis temelji na ustni 
-   komunikaciji z vodjem meteorološke podpore na 
-   prireditvi.
-   \item Pri obeh modelih (sliki \ref{fig:planica_T3}, \ref{fig:planica_T4}) je v višinah prisoten izrazit 
-   splošni severovzhodni veter (tako komponenti \(u\) 
-   kot \(v\) sta negativni). V spodnjih plasteh ozračja 
-   pa pride v modelu {MicroHH} do obrata smeri 
-   vetra, ki piha jugozahodno oziroma skoraj južno, kar 
-   se ujema z dejanskim potekom vetra med tekmovanjem. 
-   Podobno je opazno iz vertikalnega preseka komponent 
-   vetra v smeri zahod–vzhod (rdeča označuje veter v 
-   smeri severa). Prav tako se opazi prisotnost 
-   blažilnem-območja na vrhu domene {MicroHH} 
-   (od \(5500\,\mathrm{m}\) do \(7000\,\mathrm{m}\)). 
-   Model {ALADIN} ohranja splošno smer vetra tudi 
-    v dnu doline, kar ni v skladu z dejanskimi opazovanji.
-  \item Iz slike \ref{fig:planica_vy} je v v obeh primerih nad \(1300\,\mathrm{m}\) 
-  profil temperature adiabaten, kar kaže, da je zrak 
-  dobro premešan (posledica močnega vetra v višinah). 
-  V modelu {ALADIN} se mešanje nadaljuje vse do 
-  tal, medtem ko se v modelu {MicroHH} v spodnjih
-  plasteh doline začenja nabirati relativno hladen zrak,
-  kar je bolj realističen prikaz, saj nakazuje manjše 
-  mešanje.
-
-\end{itemize}
-
-%\begin{itemize}
-%\item Ponovno nimamo meritev za tisti dan (oz. so neuporabne), vendare pa ponovno opazimo 
-%podobno obnašanje modelov.
-%\item Iz opažanj vemo, da je ob času tekmo močan jugo-vzhodni veter, kar pomeni 
-%pomeni, da je druga komponenta vetra negativna tj. $v < 0$ in $|v| >> 0$, kar se ujema 
-%z grafoma za hitrost $v$.
-%\end{itemize}
-
-
 
 \end{document}
