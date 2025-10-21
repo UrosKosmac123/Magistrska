@@ -448,6 +448,9 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdfx/8bit.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdfx/8bit.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdfx/8bit.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdfx/8bit.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdfx/8bit.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdfx/8bit.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdfx/8bit.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pdftex/glyphtounicode.tex
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdfx/glyphtounicode-cmr.tex
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdfx/glyphtounicode-ntx.tex
@@ -603,8 +606,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmtt12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmcsc10.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
@@ -631,7 +632,9 @@ INPUT ./slike/Reynolds.jpeg
 INPUT ./slike/Reynolds.jpeg
 INPUT ./slike/Reynolds.jpeg
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm

@@ -16,7 +16,7 @@
 \naslov{Turbulence in simulacije velikih turbulentnih vrtincev}
 
 % - naslov dela v angleščini
-\title{Atmospheric turbulence and Large eddy simulations}
+\title{Turbulence and Large eddy simulations}
 
 % - ime mentorja/mentorice s polnim nazivom:
 %   - doc.~dr.~Ime Priimek
@@ -38,21 +38,51 @@
 % - povzetek v slovenščini
 %   V povzetku na kratko opišite vsebinske rezultate dela. Sem ne sodi razlaga
 %   organizacije dela, torej v katerem razdelku je kaj, pač pa le opis vsebine.
-\povzetek{Tukaj napišemo povzetek vsebine. Sem sodi razlaga vsebine in ne opis tega, kako je delo organizirano.}
+\povzetek{V tem magistrskem delu preučujemo pojav turbulence in 
+njeno analizo preko simulacije velikih turbulentnih vrtincev (LES - Large Eddy Simulation). 
+Najprej so obravnavani temeljni ohranitveni zakoni, kot so zakon 
+o ohranitvi mase, gibalne količine, vrtilne količine in energije,
+ter njihova povezava z Navier-Stokesovimi enačbami. Nato se 
+osredotočimo na postopek filtracije in modeliranje majhnih skal,
+pri čemer so predstavljeni različni pristopi, glavni je
+modelom Smagorinskega. 
+Pomemben del dela je tudi analiza energije, ki
+temelji na Kolmogorovovi teoriji turbulence in nam omogoča oceniti 
+napako metode. V zaključnem delu 
+so predstavljene numerične simulacije, izvedene z modelom 
+MicroHH, ki prikazujejo turbulentne procese v atmosferi nad 
+območjema Planice in Ljubljanskega barja. Rezultati potrjujejo 
+uporabnost LES pristopa za opis turbulentnih tokov v atmosferi 
+ter pomen ustrezne izbire modela pri numeričnih izračunih.}
 
 % - povzetek v angleščini
-\abstract{An abstract of the work is written here. This includes a short description of
-the content and not the structure of your work.}
+\abstract{In this master’s thesis, we examine the phenomenon of 
+turbulence and its analysis through Large Eddy Simulation (LES).
+ First, we discuss the fundamental conservation laws, such as 
+ the conservation of mass, momentum, angular momentum, and 
+ energy, and their connection to the Navier–Stokes equations. 
+ We then focus on the filtering process and the modeling of 
+ small scales, presenting different approaches, with the main 
+ one being the Smagorinsky model. An important part of the 
+ thesis is also the analysis of energy based on Kolmogorov’s 
+ turbulence theory, which allows us to estimate the method’s 
+ error. In the final part, we present numerical simulations 
+ performed with the MicroHH model, which demonstrate turbulent 
+ atmospheric processes over the areas of Planica and the 
+ Ljubljana Marshes. The results confirm the applicability of 
+ the LES approach for describing turbulent atmospheric flows 
+ and highlight the importance of proper model selection in 
+ numerical computations.}
 
 % - klasifikacijske oznake, ločene z vejicami
 %   Oznake, ki opisujejo področje dela, so dostopne na strani https://www.ams.org/msc/
-\klasifikacija{74B05, 65N99}
+\klasifikacija{76F02,76F05, 76F65, 76M55}
 
 % - ključne besede, ki nastopajo v delu, ločene s \sep
-\kljucnebesede{integracija\sep kompleks\sep \texorpdfstring{$C^*$}{C*}-algebre}
+\kljucnebesede{turbulenca, veliki turbulentni vrtinci, ohranitveni zakoni, vektorska analiza, Navier-Stokesove enačbe, filtracija, energija, modeliranje}
 
 % - angleški prevod ključnih besed
-\keywords{integration\sep complex\sep \texorpdfstring{$C^*$}{C*}-algebras}
+\keywords{turbulence, large eddies, conservation laws, vector analysis, Navier-Stokes equations, filtering, energy, modeling}
 
 % - neobvezna zahvala
 %\zahvala{
@@ -61,9 +91,9 @@ the content and not the structure of your work.}
 %}
 
 % - program dela, ki ga napiše mentor z osnovno literaturo
-\programdela{
-  Mentor naj napiše program dela skupaj z osnovno literaturo.
-}
+%\programdela{
+%  Mentor naj napiše program dela skupaj z osnovno literaturo.
+%}
 
 \osnovnaliteratura{
 % Literatura mora biti tukaj posebej samostojno navedena (po pomembnosti) in ne
@@ -633,7 +663,7 @@ površinske momente oblike $\bd{M}_S = \nabla \cdot (\bd{r} \times \sigma)$. Pon
 \begin{align*}
 \frac{\partial (\bd{x} \times (\rho\bd{u}))}{\partial t} + \nabla \cdot (\bd{x} \times (\rho \bd{u})) \otimes \bd{u} &= \bd{x}\times \bd{f}_b
 \end{align*}
-oz. z novimo momemnti 
+oz. z novimo momenti 
 \begin{align*}
   \frac{\partial (\bd{x} \times (\rho\bd{u}))}{\partial t} + \nabla \cdot (\bd{x} \times (\rho \bd{u})) \otimes \bd{u} &= \bd{x}\times (\rho \bd{f}_b) + \nabla \cdot (\bd{x} \times \sigma).
 \end{align*}

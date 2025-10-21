@@ -64,10 +64,8 @@
    <dc:format>application/pdf</dc:format> 
    <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Turbulence in simulacije velikih turbulentnih vrtincev</rdf:li></rdf:Alt></dc:title>
    <dc:creator><rdf:Seq><rdf:li>Uroš Kosmač</rdf:li></rdf:Seq></dc:creator>
-   <dc:description><rdf:Alt><rdf:li xml:lang="x-default">Magistrsko delo, Matematika, 74B05, 65N99</rdf:li></rdf:Alt></dc:description>
-   <dc:subject><rdf:Bag><rdf:li>integracija</rdf:li>
-     <rdf:li>kompleks</rdf:li>
-     <rdf:li>C*-algebre</rdf:li></rdf:Bag></dc:subject>
+   <dc:description><rdf:Alt><rdf:li xml:lang="x-default">Magistrsko delo, Matematika, 76F02,76F05, 76F65, 76M55</rdf:li></rdf:Alt></dc:description>
+   <dc:subject><rdf:Bag><rdf:li>turbulenca, veliki turbulentni vrtinci, ohranitveni zakoni, vektorska analiza, Navier-Stokesove enačbe, filtracija, energija, modeliranje</rdf:li></rdf:Bag></dc:subject>
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:prism="http://prismstandard.org/namespaces/basic/2.2/"> 
   </rdf:Description> 
@@ -79,15 +77,15 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2025-10-21T18:53:41+02:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2025-10-21T18:53:41+02:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2025-10-21T18:53:41+02:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2025-10-21T21:04:27+02:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2025-10-21T21:04:27+02:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2025-10-21T21:04:27+02:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
    <xmpMM:DocumentID>uuid:3DAEA27D-8198-DB3C-8071-3A4D4E9C7567</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:E9920E91-BC8B-51B9-D623-D6697E75C6C1</xmpMM:InstanceID> 
+   <xmpMM:InstanceID>uuid:BB2C1E4C-074A-1BCB-9429-951E44612408</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 

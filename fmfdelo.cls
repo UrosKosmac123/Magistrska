@@ -589,13 +589,6 @@
   \cleardoublepage
 }
 \def\@frontpages@common@program{
-  \@sloeng{
-    \pdfbookmark[1]{Program dela}{program}
-  }{
-    \pdfbookmark[1]{Project plan}{program}
-  }
-  \@sloeng{\section*{Program dela}}{\section*{Project plan}}
-  \@programdela
 
   % izvede vsebino osnovne literature
   \@osnovnaliteratura
@@ -605,12 +598,6 @@
                                     {\section*{Basic references}}}]
   \endrefcontext
 
-  \vspace{2cm}
-  \begin{flushright}
-    \begin{tabular}{rp{4cm}} \@sloeng{\@podpisi}{\@signatures} \end{tabular}
-  \end{flushright}
-  \vfill
-  \cleardoublepage
 }
 \def\@frontpages@sl@naslovnica{
   \thispagestyle{empty}

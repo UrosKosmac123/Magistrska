@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.25)  21 OCT 2025 18:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.25)  21 OCT 2025 21:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -917,7 +917,7 @@ Package: mathalpha 2025/01/17 - 1.145mathalpha (License LPPL) Michael Sharpe
 LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `bold'
 (Font)                  U/BOONDOX-scro/m/n --> U/BOONDOX-scro/b/n on input line 963.
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 122.
+Package hyperref Info: Option `colorlinks' set `true' on input line 152.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/esdiff/esdiff.sty
 Package: esdiff 
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/animate/animate.sty
@@ -1149,6 +1149,8 @@ File: 8bit.def 2008/03/30 v1.1d Input encoding file
 File: 8bit.def 2008/03/30 v1.1d Input encoding file
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/pdfx/8bit.def
+File: 8bit.def 2008/03/30 v1.1d Input encoding file
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/pdfx/8bit.def
 File: 8bit.def 2008/03/30 v1.1d Input encoding file
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/pdfx/8bit.def
@@ -1609,32 +1611,32 @@ Now handling font encoding PU ...
    defining Unicode char U+2423 (decimal 9251)
    defining Unicode char U+FEFF (decimal 65279)
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 170.
-Package hyperref Info: Option `colorlinks' set `true' on input line 170.
-Package hyperref Info: Option `unicode' set `true' on input line 170.
-Package hyperref Info: Option `breaklinks' set `true' on input line 170.
-Package hyperref Info: Option `psdextra' set `true' on input line 170.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 200.
+Package hyperref Info: Option `colorlinks' set `true' on input line 200.
+Package hyperref Info: Option `unicode' set `true' on input line 200.
+Package hyperref Info: Option `breaklinks' set `true' on input line 200.
+Package hyperref Info: Option `psdextra' set `true' on input line 200.
  (./Kosmač-27232011-2025.aux)
 \openout1 = `Kosmač-27232011-2025.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
 Package biblatex Info: Trying to load language 'slovene'...
 Package biblatex Info: ... file 'slovene.lbx' found.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/slovene.lbx
@@ -1648,8 +1650,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Kosmač-27232011-2025.bbl' found.
  (./Kosmač-27232011-2025.bbl)
-Package biblatex Info: Reference section=0 on input line 170.
-Package biblatex Info: Reference segment=0 on input line 170.
+Package biblatex Info: Reference section=0 on input line 200.
+Package biblatex Info: Reference segment=0 on input line 200.
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count523
@@ -1672,7 +1674,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 170.
+Package hyperref Info: Link coloring ON on input line 200.
  (./Kosmač-27232011-2025.out) (./Kosmač-27232011-2025.out)
 \@outlinefile=\write8
 \openout8 = `Kosmač-27232011-2025.out'.
@@ -1684,49 +1686,49 @@ Package hyperref Info: Link coloring ON on input line 170.
 \enitdp@tabularnotes=\count530
 \c@tabularnotes*i=\count531
 \enitdp@tabularnotes*=\count532
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 170.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 200.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 170.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 200.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 170.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 200.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 170.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 200.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 170.
+(Font)              <17.28> on input line 200.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 170.
+(Font)              <12> on input line 200.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 170.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 170.
+(Font)              <10> on input line 200.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 200.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 170.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 200.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 170.
+LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 200.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/yhmath/OMXyhex.fd
 File: OMXyhex.fd 
 File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 170.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 200.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 170.
+(Font)              <14.4> on input line 200.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 170.
+(Font)              <7> on input line 200.
 
 
 (/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
@@ -1739,9 +1741,9 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 170.
+(Font)              <8> on input line 200.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 170.
+(Font)              <6> on input line 200.
  (./Kosmač-27232011-2025.toc
 
 [3])
@@ -1751,16 +1753,16 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 [4]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 170.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 200.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (17.54521pt too wide) in paragraph at lines 170--170
+Overfull \hbox (17.54521pt too wide) in paragraph at lines 200--200
 \T1/lmr/m/n/12 19. 7. 2025], do-sto-pno na [][]$\T1/lmtt/m/n/12 https : / / web . stanford . edu / group / ctr / ResBriefs97 /|
  []
 
 
-Overfull \hbox (5.70221pt too wide) in paragraph at lines 170--170
+Overfull \hbox (5.70221pt too wide) in paragraph at lines 200--200
 \T1/lmr/m/n/12 19. 7. 2025], do-sto-pno na [][]$\T1/lmtt/m/n/12 https : / / wias -[] berlin . de / people / john / BETREUUNG /|
  []
 
@@ -1771,41 +1773,35 @@ Overfull \hbox (5.70221pt too wide) in paragraph at lines 170--170
 ]
 
 [6]
-
-[7
-
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-
-[8
-
-]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 180.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 210.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<slike/vrtinci.jpeg, id=405, 1558.82375pt x 1002.74625pt>
+<slike/vrtinci.jpeg, id=387, 1558.82375pt x 1002.74625pt>
 File: slike/vrtinci.jpeg Graphic file (type jpg)
 <use slike/vrtinci.jpeg>
-Package pdftex.def Info: slike/vrtinci.jpeg  used on input line 192.
+Package pdftex.def Info: slike/vrtinci.jpeg  used on input line 222.
 (pdftex.def)             Requested size: 202.72522pt x 130.40749pt.
-<slike/vrtinci2.jpeg, id=406, 1734.48pt x 1003.75pt>
+<slike/vrtinci2.jpeg, id=388, 1734.48pt x 1003.75pt>
 File: slike/vrtinci2.jpeg Graphic file (type jpg)
 <use slike/vrtinci2.jpeg>
-Package pdftex.def Info: slike/vrtinci2.jpeg  used on input line 198.
+Package pdftex.def Info: slike/vrtinci2.jpeg  used on input line 228.
 (pdftex.def)             Requested size: 202.7031pt x 130.30829pt.
-<slike/difus.jpeg, id=413, 1745.52126pt x 1003.75pt>
+<slike/difus.jpeg, id=395, 1745.52126pt x 1003.75pt>
 File: slike/difus.jpeg Graphic file (type jpg)
 <use slike/difus.jpeg>
-Package pdftex.def Info: slike/difus.jpeg  used on input line 219.
+Package pdftex.def Info: slike/difus.jpeg  used on input line 249.
 (pdftex.def)             Requested size: 331.65248pt x 190.71448pt.
-<slike/Reynolds.jpeg, id=414, 1237.62375pt x 1003.75pt>
+<slike/Reynolds.jpeg, id=396, 1237.62375pt x 1003.75pt>
 File: slike/Reynolds.jpeg Graphic file (type jpg)
 <use slike/Reynolds.jpeg>
-Package pdftex.def Info: slike/Reynolds.jpeg  used on input line 226.
+Package pdftex.def Info: slike/Reynolds.jpeg  used on input line 256.
 (pdftex.def)             Requested size: 235.15096pt x 190.71448pt.
 
 
-[1{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./slike/vrtinci.jpeg> <./slike/vrtinci2.jpeg>]
+[1
+
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./slike/vrtinci.jpeg> <./slike/vrtinci2.jpeg>]
 
 [2 <./slike/difus.jpeg> <./slike/Reynolds.jpeg>]
 
@@ -1816,7 +1812,7 @@ Package pdftex.def Info: slike/Reynolds.jpeg  used on input line 226.
 [5]
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 441--444
+Underfull \hbox (badness 10000) in paragraph at lines 471--474
 
  []
 
@@ -1837,12 +1833,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 441--444
 [13]
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 873--874
+Underfull \hbox (badness 10000) in paragraph at lines 903--904
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 891--892
+Underfull \hbox (badness 10000) in paragraph at lines 921--922
 
  []
 
@@ -1851,14 +1847,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 891--892
 [15]
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 993--997
+Underfull \hbox (badness 10000) in paragraph at lines 1023--1027
 
  []
 
 
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 1095--1097
+Underfull \hbox (badness 10000) in paragraph at lines 1125--1127
 
  []
 
@@ -1867,7 +1863,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1095--1097
 [18]
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 1208--1211
+Underfull \hbox (badness 10000) in paragraph at lines 1238--1241
 
  []
 
@@ -1878,7 +1874,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1208--1211
 [21]
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 1345--1348
+Underfull \hbox (badness 10000) in paragraph at lines 1375--1378
 
  []
 
@@ -1888,37 +1884,37 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 [23]
-Overfull \hbox (113.97644pt too wide) detected at line 1508
+Overfull \hbox (113.97644pt too wide) detected at line 1538
 []|
  []
 
 
 
 [24]
-Overfull \hbox (106.20682pt too wide) detected at line 1513
+Overfull \hbox (106.20682pt too wide) detected at line 1543
 []|
  []
 
 
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1566--1573
+Underfull \hbox (badness 10000) in paragraph at lines 1596--1603
 
  []
 
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1574.
+(Font)              scaled to size 12.0pt on input line 1604.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1574.
+(Font)              scaled to size 8.0pt on input line 1604.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 6.0pt on input line 1574.
+(Font)              scaled to size 6.0pt on input line 1604.
 
 
 [26]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 1674.
+(Font)              <10.95> on input line 1704.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 10.95pt on input line 1674.
+(Font)              scaled to size 10.95pt on input line 1704.
 
 
 [27]
@@ -1926,7 +1922,7 @@ LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
 [28]
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1796--1800
+Underfull \hbox (badness 10000) in paragraph at lines 1826--1830
 
  []
 
@@ -1937,7 +1933,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1796--1800
 [31]
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1951--1953
+Underfull \hbox (badness 10000) in paragraph at lines 1981--1983
 
  []
 
@@ -1962,21 +1958,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 1951--1953
 [41]
 
 [42]
-Underfull \hbox (badness 10000) in paragraph at lines 2481--2483
+Underfull \hbox (badness 10000) in paragraph at lines 2511--2513
 
  []
 
 
 
 [43]
-Underfull \hbox (badness 10000) in paragraph at lines 2536--2539
+Underfull \hbox (badness 10000) in paragraph at lines 2566--2569
 
  []
 
 
 
 [44]
-Underfull \hbox (badness 10000) in paragraph at lines 2571--2574
+Underfull \hbox (badness 10000) in paragraph at lines 2601--2604
 
  []
 
@@ -2044,17 +2040,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 2571--2574
 
 [66]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <24.88> on input line 3780.
+(Font)              <24.88> on input line 3810.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 3780.
+(Font)              <20.74> on input line 3810.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 24.88pt on input line 3780.
+(Font)              scaled to size 24.88pt on input line 3810.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 20.74pt on input line 3780.
+(Font)              scaled to size 20.74pt on input line 3810.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 17.28pt on input line 3780.
+(Font)              scaled to size 17.28pt on input line 3810.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3791--3795
+Underfull \hbox (badness 10000) in paragraph at lines 3821--3825
 
  []
 
@@ -2071,10 +2067,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 3791--3795
 [71]
 
 [72]
-<slike/Smag.jpg, id=1114, 316.18124pt x 188.705pt>
+<slike/Smag.jpg, id=1098, 316.18124pt x 188.705pt>
 File: slike/Smag.jpg Graphic file (type jpg)
 <use slike/Smag.jpg>
-Package pdftex.def Info: slike/Smag.jpg  used on input line 4120.
+Package pdftex.def Info: slike/Smag.jpg  used on input line 4150.
 (pdftex.def)             Requested size: 142.28024pt x 84.91646pt.
 
 
@@ -2090,9 +2086,9 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [76]
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 10.0pt on input line 4324.
+(Font)              scaled to size 10.0pt on input line 4354.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 7.0pt on input line 4324.
+(Font)              scaled to size 7.0pt on input line 4354.
 
 
 [77]
@@ -2100,26 +2096,26 @@ LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
 [78]
 
 [79]
-Overfull \hbox (1.46098pt too wide) in paragraph at lines 4431--4436
+Overfull \hbox (1.46098pt too wide) in paragraph at lines 4461--4466
 \OML/lmm/m/it/12 v\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x; y; z; \OT1/lmr/m/n/12 0)$ \T1/lmr/m/n/12 ter vir-tu-alno po-ten-ci-alno tem-pe-ra-turo in vlago $\OML/lmm/m/it/12 ^^R[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x; y; z; \OT1/lmr/m/n/12 0)$ \T1/lmr/m/n/12 in $\OML/lmm/m/it/12 q\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x; y; z; \OT1/lmr/m/n/12 0)$\T1/lmr/m/n/12 .|
  []
 
 
 
 [80]
-<rezultati/planica_orografija.pdf, id=1185, 719.07875pt x 511.4872pt>
+<rezultati/planica_orografija.pdf, id=1170, 719.07875pt x 511.4872pt>
 File: rezultati/planica_orografija.pdf Graphic file (type pdf)
 <use rezultati/planica_orografija.pdf>
-Package pdftex.def Info: rezultati/planica_orografija.pdf  used on input line 4539.
+Package pdftex.def Info: rezultati/planica_orografija.pdf  used on input line 4569.
 (pdftex.def)             Requested size: 426.79134pt x 303.58551pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<rezultati/v_yz_5.pdf, id=1186, 721.0392pt x 511.1892pt>
+<rezultati/v_yz_5.pdf, id=1171, 721.0392pt x 511.1892pt>
 File: rezultati/v_yz_5.pdf Graphic file (type pdf)
 <use rezultati/v_yz_5.pdf>
-Package pdftex.def Info: rezultati/v_yz_5.pdf  used on input line 4546.
+Package pdftex.def Info: rezultati/v_yz_5.pdf  used on input line 4576.
 (pdftex.def)             Requested size: 384.10959pt x 272.3174pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -2127,27 +2123,27 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 [81]
-<rezultati/u_planica_long_5.pdf, id=1193, 740.73123pt x 511.01666pt>
+<rezultati/u_planica_long_5.pdf, id=1178, 740.73123pt x 511.01666pt>
 File: rezultati/u_planica_long_5.pdf Graphic file (type pdf)
 <use rezultati/u_planica_long_5.pdf>
-Package pdftex.def Info: rezultati/u_planica_long_5.pdf  used on input line 4570.
+Package pdftex.def Info: rezultati/u_planica_long_5.pdf  used on input line 4600.
 (pdftex.def)             Requested size: 426.79134pt x 294.4327pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<rezultati/v_planica_long_5.pdf, id=1194, 739.95195pt x 511.01666pt>
+<rezultati/v_planica_long_5.pdf, id=1179, 739.95195pt x 511.01666pt>
 File: rezultati/v_planica_long_5.pdf Graphic file (type pdf)
 <use rezultati/v_planica_long_5.pdf>
-Package pdftex.def Info: rezultati/v_planica_long_5.pdf  used on input line 4578.
+Package pdftex.def Info: rezultati/v_planica_long_5.pdf  used on input line 4608.
 (pdftex.def)             Requested size: 384.10959pt x 265.27013pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<rezultati/tv_planica_long_5.pdf, id=1195, 739.95195pt x 511.01666pt>
+<rezultati/tv_planica_long_5.pdf, id=1180, 739.95195pt x 511.01666pt>
 File: rezultati/tv_planica_long_5.pdf Graphic file (type pdf)
 <use rezultati/tv_planica_long_5.pdf>
-Package pdftex.def Info: rezultati/tv_planica_long_5.pdf  used on input line 4585.
+Package pdftex.def Info: rezultati/tv_planica_long_5.pdf  used on input line 4615.
 (pdftex.def)             Requested size: 384.10959pt x 265.27013pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -2163,38 +2159,38 @@ LaTeX Warning: Text page 84 contains only floats.
 
 
 [84 <./rezultati/u_planica_long_5.pdf> <./rezultati/v_planica_long_5.pdf>]
-Overfull \hbox (41.03586pt too wide) in paragraph at lines 4622--4625
+Overfull \hbox (41.03586pt too wide) in paragraph at lines 4652--4655
 \T1/lmr/bx/n/12 Slo-ve-nije za oko-lje (ARSO) \T1/lmr/m/n/12 na ob-mo-�ju \T1/lmr/bx/n/12 Lju-bljan-skega barja\T1/lmr/m/n/12 , je bila []|
  []
 
-<rezultati/barje_orografija.pdf, id=1315, 711.40941pt x 511.4872pt>
+<rezultati/barje_orografija.pdf, id=1299, 711.40941pt x 511.4872pt>
 File: rezultati/barje_orografija.pdf Graphic file (type pdf)
 <use rezultati/barje_orografija.pdf>
-Package pdftex.def Info: rezultati/barje_orografija.pdf  used on input line 4637.
+Package pdftex.def Info: rezultati/barje_orografija.pdf  used on input line 4667.
 (pdftex.def)             Requested size: 426.79134pt x 306.84785pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<rezultati/barje_sodar_tv_345.pdf, id=1316, 732.28267pt x 511.01666pt>
+<rezultati/barje_sodar_tv_345.pdf, id=1300, 732.28267pt x 511.01666pt>
 File: rezultati/barje_sodar_tv_345.pdf Graphic file (type pdf)
 <use rezultati/barje_sodar_tv_345.pdf>
-Package pdftex.def Info: rezultati/barje_sodar_tv_345.pdf  used on input line 4647.
+Package pdftex.def Info: rezultati/barje_sodar_tv_345.pdf  used on input line 4677.
 (pdftex.def)             Requested size: 384.10959pt x 268.05383pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<rezultati/tv_barje_long_5.pdf, id=1317, 739.95195pt x 511.01666pt>
+<rezultati/tv_barje_long_5.pdf, id=1301, 739.95195pt x 511.01666pt>
 File: rezultati/tv_barje_long_5.pdf Graphic file (type pdf)
 <use rezultati/tv_barje_long_5.pdf>
-Package pdftex.def Info: rezultati/tv_barje_long_5.pdf  used on input line 4654.
+Package pdftex.def Info: rezultati/tv_barje_long_5.pdf  used on input line 4684.
 (pdftex.def)             Requested size: 384.10959pt x 265.27013pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<rezultati/rh_barje_long_5.pdf, id=1318, 739.95195pt x 511.01666pt>
+<rezultati/rh_barje_long_5.pdf, id=1302, 739.95195pt x 511.01666pt>
 File: rezultati/rh_barje_long_5.pdf Graphic file (type pdf)
 <use rezultati/rh_barje_long_5.pdf>
-Package pdftex.def Info: rezultati/rh_barje_long_5.pdf  used on input line 4661.
+Package pdftex.def Info: rezultati/rh_barje_long_5.pdf  used on input line 4691.
 (pdftex.def)             Requested size: 384.10959pt x 265.27013pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -2217,17 +2213,17 @@ Underfull \vbox (badness 3460) has occurred while \output is active []
 [90
 
 ]
-Overfull \hbox (30.6104pt too wide) in paragraph at lines 4760--4760
+Overfull \hbox (30.6104pt too wide) in paragraph at lines 4790--4790
 \T1/lmtt/m/n/12 chemphys . bouchbinder / files / uploads / Courses / 2023 / HW / Q1 -[] TensorsAnalysis -[]|
  []
 
 
-Overfull \hbox (12.3289pt too wide) in paragraph at lines 4760--4760
+Overfull \hbox (12.3289pt too wide) in paragraph at lines 4790--4790
 \T1/lmr/m/n/12 19. 7. 2025], do-sto-pno na [][]$\T1/lmtt/m/n/12 https : / / web . stanford . edu / group / ctr / ResBriefs97 /|
  []
 
 
-Overfull \hbox (0.4859pt too wide) in paragraph at lines 4760--4760
+Overfull \hbox (0.4859pt too wide) in paragraph at lines 4790--4790
 \T1/lmr/m/n/12 19. 7. 2025], do-sto-pno na [][]$\T1/lmtt/m/n/12 https : / / wias -[] berlin . de / people / john / BETREUUNG /|
  []
 
@@ -2241,24 +2237,24 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `Kosmač-27232011-2025.out' has not changed.
-(rerunfilecheck)             Checksum: 1FF24122B3E5F404D12FEA3ED43A8C51;6915.
+(rerunfilecheck)             Checksum: 39F93B452AB57A6D1F941419016B5E9E;6865.
 Package logreq Info: Writing requests to 'Kosmač-27232011-2025.run.xml'.
 \openout1 = `Kosmač-27232011-2025.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45074 strings out of 473190
- 899126 string characters out of 5715800
- 1686788 words of memory out of 5000000
- 67061 multiletter control sequences out of 15000+600000
+ 45068 strings out of 473190
+ 899118 string characters out of 5715800
+ 1691144 words of memory out of 5000000
+ 67057 multiletter control sequences out of 15000+600000
  741882 words of font info for 189 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,20n,97p,747b,3535s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/yhmath/yhcmex.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
-Output written on Kosmač-27232011-2025.pdf (100 pages, 4096029 bytes).
+Output written on Kosmač-27232011-2025.pdf (98 pages, 4097464 bytes).
 PDF statistics:
- 1813 PDF objects out of 2073 (max. 8388607)
- 1386 compressed objects within 14 object streams
- 485 named destinations out of 1000 (max. 500000)
- 581 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1798 PDF objects out of 2073 (max. 8388607)
+ 1373 compressed objects within 14 object streams
+ 481 named destinations out of 1000 (max. 500000)
+ 573 words of extra memory for PDF output out of 10000 (max. 10000000)
 
