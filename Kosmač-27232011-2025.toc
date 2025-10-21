@@ -16,12 +16,12 @@
 \contentsline {subsubsection}{\numberline {1.12.1}Reynoldsovo število}{22}{subsubsection.1.12.1}%
 \contentsline {subsubsection}{\numberline {1.12.2}Kinetična energija in viskozna disipativnost}{23}{subsubsection.1.12.2}%
 \contentsline {subsubsection}{\numberline {1.12.3}Velikostne skale}{26}{subsubsection.1.12.3}%
-\contentsline {section}{\numberline {2}Large eddy simulacije}{29}{section.2}%
+\contentsline {section}{\numberline {2}Simulacije velikih turbulentnih vrtincev}{29}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Povprečja}{29}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Ansambelsko povprečje}{30}{subsubsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.2}Filtracija}{31}{subsubsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.2}Filtrirani ohranitveni zakoni}{36}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Filtriran zakon o ohranitvi mase}{36}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.1}Filtriran zakon o ohranitvi mase}{37}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Filtriran zakon o ohranitvi gibalne količine}{37}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}Filtriran zakon o ohranitvi vrtinčnosti}{38}{subsubsection.2.2.3}%
 \contentsline {subsubsection}{\numberline {2.2.4}Filtriran zakon o ohranitvi skalarja}{38}{subsubsection.2.2.4}%
@@ -33,7 +33,7 @@
 \contentsline {subsubsection}{\numberline {2.3.4}Škatlast filter}{48}{subsubsection.2.3.4}%
 \contentsline {section}{\numberline {3}Energija in spektralna analiza}{49}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Osnovni pojmi}{49}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Hipoteze Kolomogorova}{55}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Hipoteze Kolmogorova}{55}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Energijsko spektralna funkcija}{56}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Spekter Kolmogorova}{58}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Napake filtriranih polj}{64}{subsection.3.5}%
@@ -53,4 +53,6 @@
 \contentsline {subsection}{\numberline {5.3}Rezultati simulacij}{81}{subsection.5.3}%
 \contentsline {subsubsection}{\numberline {5.3.1}Planica}{81}{subsubsection.5.3.1}%
 \contentsline {subsubsection}{\numberline {5.3.2}Ljubljansko barje}{85}{subsubsection.5.3.2}%
-\contentsline {section}{Literatura}{89}{section*.19}%
+\contentsline {section}{Priloga A: Nepreverjene ali Izpeljane Enačbe}{89}{section*.19}%
+\contentsline {section}{Priloga A: Lastnosti diadskega produkta in operatorja nabla}{89}{section*.20}%
+\contentsline {section}{Literatura}{91}{section*.24}%

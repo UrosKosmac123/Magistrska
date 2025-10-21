@@ -449,6 +449,64 @@
       \field{year}{2001}
       \true{nocite}
     \endentry
+    \entry{veritasium2020turbulent}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=fb57e6cc4f0191011565336ff8cde407}{%
+           family={{Veritasium}},
+           familyi={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{fb57e6cc4f0191011565336ff8cde407}
+      \strng{fullhash}{fb57e6cc4f0191011565336ff8cde407}
+      \strng{fullhashraw}{fb57e6cc4f0191011565336ff8cde407}
+      \strng{bibnamehash}{fb57e6cc4f0191011565336ff8cde407}
+      \strng{authorbibnamehash}{fb57e6cc4f0191011565336ff8cde407}
+      \strng{authornamehash}{fb57e6cc4f0191011565336ff8cde407}
+      \strng{authorfullhash}{fb57e6cc4f0191011565336ff8cde407}
+      \strng{authorfullhashraw}{fb57e6cc4f0191011565336ff8cde407}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{Accessed: 2025-10-15}
+      \field{title}{Turbulent Flow is MORE Awesome Than Laminar Flow}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=_UoTTq651dE
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=_UoTTq651dE
+      \endverb
+    \endentry
+    \entry{3blue1brown2018turbulence}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=682352d7b7d88f46edac62cd97b58db1}{%
+           family={{3Blue1Brown}},
+           familyi={3\bibinitperiod}}}%
+      }
+      \strng{namehash}{682352d7b7d88f46edac62cd97b58db1}
+      \strng{fullhash}{682352d7b7d88f46edac62cd97b58db1}
+      \strng{fullhashraw}{682352d7b7d88f46edac62cd97b58db1}
+      \strng{bibnamehash}{682352d7b7d88f46edac62cd97b58db1}
+      \strng{authorbibnamehash}{682352d7b7d88f46edac62cd97b58db1}
+      \strng{authornamehash}{682352d7b7d88f46edac62cd97b58db1}
+      \strng{authorfullhash}{682352d7b7d88f46edac62cd97b58db1}
+      \strng{authorfullhashraw}{682352d7b7d88f46edac62cd97b58db1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{note}{Accessed: 2025-10-15}
+      \field{title}{Why 5/3 is a Fundamental Constant for Turbulence}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=_UoTTq651dE&t=135s
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=_UoTTq651dE&t=135s
+      \endverb
+    \endentry
     \entry{krueger2016gcss}{incollection}{}{}
       \name{author}{3}{}{%
         {{hash=73d6274427fa1b138accc494b8ebcc3e}{%
@@ -525,8 +583,8 @@
       \strng{authornamehash}{12f0c5e919cf8c1b263bbdbd7f96c324}
       \strng{authorfullhash}{12f0c5e919cf8c1b263bbdbd7f96c324}
       \strng{authorfullhashraw}{12f0c5e919cf8c1b263bbdbd7f96c324}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of the Meteorological Society of Japan. Ser. II}
@@ -557,8 +615,8 @@
       \strng{authornamehash}{54d21c50e8b65ce72e40e0df8c0aa105}
       \strng{authorfullhash}{54d21c50e8b65ce72e40e0df8c0aa105}
       \strng{authorfullhashraw}{54d21c50e8b65ce72e40e0df8c0aa105}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Trudy Akademii Nauk SSSR, Geofizicheski Institut}
@@ -572,6 +630,35 @@
     \endentry
   \enddatalist
   \datalist[entry]{nty/global//global/global/global}
+    \entry{3blue1brown2018turbulence}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=682352d7b7d88f46edac62cd97b58db1}{%
+           family={{3Blue1Brown}},
+           familyi={3\bibinitperiod}}}%
+      }
+      \strng{namehash}{682352d7b7d88f46edac62cd97b58db1}
+      \strng{fullhash}{682352d7b7d88f46edac62cd97b58db1}
+      \strng{fullhashraw}{682352d7b7d88f46edac62cd97b58db1}
+      \strng{bibnamehash}{682352d7b7d88f46edac62cd97b58db1}
+      \strng{authorbibnamehash}{682352d7b7d88f46edac62cd97b58db1}
+      \strng{authornamehash}{682352d7b7d88f46edac62cd97b58db1}
+      \strng{authorfullhash}{682352d7b7d88f46edac62cd97b58db1}
+      \strng{authorfullhashraw}{682352d7b7d88f46edac62cd97b58db1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{note}{Accessed: 2025-10-15}
+      \field{title}{Why 5/3 is a Fundamental Constant for Turbulence}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=_UoTTq651dE&t=135s
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=_UoTTq651dE&t=135s
+      \endverb
+    \endentry
     \entry{anderson}{book}{}{}
       \name{author}{1}{}{%
         {{hash=10a69cdb7e228df9d900262d50d1b9af}{%
@@ -1091,6 +1178,35 @@
       \range{pages}{-1}
       \verb{doi}
       \verb 10.1175/AMSMONOGRAPHS-D-15-0047.1
+      \endverb
+    \endentry
+    \entry{veritasium2020turbulent}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=fb57e6cc4f0191011565336ff8cde407}{%
+           family={{Veritasium}},
+           familyi={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{fb57e6cc4f0191011565336ff8cde407}
+      \strng{fullhash}{fb57e6cc4f0191011565336ff8cde407}
+      \strng{fullhashraw}{fb57e6cc4f0191011565336ff8cde407}
+      \strng{bibnamehash}{fb57e6cc4f0191011565336ff8cde407}
+      \strng{authorbibnamehash}{fb57e6cc4f0191011565336ff8cde407}
+      \strng{authornamehash}{fb57e6cc4f0191011565336ff8cde407}
+      \strng{authorfullhash}{fb57e6cc4f0191011565336ff8cde407}
+      \strng{authorfullhashraw}{fb57e6cc4f0191011565336ff8cde407}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{Accessed: 2025-10-15}
+      \field{title}{Turbulent Flow is MORE Awesome Than Laminar Flow}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=_UoTTq651dE
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=_UoTTq651dE
       \endverb
     \endentry
     \entry{wyngaard}{book}{}{}

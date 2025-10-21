@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.25)  21 OCT 2025 18:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.25)  16 OCT 2025 20:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1614,7 +1614,8 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 170.
 Package hyperref Info: Option `unicode' set `true' on input line 170.
 Package hyperref Info: Option `breaklinks' set `true' on input line 170.
 Package hyperref Info: Option `psdextra' set `true' on input line 170.
- (./Kosma훾-27232011-2025.aux)
+
+No file Kosma훾-27232011-2025.aux.
 \openout1 = `Kosma훾-27232011-2025.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 170.
@@ -1637,7 +1638,7 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 170.
 LaTeX Font Info:    ... okay on input line 170.
 Package biblatex Info: Trying to load language 'slovene'...
 Package biblatex Info: ... file 'slovene.lbx' found.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/slovene.lbx
+(/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/slovene.lbx
 File: slovene.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -1673,7 +1674,6 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 170.
- (./Kosma훾-27232011-2025.out) (./Kosma훾-27232011-2025.out)
 \@outlinefile=\write8
 \openout8 = `Kosma훾-27232011-2025.out'.
 
@@ -1742,15 +1742,18 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 170.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 170.
- (./Kosma훾-27232011-2025.toc
 
-[3])
+No file Kosma훾-27232011-2025.toc.
 \tf@toc=\write9
 \openout9 = `Kosma훾-27232011-2025.toc'.
 
 
 
-[4]
+[3]
+
+[4
+
+]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 170.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1766,9 +1769,7 @@ Overfull \hbox (5.70221pt too wide) in paragraph at lines 170--170
 
 
 
-[5
-
-]
+[5]
 
 [6]
 
@@ -1783,22 +1784,31 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 18
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<slike/vrtinci.jpeg, id=405, 1558.82375pt x 1002.74625pt>
+
+LaTeX Warning: Reference `fig:vrtinci' on page 1 undefined on input line 187.
+
+<slike/vrtinci.jpeg, id=108, 1558.82375pt x 1002.74625pt>
 File: slike/vrtinci.jpeg Graphic file (type jpg)
 <use slike/vrtinci.jpeg>
 Package pdftex.def Info: slike/vrtinci.jpeg  used on input line 192.
 (pdftex.def)             Requested size: 202.72522pt x 130.40749pt.
-<slike/vrtinci2.jpeg, id=406, 1734.48pt x 1003.75pt>
+<slike/vrtinci2.jpeg, id=109, 1734.48pt x 1003.75pt>
 File: slike/vrtinci2.jpeg Graphic file (type jpg)
 <use slike/vrtinci2.jpeg>
 Package pdftex.def Info: slike/vrtinci2.jpeg  used on input line 198.
 (pdftex.def)             Requested size: 202.7031pt x 130.30829pt.
-<slike/difus.jpeg, id=413, 1745.52126pt x 1003.75pt>
+
+LaTeX Warning: Reference `fig:difus' on page 1 undefined on input line 209.
+
+
+LaTeX Warning: Reference `fig:difus' on page 1 undefined on input line 210.
+
+<slike/difus.jpeg, id=114, 1745.52126pt x 1003.75pt>
 File: slike/difus.jpeg Graphic file (type jpg)
 <use slike/difus.jpeg>
 Package pdftex.def Info: slike/difus.jpeg  used on input line 219.
 (pdftex.def)             Requested size: 331.65248pt x 190.71448pt.
-<slike/Reynolds.jpeg, id=414, 1237.62375pt x 1003.75pt>
+<slike/Reynolds.jpeg, id=115, 1237.62375pt x 1003.75pt>
 File: slike/Reynolds.jpeg Graphic file (type jpg)
 <use slike/Reynolds.jpeg>
 Package pdftex.def Info: slike/Reynolds.jpeg  used on input line 226.
@@ -1813,6 +1823,10 @@ Package pdftex.def Info: slike/Reynolds.jpeg  used on input line 226.
 
 [4]
 
+LaTeX Warning: Reference `eq:euler-lagrange' on page 5 undefined on input line 355.
+
+
+
 [5]
 
 [6]
@@ -1821,8 +1835,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 441--444
  []
 
 
+LaTeX Warning: Reference `transport' on page 7 undefined on input line 497.
+
+
 
 [7]
+
+LaTeX Warning: Reference `lema:1' on page 8 undefined on input line 529.
+
+
 
 [8]
 
@@ -1832,17 +1853,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 441--444
 
 [11]
 
+LaTeX Warning: Reference `NS' on page 12 undefined on input line 724.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 12 undefined on input line 740.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 12 undefined on input line 740.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 12 undefined on input line 740.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 12 undefined on input line 740.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 12 undefined on input line 740.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 12 undefined on input line 740.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 12 undefined on input line 740.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 12 undefined on input line 740.
+
+
+
 [12]
+
+LaTeX Warning: Reference `lema:1' on page 13 undefined on input line 825.
+
+
 
 [13]
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 873--874
+Underfull \hbox (badness 10000) in paragraph at lines 869--870
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 891--892
+Underfull \hbox (badness 10000) in paragraph at lines 887--888
 
  []
 
@@ -1851,14 +1904,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 891--892
 [15]
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 993--997
+Underfull \hbox (badness 10000) in paragraph at lines 989--993
 
  []
 
 
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 1095--1097
+Underfull \hbox (badness 10000) in paragraph at lines 1091--1093
 
  []
 
@@ -1866,8 +1919,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 1095--1097
 
 [18]
 
+LaTeX Warning: Reference `NS' on page 19 undefined on input line 1164.
+
+
+
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 1208--1211
+
+LaTeX Warning: Reference `ohranitev mase' on page 20 undefined on input line 1180.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 20 undefined on input line 1180.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 20 undefined on input line 1180.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 20 undefined on input line 1180.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 20 undefined on input line 1180.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 20 undefined on input line 1180.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 20 undefined on input line 1180.
+
+
+LaTeX Warning: Reference `ohranitev mase' on page 20 undefined on input line 1180.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1204--1207
 
  []
 
@@ -1875,10 +1957,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 1208--1211
 
 [20]
 
+LaTeX Warning: Reference `lema:1' on page 21 undefined on input line 1251.
+
+
+
 [21]
 
+LaTeX Warning: Reference `NS' on page 22 undefined on input line 1301.
+
+
+
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 1345--1348
+Underfull \hbox (badness 10000) in paragraph at lines 1341--1344
 
  []
 
@@ -1888,37 +1978,52 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 [23]
-Overfull \hbox (113.97644pt too wide) detected at line 1508
+Overfull \hbox (113.97644pt too wide) detected at line 1504
 []|
  []
 
 
 
 [24]
-Overfull \hbox (106.20682pt too wide) detected at line 1513
+Overfull \hbox (106.20682pt too wide) detected at line 1509
 []|
  []
 
 
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1566--1573
+
+LaTeX Warning: Reference `Euler NS' on page 26 undefined on input line 1564.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1562--1569
 
  []
 
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1574.
+(Font)              scaled to size 12.0pt on input line 1570.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1574.
+(Font)              scaled to size 8.0pt on input line 1570.
 LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 6.0pt on input line 1574.
+(Font)              scaled to size 6.0pt on input line 1570.
 
 
 [26]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 1674.
-LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 10.95pt on input line 1674.
+
+LaTeX Warning: Reference `hitrost approx' on page 27 undefined on input line 1602.
+
+
+LaTeX Warning: Reference `hitrost approx' on page 27 undefined on input line 1636.
+
+
+LaTeX Warning: Reference `hitrost approx' on page 27 undefined on input line 1636.
+
+
+LaTeX Warning: Reference `hitrost approx' on page 27 undefined on input line 1636.
+
+
+LaTeX Warning: Reference `hitrost approx' on page 27 undefined on input line 1636.
+
 
 
 [27]
@@ -1926,7 +2031,7 @@ LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
 [28]
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1796--1800
+Underfull \hbox (badness 10000) in paragraph at lines 1751--1755
 
  []
 
@@ -1937,7 +2042,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1796--1800
 [31]
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1951--1953
+Underfull \hbox (badness 10000) in paragraph at lines 1890--1892
 
  []
 
@@ -1952,6 +2057,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 1951--1953
 [36]
 
 [37]
+Overfull \hbox (0.23804pt too wide) detected at line 2145
+[]|
+ []
+
+
+Overfull \hbox (8.1796pt too wide) detected at line 2150
+[]|
+ []
+
+
 
 [38]
 
@@ -1962,31 +2077,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 1951--1953
 [41]
 
 [42]
-Underfull \hbox (badness 10000) in paragraph at lines 2481--2483
-
- []
-
-
 
 [43]
-Underfull \hbox (badness 10000) in paragraph at lines 2536--2539
+
+LaTeX Warning: Reference `izrek:iDFT' on page 44 undefined on input line 2413.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2427--2429
 
  []
+
+
+LaTeX Warning: Reference `izrek:iDFT' on page 44 undefined on input line 2430.
+
+
+LaTeX Warning: Reference `eq:DFT decomposition' on page 44 undefined on input line 2442.
 
 
 
 [44]
-Underfull \hbox (badness 10000) in paragraph at lines 2571--2574
+Underfull \hbox (badness 10000) in paragraph at lines 2482--2485
 
  []
 
 
 
 [45]
+Underfull \hbox (badness 10000) in paragraph at lines 2517--2520
+
+ []
+
+
+LaTeX Warning: Reference `eq:DFS expantion' on page 46 undefined on input line 2523.
+
+
 
 [46]
 
 [47]
+
+LaTeX Warning: Reference `eq:filterDFT' on page 48 undefined on input line 2625.
+
+
 
 [48]
 
@@ -1996,13 +2128,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 2571--2574
 
 [51]
 
+LaTeX Warning: Reference `homogenost' on page 52 undefined on input line 2837.
+
+
+LaTeX Warning: Reference `homogenost2' on page 52 undefined on input line 2863.
+
+
+
 [52]
+Overfull \hbox (17.82936pt too wide) detected at line 2889
+[]|
+ []
+
+
 
 [53]
+Overfull \hbox (1.37231pt too wide) detected at line 2938
+[]|
+ []
+
+
 
 [54]
 
 [55]
+
+LaTeX Warning: Reference `dvo_to훾kovna_korelacija' on page 56 undefined on input line 3018.
+
+
+LaTeX Warning: Reference `dvo_to훾kovna_korelacija' on page 56 undefined on input line 3018.
+
+
 
 [56]
 
@@ -2010,11 +2166,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 2571--2574
 
 [58]
 
+LaTeX Warning: Reference `hitrostno_spektralni_tenzor_lastnosti' on page 59 undefined on input line 3181.
+
+
+Overfull \hbox (21.20876pt too wide) detected at line 3186
+[]|
+ []
+
+
+
 [59]
 
 [60]
 
 [61]
+
+LaTeX Warning: Reference `pretvorba' on page 62 undefined on input line 3377.
+
+
+
+[62]
+
+LaTeX Warning: Reference `lema_pretvorba' on page 63 undefined on input line 3435.
+
+
+
+[63]
 \g__nicematrix_max_cell_width_dim=\dimen363
 \c@iRow=\count533
 \c@jCol=\count534
@@ -2034,29 +2211,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 2571--2574
 \l__nicematrix_final_j_int=\count540
 
 
-[62]
-
-[63]
-
 [64]
 
+LaTeX Warning: Reference `hitrostno_spektralni_tenzor_izotropija' on page 65 undefined on input line 3529.
+
+
+Underfull \vbox (badness 7613) has occurred while \output is active []
+
+
+
 [65]
+Overfull \hbox (12.33247pt too wide) in paragraph at lines 3551--3554
+\T1/lmr/m/n/12 뭪evilo $\OML/lmm/m/it/12 ^^Y$\T1/lmr/m/n/12 -grup je enako $\OT1/lmr/m/n/12 4 \OMS/lmsy/m/n/12 ^^@ \OT1/lmr/m/n/12 3 = 1$ \T1/lmr/m/n/12 in, 즕 vza-memo iz je-dra, kar vek-tor $\OT1/lmr/m/n/12 (3\OML/lmm/m/it/12 ; \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 2\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 3\OML/lmm/m/it/12 n \OMS/lmsy/m/n/12 ^^@|
+ []
+
+
 
 [66]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <24.88> on input line 3780.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 3780.
-LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 24.88pt on input line 3780.
-LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 20.74pt on input line 3780.
-LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 17.28pt on input line 3780.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3791--3795
+LaTeX Warning: Reference `hitrostno_spektralni_tenzor_izotropija' on page 67 undefined on input line 3652.
 
- []
+
+LaTeX Warning: Reference `hitrostno_spektralni_tenzor_izotropija' on page 67 undefined on input line 3652.
 
 
 
@@ -2064,201 +2240,302 @@ Underfull \hbox (badness 10000) in paragraph at lines 3791--3795
 
 [68]
 
+LaTeX Warning: Reference `Fourier_큄tevilo' on page 69 undefined on input line 3699.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <24.88> on input line 3726.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <20.74> on input line 3726.
+LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
+(Font)              scaled to size 24.88pt on input line 3726.
+LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
+(Font)              scaled to size 20.74pt on input line 3726.
+LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
+(Font)              scaled to size 17.28pt on input line 3726.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3737--3741
+
+ []
+
+
+
 [69]
+Overfull \hbox (9.2099pt too wide) in paragraph at lines 3783--3787
+\T1/lmr/m/n/12 da za-do-깼a do-lo-즕-nim la-stno-stim. Te la-stno-sti bodo in-va-ri-ante Navier-Stokesovih|
+ []
+
+
 
 [70]
 
 [71]
+Overfull \hbox (11.68558pt too wide) detected at line 3851
+[]|
+ []
+
+
 
 [72]
-<slike/Smag.jpg, id=1114, 316.18124pt x 188.705pt>
-File: slike/Smag.jpg Graphic file (type jpg)
-<use slike/Smag.jpg>
-Package pdftex.def Info: slike/Smag.jpg  used on input line 4120.
-(pdftex.def)             Requested size: 142.28024pt x 84.91646pt.
+
+LaTeX Warning: Reference `renormal' on page 73 undefined on input line 3885.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: Reference `renormal' on page 73 undefined on input line 3885.
 
 
 
 [73]
 
-[74 <./slike/Smag.jpg>]
+[74]
+Overfull \hbox (5.42064pt too wide) in paragraph at lines 3988--3988
+[]\T1/lmr/bx/n/14.4 Boussinesqova apro-ksi-ma-cija in mo-de-li-ra-nje ten-zorja |
+ []
+
+
 
 [75]
+Overfull \hbox (11.78635pt too wide) detected at line 4055
+[]|
+ []
 
-[76]
-LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 10.0pt on input line 4324.
-LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
-(Font)              scaled to size 7.0pt on input line 4324.
+<slike/Smag.jpg, id=819, 316.18124pt x 188.705pt>
+File: slike/Smag.jpg Graphic file (type jpg)
+<use slike/Smag.jpg>
+Package pdftex.def Info: slike/Smag.jpg  used on input line 4064.
+(pdftex.def)             Requested size: 142.28024pt x 84.91646pt.
 
+
+[76 <./slike/Smag.jpg>]
 
 [77]
 
 [78]
 
 [79]
-Overfull \hbox (1.46098pt too wide) in paragraph at lines 4431--4436
-\OML/lmm/m/it/12 v\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x; y; z; \OT1/lmr/m/n/12 0)$ \T1/lmr/m/n/12 ter vir-tu-alno po-ten-ci-alno tem-pe-ra-turo in vlago $\OML/lmm/m/it/12 ^^R[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x; y; z; \OT1/lmr/m/n/12 0)$ \T1/lmr/m/n/12 in $\OML/lmm/m/it/12 q\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x; y; z; \OT1/lmr/m/n/12 0)$\T1/lmr/m/n/12 .|
- []
+LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
+(Font)              scaled to size 10.0pt on input line 4267.
+LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
+(Font)              scaled to size 7.0pt on input line 4267.
+
+
+LaTeX Warning: Reference `sec:ohranitveni-zakoni' on page 80 undefined on input line 4284.
 
 
 
 [80]
-<rezultati/planica_orografija.pdf, id=1185, 719.07875pt x 511.4872pt>
+
+LaTeX Warning: Reference `eq:gibalna' on page 81 undefined on input line 4310.
+
+
+
+[81]
+
+[82]
+
+[83]
+<rezultati/planica_orografija.pdf, id=899, 719.07875pt x 511.4872pt>
 File: rezultati/planica_orografija.pdf Graphic file (type pdf)
 <use rezultati/planica_orografija.pdf>
-Package pdftex.def Info: rezultati/planica_orografija.pdf  used on input line 4539.
+Package pdftex.def Info: rezultati/planica_orografija.pdf  used on input line 4479.
 (pdftex.def)             Requested size: 426.79134pt x 303.58551pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<rezultati/v_yz_5.pdf, id=1186, 721.0392pt x 511.1892pt>
+<rezultati/v_yz_5.pdf, id=900, 721.0392pt x 511.1892pt>
 File: rezultati/v_yz_5.pdf Graphic file (type pdf)
 <use rezultati/v_yz_5.pdf>
-Package pdftex.def Info: rezultati/v_yz_5.pdf  used on input line 4546.
+Package pdftex.def Info: rezultati/v_yz_5.pdf  used on input line 4486.
 (pdftex.def)             Requested size: 384.10959pt x 272.3174pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+LaTeX Warning: Reference `fig:planica' on page 84 undefined on input line 4496.
 
-[81]
-<rezultati/u_planica_long_5.pdf, id=1193, 740.73123pt x 511.01666pt>
+
+
+[84]
+<rezultati/u_planica_long_5.pdf, id=908, 740.73123pt x 511.01666pt>
 File: rezultati/u_planica_long_5.pdf Graphic file (type pdf)
 <use rezultati/u_planica_long_5.pdf>
-Package pdftex.def Info: rezultati/u_planica_long_5.pdf  used on input line 4570.
+Package pdftex.def Info: rezultati/u_planica_long_5.pdf  used on input line 4510.
 (pdftex.def)             Requested size: 426.79134pt x 294.4327pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<rezultati/v_planica_long_5.pdf, id=1194, 739.95195pt x 511.01666pt>
+<rezultati/v_planica_long_5.pdf, id=909, 739.95195pt x 511.01666pt>
 File: rezultati/v_planica_long_5.pdf Graphic file (type pdf)
 <use rezultati/v_planica_long_5.pdf>
-Package pdftex.def Info: rezultati/v_planica_long_5.pdf  used on input line 4578.
+Package pdftex.def Info: rezultati/v_planica_long_5.pdf  used on input line 4518.
 (pdftex.def)             Requested size: 384.10959pt x 265.27013pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<rezultati/tv_planica_long_5.pdf, id=1195, 739.95195pt x 511.01666pt>
+<rezultati/tv_planica_long_5.pdf, id=910, 739.95195pt x 511.01666pt>
 File: rezultati/tv_planica_long_5.pdf Graphic file (type pdf)
 <use rezultati/tv_planica_long_5.pdf>
-Package pdftex.def Info: rezultati/tv_planica_long_5.pdf  used on input line 4585.
+Package pdftex.def Info: rezultati/tv_planica_long_5.pdf  used on input line 4525.
 (pdftex.def)             Requested size: 384.10959pt x 265.27013pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+LaTeX Warning: Reference `fig:planica_T3' on page 85 undefined on input line 4535.
 
-[82 <./rezultati/planica_orografija.pdf>]
 
-[83 <./rezultati/v_yz_5.pdf>]
-
-LaTeX Warning: Text page 84 contains only floats.
+LaTeX Warning: Reference `fig:planica_T4' on page 85 undefined on input line 4535.
 
 
 
-[84 <./rezultati/u_planica_long_5.pdf> <./rezultati/v_planica_long_5.pdf>]
-Overfull \hbox (41.03586pt too wide) in paragraph at lines 4622--4625
-\T1/lmr/bx/n/12 Slo-ve-nije za oko-lje (ARSO) \T1/lmr/m/n/12 na ob-mo-즞u \T1/lmr/bx/n/12 Lju-bljan-skega barja\T1/lmr/m/n/12 , je bila []|
- []
+[85 <./rezultati/planica_orografija.pdf>]
 
-<rezultati/barje_orografija.pdf, id=1315, 711.40941pt x 511.4872pt>
+LaTeX Warning: Reference `fig:planica_vy' on page 86 undefined on input line 4548.
+
+
+
+[86 <./rezultati/v_yz_5.pdf>]
+
+LaTeX Warning: Text page 87 contains only floats.
+
+
+
+[87 <./rezultati/u_planica_long_5.pdf> <./rezultati/v_planica_long_5.pdf>]
+
+LaTeX Warning: Reference `fig:barje_T3' on page 88 undefined on input line 4563.
+
+<rezultati/barje_orografija.pdf, id=1024, 711.40941pt x 511.4872pt>
 File: rezultati/barje_orografija.pdf Graphic file (type pdf)
 <use rezultati/barje_orografija.pdf>
-Package pdftex.def Info: rezultati/barje_orografija.pdf  used on input line 4637.
+Package pdftex.def Info: rezultati/barje_orografija.pdf  used on input line 4577.
 (pdftex.def)             Requested size: 426.79134pt x 306.84785pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<rezultati/barje_sodar_tv_345.pdf, id=1316, 732.28267pt x 511.01666pt>
+<rezultati/barje_sodar_tv_345.pdf, id=1025, 732.28267pt x 511.01666pt>
 File: rezultati/barje_sodar_tv_345.pdf Graphic file (type pdf)
 <use rezultati/barje_sodar_tv_345.pdf>
-Package pdftex.def Info: rezultati/barje_sodar_tv_345.pdf  used on input line 4647.
+Package pdftex.def Info: rezultati/barje_sodar_tv_345.pdf  used on input line 4587.
 (pdftex.def)             Requested size: 384.10959pt x 268.05383pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<rezultati/tv_barje_long_5.pdf, id=1317, 739.95195pt x 511.01666pt>
+<rezultati/tv_barje_long_5.pdf, id=1026, 739.95195pt x 511.01666pt>
 File: rezultati/tv_barje_long_5.pdf Graphic file (type pdf)
 <use rezultati/tv_barje_long_5.pdf>
-Package pdftex.def Info: rezultati/tv_barje_long_5.pdf  used on input line 4654.
+Package pdftex.def Info: rezultati/tv_barje_long_5.pdf  used on input line 4594.
 (pdftex.def)             Requested size: 384.10959pt x 265.27013pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<rezultati/rh_barje_long_5.pdf, id=1318, 739.95195pt x 511.01666pt>
+<rezultati/rh_barje_long_5.pdf, id=1027, 739.95195pt x 511.01666pt>
 File: rezultati/rh_barje_long_5.pdf Graphic file (type pdf)
 <use rezultati/rh_barje_long_5.pdf>
-Package pdftex.def Info: rezultati/rh_barje_long_5.pdf  used on input line 4661.
+Package pdftex.def Info: rezultati/rh_barje_long_5.pdf  used on input line 4601.
 (pdftex.def)             Requested size: 384.10959pt x 265.27013pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+LaTeX Warning: Reference `fig:barje_T3' on page 88 undefined on input line 4607.
 
-[85 <./rezultati/tv_planica_long_5.pdf>]
 
-[86 <./rezultati/barje_orografija.pdf>]
+LaTeX Warning: Reference `fig:barje_T4' on page 88 undefined on input line 4607.
+
+
+LaTeX Warning: Reference `fig:barje_T5' on page 88 undefined on input line 4607.
+
+
+
+[88 <./rezultati/tv_planica_long_5.pdf>]
+
+LaTeX Warning: Reference `fig:barje_T4' on page 89 undefined on input line 4623.
+
+
+
+[89 <./rezultati/barje_orografija.pdf>]
 Underfull \vbox (badness 3460) has occurred while \output is active []
 
 
 
-[87 <./rezultati/barje_sodar_tv_345.pdf> <./rezultati/tv_barje_long_5.pdf>]
+[90 <./rezultati/barje_sodar_tv_345.pdf> <./rezultati/tv_barje_long_5.pdf>]
 
-[88 <./rezultati/rh_barje_long_5.pdf>]
+LaTeX Warning: Reference `fig:barje_T5' on page 91 undefined on input line 4638.
 
-[89]
 
-[90
+
+[91 <./rezultati/rh_barje_long_5.pdf>]
+
+[92]
+
+[93
 
 ]
-Overfull \hbox (30.6104pt too wide) in paragraph at lines 4760--4760
-\T1/lmtt/m/n/12 chemphys . bouchbinder / files / uploads / Courses / 2023 / HW / Q1 -[] TensorsAnalysis -[]|
- []
 
+[94]
 
-Overfull \hbox (12.3289pt too wide) in paragraph at lines 4760--4760
-\T1/lmr/m/n/12 19. 7. 2025], do-sto-pno na [][]$\T1/lmtt/m/n/12 https : / / web . stanford . edu / group / ctr / ResBriefs97 /|
- []
+/Users/uroskosmac/Desktop/Magistrska/Kosma훾-27232011-2025.tex:4701: LaTeX Error: \begin{enumerate} on input line 1659 ended by \end{document}.
 
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4701 \end{document}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-Overfull \hbox (0.4859pt too wide) in paragraph at lines 4760--4760
-\T1/lmr/m/n/12 19. 7. 2025], do-sto-pno na [][]$\T1/lmtt/m/n/12 https : / / wias -[] berlin . de / people / john / BETREUUNG /|
- []
-
-
-
-[91]
-
-[92] (./Kosma훾-27232011-2025.aux)
+[95] (./Kosma훾-27232011-2025.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `Kosma훾-27232011-2025.out' has not changed.
-(rerunfilecheck)             Checksum: 1FF24122B3E5F404D12FEA3ED43A8C51;6915.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+LaTeX Warning: Temporary extra page added at the end. Rerun to get it removed.
+
+
+Package rerunfilecheck Warning: File `Kosma훾-27232011-2025.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Kosma훾-27232011-2025.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  0D0F5D44A85165815DB703EE293583F9;6908.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                Kosma훾-27232011-2025
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'Kosma훾-27232011-2025.run.xml'.
 \openout1 = `Kosma훾-27232011-2025.run.xml'.
 
- ) 
+ )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 1659 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 45074 strings out of 473190
- 899126 string characters out of 5715800
- 1686788 words of memory out of 5000000
- 67061 multiletter control sequences out of 15000+600000
- 741882 words of font info for 189 fonts, out of 8000000 for 9000
+ 44952 strings out of 473190
+ 897003 string characters out of 5715800
+ 1678663 words of memory out of 5000000
+ 66947 multiletter control sequences out of 15000+600000
+ 731116 words of font info for 179 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,20n,97p,747b,3535s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/yhmath/yhcmex.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
-Output written on Kosma훾-27232011-2025.pdf (100 pages, 4096029 bytes).
+ 84i,20n,97p,747b,3438s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/yhmath/yhcmex.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
+Output written on Kosma훾-27232011-2025.pdf (103 pages, 4080958 bytes).
 PDF statistics:
- 1813 PDF objects out of 2073 (max. 8388607)
- 1386 compressed objects within 14 object streams
+ 1516 PDF objects out of 1728 (max. 8388607)
+ 1109 compressed objects within 12 object streams
  485 named destinations out of 1000 (max. 500000)
- 581 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
