@@ -121,6 +121,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/units/units.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/units/units.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/units/nicefrac.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/units/nicefrac.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/xurl/xurl.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/xurl/xurl.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
