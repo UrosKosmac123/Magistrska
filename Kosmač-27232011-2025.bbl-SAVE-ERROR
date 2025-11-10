@@ -108,10 +108,10 @@
       \field{urldateera}{ce}
       \true{nocite}
       \verb{urlraw}
-      \verb \url{https://hanche.folk.ntnu.no/notes/buckingham/buckingham-a4.pdf}
+      \verb https://hanche.folk.ntnu.no/notes/buckingham/buckingham-a4.pdf
       \endverb
       \verb{url}
-      \verb %5Curl%7Bhttps://hanche.folk.ntnu.no/notes/buckingham/buckingham-a4.pdf%7D
+      \verb https://hanche.folk.ntnu.no/notes/buckingham/buckingham-a4.pdf
       \endverb
     \endentry
     \entry{silvestrini}{report}{}{}
@@ -839,10 +839,10 @@
       \field{urldateera}{ce}
       \true{nocite}
       \verb{urlraw}
-      \verb \url{https://hanche.folk.ntnu.no/notes/buckingham/buckingham-a4.pdf}
+      \verb https://hanche.folk.ntnu.no/notes/buckingham/buckingham-a4.pdf
       \endverb
       \verb{url}
-      \verb %5Curl%7Bhttps://hanche.folk.ntnu.no/notes/buckingham/buckingham-a4.pdf%7D
+      \verb https://hanche.folk.ntnu.no/notes/buckingham/buckingham-a4.pdf
       \endverb
     \endentry
     \entry{monin1954most}{article}{}{}

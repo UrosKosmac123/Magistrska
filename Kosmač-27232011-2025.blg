@@ -1,19 +1,19 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'Kosmač-27232011-2025.blg'
-[27] biber-darwin:340> INFO - === Sun Nov  2, 2025, 19:44:30
-[108] Biber.pm:420> INFO - Reading './Kosmač-27232011-2025.bcf'
-[139] Biber.pm:994> INFO - Found 17 citekeys in bib section 0
-[147] Biber.pm:4463> INFO - Processing section 0
-[152] Biber.pm:4654> INFO - Looking for bibtex file 'literatura.bib' for section 0
-[152] bibtex.pm:1713> INFO - LaTeX decoding ...
-[161] bibtex.pm:1519> INFO - Found BibTeX data source 'literatura.bib'
-[226] UCollate.pm:68> INFO - Overriding locale 'sl-SI' defaults 'variable = shifted' with 'variable = non-ignorable'
-[226] UCollate.pm:68> INFO - Overriding locale 'sl-SI' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[226] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'sl-SI'
-[237] UCollate.pm:68> INFO - Overriding locale 'sl-SI' defaults 'variable = shifted' with 'variable = non-ignorable'
-[237] UCollate.pm:68> INFO - Overriding locale 'sl-SI' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[237] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'sl-SI'
-[245] bbl.pm:676> INFO - Writing 'KosmaÄ-27232011-2025.bbl' with encoding 'UTF-8'
-[250] bbl.pm:779> INFO - Output to KosmaÄ-27232011-2025.bbl
-[250] Biber.pm:131> WARN - ISBN '9780070016854' in entry 'anderson' is invalid - run biber with '--validate_datamodel' for details.
-[250] Biber.pm:133> INFO - WARNINGS: 1
+[27] biber-darwin:340> INFO - === Sat Nov  8, 2025, 13:56:36
+[101] Biber.pm:420> INFO - Reading './Kosmač-27232011-2025.bcf'
+[133] Biber.pm:994> INFO - Found 17 citekeys in bib section 0
+[141] Biber.pm:4463> INFO - Processing section 0
+[145] Biber.pm:4654> INFO - Looking for bibtex file 'literatura.bib' for section 0
+[146] bibtex.pm:1713> INFO - LaTeX decoding ...
+[155] bibtex.pm:1519> INFO - Found BibTeX data source 'literatura.bib'
+[219] UCollate.pm:68> INFO - Overriding locale 'sl-SI' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[219] UCollate.pm:68> INFO - Overriding locale 'sl-SI' defaults 'variable = shifted' with 'variable = non-ignorable'
+[219] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'sl-SI'
+[230] UCollate.pm:68> INFO - Overriding locale 'sl-SI' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[230] UCollate.pm:68> INFO - Overriding locale 'sl-SI' defaults 'variable = shifted' with 'variable = non-ignorable'
+[230] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'sl-SI'
+[239] bbl.pm:676> INFO - Writing 'KosmaÄ-27232011-2025.bbl' with encoding 'UTF-8'
+[243] bbl.pm:779> INFO - Output to KosmaÄ-27232011-2025.bbl
+[244] Biber.pm:131> WARN - ISBN '9780070016854' in entry 'anderson' is invalid - run biber with '--validate_datamodel' for details.
+[244] Biber.pm:133> INFO - WARNINGS: 1
