@@ -507,6 +507,71 @@
       \verb https://www.youtube.com/watch?v=_UoTTq651dE&t=135s
       \endverb
     \endentry
+    \entry{vanHeerwaarden2017MicroHH}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=1588cb25432b60139b233eed6fc2c130}{%
+           family={Heerwaarden},
+           familyi={H\bibinitperiod},
+           given={C.\bibnamedelimi C.},
+           giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=66b476b044462d1da1e1f6c97cf12932}{%
+           family={Stratum},
+           familyi={S\bibinitperiod},
+           given={B.\bibnamedelimi J.\bibnamedelimi H.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim H\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=92193bc9681c378bdaf8ff1731f3b960}{%
+           family={Heus},
+           familyi={H\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=e43a3364f81804501349cbbef286cd6e}{%
+           family={Gibbs},
+           familyi={G\bibinitperiod},
+           given={J.\bibnamedelimi A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=e3abfdd1301ee9c1c738b7196d107977}{%
+           family={Fedorovich},
+           familyi={F\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=397c7ddcca51c73bfde40f67fb9ce382}{%
+           family={Mellado},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{26b88e3968d3b9c3b1c4ba26fa2dbc68}
+      \strng{fullhash}{27fb1c0cda260bbb6c7466a70250afc8}
+      \strng{fullhashraw}{27fb1c0cda260bbb6c7466a70250afc8}
+      \strng{bibnamehash}{26b88e3968d3b9c3b1c4ba26fa2dbc68}
+      \strng{authorbibnamehash}{26b88e3968d3b9c3b1c4ba26fa2dbc68}
+      \strng{authornamehash}{26b88e3968d3b9c3b1c4ba26fa2dbc68}
+      \strng{authorfullhash}{27fb1c0cda260bbb6c7466a70250afc8}
+      \strng{authorfullhashraw}{27fb1c0cda260bbb6c7466a70250afc8}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Geoscientific Model Development}
+      \field{title}{MicroHH 1.0: a computational fluid dynamics code for direct numerical simulation and large-eddy simulation of atmospheric boundary layer flows}
+      \field{volume}{10}
+      \field{year}{2017}
+      \field{pages}{3145\bibrangedash 3165}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.5194/gmd-10-3145-2017
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.5194/gmd-10-3145-2017
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.5194/gmd-10-3145-2017
+      \endverb
+    \endentry
     \entry{krueger2016gcss}{incollection}{}{}
       \name{author}{3}{}{%
         {{hash=73d6274427fa1b138accc494b8ebcc3e}{%
@@ -552,8 +617,8 @@
       \strng{editornamehash}{96a904e9ca27388f916fcad4ae38a0cd}
       \strng{editorfullhash}{96a904e9ca27388f916fcad4ae38a0cd}
       \strng{editorfullhashraw}{96a904e9ca27388f916fcad4ae38a0cd}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{The Atmospheric Radiation Measurement Program: The First 20 Years}
@@ -843,6 +908,71 @@
       \endverb
       \verb{url}
       \verb https://hanche.folk.ntnu.no/notes/buckingham/buckingham-a4.pdf
+      \endverb
+    \endentry
+    \entry{vanHeerwaarden2017MicroHH}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=1588cb25432b60139b233eed6fc2c130}{%
+           family={Heerwaarden},
+           familyi={H\bibinitperiod},
+           given={C.\bibnamedelimi C.},
+           giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=66b476b044462d1da1e1f6c97cf12932}{%
+           family={Stratum},
+           familyi={S\bibinitperiod},
+           given={B.\bibnamedelimi J.\bibnamedelimi H.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim H\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=92193bc9681c378bdaf8ff1731f3b960}{%
+           family={Heus},
+           familyi={H\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=e43a3364f81804501349cbbef286cd6e}{%
+           family={Gibbs},
+           familyi={G\bibinitperiod},
+           given={J.\bibnamedelimi A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=e3abfdd1301ee9c1c738b7196d107977}{%
+           family={Fedorovich},
+           familyi={F\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=397c7ddcca51c73bfde40f67fb9ce382}{%
+           family={Mellado},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{26b88e3968d3b9c3b1c4ba26fa2dbc68}
+      \strng{fullhash}{27fb1c0cda260bbb6c7466a70250afc8}
+      \strng{fullhashraw}{27fb1c0cda260bbb6c7466a70250afc8}
+      \strng{bibnamehash}{26b88e3968d3b9c3b1c4ba26fa2dbc68}
+      \strng{authorbibnamehash}{26b88e3968d3b9c3b1c4ba26fa2dbc68}
+      \strng{authornamehash}{26b88e3968d3b9c3b1c4ba26fa2dbc68}
+      \strng{authorfullhash}{27fb1c0cda260bbb6c7466a70250afc8}
+      \strng{authorfullhashraw}{27fb1c0cda260bbb6c7466a70250afc8}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Geoscientific Model Development}
+      \field{title}{MicroHH 1.0: a computational fluid dynamics code for direct numerical simulation and large-eddy simulation of atmospheric boundary layer flows}
+      \field{volume}{10}
+      \field{year}{2017}
+      \field{pages}{3145\bibrangedash 3165}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.5194/gmd-10-3145-2017
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.5194/gmd-10-3145-2017
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.5194/gmd-10-3145-2017
       \endverb
     \endentry
     \entry{monin1954most}{article}{}{}

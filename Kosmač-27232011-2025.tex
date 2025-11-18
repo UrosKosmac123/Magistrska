@@ -46,7 +46,7 @@ Nato se osredotočimo na postopek filtracije in modeliranje majhnih skal.
 Obravnavamo problem zaprtja in različne modele s katerimi ga rešimo, glavni primer
 je model Smagorinskega. 
 Pomemben del dela je tudi analiza energije, ki
-temelji na Kolmogorovovi teoriji turbulence in nam omogoča oceniti 
+temelji na Kolmogorovi teoriji turbulence in nam omogoča oceniti 
 napako metode. V zaključnem delu 
 so predstavljene numerične simulacije, izvedene z modelom 
 MicroHH, ki prikazujejo turbulentne procese v atmosferi nad 
@@ -209,7 +209,7 @@ karakteriziramo z določenimi lastnostmi. Te so:
 \begin{itemize}
 \item \textbf{Kaotičnost}: Turbulentni tok je kaotičen oz. nepredvidljiv. Će
 začetno stanje toka nekoliko spremenimo (spremenimo hitrost, tlak ...), bo končno stanje popolnoma
-drugačno, kot pred spremembo. Zato je v praksi zelo težko deterministično napovedati dogajanje.
+drugačno kot pred spremembo. Zato je v praksi zelo težko deterministično napovedati dogajanje.
 Teoretično lahko izpeljemo Navier-Stokesove enačbe, ki opisujejo gibanje vseh tokov, tudi turbulentnih,
 vendar je njihovo reševanje zelo zahtevno tudi v posebnih primerih (že sam obstoj rešitev je 
 odprto vprašanje).
@@ -237,9 +237,9 @@ različnih velikosti, kar je razvidno iz slike \ref{fig:vrtinci}.
 \item \textbf{Difuzivnost}: Zanimiva lastnost turbulentnega toka je difuzivnost. To pomeni, da se energija in gibalna količina
 preneseta po celotnem toku. Osborne Reynolds (1842 - 1912) je postavil eksperiment, ki prikazuje to lastnost. Vidna je
 na sliki \ref{fig:difus}.
-\item \textbf{Reynoldsovo število}: Podoben eksperiment, kot na sliki \ref{fig:difus}, nam da enostaven kriterij, ki mu turbulenca zadošča.
+\item \textbf{Reynoldsovo število}: Podoben eksperiment kot na sliki \ref{fig:difus} nam da enostaven kriterij, ki mu turbulenca zadošča.
 Večja kot je dolžina cevi $L$, ali večja kot je hitrost toka $u$, prej bo prišlo do turbulence. Po drugi strani pa večja kot je
-viskoznost tekočine $\nu$, manj verjetno bo, da pride do turbulence. To zapišemo preko brezdimenzijske 
+viskoznost tekočine $\nu$, manj verjetno bo da pride do turbulence. To zapišemo preko brezdimenzijske 
 konstante $Re = \frac{uL}{\nu}$. Do turbulence pride pri velikih Reynoldsovih številih, običajno pri $Re \geq 5000$.
 \item \textbf{Disipativnost}: To je proces prenosa energije iz večjih vrtincev v manjše, dokler ta ne 
 začne izhajati iz tekočine kot toplota. To pomeni, da moramo, če želimo doseči ali ohranjati turbulenten tok
@@ -259,11 +259,11 @@ ko pa se Reynoldsovo število poveča (parameter $L$ se poveča), tok postane tu
 \end{figure}
 \end{itemize}
 
-V delu se bomo predvsem osredotočil na turbulenco v atmosferi, kjer je obravnava določenih enačb
+V delu se bomo predvsem osredotočili na turbulenco v atmosferi, kjer je obravnava določenih enačb
 gibanja in fizikalnih količin nekoliko drugačna, kot pri drugih vrstah turbulence (kot so naprimer turbulence tekočin).
 Omejili se bomo na prostor $\R^3$, čeprav bomo določene koncepte 
 obravnavali v višjih dimenzijah.
-V splošnem se kakršenkoli tok obravanava na enega od sledečih načinov:
+V splošnem se kakršenkoli tok obravnava na enega od sledečih načinov:
 \begin{itemize}
   \item \textbf{Eulerjev pristop}: Recimo, da opazujemo neko domeno $\Omega \subseteq \R^3$, skozi katero teče tok.
   Zanima nas hitrostno polje 
@@ -284,8 +284,8 @@ V splošnem se kakršenkoli tok obravanava na enega od sledečih načinov:
   Z drugimi besedami $\bd{X}$ je trajektorija delca, ki se premika skozi čas, tok pa je nabor vseh trajektorij.
 \end{itemize}
 
-Kateri pristop uporabimo, je odvisno od lastnosti, ki jih želimo analizirati. Eulerjev pristop
-se osredotoči na fiksno domeno in opazujemo kako se lastnosti tekočine spreminjajo v njej skozi čas. 
+Kateri pristop uporabimo je odvisno od lastnosti, ki jih želimo analizirati. Eulerjev pristop
+se osredotoči na fiksno domeno, kjer opazujemo kako se lastnosti tekočine spreminjajo v njej skozi čas. 
 Za analizo turbulence in globalnih procesov je ta način boljši, medtem ko je Lagrangeva analiza 
 boljša za analizo mehanike delcev, disperzije in različnih procesov mešanja (difuzija). 
 
@@ -302,11 +302,11 @@ Definiramo Lagrangevo polje hitrosti
 \begin{equation}
 U(t; \bd{x}_0) \coloneqq \bd{u}(X(t; \bd{x}_0), t).
 \end{equation}
-Poglejmo, kako se izraža pospešek delca. Za $j$-to komponentno vektorja $U$ velja:
+Poglejmo, kako se izraža pospešek delca. Za $j$-to komponento vektorja $U$ velja:
 \begin{align*}
-\frac{\dif U_j}{\dif t}(t; \bd{x}_0) &= \frac{\partial}{\partial t} u_j(X(t; \bd{x}_0), t) = \\
-&= \sum_{k=1}^n \frac{\dif X_k}{\dif t}(t; \bd{x}) \frac{\partial u_j}{\partial x_k}(X(t; \bd{x}_0), t) + \Big(\frac{\partial}{\partial t} u_j(\bd{x}, t) \Big)_{\bd{x} = X(t, \bd{x}_0)} = \\
-&= \frac{\dif X}{\dif t}(t; \bd{x}_0) \cdot \Big(\text{grad}_\bd{x} u_j(\bd{x}, t) \Big)_{\bd{x} = X(t, \bd{x}_0)} + \Big(\frac{\partial}{\partial t} u_j(\bd{x}, t) \Big)_{\bd{x} = X(t, \bd{x}_0)} = \\
+\frac{\dif U_j}{\dif t}(t; \bd{x}_0) &= \frac{\partial}{\partial t} u_j(X(t; \bd{x}_0), t) \\
+&= \sum_{k=1}^n \frac{\dif X_k}{\dif t}(t; \bd{x}) \frac{\partial u_j}{\partial x_k}(X(t; \bd{x}_0), t) + \Big(\frac{\partial}{\partial t} u_j(\bd{x}, t) \Big)_{\bd{x} = X(t, \bd{x}_0)}\\
+&= \frac{\dif X}{\dif t}(t; \bd{x}_0) \cdot \Big(\text{grad}_\bd{x} u_j(\bd{x}, t) \Big)_{\bd{x} = X(t, \bd{x}_0)} + \Big(\frac{\partial}{\partial t} u_j(\bd{x}, t) \Big)_{\bd{x} = X(t, \bd{x}_0)} \\
 &= \Big(u_j(\bd{x}, t) \cdot \text{grad}_\bd{x} u_j(\bd{x}, t) + \frac{\partial}{\partial t} u_j(\bd{x}, t) \Big)_{\bd{x} = X(t, \bd{x}_0)}.
 \end{align*}
 
@@ -325,12 +325,12 @@ Pospešek, zapisan preko materialnega odvoda, je
 \frac{\dif}{\dif t} U(t; \bd{x}_0) = \Big(\frac{D \bd{u}}{Dt}(\bd{x}, t) \Big)_{\bd{x} = X(t; \bd{x}_0)}.
 \end{equation}
 
-Podoben rezultat dobimo, če namesto hitrosti, odvajamo gostoto $\rho$
+Podoben rezultat dobimo, če namesto hitrosti odvajamo gostoto $\rho$
 \begin{equation}
 \frac{\dif }{\dif t} \rho(t; \bd{x}_0) = \Big(\frac{D \rho}{Dt}(x, t) \Big)_{\bd{x} = X(t; \bd{x}_0)}.
 \end{equation}
 Materialni odvod je fundamentalni operator Eulerjevega pristopa. Vedno, ko nas bo 
-zanimalo, kako se neka količina spreminja s časom, nas bo zanimal njen materialni odvod.
+zanimalo kako se neka količina spreminja s časom, nas bo zanimal njen materialni odvod.
 
 \begin{opomba}
 Operator $\nabla$ ni komutativen. Za vektorsko polje $\bd{v}$ je v splošnem $\bd{v} \cdot \nabla \neq \nabla \cdot \bd{v}$.
@@ -398,13 +398,13 @@ Odvajamo po času
 \begin{align*}
 \frac{\partial}{\partial t} \Big(\int_{\Omega(t)} \phi(\mathbf{x},t)\, dV\Big) = \frac{\partial}{\partial t} \Big(\int_{\Omega_0} \phi(\varphi({\mathbf{x}},t), t) \det{J_\varphi(\bd{x}, t)} \, dV \Big).
 \end{align*}
-Ker je $\Omega_0$ omejeno območje, neodvisno od $t$, in $\phi$ zvezno odvedljiva lahko odvajamo
+Ker je $\Omega_0$ omejeno območje, neodvisno od $t$, in $\phi$ zvezno odvedljiva, lahko odvajamo
 znotraj integrala
 \begin{align*}
 \frac{\partial}{\partial t} \Big(\int_{\Omega(t)} \phi(\mathbf{x},t)\, dV\Big) &= \int_{\Omega_0} \frac{\partial}{\partial t} \Big(\phi(\varphi({\mathbf{x}},t), t) |\det{J_\varphi(\bd{x}, t)}|\Big) \, dV = \\
 = \int_{\Omega_0} &\frac{D \phi}{D t}(\varphi(\bd{x}, t), t) \det J_\varphi(\bd{x}, t) + \phi(\varphi({\mathbf{x}},t), t) \frac{\partial}{\partial t} |\det{J_\varphi(\bd{x}, t)}| \, dV.
 \end{align*}
-Za odvod determinate se skličemo na Jacobijevo indentiteto 
+Za odvod determinante se skličemo na Jacobijevo indetiteto 
 \begin{align*}
 \frac{\partial}{\partial t} \det{J_\varphi(\bd{x}, t)} = \det{J_\varphi(\bd{x}, t)} \operatorname{tr}\Big(J_\varphi^{-1}(\bd{x}, t) \frac{\partial}{\partial t} J_\varphi(\bd{x}, t)\Big).
 \end{align*}
@@ -450,8 +450,7 @@ Iz lastnosti diadičnega produkta $(\phi \otimes \bd{u}) \cdot \bd{n} = \phi (\b
   = \int_{\Omega(t)} \frac{\partial \phi}{\partial t} \dif V + \int_{\partial\Omega(t)} \phi (\bd{u} \cdot \bd{n}) \dif A.
 \end{align*}
 \end{dokaz}
-
-Sedaj s pomočjo dokazanega izreka lahko izpeljemo ohranitvene zakone za tekočine.
+S pomočjo dokazanega izreka lahko izpeljemo ohranitvene zakone za tekočine.
 
 \subsection{Ohranitvena enačba} 
 
@@ -464,8 +463,8 @@ Definiramo količino $\alpha$ kot
 \begin{equation}
 \alpha(\bd{x}, t) = \lim_{r \to 0} \int_{\partial B(\bd{x}, r)} \bd{f}(\bd{y}, t) \dif \bd{y}
 \end{equation}
-Če je $\alpha(\bd{x}, t) > 0$ imamo v točki $\bd{x}$ pritok, če pa je 
-$\alpha(\bd{x}, t) < 0$, pravimo, da imamo odtok. Množico vseh oddtokov in pritokov
+Če je $\alpha(\bd{x}, t) > 0$, imamo v točki $\bd{x}$ pritok, če pa je 
+$\alpha(\bd{x}, t) < 0$, pravimo, da imamo odtok. Množico vseh odtokov in pritokov
 označimo kot 
 \begin{align*}
   E^+(t) &= \{\bd{x} \in \R^n \,|\, \alpha(\bd{x}, t) > 0\}, \\
@@ -511,7 +510,7 @@ Količina vseh pritokov in odtokov v točki $\bd{x}$ je
     % Labels
     \node at (3,5.3) {Pritok};
     \node at (2.5,3.7) {$\gamma_p$};
-    \node at (3.1,-1.2) {Oddtok};
+    \node at (3.1,-1.2) {Odtok};
     \node at (2.5,-0.5) {$\gamma_o$};
     %\node at (3.9,3.5) {Top outflow};
     
@@ -562,7 +561,7 @@ Integriramo pozitivno funkcijo
 $$
 0 = \int_{B(\bd{x}_0, \delta)} f(\bd{x}) \dif V > 0.
 $$
-To vodi je protislovje, torej je $f(\bd{x}) = 0$.
+To vodi v protislovje, torej je $f(\bd{x}) = 0$.
 \end{dokaz}
 
 Ker enakost velja za vsako domeno $\Omega(t)$, po lemi \ref{lema:1} sledi:
@@ -571,7 +570,7 @@ Ker enakost velja za vsako domeno $\Omega(t)$, po lemi \ref{lema:1} sledi:
 \end{equation}
 
 \subsection{Zakon o ohranitvi mase}
-Izpeljani rezultat uporabimo na konktretnih fizikalnih količinah. 
+Izpeljani rezultat uporabimo na konkretnih fizikalnih količinah. 
 Začnemo z zakonom o ohranitvi mase. Naj bo $\rho: \Omega \times [0, \infty) \rightarrow [0, \infty)$
 gostota domene $\Omega$, ter $\bd{f} = \rho$ in nastavimo $\bd{\text{$\gamma$}} = 0$, saj se 
 masa 
@@ -601,10 +600,11 @@ V delu se bomo predvsem ukvarjali z nestisljivimi tokovi.
 Gibalna količina je definirana kot
 \begin{equation}
 \bd{p} = m \bd{u},
+\label{zgoraj}
 \end{equation}
 kjer je $m\geq 0$ masa in $\bd{u}$ hitrostni vektor. Pri obravnavi tokov 
-je bolj smiselno namesto mase obravnavati gostoto $\rho$, zato
-v ohranitveno enačbo vstavimo $\bd{f} = \rho\bd{u}$ in označimo $\bd{\text{$\gamma$}} = \bd{F}$, kjer je $\bd{F}$ vsota vseh sil. Dobimo
+je bolj smiselno namesto mase obravnavati gostoto $\rho$, zato enačbo \ref{zgoraj} delimo z volumnom domene Vol$(\Omega)$
+in vstavimo v ohranitveno enačbo vstavimo $\bd{f} = \rho\bd{u}$ in označimo $\bd{\text{$\gamma$}} = \bd{F}$, kjer je $\bd{F}$ vsota vseh sil na enoto volumna $\Omega$. Dobimo
 \begin{equation}
 \frac{\partial (\rho \bd{u})}{\partial t} + \nabla \cdot (\rho \bd{u} \otimes \bd{u}) = \bd{F}.
 \end{equation}
@@ -623,22 +623,22 @@ materialnega odvoda, kar nam da
 \begin{equation}
 \rho \frac{D \bd{u}}{D t} = \bd{F}.
 \end{equation}
-Ta rezultat je analogen drugemu Newtonovemu zakonu, kjer je masa zamenjana z gostoto in pospešek z materialnim odvodom hitrosti.
+Dobili smo 2. Newtonov zakon na enoto volumna.
 Podajmo še klasifikacijo sil, ki delujejo na tekočino. Prva vrsta sil so zunanje ali telesne sile, 
 to so sile, ki delujejo na celotno telo. Primer teh so sila teže, elektromagnetna sila, 
-Corioliosova sila ... Označevali jih bomo z $\rho \bd{f}_b$. 
+Coriolisova sila ... Označevali jih bomo z $\rho \bd{f}_b$. 
 
 Druga vrsta sil so površinske sile, ki delujejo na rob območja. 
 Taki sili sta primarno dve, to sta viskozna sila in tlačna sila.
 Označujemo jih z $\bd{f}_S$ .
 Te sile lahko karakteriziramo preko \bd{trakcije oz. strižnega vektorja}.
 Naj bo $\Omega \subset \R^n$ omejen volumen. Naj bo $\bd{a}\in \partial \Omega$ in 
-$B(\bd{a}, r)$ za $r>0$, odprta krogla točke $\bd{a}$. Označimo z $\bd{n}(\bd{a})$ enotsko normalo na $\partial \Omega$ v točki $\bd{a}$, ki kaže izven volumna $\Omega$.
-Trakcija je definirana kot sila, ki deluje na infitezimalno majhnem delu roba $\partial \Omega$:
+$D(\bd{a}, r)$ za $r>0$, odprta krogla točke $\bd{a}$. Označimo z $\bd{n}(\bd{a})$ enotsko normalo na $\partial \Omega$ v točki $\bd{a}$, ki kaže izven volumna $\Omega$.
+Trakcija je definirana kot sila, ki deluje na infinitezimalno majhnem delu roba $\partial \Omega$:
 \begin{equation}
 \bd{t}(\bd{a}, t) = \lim_{\dif A \rightarrow 0} \frac{\dif \bd{F}}{\dif A} = \lim_{r \rightarrow 0} \frac{1}{\text{Vol}(\partial D(\bd{a}, r))} \int_{\partial D(\bd{a}, r)} \bd{f}_S(\bd{x}, t) \dif \bd{x}.
 \end{equation}
-Direkne oblike trakcije ne bomo uporabili, saj se skličemo na 
+Direktne oblike trakcije ne bomo uporabili, saj se skličemo na 
 Cauchyjev izrek, po katerem obstaja zvezno odvedljiv tenzor drugega reda 
 $\sigma: \R^n \rightarrow \R^{n\times n}$, 
 da velja 
@@ -665,7 +665,7 @@ Vrtilna količina je dana z
 \begin{equation}
 \bd{L} = \bd{x} \times \bd{p} = \bd{x} \times (m\bd{u}).
 \end{equation}
-Postopamo kot pri ohranitvi gibalne količine, le da vstavimo $\bd{f} = \rho (\bd{x} \times \bd{u})$ in $\bd{\text{$\gamma$}} = \bd{M} = \bd{r}\times \bd{F}$, kjer je $\bd{M}$ vsota momentov sil $\bd{F}$. 
+Postopamo kot pri ohranitvi gibalne količine, le da vstavimo $\bd{f} = \rho (\bd{x} \times \bd{u})$ in $\bd{\text{$\gamma$}} = \bd{M} = \bd{r}\times \bd{F}$, kjer je $\bd{M}$ vsota momentov sil na enoto volumna $\bd{F}$. 
 Momente razcepimo na telesne in površinske momente kot:
 $$
 \bd{M} = \bd{r}\times \bd{F} = \bd{r}\times (\bd{f}_b + \bd{f}_S) = \bd{r}\times \bd{f}_b + \bd{r} \times \bd{f}_S = \bd{M}_b + \bd{M}_S.
@@ -675,7 +675,7 @@ površinske momente oblike $\bd{M}_S = \nabla \cdot (\bd{r} \times \sigma)$. Pon
 \begin{align*}
 \frac{\partial (\bd{x} \times (\rho\bd{u}))}{\partial t} + \nabla \cdot (\bd{x} \times (\rho \bd{u})) \otimes \bd{u} &= \bd{x}\times \bd{F}
 \end{align*}
-oz. z novimo momenti 
+oz. z novimi momenti 
 \begin{align*}
   \frac{\partial (\bd{x} \times (\rho\bd{u}))}{\partial t} + \nabla \cdot (\bd{x} \times (\rho \bd{u})) \otimes \bd{u} &= \bd{x}\times (\rho \bd{f}_b) + \nabla \cdot (\bd{x} \times \sigma).
 \end{align*}
@@ -684,7 +684,7 @@ Za odvod vektorskega produkta velja enako pravilo, kot za odvod produkta funkcij
 \frac{\partial \bd{x}}{\partial t} \times (\rho \bd{u}) + \bd{x} \times \frac{\partial (\rho\bd{u})}{\partial t} + \nabla \cdot (\bd{x} \times (\rho \bd{u})) \otimes \bd{u} &= \bd{x}\times (\rho \bd{f}_b) + \nabla \cdot (\bd{x} \times \sigma). 
 \end{align*}
 Ker je $\bd{u} = \frac{\partial \bd{x}}{\partial t}$, je prvi člen na levi strani enačbe enak 0.
-Za tretji člen uporabimo indetiteto
+Za tretji člen uporabimo identiteto
 \begin{equation}
 \nabla(\bd{x} \times \rho(\bd{u}\otimes \bd{u})) = \bd{x}\times (\nabla\cdot (\rho(\bd{u}\otimes \bd{u}))) + (\nabla \bd{r})^T \cdot \rho(\bd{u}\otimes \bd{u}) - \rho (\bd{u}\otimes \bd{u})^T.
 \end{equation}
@@ -695,7 +695,7 @@ krajšata. Sledi:
 \begin{align*}
 \bd{x} \times \frac{\partial (\rho\bd{u})}{\partial t} + \bd{x} \times (\nabla\cdot (\rho(\bd{u}\otimes \bd{u}))) &= \bd{x}\times (\rho \bd{f}_b) + \nabla \cdot (\bd{x} \times \sigma). 
 \end{align*}
-Ohranitevan enačba je:
+Ohranitvena enačba je:
 \begin{equation}
 \bd{x} \times \Big(\frac{\partial (\rho\bd{u})}{\partial t} + \nabla\cdot (\rho\bd{u})\otimes \bd{u}\Big) = \bd{x}\times (\rho \bd{f}_b) + \nabla \cdot (\bd{x} \times \sigma).
 \end{equation}
@@ -704,7 +704,7 @@ Opazimo, da je na levi strani ravno enačba ohranitve gibalne količine, torej j
 \bd{x}\times (\rho \bd{f}_b + \nabla \cdot \sigma) &= \bd{x} \times (\rho \bd{f}_b) + \nabla \cdot (\bd{x} \times \sigma) \\
 \bd{x} \times (\nabla \cdot \sigma) &= \nabla \cdot (\bd{x} \times \sigma).
 \end{align*}
-Pred zaključkom izpeljave se poslužimo še identitete,
+Pred zaključkom izpeljave se poslužimo še indetitete,
 $$
 \bd{x} \times (\nabla \cdot \sigma) = \nabla \cdot (\bd{x} \times \sigma) - \sigma^T + \sigma.
 $$
@@ -712,7 +712,7 @@ Končni rezultat pove, da je Cauchyjev napetostni tenzor simetričen:
 $$
 \sigma = \sigma^T.
 $$
-Zakaj je ta indetiteta uporabna? Ker je $\sigma$ simetričen, obstaja presenetljiv rezultat, zaradi katerega
+Zakaj je ta identiteta uporabna? Ker je $\sigma$ simetričen, obstaja presenetljiv rezultat, zaradi katerega
 lahko uvedemo tlačno silo. Za simetrične tenzorje obstaja razcep
 $$
 \sigma = -pI + \tau.
@@ -729,16 +729,19 @@ ki ga nismo definirali. Lahko bi ga, vendar kot smo videli v izpeljavi, se vsi �
 take oblike krajšajo. 
 \end{opomba}
 
-Ker se bomo omejili na Newtonske tekočine, je tenzor $\tau$ oblike 
+Omejimo se na Newtonske tekočine, ki so izotropne in za katere 
+velja, da je strižna napetost sorazmerna z gradientom hitrosti.
+Najbolj splošna oblika tenzorja je:
 \begin{equation}
+\label{tenzor_tekocine}
 \tau = \mu (\nabla \bd{u} + (\nabla \bd{u})^T) + \lambda (\nabla \cdot \bd{u}) I,
 \end{equation}
-za dinamično viskoznost $\mu > 0$ in $\lambda > 0$. Če upoštevamo nestisljivostni pogoj, 
-je člen $(\nabla \cdot \bd{u}) I$ enak nič. Vzamemo divergenco of $\tau$:
+kjer se sorazmernostna koeficienta $\mu > 0$ in $\lambda > 0$ imenujeta dinamična in volumska viskoznost. Če upoštevamo nestisljivostni pogoj, 
+je člen $(\nabla \cdot \bd{u}) I$ enak nič. Vzamemo divergenco tenzorja $\tau$:
 $$
 \nabla \cdot \tau = \mu \nabla \cdot (\nabla\bd{u}) + \mu\nabla \cdot (\nabla \bd{u})^T.
 $$
-Za prvi člen vemo, da je divergenca gradienta Laplaceov operator, za drugi člen preverimo, kako se transformira vrstica:
+Za prvi člen vemo, da je divergenca gradienta Laplaceov operator, za drugi člen preverimo kako se transformira vrstica:
 \begin{align*}
 [(\nabla \bd{u})^T]_i &= \Big[\frac{\partial u_1}{\partial x_i}\,\, \dots \,\, \frac{\partial u_n}{\partial x_i}\Big]_i, \\
 \nabla \cdot [(\nabla \bd{u})^T]_i &= \nabla \cdot \Big[\frac{\partial u_1}{\partial x_i}\,\, \dots \,\, \frac{\partial u_n}{\partial x_i}\Big]_i\\
@@ -751,7 +754,7 @@ Sledi
 $$
 \nabla \cdot \tau = \mu \nabla^2 \bd{u}.
 $$
-Dobljenemu ohranitvenem zakonu in kontinuitetni enačbi skupaj pravimo Navier-Stokesova enačba:
+Dobljenemu ohranitvenem zakonu pravimo \bd{Navier-Stokesova enačba} pri predpostavki nestisljivosti:
 \begin{align}
 \label{navier-stokes}
 \nabla \cdot \bd{u} &= 0,\nonumber\\[2mm]
@@ -800,8 +803,8 @@ Enačba, ki opiše zakon, je
 
 \subsection{Zakon o ohranitvi skalarja}
 
-Sedaj bomo posplošili zakon o ohranitvi mase, na poljubno zvezno odvedljivo skalarno polje $c: \Omega \times \R^+ \rightarrow \R$ na 
-$\Omega \subset \R^3$. Lahko bi postopali podobno, kot pri ostalih zakonih 
+Sedaj bomo posplošili zakon o ohranitvi mase na poljubno zvezno odvedljivo skalarno polje $c: \Omega \times \R^+ \rightarrow \R$ na 
+$\Omega \subset \R^3$. Lahko bi postopali podobno kot pri ostalih zakonih 
 in uporabili ohranitveno enačbo, vendar bomo tukaj prikazali malo drugačen pristop.
 
 \begin{figure}[h!]
@@ -855,8 +858,6 @@ in uporabili ohranitveno enačbo, vendar bomo tukaj prikazali malo drugačen pri
 \end{figure}
 
 
-
-
 Zakon o ohranitvi skalarja pravi, da je količina skalarja, ki se pretoči v $\Omega$ v določenem času, 
 enaka količini skalarja, ki se iztoči skozi $\partial\Omega$
 \begin{equation}
@@ -864,13 +865,13 @@ enaka količini skalarja, ki se iztoči skozi $\partial\Omega$
 \end{equation}
 kjer je $S = \partial \Omega$. Ta enačba ni popolna, saj ne upošteva dveh vplivov.
 To sta $\bd{F}$ - vektorsko polje za pretok oz. prenos skalarja $c$ in $\gamma$ - izvor za skalar $c$.
-Če dodamo, še ta člena, se ohranitvea enačba v integralski obliki glasi
+Če dodamo še ta člena, se ohranitvena enačba v integralski obliki glasi
 \begin{equation}
   \frac{\dif}{\dif t} \int_{\Omega} c \dif V = - \int_S \bd{F} \cdot \dif \bd{S} - 
   \int_S c \bd{u}  \dif \bd{S} + \int_\Omega \gamma \dif V,
 \end{equation}    
 
-Prva dva člena imata negativen predznak, ker skalar odteka. Če je $\gamma < 0$ potem imamo odtok skalarja, če pa je $\gamma > 0$ imamo pritok skalarja. 
+Prva dva člena imata negativen predznak, ker skalar odteka. Če je $\gamma < 0$, imamo odtok skalarja, če pa je $\gamma > 0$, imamo pritok skalarja. 
 Zapišemo diferencialno enačbo za zgornjo integralsko enačbo. Po Stokesovem izreku:
 \begin{align*}
 \int_{\Omega} \frac{\partial c}{\partial t} \dif V &= - \int_\Omega \nabla\cdot(\bd{F} + c \bd{u}) - \gamma \dif V .
@@ -889,13 +890,13 @@ Poglejmo si dva primera.
   $$
   \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \bd{u}) = 0
   $$
-  kar je ista enačba, kot v prejšnjem razdelku.
+  kar je ista enačba kot v prejšnjem razdelku.
   \item Zakon o ohranitvi energije (toplote): sedaj vzamemo skalarno polje $c = pc_p T$, kjer 
-  so $c_p$ - specifična toplota (konstanta), $p$ - konstanten tlak in $T$ - skalarno polje temperature. 
+  so, $c_p$ specifična toplota (konstanta), $p$ konstanten tlak in $T$ skalarno polje temperature. 
   Ker ima toplota prevodne lastnosti, je $\bd{F} \neq 0$ in velja $\bd{F} = -k\nabla T$, kjer je 
-  $k$ - konstanta toplotne prevodnosti. Predpostavimo, da je $H = 0$, čeprav v splošnem to 
+  $k$ konstanta toplotne prevodnosti. Predpostavimo, da je $H = 0$, čeprav v splošnem to 
   ni nujno res, saj lahko na primer trenje zraka pri visokih hitrostih ali sevanje 
-  zvišata temperaturo. Ohranitve enačba je 
+  zvišata temperaturo. Za ohranitveno enačbo tako dobimo 
   \begin{equation}
   \frac{\partial T}{\partial t} + \nabla \cdot (T \bd{u}) = \kappa \nabla^2 T,
   \end{equation}
@@ -908,7 +909,7 @@ Poglejmo si dva primera.
 \end{primer}
 V nadaljevanju bo dovolj, če se omejimo na naslednje predpostavke:
 \begin{itemize}
-  \item Vektorsko polje $F$ je potencialno, tj. $F = - \chi \nabla c$. 
+  \item Vektorsko polje $\bd{F}$ je potencialno, tj. $\bd{F} = - \chi \nabla c$. 
   \item Nimamo izvorov, oz. $\gamma = 0$.
 \end{itemize}
 Enačba o ohranitvi skalarja je torej:
@@ -916,432 +917,6 @@ Enačba o ohranitvi skalarja je torej:
 \begin{equation}
 \frac{D c}{D t} = \frac{\partial c}{\partial t} + \bd{u}\cdot\nabla c = \chi \nabla^2 c.
 \end{equation}
-
-
-% \newpage
-
-% Ohranitveni zakoni prej, bom odstranil.\\[5mm]
-
-% \subsubsection{Zakon o ohranitvi mase}
-% Naj bo $\Omega \subseteq \R^3$ omejena, $\partial \Omega$ njen rob in $\rho: \Omega \times [0, \infty) \rightarrow [0, \infty)$ 
-% gostota množice $\Omega$, ki je gladka. Masa $m$ od $\Omega$ je 
-% \begin{equation}
-%   m(\Omega) = \int_\Omega \rho(\bd{x}, t) \dif V.
-% \end{equation}
-% \begin{center}
-% \begin{tikzpicture}
-%   \draw  plot[smooth, tension=.7] coordinates {(-3.5,0.5) (-3,2.5) (-1,3.5) (1.5,3) (4,3.5) (5,2.5) (5,0.5) (2.5,-2) (0,-0.5) (-3,-2) (-3.5,0.5)};
-%   \draw[thick, rotate = 30] (-1.3,0.8) ellipse (0.4 and 0.7);
-%   \filldraw[red, rotate = 30] (-1.3,0.8) circle(2pt) ;
-%   \draw[thick, red, rotate = 30, ->] (-1.3,0.8) -- (-3,0.7) node[above, black] {$\bd{u}$};
-%   \node at (1.5,1.5) {$\Omega$};
-%   \node at (4,4) {$\partial$$\Omega$};
-% \end{tikzpicture}
-% \end{center}
-% ~\\[1mm]
-
-% Zakon o ohranitvi mase pravi, da je količina mase, ki se pretoči v $\Omega$ v določenem času, 
-% enaka količini mase, ki se iztoči skozi $\partial\Omega$ tj.
-% $$
-% \frac{\partial m}{\partial t} = - \int_{\partial \Omega} \rho\bd{u} \dif \bd{S}.
-% $$
-% Ker je domena $\Omega$ končna in $\rho$ gladka lahko zamenjamo vrstni red odvajanja in integriranja
-% $$
-% \int_\Omega \frac{\partial}{\partial t} \rho(x, t) \dif V = - \int_{\partial \Omega} \rho \bd{u} \dif \bd{S}.
-% $$
-% Izrek o divergenci pravi, da je:
-% $$
-% \int_{\partial \Omega} \rho\bd{u} \dif \bd{S} = \int_{\Omega} \nabla \cdot (\rho\bd{u}) \dif V
-% $$
-% Dobimo 
-% \begin{align*}
-% \int_\Omega \left(\frac{\partial}{\partial t} \rho(x, t) + \nabla \cdot (\rho\bd{u})\right) \dif V = 0.
-% \end{align*}
-
-% Naslednja lema nam bo povedala, da je integrand enak 0.
-
-% \begin{lema}
-%   %\label{lema:1}
-% Naj bo $f: \Omega \subset \R^n \rightarrow \R$ zvezna. 
-% Če za vsako podmnožico $\Omega' \subset \Omega$ velja 
-% $$
-% \int_{\Omega'} f(\bd{x}) \dif V = 0,
-% $$
-% potem je 
-% $$
-% f(\bd{x}) = 0, \quad \forall \bd{x} \in \Omega.
-% $$
-% \end{lema}
-
-% \begin{dokaz}
-% Recimo, da je $f(\bd{x}_0) \neq 0$ za $\bd{x}_0 \in \Omega' \subset \Omega$. Brez škode 
-% splošnosti predpostavimo $f(\bd{x}_0) > 0$. Zaradi 
-% zveznosti funkcije $f$ obstaja tak $\delta > 0$, da je 
-% $$
-% f(\bd{x}) > 0, \quad \forall \bd{x} \in B(\bd{x}_0, \delta) \subset \Omega'.
-% $$
-% Integriramo nenegativno funkcijo 
-% $$
-% \int_{\Omega'} f(\bd{x}) \dif V = \int_{B(\bd{x}_0, \delta)} f(\bd{x}) \dif V > 0.
-% $$
-% To vodi je protislovje, torej je $f(\bd{x}) = 0$.
-% \end{dokaz}
-
-% Ker enakost velja za vsako domeno $\Omega$ iz leme sledi enakost
-% \begin{equation}
-% \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho\bd{u}) = 0.
-% \end{equation}
-
-
-% To je diferencialna oblika zakona o ohranitvi mase, enačbi, ki zakon opiše, pravimo \textbf{kontinuitetna enačba}.
-% Če je gostota konstantna, tj. $\rho(x, t) \equiv c > 0$, potem se kontinuitetna enačba poenostavi
-% $$
-% \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho\bd{u}) = \rho (\nabla \cdot \bd{u}) = 0 \Longrightarrow \nabla \cdot u = 0.
-% $$
-% \begin{definicija}
-% Tok je \textbf{nestisljiv}, če velja 
-% \begin{equation}
-% %\label{ohranitev mase}
-%   \nabla \cdot u = 0.    
-% \end{equation}
-% \end{definicija}
-
-% \subsection{Zakon o ohranitvi gibalne količine}
-% V tem razdelku bomo predpostavili, da je gostota $\rho$ konstantna, tj.
-% \begin{equation}
-% m = \int_\Omega \rho \dif V = \rho \int_\Omega \dif V = \rho \cdot V,
-% \end{equation}
-% kjer je $V = \int_\Omega \dif V$ volumen domene $\Omega$. Zakon o ohranitvi gibalne količine, 
-% pravi, da je vsota gibalnih količin ($\bd{p}$) v zaprtem sistemu konstanten. Za $n$ delcev je
-% \begin{align*}
-% &\sum_{k=1}^n \bd{p}_k = \text{const.} \\[1mm]
-% &\sum_{k=1}^n \frac{\dif \bd{p}_k}{\dif t} = 0.
-% \end{align*}
-% Gibalna količina je dana s $\bd{p} = m \bd{v}$, kar ekvivalentno zapišemo
-% \begin{align*}
-% \frac{\dif \bd{p}}{\dif t} = \frac{\dif \,(m \bd{v})}{\dif t} &= m\frac{\dif \bd{v}}{\dif t} = m \bd{a} = \bd{F} \Longrightarrow\\[2mm]
-% \sum_{k=1}^n \bd{F}_k &= 0.
-% \end{align*}
-% To je ravno 1. Newtonov zakon. Ob upoštevanju 2. Newtonov zakona, dobimo obliko:
-% \begin{equation}
-% \sum_{k=1}^n \bd{F}_k = m \bd{a}.
-% \end{equation}
-% Zapišimo ta zakon za tokove, preko materialnega odvoda.
-% \begin{align*}
-% m \bd{a} = \rho V \frac{D \bd{u}}{D t} = \sum_{k=1}^n \bd{F}_k \\
-% \rho \frac{D \bd{u}}{D t} = \sum_{k=1}^n \frac{\bd{F}_k}{V}. 
-% \end{align*}
-% Pri tokovih se pojavita dve vrsti sil 
-% \begin{itemize}
-%   \item Ploskovne sile, ki jih delimo na 
-%   \begin{enumerate}
-%     \item[1)] Tangencialne (viskoznost)
-%     \item[2)] Normalne (tlak)
-%   \end{enumerate}
-%   \item Telesne oz. zunanje sile (gravitacija, Coriolisova sila, magnetizem, \dots)
-% \end{itemize}
-% Izraz $\frac{F_k}{V}$ bomo zapisali preko količin $\bd{u}$ in $p$. 
-% Izpeljave naredimo v enodimenzionalnem primeru, kar se enostavno posploši 
-% na višje dimenzije.\\
-% \textbf{Normalna sila .oz tlak:}\\[1mm]
-% \begin{center}
-
-% \begin{tikzpicture}[scale=2]
-%   \draw[thick] (-4,0,0) -- (-2,0,0) -- (-2,1,0) -- (-4,1,0) -- cycle; % Bottom face
-%   \draw[thick] (-4,0,0) -- (-4,0,1) -- (-4,1,1) -- (-4,1,0);          % Left face
-%   \draw[thick] (-2,0,0) -- (-2,0,1) -- (-2,1,1) -- (-2,1,0);          % Right face
-%   \draw[thick] (-4,0,1) -- (-2,0,1) -- (-2,1,1) -- (-4,1,1) -- cycle; % Top face
-
-%   \draw[thick] (0,0,0) -- (1,0,0) -- (1,1,0) -- (0,1,0) -- cycle; % Bottom face
-%   \draw[thick] (0,0,0) -- (0,0,1) -- (0,1,1) -- (0,1,0);          % Left face
-%   \draw[thick] (1,0,0) -- (1,0,1) -- (1,1,1) -- (1,1,0);          % Right face
-%   \draw[thick] (0,0,1) -- (1,0,1) -- (1,1,1) -- (0,1,1) -- cycle; % Top face
-
-%   % Left arrow
-%   \draw[->, thick] (-0.5, 0.2, 0.2) -- (0, 0.2, 0.2);
-%   \draw[->, thick] (-0.5, 0.5, 0.5) -- (0, 0.5, 0.5);
-%   \draw[->, thick] (-0.5, 0.6, 0.15) -- (0, 0.6, 0.15);
-
-%   % Right arrow
-%   \draw[->, thick] (1.5, 0.2, 0.2) -- (0.9, 0.2, 0.2);
-%   \draw[->, thick] (1.5, 0.5, 0.5) -- (0.9, 0.5, 0.5);
-%   \draw[->, thick] (1.5, 0.6, 0.15) -- (0.9, 0.6, 0.15);
-
-%   %\draw[->, thick] (0.9, 1.9, 1.5) -- (0.9, 1.4, 1.5);
-%   %\draw[->, thick] (1.2, 1.9, 1.7) -- (1.2, 1.4, 1.7);
-%   %\draw[->, thick] (0.6, 1.9, 1.7) -- (0.6, 1.4, 1.7);
-
-%   \node at (-1.5, 0.5, 0) {$\Longrightarrow$};
-%   %\node at (0.5, -0.5, 0) {Front};
-%   \draw[thick, decorate, decoration={brace, mirror}] (-0.4, -0.5, 0) -- (0.6, -0.5, 0) 
-%         node[midway, yshift=-0.3cm] {$\triangle x$};
-%   \draw[thick, decorate, decoration={brace}] (0.5, -0.35, 0) -- (0.5, 0.55, 0) 
-%         node[midway, xshift = -0.4cm, yshift=-0.3cm] {$\triangle y$};
-% \end{tikzpicture}
-% \end{center}
-
-% Recimo, da imamo majhno pravokotno domeno z volumnom $V = \triangle x \triangle y  \triangle z$.
-% Poglejmo, kako se sila izraža v $x$ - smeri, ko pride do spremembe tlaka. Ta je definiran kot $p = \frac{\triangle F}{\triangle A}$, 
-% kjer sta $\triangle F$ - majhna sprememba sile in $\triangle A$ - majhna sprememba površine. Imamo:
-% \begin{align*}
-% F_x &= p_1 A_1 - p_2 A_2 = \quad \quad(A_1 = A_2 = A) \\
-% F_x &= (p_1 - p_2)A = \triangle p A \quad \Longrightarrow \\
-% \frac{F_x}{V} &= \frac{\triangle p \triangle y \triangle z}{\triangle x \triangle y \triangle z} = \frac{\triangle p}{\triangle x}
-% \end{align*}
-% Pošljemo $\triangle x$ proti $0$:
-% $$
-% \frac{F}{V} = \lim_{\triangle x \rightarrow 0 }\frac{F_x}{V} = \lim_{\triangle x \rightarrow 0} \frac{\triangle p}{\triangle x} = \frac{\partial p}{\partial x}
-% $$
-% Na enak način dobimo v $y$ in $z$ smeri. V vektorskem zapisu: 
-% $\frac{\bd{F}}{V} = \nabla p$.
-% \noindent
-% \textbf{Tangencialna sila oz. viskoznost:} \\[1mm]
-% Viskoznost ima podobno vlogo kot koeficient trenje. To je merilo za koliko tekočina 
-% „ustavlja“ samo sebe. Sila med tokovoma, ki je posledica 
-% premikanja oz. drsenja med njima imenujemo strižna napetost. Definirana je enako kot tlak, vendar kaže v drugo smer, tj. $\tau = \frac{F}{A}$.
-% \begin{center}
-% \begin{tikzpicture}
-%   % Draw horizontal blue lines of different lengths
-%   \draw[thick, blue] (0,2) -- (4,2);
-%   \draw[thick, blue] (0,1.5) -- (3.5,1.5);
-%   \draw[thick, blue] (0,1) -- (3,1);
-%   \draw[thick, blue] (0,0.5) -- (2.5,0.5);
-%   \draw[thick, blue] (0,0) -- (2,0);
-  
-%   % Add atoms as small circles
-%   \filldraw[black] (1.5,0.25) circle(2pt) node[below] {};
-%   \filldraw[black] (2,0.75) circle(2pt) node[below] {};
-%   \filldraw[black] (1,1.25) circle(2pt) node[below] {};
-%   \filldraw[black] (0.5,1.75) circle(2pt) node[below] {};
-  
-%   % Add arrows for the motion of atoms
-%   \draw[->, thick] (1.5,0.25) -- (1,0.2);
-%   \draw[->, thick] (2,0.75) -- (2.5,1);
-%   \draw[->, thick] (1,1.25) -- (0.7,0.9);
-%   \draw[->, thick] (0.5,1.75) -- (1,2);
-  
-%   % Add a small red square
-%   \draw[red] (2.5,1.2) rectangle +(0.2,0.2);
-  
-  
-%   \draw[red] (6.5,0.7) rectangle +(1,1);
-%   \draw[->, thick, blue] (6.5,0.6) -- (7,0.6);
-%   \draw[->, thick, blue] (6.5,1.8) -- (7.5,1.8);
-%   \node at (0.5, -0.5, 0) {$u_1$};
-
-%   % Add labels
-%   \node at (7.3,2.1) [left] {$u_2$};
-%   \node at (7.3,0.2) [left] {$u_1$};
-% \end{tikzpicture}
-% \end{center}
-% Pogledamo spremembo hitrosti v $x$ - smeri
-% $$
-% \tau_x = \frac{F_x}{A} = \frac{m}{A} \cdot \frac{\triangle u}{\triangle t}\cdot \frac{\triangle y}{\triangle y} = \underbrace{\frac{m}{A} \cdot\frac{\triangle y}{\triangle t}}_{\mu} \cdot\frac{\triangle u}{\triangle y} = \mu \frac{\triangle u}{\triangle y}.
-% $$
-% $\mu$ je dinamična viskoznost, odvisna le od lastnosti tekočine. 
-% Ko pošljemo $\triangle y \rightarrow 0$, dobimo
-% $$
-% \tau = \lim_{\triangle y \rightarrow 0} \tau_x = \lim_{\triangle y \rightarrow 0} \mu\frac{\triangle u}{\triangle y} = \mu\frac{\partial u}{\partial y}
-% $$
-% Naredimo podobno analizo, kot pri tlaku \\
-% \begin{center}
-% \begin{tikzpicture}
-%   \draw[red] (3.5,0.7) rectangle +(1,1);
-%   \draw[->, thick, blue] (3.5,0.6) -- (4.5,0.6);
-%   \draw[->, thick, blue] (4.5,1.8) -- (3.5,1.8);
-
-%   % Add labels
-%   \node at (4.3,2.1) [left] {$\tau_2$};
-%   \node at (4.3,0.2) [left] {$\tau_1$};
-% \end{tikzpicture}
-% \end{center}
-% Če sta strižni napetosti različni, imamo neničelno silo na majhnem območju $\Omega = \triangle x \triangle y \triangle z$:
-% \begin{align*}
-% F_x &= \tau_2 A_2 - \tau_1 A_1  \quad (A_1 = A_2)\\
-% F_x &= \triangle \tau \triangle x \triangle z  \quad \Longrightarrow\\
-% \frac{F_x}{V} &= \frac{\triangle \tau \triangle x \triangle z}{\triangle x \triangle y \triangle z} = \frac{\triangle \tau}{\triangle y}.
-% \end{align*}
-% Ponovno pošljemo $\triangle y \rightarrow 0$
-% $$
-% \frac{F}{V} = \lim_{\triangle y \rightarrow 0} \frac{F_x}{V} = \lim_{\triangle y \rightarrow 0} \frac{\triangle \tau}{\triangle y} = \frac{\partial \tau}{\partial y} = \frac{\partial}{\partial y} \Big(\mu\frac{\partial u}{\partial y} \Big) = \mu \frac{\partial^2 u}{\partial y^2}.
-% $$
-% Delec volumna se premika le v $x$ - smeri, vendar strižna napetost deluje na vse njegove površine, zato, je sila izraža preko Laplaceovega operatorja
-% $$
-% \frac{F}{V} = \mu \Big(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} =  \Big) = \mu \nabla^2 u.
-% $$
-% V vektorski notaciji: $\frac{\bd{F}}{V} = \mu \nabla^2 \bd{u}$.\\
-% \textbf{Telesne sile:} \\
-% V splošnem je veliko različnih sil, tu pa bomo upoštevali le gravitacijo (v modeliranju atmosfere, je ključno, da upoštevamo Corioliosovo silo). Gravitacijska sila v primeru tokov 
-% $$
-% \frac{\bd{F}}{V} = \frac{m \bd{g}}{V} = \frac{\rho V \bd{g}}{V} = \rho \bd{g}.
-% $$
-% Ko združimo vse tri sile, dobimo enačbo
-% $$
-% \rho \frac{D u}{D t} = - \frac{\partial p}{\partial x} + \mu \Big( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} \Big) + \rho g.
-% $$
-% Ker je hitrost vektorska količina, imamo $3$ enačbe 
-% \begin{align*}
-%   \rho \frac{D u}{D t} &= - \frac{\partial p}{\partial x} + \mu \Big( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} \Big) + \rho g_x,\\
-%   \rho \frac{D v}{D t} &= - \frac{\partial p}{\partial y} + \mu \Big( \frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2} + \frac{\partial^2 v}{\partial z^2} \Big) + \rho g_y,\\
-%   \rho \frac{D w}{D t} &= - \frac{\partial p}{\partial z} + \mu \Big( \frac{\partial^2 w}{\partial x^2} + \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2} \Big) + \rho g_z.
-% \end{align*}
-% Kompaktno zapišemo 
-% $$
-% \rho \frac{D \bd{u}}{D t} = - \nabla p + \mu \nabla^2 \bd{u} + \rho \bd{g},
-% $$
-% kjer sta $\bd{u} = (u, v, w)$ in $g = (g_x, g_y, g_z)$. Tem enačbam pravimo Navier-Stokesove enačbe.
-% Običajno se zadnjo enačbo deli z gostoto $\rho$ in uvede \textbf{kinematično viskoznost} $\nu = \frac{\mu}{\rho}$. Če razpišemo
-%  materialni odvod, se celotna enačba glasi
-% \begin{equation}
-%   \label{NS}
-% \frac{D \bd{u}}{D t} = \frac{\partial \bd{u}}{\partial t} + (\bd{u}\cdot \nabla)\bd{u} = - \frac{1}{\rho}\nabla p + \nu \nabla^2 \bd{u} + \rho \bd{g}.
-% \end{equation}
-
-% \begin{opomba}
-%   \hfil
-% \begin{itemize}
-%   \item Če ne poznamo telesnih sil ali jih imamo več, v zadnji enačbi sumand $\rho \bd{g}$ zamenjamo s $\bd{f}$.
-%   \item Količine deljene z gostoto, imenujemo kinematične količine.
-% \end{itemize}
-% \end{opomba}
-
-% \subsection{Zakon o ohranitvi vrtinčnosti}
-
-% Naslednja pomembna količina je vrtinčenja \bd{$\omega$}. Kot že ime pove, je to količina, ki opisuje vrtenje toka okoli neke točke. 
-% \begin{definicija}
-% Naj bo $\bd{u} \in C^1(\Omega)$, $\Omega \subset \R^3$ . Vrtinčenje $\omega$ je rotor polja $\bd{u}$
-% \begin{equation}
-% \bd{$\omega$} \equiv \nabla \times \bd{u}.
-% \end{equation}
-% \end{definicija}
-% Ohranitveno enačbo za \bd{$\omega$} dobimo preko Navier-Stokesove enačbe. Predpostavimo, 
-% da je vektorsko polje $\bd{u} \in C^2$ na poljubni domeni. Vzamemo rotor enačbe \eqref{NS}:
-% \begin{align*}
-% \nabla \times (\frac{\partial \bd{u}}{\partial t} + (\bd{u}\cdot \nabla)\bd{u}) = \nabla\times (- \frac{1}{\rho}\nabla p + \nu \nabla^2 \bd{u} + \bd{f}) \\
-% \frac{\partial \bd{$\omega$}}{\partial t} + \nabla \times ((\bd{u}\cdot \nabla)\bd{u}) = - \frac{1}{\rho} \nabla \times (\nabla p) + \nu\nabla^2 \bd{$\omega$} + \nabla \times \bd{f}
-% \end{align*}
-% Dobro znano dejstvo je, da je rotor gradienta skalarne funkcije $0$, torej je 
-% $\nabla \times (\nabla p) = \bd{0}$. Poenostavimo člen s hitrostjo. Iz dvojnega vektorskega produkta dobimo 
-% \begin{align*}
-% \bd{u} \times (\nabla \times \bd{u}) &=  \nabla(\bd{u}\cdot \bd{u}) - (\bd{u}\cdot \nabla)\bd{u} \\
-% \Longrightarrow \quad(\bd{u}\cdot \nabla)\bd{u} &= \nabla (\bd{u}\cdot \bd{u}) - \bd{u}\times (\underbrace{\nabla \times \bd{u}}_{= \bd{$\omega$}})
-% \end{align*}
-% Vzamemo rotor zadnje enakosti:
-% \begin{align*}
-% \nabla \times (\bd{u}\cdot \nabla)\bd{u} &= \underbrace{\nabla \times (\nabla(\bd{u}\cdot \bd{u}))}_{= 0} - \nabla \times (\bd{u} \times \bd{$\omega$}) \\
-% &= \nabla \times (\bd{$\omega$} \times \bd{u}) \\
-% &= (\bd{u}\cdot \nabla)\bd{$\omega$} - (\bd{$\omega$} \cdot \nabla)\bd{u} + \bd{$\omega$}\underbrace{(\nabla \cdot \bd{u})}_{= 0 \text{ po } \eqref{ohranitev mase}} + \bd{u} \underbrace{(\nabla \cdot \bd{$\omega$})}_{= 0}
-% \end{align*}
-% Vstavimo v prvotno enačbo
-% \begin{align*}
-% \frac{\partial \bd{$\omega$}}{\partial t} + (\bd{u}\cdot \nabla)\bd{$\omega$} + (\bd{$\omega$} \cdot \nabla)\bd{u} - (\bd{$\omega$} \cdot \nabla)\bd{u} + \bd{u} (\nabla \cdot \bd{$\omega$}) =  \nu\nabla^2 \bd{$\omega$} + \nabla \times \bd{f}.
-% \end{align*}
-% Enačba, ki opiše zakon
-% \begin{equation}
-% \frac{D\bd{$\omega$}}{D t} = \frac{\partial \bd{$\omega$}}{\partial t} + (\bd{u}\cdot \nabla)\bd{$\omega$} = (\bd{$\omega$} \cdot \nabla)\bd{u}+ \nu \nabla^2 \bd{$\omega$} + \nabla \times \bd{f}.
-% \end{equation}
-
-% \subsection{Zakon o ohranitvi skalarja}
-% Sedaj bomo posplošili zakon o ohranitvi mase, za poljubno zvezno odvedljivo skalarno polje $c: \Omega \times \R^+ \rightarrow \R$ na 
-% $\Omega \subset \R^3$.
-% Začnemo z enako enačbo kot pri zakonu o ohranitvi mase, le, da dodamo še dva dodatna 
-% člena. Ta člena sta $F$ - vektorsko polje, za pretok oz. prenos skalarja $c$ in $H$ - izvor za skalar $c$.
-% V integralski obliki zapišemo:
-% \begin{equation}
-% \frac{\dif}{\dif t} \int_{\Omega} c \dif V = - \int_S \bd{F} \cdot \dif \bd{S} - 
-% \int_S c \bd{u}  \dif \bd{S} + \int_\Omega H \dif V,
-% \end{equation}
-% kjer je $S = \partial \Omega$.
-% Prva dva člena imata negativen predznak, ker skalar odteka. Če je $H < 0$ potem imamo odtok skalarja, če pa je $H > 0$ imamo pritok skalarja. 
-
-% \begin{primer}
-% Enostaven primer, ki pokaže pomen količine $H$. Pri zgornji luknji imamo pritok 
-% mase (tekočine) in v tem primeru je $H_{p} > 0$, med tem, ko imamo v spodnji luknji odtok
-% mase (tekočine) in je $H_{0} > 0$. Celotni $H$ je razlika $H = H_p - H_0$.\\
-% \begin{center}
-% \begin{tikzpicture}[scale=1.2]
-
-%   % Basin (korito) with gaps at the bottom and top
-%   \draw[thick] (0,0) -- (2.5,0);    % Left part of bottom line
-%   \draw[thick] (3.5,0) -- (6,0);    % Right part of bottom line
-  
-%   \draw[thick] (0,3) -- (2.5,3);    % Left part of top line
-%   \draw[thick] (3.5,3) -- (6,3);    % Right part of top line
-  
-%   \draw[thick] (0,0) -- (0,3);      % Left wall
-%   \draw[thick] (6,0) -- (6,3);      % Right wall
-  
-%   % Water level inside basin
-%   \fill[blue!20] (0,0) rectangle (6,1.8);
-  
-%   % Narrow inflow pipe (higher up)
-%   \draw[thick] (2.9,5) rectangle (3.1,3.8);
-  
-%   % Water inflow stream
-%   \draw[blue, thick, ->] (3,3.8) -- (3,3.2);
-  
-%   % Outflow stream at bottom hole
-%   \draw[blue, thick, ->] (3,0) -- (3,-0.8);
-  
-%   % Outflow stream at top hole
-%   %\draw[blue, thick, ->] (3,3) -- (3,3.5);
-  
-%   % Labels
-%   \node at (3,5.3) {Pritok};
-%   \node at (3.5,-1) {Oddtok};
-%   %\node at (3.9,3.5) {Top outflow};
-  
-%   % H explanation
-%   %\node at (7,2.2) {\Large $H = \text{Inflow} - \text{Outflows}$};
-% \end{tikzpicture}
-% \end{center}
-% \end{primer}
-% Zapišemo diferencialno enačbo za zgornjo integralsko enačbo. Po Stokesovem izreku:
-% \begin{align*}
-% \frac{\dif}{\dif t} \int_{\Omega} c \dif V &= - \int_S \bd{F} \cdot \dif \bd{S} - 
-% \int_S c \bd{u}  \dif \bd{S} + \int_\Omega H \dif V \\
-% \int_{\Omega} \frac{\partial c}{\partial t} \dif V &= - \int_\Omega \nabla\cdot(\bd{F} + c \bd{u}) - H \dif V .
-% \end{align*}
-% Po lemi \ref{lema:1} dobimo :
-% \begin{equation}
-% \frac{\partial c}{\partial t} + \nabla \cdot (\bd{F} + c\bd{u}) - H = 0.
-% \end{equation}
-
-% Poglejmo si dva primera
-% \begin{primer}
-%   \hfil
-% \begin{itemize}
-%   \item Zakon o ohranitvi mase: vzamemo $c = \rho$, $\bd{F} = 0$ (masa je statična, se ne prevaja) in 
-%   $H = 0$ (masa se ne ustvari ali uniči). Dobimo
-%   $$
-%   \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \bd{u}) = 0
-%   $$
-%   kar je ista enačba, kot smo dobili v prejšnjem razdelku.
-%   \item Zakon o ohranitvi energije (toplote): sedaj vzamemo skalarno polje $c = pc_p T$, kjer 
-%   so $c_p$ - specifična toplota(konstanta), $p$ - konstanten tlak in $T$ - skalarno polje temperature. 
-%   Ker ima toplota prevodne lastnosti, je $F \neq 0$ in zanj velja $\bd{F} = -k\nabla T$, kjer je 
-%   $k$ - konstanta toplotne prevodnosti. Predpostavimo, da je $H = 0$, čeprav v splošnem to 
-%   ni nujno res, saj lahko na primer trenje zraka pri visokih hitrostih ali sevanje 
-%   dvigneta temperaturo. Ohranitve enačba je 
-%   \begin{equation}
-%   \frac{\partial T}{\partial t} + \nabla \cdot (T \vec{u}) = \kappa \nabla^2 T,
-%   \end{equation}
-%   kjer je $\kappa = \frac{k}{p c_p}$.
-%   Če je hitrost $u$ konstantna za $\nabla$ ("ohranitev mase"), lahko enačbo zapišemo preko materialnega odvoda
-%   \begin{equation}
-%   \frac{D T}{D t} = \frac{\partial T}{\partial t} + \vec{u}\cdot\nabla T = \kappa \nabla^2 T
-%   \end{equation}
-% \end{itemize}
-% \end{primer}
-% Za našo uporabo v nadaljevanju bo dovolj, če omejimo na naslednje predpostavke
-% \begin{itemize}
-%   \item Vektorsko polje $F$ je potencialno, tj. $F = - \gamma \nabla c$. 
-%   \item Nimamo izvorov oz. $H = 0$.
-% \end{itemize}
-% Torej bo za nas enačba o hranitvi skalarja 
-% \begin{equation}
-% \frac{D c}{D t} = \frac{\partial c}{\partial t} + u\cdot\nabla c = \gamma \nabla^2 c.
-% \end{equation}
 
 \subsection{Lastnosti turbulence}
 V tem razdelku si bomo pogledali nekaj lastnosti turbulence, oz. nekaj posledic 
@@ -1357,9 +932,9 @@ $$
 \rho \frac{D \bd{u}}{D t} = - \nabla p + \mu \nabla^2 \bd{u} + \bd{f}.
 $$
 
-Enačba, ki jo želimo analizirati ima enoto $kg \cdot m^{-2}\cdot s^{-2}$. Formalno 
-ima sistem, ki ga enačba opisuje, neke karakteristične lastnosti. Tri, ki se takoj ponudijo, so 
-$U$ - karakteristična hitrost, $L$ - karakteristična dolžina in gostota $\rho$. Uvedemo nove brezdimenzijske
+Enačba, ki jo želimo analizirati, ima enoto $kg \cdot m^{-2}\cdot s^{-2}$. Formalno 
+ima sistem, ki ga enačba opisuje, neke karakteristične lastnosti. Tri, ki se takoj ponudijo, so, 
+$U$ karakteristična hitrost, $L$ karakteristična dolžina in gostota $\rho$. Uvedemo nove brezdimenzijske
 spremenljivke tako, da stare normiramo z ustrezno kombinacijo $U$, $L$ in $\rho$:
 $$
 \widetilde{\bd{u}} = \frac{\bd{u}}{U}, \quad \widetilde{p} = \frac{p}{\rho U^2}, \quad \widetilde{\bd{f}} = \bd{f} \,\,\frac{\rho L}{U^2},
@@ -1378,7 +953,7 @@ Vstavimo v enačbo \ref{navier-stokes}:
 (\widetilde{\bd{u}} \cdot \widetilde{\nabla}) \widetilde{\bd{u}} = - \widetilde{\nabla} \widetilde{p}
 + \frac{1}{Re} \widetilde{\nabla}^2 \widetilde{\bd{u}} + \widetilde{\bd{f}}
 \end{align*}
-V enačbi nam ostane le ena kostanta, ki jo imenujemo Reynoldsovo število $Re$
+V enačbi nam ostane le ena konstanta, ki jo imenujemo Reynoldsovo število $Re$
 \begin{equation}
 Re = \frac{\rho UL}{\mu} = \frac{UL}{\nu},
 \end{equation}
@@ -1420,8 +995,8 @@ obrnemo, to je snovi lahko \href{https://www.youtube.com/watch?v=h1DnrWEOWeg&fea
 
 \subsubsection{Kinetična energija in viskozna disipativnost}
 
-Sedaj si bomo pogledali še eno pomebno lastnost turbulence, ki ji pravimo disipativnost. 
-Privzeli bomo, da je hitrost na robu območja enaka $0$ torej $\bd{u}_{|_{\partial\Omega}} = 0$. 
+Sedaj si bomo pogledali še eno pomembno lastnost turbulence, ki ji pravimo disipativnost. 
+Privzeli bomo, da je hitrost na robu območja enaka $0$, torej $\bd{u}_{|_{\partial\Omega}} = 0$. 
 Empirično se izkaže, da je ta predpostavka smiselna. Če si predstavljamo posodo z 
 vodnim tokom, spodnja skica prikaže, da ko se bližamo robu posode, postaja trenje med tekočino
 in robom posode vedno večje, in posledično hitrost tekočine vedno manjša. Ustvari se tanka plast, 
@@ -1561,7 +1136,7 @@ $$
 \frac{\partial}{\partial t} \Big(\frac{1}{2} |\bd{u}|^2 \Big) + \nabla \cdot \Big(\frac{1}{2} |\bd{u}|^2 \bd{u}\Big) = 
 -\frac{1}{\rho}\nabla(p \bd{u}) + \nu \nabla\cdot\Big((\bd{u}\cdot \nabla)\bd{u} - \nabla\Big(\frac{1}{2} |\bd{u}|^2\Big)\Big) - \nu|\nabla \bd{u}|^2
 $$
-integriramo po omejenem območju $\Omega$ z robomo $\partial \Omega$ in dobimo:
+integriramo po omejenem območju $\Omega$ z robom $\partial \Omega$ in dobimo:
 \begin{align*}
 \int_\Omega \frac{\partial}{\partial t} \Big(\frac{1}{2} |\bd{u}|^2 \Big)\dif V + \int_\Omega \nabla \cdot\Big(\frac{1}{2} |\bd{u}|^2 \bd{u}+\frac{1}{\rho}p \bd{u} - \nu(\bd{u}\cdot \nabla)\bd{u} + \nu\nabla\Big(\frac{1}{2} |\bd{u}|^2\Big)\Big)\dif V =\int_V - \nu|\nabla \bd{u}|^2 \dif \Omega.\qquad\qquad\qquad
 \end{align*}
@@ -1591,8 +1166,8 @@ Dobimo zelo podobno zvezo, le da vsebuje še delo zunanje sile
 $$
  \nu\int_\Omega |\nabla \bd{u}|^2 \dif V = \int_\Omega \bd{u}\cdot \bd{f} \dif V.
 $$
-Ta enakost nam pove, da v primeru, ko se kinetična energija ohranja, je energija, ki odhaja iz sistema enaka energiji, ki jo dovajamo z delom telesne sile $\bd{f}$.
-Ta rezultat namiguje, da smo na pravi poti, kar se tiče analize turbulence in tokov
+Ta enakost nam pove, da v primeru, ko se kinetična energija ohranja, je energija, ki odhaja iz sistema, enaka energiji, ki jo dovajamo z delom telesne sile $\bd{f}$.
+Ta rezultat namiguje, da smo na pravi poti kar se tiče analize turbulence in tokov
 nasplošno, saj je rezultat ekvivalenten prvemu zakonu termodinamike:
 \begin{definicija}[Prvi zakon termodinamike]
 Naj bo $\Omega$ sistem oz. omejeno območje. Potem je sprememba energije $\triangle E$ sistema, 
@@ -1611,10 +1186,10 @@ Naj bo $\bd{u}$ rešitev Navier-Stokesove enačbe. \textbf{Viskozna disipativnos
 \end{definicija}
 
 \subsubsection{Velikostne skale}
-Ključna ugotovitev v prvi polovici 20. stoletja, ki je spremenila, pogled
-na turbulenco je, da se kljub njenemu kaotičnemu obnašanju, pojavijo urejene strukture. 
+Ključna ugotovitev v prvi polovici 20. stoletja, ki je spremenila pogled
+na turbulenco je, da se kljub njenemu kaotičnemu obnašanju pojavijo urejene strukture. 
 To so turbulentni vrtinci (eng. eddies). V zadnjem razdelku smo videli, da na poljubni domeni 
-$\Omega$, energija s časom pada. Jasno je, da bo odtok/prenos energije večji na večji domeni. Če je turbulentni 
+$\Omega$ energija s časom pada. Jasno je, da bo odtok/prenos energije večji na večji domeni. Če je turbulentni 
 tok sestavljen iz turbulentnih vrtincev, se pojavi vprašanje, kako veliki so taki vrtinci? 
 Ključni so vrtinci "najmanjših" \, velikosti zaradi naslednjega mehanizma:
 največji vrtinci, ki nosijo največ energije, jo izgubljajo preko prenosa na manjše vrtince. Ta postopek se ponavlja, dokler 
@@ -1626,7 +1201,7 @@ ampak se zaradi viskoznosti začne pretvarjati v toploto. Tem vrtincem pravimo \
 dobili Eulerjevo enačbo \eqref{Euler NS}, ki ne vsebuje viskoznega člena. To pomeni, da je 
 $\nu \nabla^2 \bd{u} \approx 0$ torej $\epsilon \approx$ konst. Zato bomo v 
 nadaljevanju predpostavili, da je viskozna disipativnost konstantna. Ta predpostavka je 
-smiselna, do dolžin velikosti $\eta$. Izraz za $\eta$ bomo izpeljali v nadaljevanju, sedaj 
+smiselna do dolžin velikosti $\eta$. Izraz za $\eta$ bomo izpeljali v nadaljevanju, sedaj 
 pa razkrijemo le, da je v atmosferi $\eta \approx 1$mm.\\
 
 Označimo z $\mathscr{l}$ premer poljubnega vrtinca in z $\mathscr{u}$ povprečno hitrost vrtinca.
@@ -1644,7 +1219,7 @@ Za primerno izbran čas $\tau$ dobimo oceno
 kjer je $\mathscr{u} = \frac{\mathscr{l}}{\tau}$.\\
 Izkaže se, da je to zelo dober način za ocenjevanje velikosti vrtincev. Velik preskok je 
 naredil Andrej Nikolajevič Kolmogorov, ki je postavil hipotezo, da sta hitrost $\upsilon$ 
-in dolžina $\eta$ disipativnih vrtincev odvisna le od viskozne disipativnosti $\epsilon$ 
+in dolžina $\eta$ disipativnih vrtincev odvisni le od viskozne disipativnosti $\epsilon$ 
 in kinematične viskoznosti $\nu$. Poiščimo izraz zanju.
 Na domeni velikosti $\eta$ začne prevladovati viskozni del Navier-Stokesove enačbe 
 $$
@@ -1711,7 +1286,7 @@ $\upsilon \sim 10^{-2} \frac{m}{s}$ in $\eta \sim 10^{-3}m$.
 Posledica zadnje analize je, da lahko velikost turbulentnih vrtincev (pa tudi obravnavane domene)
 razdelimo na tri dele. Naj bo $L$ velikost največjih vrtincev. Potem imamo:
 \begin{enumerate}
-\item[i)] \bd{Disipativno območje}: v tem območju so velikosti vrtincev $l$ omejene z Kolmogorovovo dolžinsko skalo $\eta$, oz. $l < \eta$.
+\item[i)] \bd{Disipativno območje}: v tem območju so velikosti vrtincev $l$ omejene z Kolmogorovo dolžinsko skalo $\eta$, oz. $l < \eta$.
 \item[ii)] \bd{Inercijsko območje}: to je območje, kjer prihaja do prenosa energije iz večjih na manjše vrtince. Velikosti vrtincev so omejene z $\eta < l < L$.
 \item[iii)] \bd{Območje velikih vrtincev}: to je območje, kjer se zadržuje večina energije sistema, oz. $l \sim L$.
 \end{enumerate}
@@ -1728,7 +1303,7 @@ razdelimo na tri dele. Naj bo $L$ velikost največjih vrtincev. Potem imamo:
   \coordinate (L) at (9.5,0);
 
   % small tick marks and labels
-  \foreach \p/\lab in {eta/$\eta$, ellDI/$\ell_{\mathrm{DI}}$, ellEI/$\ell_{\mathrm{EI}}$, ell0/$\ell_0$, L/$L$}
+  \foreach \p/\lab in {eta/$\eta$, ellDI/$\ell_{\mathrm{DI}}$, ellEI/$\ell_{\mathrm{EL}}$, ell0/$\ell_0$, L/$L$}
   {
     \draw (\p) ++(0,0.08) -- ++(0,-0.16);
     \node[below=3pt] at (\p) {\lab};
@@ -1751,11 +1326,11 @@ razdelimo na tri dele. Naj bo $L$ velikost največjih vrtincev. Potem imamo:
 \begin{opomba}
 Meje turbulentnih območji so teoretične. V praksi se izkaže, da imamo nekaj 
 odstopanja od teh mej (to je prikazano na zgornji skici). Običajno sta
-$l_{\text{DI}} = 60\eta$ in $l_{\text{EL}} = \frac{1}{6} L$
+$\ell_{\text{DI}} \sim 60\eta$ in $\ell_{\text{EL}} \sim \frac{1}{6} L$
 \end{opomba}
 
 
-Z znanjem ki smo ga pridobili, lahko hitro razložimo problem modeliranja turbulence
+Z znanjem, ki smo ga pridobili, lahko hitro razložimo problem modeliranja turbulence
 neposredno preko Navier-Stokesovih enačb. Najmanjše smiselne dolžine so velikosti $\eta$,
 velikost območja, ki ga želimo modelirati, naj bo $L$. Po zgornjem razmisleku je število potrebnih točk 
 $$
@@ -1779,7 +1354,7 @@ V zaključku zadnjega poglavja smo videli, da je neposredno reševanje Navier-\\
 za velike turbulentne vrtince oz. tridimenzionalno turbulentno gibanje tokov, neučinkovito. V tem poglavju 
 bomo spoznali orodja, s katerimi bomo enačbe, ki opisujejo dane tokove, priredili na tak
 način, da jih bomo lahko bolj učinkovito rešili. Simulacije velikih turbulentnih vrtincev (eng. 
-Large eddy simulations oz. LES) razdelimo na štiri korake 
+Large eddy simulations oz. LES) razdelimo na štiri korake. 
 \begin{enumerate}
 \item[i)] Spoznali bomo koncept povprečenja in razcep toka na dva dela: 
 povprečni del in spremenljivi/turbulentni del. Povprečni del bo predstavljal hitrostno polje 
@@ -1815,7 +1390,7 @@ $\alpha, \beta \in \R$:
   $$\overline{\alpha \bd{U} + \beta \bd{V}} = \alpha \overline{\bd{U}} + \beta\overline{\bd{V}}.$$
   \item[ii)] Povprečje konstante:
   $$ \overline{\bd{C}} = \bd{C}.$$
-  \item[iii)] Indempotentnost:
+  \item[iii)] Idempotentnost:
   $$ \overline{\overline{\bd{U}}} = \overline{\bd{U}}.$$
   \item[iv)] Povprečje oscilirajočega dela:
   \label{lastnost iv}
@@ -1858,7 +1433,7 @@ Ansambelsko povprečje toka $\bd{U}$ je
 
 Bolj formalno na $\bd{U}(\bd{x}, t;\alpha)$ gledamo kot na slučajni vektor ter na zaporedje 
 $\bd{U}(\bd{x}, t; 1)$, $\bd{U}(\bd{x}, t; 2)$ \dots, $\bd{U}(\bd{x}, t;n)$ kot na zaporedje neodvisno, enako porazdeljenih 
-slučajnih vektorjev. Pričakovano vrednost označimo $E(\bd{U}_i(\bd{x}, t; \alpha)) = \mu(\bd{x}, t)$ za vsak $i\in\N$, zato je po 
+slučajnih vektorjev. Pričakovano vrednost označimo $E(\bd{U}(\bd{x}, t; \alpha)) = \bd{\text{$\mu$}}(\bd{x}, t)$ za vsak $i\in\N$, zato je po 
 zakonu velikih števil ansambelsko povprečje konvergentno.\\
 
 Ansambelsko povprečje zadošča vsem lastnostim $i) - vi)$, zato je temelj za \\
@@ -1924,15 +1499,15 @@ Naj bo $G$ filtracijska funkcija in $\bd{U}$ tok. Potem je residualno polje defi
 \item Polji $\overline{\bd{U}}$ in $\bd{u}'$ se v literaturi pogosto imenujeta razrešeni del in podfilterski del.
 \item Opazimo, da je definicija filtra skoraj identična definiciji konvolucije, le da je  
 $\bd{U}$ vektorsko polje in ne skalar.
-\item Zgornji razcep je analogen Reynoldsovem razcepu, glavna razlika je, da rezidualni 
-del ni nujno enak $0$,
+\item Zgornji razcep je analogen Reynoldsovem razcepu, glavna razlika je, da filter rezidualnega
+dela ni nujno enak $0$,
 $$ \overline{\bd{u}'} \neq 0.$$
 \end{itemize}
 \end{opomba}
 
 \begin{trditev}
 Filtracija zadošča lastnostim $i), ii)$ in komutiranju s časovnim odvodom. 
-Če je filtracijska funkcija $G$ homogena, velja lastnost $vi)$.
+Če je filtracijska funkcija $G$ homogena tj. $G(\bd{r}, \bd{x}) = G(\bd{r})$, velja lastnost $vi)$.
 \end{trditev}
 
 \begin{opomba}
@@ -1941,7 +1516,8 @@ bomo privzeli dve vrsti pogojev filtracijske funkcije $G$ na domeni $\Omega \sub
 \hfill
 \begin{itemize}
 \item $G$ bo imela kompakten nosilec.
-\item $\forall \bd{x} \in \Omega$: $||\bd{U}(\bd{x}, t)|| < G(\bd{r}, \bd{x}), ||\frac{\partial \bd{U}}{\partial t}(\bd{x}, t)|| < G(\bd{r}, \bd{x}), ||\frac{\partial \bd{U}}{\partial x_i}(\bd{x}, t)|| < G(\bd{r}, \bd{x})$.
+\item $\forall \bd{x} \in \Omega$ in $i=1, \dots, n$: $||\bd{U}(\bd{x}, t)|| < G(\bd{r}, \bd{x}), ||\frac{\partial \bd{U}}{\partial t}(\bd{x}, t)|| < G(\bd{r}, \bd{x}), \\
+||\frac{\partial \bd{U}}{\partial x_i}(\bd{x}, t)|| < G(\bd{r}, \bd{x})$.
 \end{itemize}
 Ti pogoji bodo zagotovili obstoj integrala in možnost zamenjave vrstnega reda integracije in odvajanja.
 V prvem primeru, ker bo območje integracije omejeno, v drugem primeru pa bo 
@@ -1967,11 +1543,11 @@ $G$ integrabilna, zato bomo po Lebesgue-ovem izreku o dominirani konvergenci lah
   \item[vi)] Kot smo omenili v opombi \ref{konvergenca filtra}, obravnavamo dva različna primera: 
   \begin{itemize}
     \item $G$ ima kompakten nosilec. \\
-    Ker ima $G$ kompakten nosilec je $\text{supp}(\bd{U})$ omejena množica in je
+    Ker ima $G$ kompakten nosilec, je $\text{supp}(\bd{U})$ omejena množica in je
     \begin{align*}
       \int_{\R^d} G(\bd{r}, \bd{x})\bd{U}(\bd{x}-\bd{r}, t) \dif \bd{r} = \int_{\text{supp}(\bd{U})} G(\bd{r}, \bd{x})\bd{U}(\bd{x}-\bd{r}, t) \dif \bd{r}.
     \end{align*}
-    Ker je območje integracije omejeno in $\bd{U}$ zvezno odvedljiva lahko zamenjamo vrstni red integracije in odvajanja.
+    Ker je območje integracije omejeno in $\bd{U}$ zvezno odvedljiva, lahko zamenjamo vrstni red integracije in odvajanja.
     \item $||\bd{U}(\bd{x}, t)|| < G(\bd{r}, \bd{x})$.
     Definiramo zaporedje 
     $$
@@ -2028,24 +1604,24 @@ Iz konvolucijskega izreka dobimo
 \noindent
 \textbf{Valovni preklopni filter:} \\
 Pokazali smo, da filter zadošča lastnostim $i), ii)$ in $vi)$. Ali lahko s pravo izbiro 
-$G$ dodatno zadostimo še kateri od ostalih lastnosti? Zaradi linearnosti filtra nam 
-le indempotentnost in pravilo produkta. Pravilu produkta bo
+$G$ dodatno zadostimo še kateri od ostalih lastnosti? Zaradi linearnosti filtra je dovolj obravnavati le
+idempotentnost in pravilo produkta. Pravilu produkta bo
 zadoščeno, če bo za pravo funkcijo $G$ integral multiplikativen. Take funkcije sicer 
 obstajajo, vedar so zelo raznolike in običajno nimajo fizikalnega pomena. Torej nam ostane 
 le idempotentnost. Poglejmo, kako se izraža $\overline{\overline{{U}}}$ preko konvolucije:
 \begin{align*}
-\overline{\overline{{U}}}(x, t) &= \int_{\R} G(r) \overline{{U}}(x - r, t) \dif r = \\
-&= \int_{\R} G(r) \int_{\R} G(s) {U}(x-r-s, t) \dif s \dif r = \\
+\overline{\overline{{U}}}(x, t) &= \int_{\R} G(r) \overline{{U}}(x - r, t) \dif r, \\
+&= \int_{\R} G(r) \int_{\R} G(s) {U}(x-r-s, t) \dif s \dif r, \\
 &= \int_{\R} (G*{U})(x - r, t) \dif r = G*(G * {U})(x, t).
 \end{align*}
 Torej je
 \begin{align*}
 \mathcal{F}(\overline{\overline{{U}}})(\xi, t) = \mathcal{F}(G)^2(\xi)\cdot\mathcal{F}({U})(\xi, t) = \hat{G}^2(\xi) \cdot \hat{{U}}(\xi, t).
 \end{align*}
-Če želimo, da je $G$ indempotent, mora veljati $\overline{\overline{{U}}} = \overline{{U}}$. 
+Če želimo, da je $G$ idempotent, mora veljati $\overline{\overline{{U}}} = \overline{{U}}$. 
 \begin{align*}
-\overline{{U}} &= \overline{\overline{{U}}} \\
-\hat{{U}}\hat{G} &= \hat{{U}}\hat{G}^2 \\ 
+\overline{{U}} &= \overline{\overline{{U}}}, \\
+\hat{{U}}\hat{G} &= \hat{{U}}\hat{G}^2, \\ 
 \hat{U}(\hat{G}^2 - &\hat{G}) = 0.
 \end{align*}
 Ker je $U \neq 0$, $\hat{G}$ zavzame vrednosti $0$ in $1$. Preden si pogledamo bolj specifičen primer, 
@@ -2056,10 +1632,10 @@ Razvijemo ${U}$  v kompleksno Fourierovo vrsto na intervalu $[0, L]$ za $L > 0$
 \end{equation}
 kjer je $\kappa_n = 2\pi\frac{n}{L}$. Filtriramo razvoj 
 \begin{align*}
-\overline{U}(x, t) &= \int_{\R} G(r) U(x - r, t) \dif r = \\
-&= \int_{\R} G(r) \sum_{n=-\infty}^\infty a_n(t) e^{i\kappa_n (x - r)} \dif r = \\
-&= \sum_{n=-\infty}^\infty a_n(t)\Big(\int_{\R^d} G(r) e^{-i\kappa_n r}\Big) e^{i\kappa_n x}\dif r = \\
-&= \sum_{n=-\infty}^\infty a_n(t) \hat{G}(\kappa_n) e^{i\kappa_n x},
+\overline{U}(x, t) &= \int_{\R} G(r) U(x - r, t) \dif r, \\
+&= \int_{\R} G(r) \sum_{n=-\infty}^\infty a_n(t) e^{i\kappa_n (x - r)} \dif r, \\
+&= \sum_{n=-\infty}^\infty a_n(t)\Big(\int_{\R^d} G(r) e^{-i\kappa_n r}\Big) e^{i\kappa_n x}\dif r, \\
+&= \sum_{n=-\infty}^\infty a_n(t) \hat{G}(\kappa_n) e^{i\kappa_n x}.
 \end{align*}
 Kot prej je $\hat{G}$ Fourierova transformiranka funkcije $G$ 
 $$
@@ -2086,7 +1662,7 @@ $$
 T^2(\kappa_n) = T(\kappa_n), \quad n\in \Z,
 $$
 kar se ujema z dosedaj ugotovljenim. Ta izpeljava je pomembna, ker uvede količino 
-$\kappa_n$, ki jo imenujemo $n$-to valovno število. To bo ključno za razreševanje 
+$\kappa_n$, ki jo imenujemo $n$-to valovno število. To bo ključno za reševanje 
 polja $\overline{U}$ na diskretni množici (kar je potrebno za numerično modeliranje).
 Definiramo nizko-prehodno prenosno funkcijo
 $$
@@ -2095,7 +1671,7 @@ T_c(\kappa)=\left\{\begin{array}{l}
   0 ;\,\, |\kappa| > \kappa_c,
 \end{array}\right.
 $$
-za $\kappa_c \in \R$. Imenuje se \textbf{preklopno valovno število}. Sedaj lahko izračunamo 
+za $\kappa_c \in \R$. To število imenujemo \textbf{preklopno valovno število}. Sedaj lahko izračunamo 
 filtracijsko funkcijo $G$
 \begin{align*}
 G(x) &= \frac{1}{2\pi} \int_\R T_c(\kappa) e^{-i\kappa x} \dif \kappa = \\
@@ -2134,7 +1710,7 @@ vendar zanjo filtracijska funkcija ne obstaja.
 
 
 \noindent
-\textbf{Škatlast filter:}\\
+\textbf{Škatlasti filter:}\\
 Nekoliko bolj naravna filtracijska funkcija, ki spominja na prostorsko povprečje, je 
 škatlasta funkcija:
 \begin{definicija}
@@ -2197,7 +1773,7 @@ $$
 \nabla\cdot \bd{U} = \sum_{i=1}^3 \frac{\partial \bd{U}}{\partial x_i} = \bd{0}.
 $$
 \noindent
-Uporabimno filtracijo na zakonu o ohranitvi gibalne količine.
+Uporabimo filtracijo na zakonu o ohranitvi gibalne količine.
 \begin{align*}
 \overline{\nabla\cdot \bd{U}}= \overline{\sum_{i=1}^3 \frac{\partial \bd{U}}{\partial x_i}} = 
 \sum_{i=1}^3 \frac{\partial \overline{\bd{U}}}{\partial x_i} = \nabla\cdot \overline{\bd{U}} = 0.
@@ -2212,7 +1788,7 @@ Filtriran zakon se glasi:
 
 Zakon: 
 $$
-\frac{\partial \bd{U}}{\partial t} + (\bd{U}\cdot \nabla)\bd{U} = -\frac{1}{\rho} \nabla \bd{U} + \nu\nabla^2 \bd{U} + \bd{f}.
+\frac{\partial \bd{U}}{\partial t} + (\bd{U}\cdot \nabla)\bd{U} = -\frac{1}{\rho} \nabla p + \nu\nabla^2 \bd{U} + \bd{f}.
 $$
 
 \noindent
@@ -2243,17 +1819,17 @@ Pišimo:
 \frac{\partial U_j}{\partial t} + \nabla\cdot(U_j \bd{U}) = -\frac{1}{\rho} \frac{\partial p}{\partial x_j} + \nu\nabla^2 U_j + f_j, \,\, j = 1, 2, 3.
 \end{align*}
 
-Filtriramo vsako enačbo posebaj, kjer upoštevamo, da filtracija komutira z odvajanjem. Torej
+Filtriramo vsako enačbo posebej, kjer upoštevamo, da filtracija komutira z odvajanjem. Torej
 \begin{align*}
   \frac{\partial \overline{U}_j}{\partial t} + \nabla\cdot(\overline{U_j \bd{U}}) = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_j} + \nu\nabla^2 \overline{U}_j + \overline{f}_j.
 \end{align*}
-Enačbo lahko krajše, če uporabimo Einsteinovo konvencijo 
+Enačbo lahko zapišemo krajše, če uporabimo Einsteinovo konvencijo 
 $$
 \sum_{i=1}^n a_i b_i = a_i b_i.
 $$
 Filtriran zakon se glasi
 \begin{equation}
-\frac{\partial \overline{U}_j}{\partial t} + \frac{\partial \overline{U_i U_j}}{\partial x_i} = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_j} + \nu \frac{\partial^2 \overline{U}_j}{\partial x_i \partial x_i} + \overline{f}_j, j = 1, 2, 3.
+\frac{\partial \overline{U}_j}{\partial t} + \frac{\partial \overline{U_i U_j}}{\partial x_i} = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_j} + \nu \frac{\partial^2 \overline{U}_j}{\partial x_i \partial x_i} + \overline{f}_j,\,\, j = 1, 2, 3.
 \end{equation}
 
 \subsubsection{Filtriran zakon o ohranitvi vrtinčnosti}
@@ -2306,10 +1882,9 @@ Filtriran zakon je tako enak
 
 \subsubsection{Filtriran materialni odvod}
 
-Izpeljane enačbe smo sicer prevedli na enačbe primernejše za modeliranje (pomen filtra bomo 
-pokazali v naslednjem razdelku). Toda če primerjamo filtrirano in 
+Izpeljane enačbe smo prevedli na enačbe primernejše za modeliranje (zakaj je ta oblika boljša bomo spoznali v naslednjem poglavju). Toda če primerjamo filtrirano in 
 nefiltrirano Navier-Stokesovo enačbo, sta enačbi fundamentalno drugačni, saj imamo 
-v drugem členu v enem primeru odvod produkta skalarjev $\overline{U_i U_j}$ v drugem pa produkta odvoda
+v drugem členu v enem primeru odvod produkta skalarjev $\overline{U_i U_j}$, v drugem pa produkt odvoda
 skalarjev $\overline{U}_i \overline{U}_j$. Radi bi torej v filtrirani enačbi uvedli člen $\overline{U_i} \cdot \overline{U_j}$.
 Vendar se pojavi problem, saj $\overline{U_i U_j}-\overline{U_i}\,\overline{U_j} \neq 0$. 
 \begin{definicija}
@@ -2320,24 +1895,27 @@ Naj bo $\bd{U}$ vektorsko polje in $\overline{\bd{U}}$ njegova filtracija. Koli�
 pravimo \textbf{rezidualni napetostni tenzor}.
 \end{definicija}
 
-Iz definicije tenzorja $\tau^R$ se naravno pojavita dodatni definiciji
+Iz definicije tenzorja $\tau^R$ dodamo še dve definiciji
 \begin{definicija}
 \bd{Rezidualna oz. turbulentna kinetična energija} je 
 \begin{equation}
-k_r = \frac{1}{2} \tau_{ii}^R = \frac{1}{2}\text{tr}(\tau^R).
+k^R = \frac{1}{2} \tau_{ii}^R = \frac{1}{2}\text{tr}(\tau^R).
 \end{equation}
 \end{definicija}
+
+Definicija pove, da  tenzor $\tau^R$ razcepimo na 
 
 \begin{definicija}
 \textbf{Izotropni rezidualni napetostni tenzor} je dan z 
 \begin{equation}
-\tau_{ij}^\text{izo} = \frac{2}{3} k_r \delta_{ij},
+\tau_{ij}^\text{izo} = \frac{2}{3} k^R \delta_{ij},
 \end{equation}
 \textbf{anizotropni rezidualni napetostni tenzor} pa z 
 \begin{equation}
 \tau_{ij}^\text{anizo} = \tau_{ij}^R - \tau_{ij}^\text{izo}.
 \end{equation}
 \end{definicija}
+Definicija pove, da tenzor $\tau^R$ razdelimo na izotropni in anizotropni del. 
 
 Zapišimo filtrirano Navier-Stokesovo enačbo s pomočjo teh definicij:
 \begin{align*}
@@ -2345,13 +1923,13 @@ Zapišimo filtrirano Navier-Stokesovo enačbo s pomočjo teh definicij:
 \frac{\partial \overline{U}_j}{\partial t} + \frac{\partial}{\partial x_i} (\overline{U_i}\, \overline{U_j} + \tau_{ij}^R) = 
 \frac{\partial \overline{U}_j}{\partial t} + \frac{\partial}{\partial x_i} \overline{U_i}\, \overline{U_j} + \frac{\partial}{\partial x_i} \tau_{ij}^R\\[2mm]
 \end{align*}
-
+Dobimo
 \begin{align*}
 \frac{\partial \overline{U}_j}{\partial t} + \frac{\partial \overline{U_i}\, \overline{U_j}}{\partial x_i} = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_j} 
 - \frac{\partial \tau_{ij}^R}{\partial x_i}+ \nu \frac{\partial^2 \overline{U}_j}{\partial x_i \partial x_i} + \overline{f}_j.
 \end{align*}
 
-Zapišemo še s pomočjo $\tau^\text{anizo}$ tenzorja:
+Zapišemo še preko $\tau^\text{anizo}$ tenzorja:
 \begin{align*}
 &-\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_j} - \frac{\partial \tau_{ij}^R}{\partial x_i}+ \nu \frac{\partial^2 \overline{U}_j}{\partial x_i \partial x_i} + \overline{f}_j \\[1mm]
 &=-\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_j} - \frac{\partial (\tau^\text{izo}_{ij} + \tau^\text{anizo}_{ij}) }{\partial x_i}+ \nu \frac{\partial^2 \overline{U}_j}{\partial x_i \partial x_i} + \overline{f}_j = \\[1mm]
@@ -2377,7 +1955,7 @@ Sedaj bomo videli, zakaj je smiselno uvesti filtrirane enačbe, saj
 direktna primerjava z nefiltriranimi enačbami ne pokaže bistvene razlike.
 Razreševanje filtriranih polj pomeni, da pri danem številu točk $N$ 
 poiščemo korak $h$, ki omogoča čim boljšo aproksimacijo filtriranega polja.
-Omejimo se na enodomenzionalni primer polja $u$ in interval $[0, L)$, 
+Omejimo se na enodimenzionalni primer polja $u$ in interval $[0, L)$, 
 $L > 0$. Če polje $u$ evalviramo v $N \in \N$ točkah, nas zanima, 
 kolikšen mora biti korak $h = \frac{L}{N}$, da lahko primerno aproksimiramo 
 polje $u$ in določimo željene informacije (ekvivalentno lahko fiksiramo 
@@ -2400,7 +1978,7 @@ Inverzna diskretna Fourierova transformacija pa je definirana kot
 \end{definicija}
 
 \begin{opomba}
-Če funkcijo $u$ iz definicije transliramo, je dovolj če se 
+Če funkcijo $u$ iz definicije transliramo, je dovolj, če se 
 omejimo na interval $[0, L]$. V tem primeru je $x_k = \frac{kL}{N}$.
 \end{opomba}
 
@@ -2521,7 +2099,7 @@ Označimo transformiranko $u(x-t)$ s $U^s$. Potem je
     &= \sum_{k=-t}^{N-1-t} u(x_{k}) e^{\frac{-2(k+t) \pi i n}{N}} \\
     &= e^{\frac{-2\pi i t n}{N}} \sum_{k=-t}^{N-1-t} u(x_{k}) e^{\frac{-2k \pi i n}{N}}  \\
     &\stackrel{ii)}{=} e^{\frac{-2\pi i t n}{N}} \sum_{k=0}^{N-1} u(x_{k}) e^{\frac{-2k \pi i n}{N}} \\
-    & e^{\frac{-2\pi i t n}{N}} U(x_n).
+    &= e^{\frac{-2\pi i t n}{N}} U(x_n).
   \end{align*}
 
 \item[iv)]
@@ -2595,7 +2173,7 @@ u(x_n) = \sum_{k=1-\frac{N}{2}}^{\frac{N}{2}} a_k e^{i\kappa_k x_n}.
 
 V praksi se DFT uporablja, ker Fourierovo transformacijo in 
 Fourierovo vrsto le redko lahko izračunamo analitično.
-Izkaže se, da v ustreznem kontekstu enačimo Fourierovo vrsto in diskretno Fourierovo vrsto
+Izkaže se, da v ustreznem kontekstu enačimo Fourierovo vrsto in diskretno Fourierovo vrsto.
 \begin{izrek}
 Naj bo $u: [0, L] \rightarrow \R$ periodična funkcija s periodo $N\in \N$, katere Fourierov 
 razvoj obstaja in je enak funkciji $u$. Potem velja
@@ -2622,7 +2200,7 @@ in ločimo na dva primera: \\
   $$
   u(x_n) = \sum_{k=1-\frac{N}{2}}^{\frac{N}{2}-1} b_k e^{i\kappa_k x_n},
   $$
-  in je očitno, da so $b_k = c_k$. 
+  in je očitno, da so $b_k = a_k$. 
   \item[ii)] Poglejmo si sedaj splošen primer, brez omejitve na koeficiente 
   $b_k$. Naj bo $k \in \{-(\frac{1}{2}N - 1), \dots, (\frac{1}{2}N - 1)\}$. 
   Po osnovnem izreku o deljenju, poljuben indeks zapišemo kot
@@ -2633,7 +2211,7 @@ in ločimo na dva primera: \\
   Eksponenti se poenostavijo 
   $$
   e^{i \kappa_{k + mN} x_n} =  e^{i \kappa_{k} x_n}  e^{2mi\kappa_{\text{max}} x_n} = 
-  e^{i\kappa_k x_m} e^{2\pi i k m} = e^{i\kappa_k x_m}
+  e^{i\kappa_k x_n} e^{2\pi i k m} = e^{i\kappa_k x_n}
   $$
   Fourierova vrsta se reducira v 
   \begin{align*}
@@ -2695,7 +2273,7 @@ za konkretne filtre v eni dimenziji.
 
 \begin{opomba}
 Nauk razdelka je, da lahko polje $u$ točno predstavimo s končnim naborom 
-vrednosti. Od nekje točke naprej ne dobimo boljšega rezultata, če 
+vrednosti. Od neke točke naprej ne dobimo boljšega rezultata, če 
 uporabimo več funkcijskih vrednosti.
 \end{opomba}
 
@@ -2794,7 +2372,7 @@ $$
 \frac{\kappa_c}{\kappa_r} = \frac{\frac{\pi}{\Delta}}{\frac{\pi}{h}} = \frac{h}{\Delta}.
 $$
 Koliko moramo skrajšati vrsto $\tilde{u}$, oz. kakšno razmerje $\frac{h}{\Delta}$ izbrati, da 
-dobimo dobro aproksimacijo in kaj sploh pomeni, dobra aproksimacija,
+dobimo dobro aproksimacijo in kaj sploh pomeni dobra aproksimacija,
 odgovorimo v naslednjem poglavju. 
 
 \subsubsection{Škatlasti filter}
@@ -2820,7 +2398,7 @@ da je hitrostno polje $\bd{u}$ slučajno.
 
 \subsection{Osnovni pojmi}
 
-Spomnimo se nekaj osnovnih pojmov
+Spomnimo se nekaj osnovnih pojmov.
 
 \begin{definicija}
 Trojici $(\Omega, \mathcal{F}, P)$ pravimo \textbf{verjetnostni prostor}, 
@@ -2841,12 +2419,12 @@ Naj bo $\bd{U}$ slučajni vektor na verjetnostnem prostoru $(\Omega, \mathcal{F}
 kjer je $\Omega \subseteq \R^n$, $\mathcal{F} \in \mathcal{P}(\R)$ in $P$ verjetnostna mera.
 Kumulativna porazdelitvena funkcija je
 \begin{equation}
-F_\bd{U}(V; x, t) = P(U_1(x, t) < V_1, \dots, U_n(x, t) < V_n)
+F_\bd{U}({V}; x, t) = P(U_1(x, t) < V_1, \dots, U_n(x, t) < V_n)
 \end{equation}
-za $i = 1, \dots, n$ in $V \in \Omega$. Porazdelitvena 
+za $i = 1, \dots, n$ in $\bd{V} \in \Omega$. Porazdelitvena 
 gostota je 
 \begin{equation}
-f_\bd{U}(V; x, t) = \frac{\partial^n F}{\partial x_1 \dots \partial x_n}(x, t).
+f_\bd{U}({V}; x, t) = \frac{\partial^n F}{\partial V_1 \dots \partial V_n}(x, t).
 \end{equation}
 \end{definicija}
 
@@ -2857,7 +2435,7 @@ Predpostavimo, da je verjetnostna mera $P$ dovolj gladka, da je definicija dobra
 \begin{definicija}
 Naj bo $\bd{U}$ slučajni vektor. Srednja (pričakovana) vrednost je 
 \begin{equation}
-\langle \bd{U}(x, t) \rangle = \int_{\R^n} V \cdot f(V; x, t) \dif V.
+\langle \bd{U}(x, t) \rangle = \int_{\R^n} V \cdot f_{\bd{U}}(V; x, t) \dif V.
 \end{equation}
 \end{definicija}
 
@@ -2913,7 +2491,7 @@ oz. razcep $\bd{U}$ na povprečen in turbulentni del
 Oglejmo si nekaj \textbf{statističnih lastnosti}, ki jih lahko slučajni
 vektor $\bd{U}$ izkazuje:
 \begin{itemize}
-  \item \textbf{Homogenost}: $f(V; \bd{x} + \bd{x}_0, t) = f(V; \bd{x}, t)$ za $\bd{x}_0 \in \R^3$, t.j. $\bd{U}$ je 
+  \item \textbf{Homogenost}: $f(V; \bd{x} + \bd{x}_0, t) = f(V; \bd{x}, t)$ za $\bd{x}_0 \in \R^n$, t.j. $\bd{U}$ je 
   translacijsko invarianten.
   \item \textbf{Stacionarnost}: $f(V; \bd{x}, t + t_0) = f(V; \bd{x}, t)$ za $t_0>0$, t.j. $\bd{U}$ je 
   časovno invarianten. 
@@ -2929,10 +2507,10 @@ vrednost $\langle \bd{U} \rangle$ neodvisna od $\bd{x}$.
 
 \begin{dokaz}
 Naj za slučajni vektor $\bd{U}$ velja:
-$$\forall \bd{x}_0, \bd{x} \in \R^n: f(V; \bd{x} + \bd{x}_0, t) = f(\bd{V}; \bd{x}, t).$$
+$$\forall \bd{x}_0, \bd{x} \in \R^n: f(V; \bd{x} + \bd{x}_0, t) = f({V}; \bd{x}, t).$$
 Po definiciji pričakovane vrednosti je
 $$
-\langle \bd{U}(\bd{x}, t) \rangle = \int_{\R^n} \bd{V} \cdot f(\bd{V}; \bd{x}, t) \dif \bd{V} = \int_{\R^n} \bd{V} \cdot f(\bd{V}; \bd{x} + \bd{x}_0, t) \dif \bd{V} = \langle \bd{U}(\bd{x} + \bd{x}_0, t) \rangle
+\langle \bd{U}(\bd{x}, t) \rangle = \int_{\R^n} {V} \cdot f(\bd{V}; \bd{x}, t) \dif {V} = \int_{\R^n} {V} \cdot f({V}; \bd{x} + \bd{x}_0, t) \dif {V} = \langle \bd{U}(\bd{x} + \bd{x}_0, t) \rangle
 $$
 Ker enakost velja za vsak $\bd{x}_0$ in $\bd{x}$, je: 
 $$
@@ -2957,7 +2535,7 @@ pravimo \textbf{dvo-točkovna korelacija}.
 \end{definicija}
 
 Intuitivno ta količina pove, kako podobno se hitrosti $u_i$ in 
-$u_j$ obnašata. Večja, kot je količina $R_{ij}$, bolj sta si hitrosti 
+$u_j$ v matriki $R$ obnašata. Večja, kot je količina $R_{ij}$, bolj sta si hitrosti 
 podobni (npr. dve žogici v vodnem toku, ki sta zelo blizu, imata podobno pot) oz. 
 manjša kot je korelacija, bolj sta si hitrosti različni (npr. dva lista, ki padeta 
 z drevesa in sta zelo narazen, bosta skoraj gotovo imela zelo različno pot).
@@ -3036,17 +2614,18 @@ je $\bd{u}$ gladka. Dobimo
 \end{align*}
 Količina v integrandu je dvo-točkovna korelacija, ki je neodvisna od $\bd{x}'$,
 zato lahko preuredimo integral v
-\begin{align*}
-  &\langle \hat{\bd{u}}(\bd{\text{$\kappa$}}_\bd{k}, t) \hat{\bd{u}}^T(\bd{\text{$\kappa$}}_\bd{l}, t) \rangle =\\
-  =& \frac{1}{L^{2n}} \int_{[0, L]^{n}} \int_{[0, L]^{n} - \bd{x}'} R(\bd{r}, t) e^{-i((\bd{\text{$\kappa$}}_{\bd{k}} + \bd{\text{$\kappa$}}_{\bd{l}})\bd{x}' + \bd{\text{$\kappa$}}_{\bd{k}} \cdot \bd{r})} \dif\bd{r} \dif\bd{x}' \\
+\begin{align}
+  &\langle \hat{\bd{u}}(\bd{\text{$\kappa$}}_\bd{k}, t) \hat{\bd{u}}^T(\bd{\text{$\kappa$}}_\bd{l}, t) \rangle = \nonumber\\
+  =& \frac{1}{L^{2n}} \int_{[0, L]^{n}} \int_{[0, L]^{n} - \bd{x}'} R(\bd{r}, t) e^{-i((\bd{\text{$\kappa$}}_{\bd{k}} + \bd{\text{$\kappa$}}_{\bd{l}})\bd{x}' + \bd{\text{$\kappa$}}_{\bd{k}} \cdot \bd{r})} \dif\bd{r} \dif\bd{x}' \nonumber\\
   =& \frac{1}{L^{n}} \int_{[0, L]^{n}} e^{-i(\bd{\text{$\kappa$}}_{\bd{k}} + \bd{\text{$\kappa$}}_{\bd{l}})\bd{x}'}\left(\frac{1}{L^n}\int_{[0, L]^{n} - \bd{x}'} R(\bd{r}, t) e^{-i\bd{\text{$\kappa$}}_{\bd{k}} \cdot \bd{r}} \dif\bd{r}\right) \dif\bd{x}'.
-\end{align*}
+  \label{kovarianca_integral}
+\end{align}
 
 Potrebujemo še eno lemo, ki nam pove, da je notranji integral 
 neodvisen od $\bd{x}'$.
 
 \begin{lema}
-Naj bo $\bd{f} \in C([0, L]^n)$ vektorsko polje, ki je periodično za 
+Naj bo $\bd{f} \in C^1([0, L]^n)$ vektorsko polje, ki je periodično za 
 $L>0$ in $\bd{a}\in \R^n$. Potem velja 
 \begin{equation*}
 \int_{[0, L]^n + \mathbf{a}} \mathbf{f}\,(\mathbf{x}) \dif \mathbf{x} = \int_{[0, L]^n} \mathbf{f}\,(\mathbf{x}) \dif\mathbf{x}
@@ -3079,7 +2658,7 @@ kjer zadnja enakost sledi iz periodičnosti $\bd{f}$. Ker so vsi parcialni odvod
 $\bd{g}$ enaki $0$ je $\bd{g}(\bd{a}) = \bd{g}_0 \in \R^n$  
 za vsak $\bd{a} \in \R^n$. Trditev sledi, ko izberemo $\bd{a} = \bd{0}$.
 \end{dokaz}
-Sedaj lahko zaključimo izpeljavo kovariance. Ker je notranji integral po zadnji lemi neodvisen 
+Sedaj lahko zaključimo izpeljavo kovariance. Ker je notranji integral \ref{kovarianca_integral} po zadnji lemi neodvisen 
 od $\bd{x}'$ dobimo 
 $$
 \langle \hat{\bd{u}}(\bd{\text{$\kappa$}}_\bd{k}, t) \hat{\bd{u}}^T(\bd{\text{$\kappa$}}_\bd{l}, t) \rangle = \frac{1}{L^{n}} \int_{[0, L]^{n}} e^{-i(\bd{\text{$\kappa$}}_{\bd{k}} + \bd{\text{$\kappa$}}_{\bd{l}})\bd{x}'}\left(\frac{1}{L^n}\int_{[0, L]^{n}} R(\bd{r}, t) e^{-i\bd{\text{$\kappa$}}_{\bd{k}} \cdot \bd{r}} \dif\bd{r}\right) \dif\bd{x}' .
@@ -3098,7 +2677,7 @@ Kovarianca se poenostavi v
 \end{align*}
 Iz klasične mehanike vemo, da je kinetična energija enaka $E = \frac{1}{2} m u^2$. Ker je
 faktor $\frac{1}{2} m$ konstanten, za analizo ni pomemben. Člen $u^2$ je analogen členu $\bd{U} \bd{U}^T$. 
-Zato kovarianca oz. kovariančna matrika vsebuje vse informacije o kinetični energiji toka, 
+Zato kovarianca oz. kovariančna matrika vsebuje vse informacije o kinetični energiji toka 
 v danem valovnem številu.
 Zgornja izpeljava pa je pokazala, da je za analizo te energije dovolj obravnavati 
 $\hat{R}$. Dobljeni rezultat malo posplošimo. Preko transformacije $\bd{x} = \bd{s} - \frac{L}{2}(1, \dots, 1)$, 
@@ -3106,7 +2685,7 @@ se integral premakne na simetrične intervale
 $\left[-\frac{L}{2}, \frac{L}{2}\right]^n$. Limita $L \rightarrow \infty$ izraza $ \hat{R}(\bd{\text{$\kappa$}}_{\bd{k}}, t)$ je 
 Fourierova transformacija
 \begin{align*}
-\lim_{L\rightarrow \infty} \hat{R}(\bd{\text{$\kappa$}}_{\bd{k}}, t) = \frac{1}{(2\pi)^n}\int_{\R^n} \bd{R}(\bd{x}, t) e^{-i\text{\bd{$\kappa$}} \cdot \bd{x}} \dif \bd{x} = \hat{R}(\bd{\text{$\kappa$}}, t).
+\lim_{L\rightarrow \infty} \hat{R}(\bd{\text{$\kappa$}}_{\bd{k}}, t) = \frac{1}{(2\pi)^n}\int_{\R^n} {R}(\bd{x}, t) e^{-i\text{\bd{$\kappa$}} \cdot \bd{x}} \dif \bd{x} = \hat{R}(\bd{\text{$\kappa$}}, t).
 \end{align*}
 Prednost uporabe tega zapisa je, da periodičnost ni več pogoj. Čeprav
 v določenih primerih, kjer so domene majhne, ta približek ne bo nujno dober, 
@@ -3159,7 +2738,7 @@ Imamo
 \begin{align*} 
 0 &\leq \langle g^*(\text{\bd{$\kappa$}}) \cdot g(\text{\bd{$\kappa$}}) \rangle = \langle (\hat{\bd{u}}^*(\text{\bd{$\kappa$}}, t) \cdot \bd{v})^* \cdot (\hat{\bd{u}}^*(\text{\bd{$\kappa$}}, t) \cdot \bd{v}) \rangle \\
 &= \langle \bd{v}^* \cdot(\hat{\bd{u}}(\text{\bd{$\kappa$}}, t) \hat{\bd{u}}^*(\text{\bd{$\kappa$}}, t)) \cdot \bd{v} \rangle \\
-&= \bd{v}^T\langle \hat{\bd{u}}^*(\text{\bd{$\kappa$}}, t) \cdot \hat{\bd{u}}(\text{\bd{$\kappa$}}, t) \rangle \bd{v}.
+&= \bd{v}^T\langle \hat{\bd{u}}(\text{\bd{$\kappa$}}, t) \cdot \hat{\bd{u}}^*(\text{\bd{$\kappa$}}, t) \rangle \bd{v}.
 \end{align*}
 Kot pri izpeljavi kovariančne matrike, je izraz enak 
 \begin{align*}
@@ -3167,7 +2746,7 @@ Kot pri izpeljavi kovariančne matrike, je izraz enak
 \end{align*}
 \item[iii)] Enakost zapišemo v spektralnem prostoru
 \begin{align*}
-  0 &= \mathcal{F}(0) = \mathcal{F}(\nabla \cdot \bd{U})(\text{\bd{$\kappa$}}) = \mathcal{F}\left(\sum_{i=1}^{n} \frac{\partial u_i}{\partial x_i} \right) = \sum_{i=1}^{n} \mathcal{F}\left(\frac{\partial u_i}{\partial x_i} \right)(\text{\bd{$\kappa$}}) \\
+  0 &= \mathcal{F}(0) = \mathcal{F}(\nabla \cdot \bd{U})(\text{\bd{$\kappa$}}) = \mathcal{F}\left(\sum_{i=1}^{n} \frac{\partial u_i}{\partial x_i}\right)(\text{\bd{$\kappa$}}) = \sum_{i=1}^{n} \mathcal{F}\left(\frac{\partial u_i}{\partial x_i} \right)(\text{\bd{$\kappa$}}) \\
   &= i\sum_{i=1}^{n} \text{\bd{$\kappa$}}_i \hat{u}_i(\text{\bd{$\kappa$}}, t) = i \text{\bd{$\kappa$}} \cdot \hat{\bd{u}}(\text{\bd{$\kappa$}}, t) = i \text{\bd{$\kappa$}}^T \hat{\bd{u}}(\text{\bd{$\kappa$}}, t) = 0.
 \end{align*}
 \begin{align*}
@@ -3187,7 +2766,7 @@ leta 1941 formuliral tri hipoteze, ki so še do danes osnova za
 razumevanje in analizo turbulentnih tokov.\\
 \noindent
 Naj bo $\bd{U}$ slučajni vektor, ki predstavlja hitrostno polje, 
-na domeni $\Omega \subseteq \R^3$ ter $\bd{x}^{(0)}$, $\bd{x}^{(1)}$, \dots, $\bd{x}^{(N)}$ $\in \Omega$.
+na domeni $\Omega \subseteq \R^3$, ter $\bd{x}^{(0)}$, $\bd{x}^{(1)}$, \dots, $\bd{x}^{(N)}$ $\in \Omega$.
 Definiramo nove koordinate in novo hitrostno polje
 \begin{align*}
 \bd{y} &= \bd{x} - \bd{x}^{(0)}, \\
@@ -3235,19 +2814,20 @@ določena z $\epsilon$.
 \subsection{Energijsko spektralna funkcija}
 
 Videli smo pomembnost dvo-točkovne korelacije in kovariance. 
-Zaradi hipoteze o lokalni izotropiji, se lahko pri obravnavi 
-energije turbulentnih tokov, omejimo na hitrostno-spektralni tenzor $\Phi(\text{\bd{$\kappa$}}, t)$. 
+Zaradi hipoteze o lokalni izotropiji, lahko kovariančno matriko zapišemo
+hitrostno-spektralnega tenzorja $\Phi(\text{\bd{$\kappa$}}, t)$, zato je pri obravnavi energije 
+dovolj če se omejimo le na $\Phi$. 
 Na žalost je tenzor vse prej kot enostaven, tudi če se omejimo na tridimenzionalni primer. V tem razdelku bomo pokazali, 
 da nam predpostavka o izotropiji omogoča, da tenzor $\Phi$ zapišemo 
 preko enostavnejše funkcije, ki ji pravimo energijsko spektralna funkcija.
-Obliko funkcije nam bodo dale Kolmogorove hipoteze podobnosti. 
+Obliko funkcije nam bodo dale podobnostne hipoteze Kolmogorova. 
 
 \begin{definicija}
 Naj bo $\bd{U}$ zvezno odvedljiv slučajni vektor in $\Phi(\text{\bd{$\kappa$}}, t)$ 
-hitrostno-spektralni tenzor, prirejen $\bd{U}$. Potem je \bd{energijsko spektralna funkcija} $E: [0, \infty) \rightarrow \R$, dana
+hitrostno-spektralni tenzor, prirejen $\bd{U}$. Potem je \bd{energijsko spektralna funkcija} $E: [0, \infty) \times [0, \infty) \rightarrow \R$, dana
 s predpisom
 \begin{equation}
-E(\kappa, t) = \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \frac{1}{2} \text{tr}(\Phi(\text{\bd{$\kappa$}}, t)) \dif \text{\bd{$\kappa$}}
+E(\kappa, t) = \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \frac{1}{2} \text{tr}(\Phi(\text{\bd{$\kappa$}}, t)) \dif \text{\bd{$\kappa$}}.
 \end{equation}
 Enodimenzionalna spektralna funkcija je enaka 
 \begin{equation}
@@ -3310,7 +2890,7 @@ Slednji izrek uporabimo, da dobimo razcep za $\Phi$:
 \begin{equation}
 \Phi(\text{\bd{$\kappa$}}, t) = A(|\text{\bd{$\kappa$}}|, t) I + B(|\text{\bd{$\kappa$}}|, t) \text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T,
 \end{equation}
-za $A, B: [0, \infty) \rightarrow \R$ in $t\in \R$. Enakost množimo z 
+za $A, B: [0, \infty) \rightarrow \R$ in $t\geq 0$. Enakost množimo z 
 $\text{\bd{$\kappa$}}^T$, ter upoštevamo nestisljivostni pogoj \eqref{hitrostno_spektralni_tenzor_lastnosti}:
 \begin{align*}
 0 = \text{\bd{$\kappa$}}^T \Phi(\text{\bd{$\kappa$}}, t) &= A(|\text{\bd{$\kappa$}}|, t) \text{\bd{$\kappa$}}^T  + B(|\text{\bd{$\kappa$}}|, t) (\text{\bd{$\kappa$}}^T \text{\bd{$\kappa$}}) \text{\bd{$\kappa$}}^T = (A(|\text{\bd{$\kappa$}}|, t)  + B(|\text{\bd{$\kappa$}}|, t) (\text{\bd{$\kappa$}}^T \text{\bd{$\kappa$}})) \text{\bd{$\kappa$}}^T.
@@ -3328,7 +2908,7 @@ $A$, $B$ in $E$.
 &= A(|\text{\bd{$\kappa$}}|, t) \text{tr}(I) + B(|\text{\bd{$\kappa$}}|, t) \text{tr}(\text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T) \\
 &= A(|\text{\bd{$\kappa$}}|, t) n + B(|\text{\bd{$\kappa$}}|, t) |\text{\bd{$\kappa$}}|^2.
 \end{align*}
-Energijsko spektralno funkcijo je enaka
+Energijska spektralna funkcija je enaka
 \begin{align*}
 E(\kappa, t) &= \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \frac{1}{2} \text{tr}(\Phi(\text{\bd{$\kappa$}}, t)) \dif \text{\bd{$\kappa$}} = \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \frac{1}{2} (A(|\text{\bd{$\kappa$}}|, t) n + B(|\text{\bd{$\kappa$}}|, t) |\text{\bd{$\kappa$}}|^2) \dif \text{\bd{$\kappa$}} \\
 &= \frac{n A(\kappa, t)}{2} \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \dif \text{\bd{$\kappa$}} + \frac{B(\kappa, t) \kappa^2}{2} \oint\limits_{|\text{\bd{$\kappa$}}| = \kappa} \dif \text{\bd{$\kappa$}} \\
@@ -3342,20 +2922,20 @@ S_{n-1}(\kappa) = \frac{2\pi^{\frac{n}{2}}}{\Gamma(\frac{n}{2})} \kappa^{n-1}.
 $$
 Iz zadnje izpeljave izrazimo $B$ in vstavimo v $\Phi$:
 \begin{align}
-  \Phi(\text{\bd{$\kappa$}}, t) &= A(|\text{\bd{$\kappa$}}|, t) I + B(|\text{\bd{$\kappa$}}|, t) \text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T \nonumber\\
-  &= B(|\text{\bd{$\kappa$}}|, t) (-|\text{\bd{$\kappa$}}|^2 I + \text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T) \nonumber\\
-  &= \frac{2E((|\text{\bd{$\kappa$}}|, t))}{|\text{\bd{$\kappa$}}|^2 S_{n-1}(|\text{\bd{$\kappa$}}|)(1-n)} (-|\text{\bd{$\kappa$}}|^2 I + \text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T) \nonumber\\
-  &= \frac{2E((|\text{\bd{$\kappa$}}|, t))}{S_{n-1}(|\text{\bd{$\kappa$}}|)(n-1)} \Big(I - \frac{1}{|\text{\bd{$\kappa$}}|^2}\text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T\Big) \nonumber\\
-  &= \frac{2E((|\text{\bd{$\kappa$}}|, t))}{S_{n-1}(|\text{\bd{$\kappa$}}|)(n-1)} P(\text{\bd{$\kappa$}}),
+  \Phi(\text{\bd{$\kappa$}}, t) &= A(|\text{\bd{$\kappa$}}|, t) I + B(|\text{\bd{$\kappa$}}|, t) \text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T \nonumber\\[1mm]
+  &= B(|\text{\bd{$\kappa$}}|, t) (-|\text{\bd{$\kappa$}}|^2 I + \text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T) \nonumber\\[1mm]
+  &= \frac{2}{1-n} \frac{E((|\text{\bd{$\kappa$}}|, t))}{|\text{\bd{$\kappa$}}|^2 S_{n-1}(|\text{\bd{$\kappa$}}|)} (-|\text{\bd{$\kappa$}}|^2 I + \text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T) \nonumber\\[1mm]
+  &= \frac{2}{n-1}\frac{E((|\text{\bd{$\kappa$}}|, t))}{S_{n-1}(|\text{\bd{$\kappa$}}|)} \Big(I - \frac{1}{|\text{\bd{$\kappa$}}|^2}\text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T\Big) \nonumber\\[1mm]
+  &= \frac{2}{n-1} \frac{E((|\text{\bd{$\kappa$}}|, t))}{S_{n-1}(|\text{\bd{$\kappa$}}|)} P(\text{\bd{$\kappa$}}),
 \label{hitrostno_spektralni_tenzor_izotropija} % Ensure this label is defined in the correct section
 \end{align}
 kjer smo s $P$ označili ortogonalni projektor 
 $$
 P(\text{\bd{$\kappa$}}) = I - \frac{1}{|\text{\bd{$\kappa$}}|^2}\text{\bd{$\kappa$}} \text{\bd{$\kappa$}}^T.
 $$
-V $3$-dimenzionalnem primeru, dobimo 
+V $3$-dimenzionalnem primeru dobimo 
 \begin{equation}
-\Phi(\text{\bd{$\kappa$}}, t) = \frac{E(|\text{\bd{$\kappa$}}|)}{4\pi |\text{\bd{$\kappa$}}|^2}P(\text{\bd{$\kappa$}})
+\Phi(\text{\bd{$\kappa$}}, t) = \frac{E(|\text{\bd{$\kappa$}}|)}{4\pi |\text{\bd{$\kappa$}}|^2}P(\text{\bd{$\kappa$}}).
 \end{equation}
 
 \subsection{Spekter Kolmogorova}
@@ -3371,11 +2951,11 @@ bolj formalno. Naslonili se bomo na izrek Buckingham $\pi$.
 Preden ga predstavimo in dokažemo, navedimo nekaj pojmov. 
 
 \begin{definicija}
-Naj bodo $1, F_1$, \dots, $F_n$ formalne spremenljivke, ki predstavljajo 
+Naj bodo $F_0, F_1$, \dots, $F_n$ formalne spremenljivke, ki predstavljajo 
 osnovne fizikalne enote. Množico osnovnih enot $\mathcal{B}$ definiramo kot 
 množico urejenih parov: 
 $$
-\mathcal{B} = \{(\alpha_i, F_i) \,|\, i= 1, \dots, n, \, \alpha_i \geq 0\} \cup \{(\alpha_0, 1) \,|\, \alpha_0 \geq 0\}.
+\mathcal{B} = \{(\alpha_i, F_i) \,|\, i= 0, 1, \dots, n, \, \alpha_i \geq 0\} .
 $$
 
 Bolj intuitivno bomo par označevali kot: $\alpha_i(F_i)\cdot [F_i] = \alpha_i \cdot [F_i]$. 
@@ -3387,7 +2967,7 @@ Za dane pare definiramo
   $$
   \item Enoto označimo z 
   $$
-  (1, 1) = 1.
+  (1, F_0) = 1.
   $$
   \item Obrljiv element kot 
   $$
@@ -3420,9 +3000,11 @@ $$
 $$
 [F] = \prod_{i=1}^n [F_i^{k}]
 $$
+\item Enoto $F_0$ bomo označevali z $1$.
 \end{itemize}
 \end{opomba}
 
+\newpage
 \begin{definicija}
 Enota $\alpha\cdot[F] \in \mathcal{F}$ je brezdimenzijska, če je $[F] = 1$.
 \end{definicija}
@@ -3443,11 +3025,11 @@ je vektorski prostor nad $\R$, ki je izomorfen $\R^n$.
  $T$ (sekunda), $L$ (meter), $M$ (kilogram), $K$ (kelvin), $N$ (mol), $I$ (amper) in $C$ (kandela).
  Potem je $\mathcal{F}$ prostor vseh fizikalnih količin
  $$
- \mathcal{F} = \{\alpha \cdot [T^{k_1} L^{k_2} M^{k_3} K^{k_4} N^{k_5} I^{k_6} C^{k_7}] \mid i = 1, \dots, 7 \text{ in } k_i \in \Z\}.
+ \mathcal{F} = \{\alpha \cdot [T^{k_1} L^{k_2} M^{k_3} K^{k_4} N^{k_5} I^{k_6} C^{k_7}] \mid i = 1, \dots, 7 \text{ in } k_i \in \R\}.
  $$
- Na primer enota $T^{-2}L^1M^1$ predstavlja silo. Po trditvi lahko 
- vsako enoto predstavimo, kot vektor v $\Z^7$, torej lahko silo zapišemo kot 
- $(-2, 1, 1, 0, 0, 0, 0)$ oz. $1N$ kot $1 \cdot (-2, 1, 1, 0, 0, 0, 0)$.
+ Na primer enota $T^{-2}L^1M^1$ predstavlja Newton (N), enoto za silo. Po trditvi lahko 
+ vsako enoto predstavimo kot vektor v $\R^7$, torej lahko Newton zapišemo kot 
+ $(-2, 1, 1, 0, 0, 0, 0)$ oz. silo $1N$ kot $1 \cdot (-2, 1, 1, 0, 0, 0, 0)$.
  \end{primer}
 
 Ključni koncept, ki se bo pojavil pri dokazu izreka, je pretvorba enote npr.
@@ -3514,8 +3096,11 @@ Poglejmo, kako se transformira $\Phi$:
 Ker velja lastnost \eqref{pretvorba}, sledi
 \begin{align*}
 &f(\alpha_1, \dots, \alpha_n) \cdot \prod_{i=1}^n [\hat{R}_i] = f(\alpha_1, \dots, \alpha_n) \cdot \prod_{i=1}^n [\hat{F}_i^{b_i}] \\
-= &f(\alpha_1, \dots, \alpha_n) \cdot \prod_{i=1}^n [(x_i F_i)_i^{b_i}] = f(\alpha_1, \dots, \alpha_n) \Big(\prod_{i=1}^n x_i^{b_i}\Big) \cdot \prod_{i=1}^n [F_i^{b_i}] \\
-= &\prod_{i=1}^n x_i^{b_i} \cdot \Big(f(\alpha_1, \dots, \alpha_n)\cdot \prod_{i=1}^n [F_i^{b_i}] \Big) = \prod_{i=1}^n x_i^{b_i} \cdot \Phi(\alpha_1 R_1, \dots, \alpha_n R_n).
+=& f(\alpha_1, \dots, \alpha_n) \cdot \prod_{i=1}^n [(x_i F_i)_i^{b_i}] \\
+=& f(\alpha_1, \dots, \alpha_n) \Big(\prod_{i=1}^n x_i^{b_i}\Big) \cdot \prod_{i=1}^n [F_i^{b_i}] \\
+=& \prod_{i=1}^n x_i^{b_i} \cdot \Big(f(\alpha_1, \dots, \alpha_n)\cdot \prod_{i=1}^n [F_i^{b_i}] \Big) = \\
+=& \prod_{i=1}^n x_i^{b_i} \cdot \Big(f(\alpha_1, \dots, \alpha_n)\cdot \prod_{i=1}^n [R_i] \Big) = \\
+=& \prod_{i=1}^n x_i^{b_i} \cdot \Phi(\alpha_1 R_1, \dots, \alpha_n R_n).
 \end{align*}
 \end{dokaz}
 
@@ -3552,7 +3137,7 @@ ekvivalentno:
 $$
 R_1^{\lambda_1} \cdot \ldots \cdot R_n^{\lambda_n} = 1 \Longrightarrow \lambda_1 = \dots = \lambda_n = 0.
 $$
-Privzeli bomo, da je $m\geq r$, kar pomeni, da imamo več neodvisnih spremeljivk kot enot. Sedaj lahko za $k > r$ enoto $R_k$ izrazimo kot 
+Privzeli bomo, da je $m\geq r$, kar pomeni, da imamo več neodvisnih spremen-ljivk kot enot. Sedaj lahko za $k > r$ enoto $R_k$ izrazimo kot 
 $$
 R_k = R_1^{d_1}\cdot \ldots \cdot R_r^{d_r}
 $$
@@ -3627,9 +3212,9 @@ Vendar to pomeni
 \begin{align*}
 [R_1^{d_1}\cdot \ldots R_r^{d_r}] = \prod_{i=1}^m [F^{k_{i1}d_1}\cdot \ldots \cdot F_r^{k_{ir}d_r}] = \prod_{i=1}^m F_i^{k_{i1} d_1 + \dots + k_{ir}d_r},
 \end{align*} 
-kjer želimo, da je eksponent enak $0$. Z drugimi besedami, brezdimenzijske grupe $\pi$, 
+kjer želimo, da je eksponent enak $0$. Z drugimi besedami, brezdimenzijske grupe $\pi$
 so vektorji, ki ležijo v jedru matrike iz dokaza. Ker ima 
-ta matrika, enak rang kot če vzamemo matriko vseh spremenljivk, je dovolj 
+ta matrika enak rang kot če vzamemo matriko vseh spremenljivk, je dovolj 
 poiskati jedro le te
 \[
 M =
@@ -3656,13 +3241,13 @@ f(E, \epsilon, \nu, \kappa) = 0,
 $$
 za $f:\mathcal{F} \rightarrow \R$. Za $\epsilon$ in $\nu$ že vemo, da imata
 enote $[\epsilon] = [L^2 T^{-3}]$ in $[\nu] = [M^1 L^{-1}T^{-1}]$. Ker je 
-$\kappa = \frac{2\pi}{L}$ pomeni, da je $[\kappa] = [L^{-1}]$.
+$\kappa = \frac{2\pi}{L}$, imamo $[\kappa] = [L^{-1}]$.
 Hitrostno-spektralni tenzor $\Phi$ je 
 $$
 \Phi(\text{\bd{$\kappa$}}, t) = \frac{1}{(2\pi)^n} \int_{\R^n} {R}(\bd{x}, t) e^{-i\text{\bd{$\kappa$}} \cdot \bd{x}} \dif \bd{x}.
 $$
-Po definiciji $R$ prestavlja kinetično energijo, torej ima enoto $[L^2T^{-2}]$.
-Eksponetni del integranda je brezdimenzijski, diferencial pa ima enoto $[L^{n}]$. Zato je enota
+Po definiciji $R$ predstavlja kinetično energijo, torej ima enoto $[L^2T^{-2}]$.
+Eksponenti del integranda je brezdimenzijski, diferencial pa ima enoto $[L^{n}]$. Zato je enota
 tenzorja $\Phi$ enaka $[L^2T^{-2}L^n] = [L^{n+2}T^{-2}]$. Iz 
 enačbe \eqref{hitrostno_spektralni_tenzor_izotropija} izrazimo enoto za 
 $E$, kar nam da $[L^{n+2} T^{-2} L^{-2}] = [L^n T^{-2}]$. Sedaj lahko 
@@ -3692,7 +3277,7 @@ dobimo
 $$
 \pi = E^{3} \epsilon^{-2} \kappa^{3n - 4}, 
 $$
-ki zadošča $F(\pi) = 0$, za neko neznano funkcijo $F$. Ker je $\pi$ brezdimenzijska količina,
+ki zadošča $F(\pi) = 0$, za neko neznano funkcijo $F$. Ker je $\pi$ brezdimenzijska
 oz. konstanta količina, lahko zapišemo
 \begin{equation}
   E^{3} \epsilon^{-2} \kappa^{3n - 4} = C \in \R,
@@ -3706,11 +3291,11 @@ Za $n=3$ dobimo
 E(\kappa) = C \epsilon^{\frac{2}{3}} \kappa^{-\frac{5}{3}},
 \end{equation}
 kar je znameniti \textbf{spekter Kolmogorova}. Konstanto $C$ imenujemo 
-\textbf{Kolmogorovova konstanta}. Njena vrednost je določena eksperimentalno, 
+\textbf{konstanta}. Njena vrednost je določena eksperimentalno
 in znaša približno $C \approx 1.5$.
 
 \begin{primer}
-Poglejmo si primer, kako lahko z uporabo izreka določimo Kolmogorovovo hitrostno \eqref{def:kolmogorov speed} in dolžinsko skalo \eqref{def:kolmogorov length}.
+Poglejmo si primer, kako lahko z uporabo izreka določimo hitrostno \eqref{def:kolmogorov speed} in dolžinsko skalo \eqref{def:kolmogorov length} Kolmogorova.
 Recimo, da iščemo zvezo med spremenljivkami $\epsilon$, $\nu$, $\upsilon$ in $\eta$ v obliki $f(\epsilon$, $\nu$, $\upsilon$, $\eta) = 0$ za neko funkcijo $f: \mathcal{F}^4 \rightarrow \R$. 
 Enote so sledeče: $[\epsilon] = [L^2 T^{-3}]$, $[\nu] = [L^2 T^{-1}]$ $[\upsilon] = [L^1 T^{-1}]$in $[\eta] = [L^1]$. Dimenzijska matrika je
 \newpage
@@ -3765,26 +3350,31 @@ je
 \begin{equation}
 \overline{R}(\bd{x},\bd{r},t) = \langle \overline{\bd{U}}(\bd{x}, t) \cdot \overline{\bd{U}}^T(\bd{x} + \bd{r}, t) \rangle.
 \end{equation} 
-in \bd{Filtrirana energijska spektralna funkcija $\overline{E}$} je enaka
+\bd{Filtrirana energijska spektralna funkcija $\overline{E}$} je enaka
 \begin{equation}
 \overline{E}(\kappa, t) = \oint_{|\bd{\text{$\kappa$}}| = \kappa} \frac{1}{2} \text{tr}(\hat{\overline{R}}(\bd{\text{$\kappa$}, t})) \dif \bd{\text{$\kappa$}},
+\end{equation}
+in enodimenzionalna filtrirana spektralna funkcija enaka 
+\begin{equation}
+\overline{E_{ij}^k}(\bd{\text{$\kappa$}}, t) = \frac{1}{\pi} \int_{\R} \overline{R_{ij}}(r\bd{e}_k) e^{-i (\bd{\text{$\kappa$}} \cdot \bd{e}_k) r} \dif {r},
 \end{equation}
 kjer $\hat{\cdot}$ označuje Fourierovo transformacijo.
 \end{definicija}
 
+\newpage
 \begin{opomba}
 \hfill
 \begin{itemize}
   \item Definicija filtrirane spektralne funkcije je identična kot pri nefiltrirani,
   le da je slučajni vektor filtriran.
-  \item Tako kot $R$ je tudi $\overline{R}$ neodvisna od $\bd{x}$, zato bomo argument $\bd{x}$ izpuščali.
+  \item Tako kot $R$ je tudi $\overline{R}$ neodvisna od prvega argumenta, zato bomo argument $\bd{x}$ izpuščali.
 \end{itemize}
 \end{opomba}
 
 \begin{lema}
 Naj bo $\bd{U}$ homogen slučajni vektor in $G$ filtracijska funkcija. Potem je: 
 \begin{equation}
-\overline{E}(\kappa, t) = |\hat{G}(\kappa)|^2 E(\kappa, t).
+\overline{E_{ij}^k}(\bd{\text{$\kappa$}}, t) = |\hat{G}(\bd{\text{$\kappa$}})|^2 {E_{ij}^k}(\bd{\text{$\kappa$}}, t).
 \end{equation}
 \end{lema}
 
@@ -3793,48 +3383,64 @@ Ker je sled tr aditivna, je dovolj preveriti le primer, ko je
 $\bd{U}$ enodimenzionalen. Označimo ga z $u$ in sledimo definiciji 
 ter uporabimo lastnost invariance $R$ v prvi komponenti
 \begin{align*}
-\overline{R}(\bd{x}, \bd{r}, t) &= \langle \overline{u}(x + r) \overline{u}(x) \rangle \\
-&= \Big\langle\int_\R \int_\R G(y) G(z) u(x+r-y, t) u(x-z, t) \dif y \dif z\Big\rangle \\
-&= \int_\R \int_\R G(y) G(z) \langle u(x+r-y, t) u(x-z, t) \rangle \dif y \dif z \\
-&\stackrel{x \rightarrow x + z}{=} \int_\R \int_\R G(y) G(z) \langle u(x+r+z-y, t) u(x, t) \rangle \dif y \dif z \\
-&= \int_\R \int_\R G(y) G(z) R(r+z-y, t) \dif y \dif z,
+  \overline{R}(x, r, t) &= \langle \overline{u}(x + r)\,\overline{u}(x) \rangle \\
+  &= \Big\langle \int_{\mathbb{R}^n} \int_{\mathbb{R}^n} G(y)\,G(z)\,u(x + r - y, t)\,u(x - z, t)\,dy\,dz \Big\rangle \\
+  &= \int_{\mathbb{R}^n} \int_{\mathbb{R}^n} G(y)\,G(z)\,\langle u(x + r - y, t)\,u(x - z, t) \rangle\,dy\,dz \\
+  &\stackrel{x \rightarrow x + z}{=} \int_{\mathbb{R}^n} \int_{\mathbb{R}^n} G(y)\,G(z)\,\langle u(x + r + z - y, t)\,u(x, t) \rangle\,dy\,dz \\
+  &= \int_{\mathbb{R}^n} \int_{\mathbb{R}^n} G(y)\,G(z)\,R(r + z - y, t)\,dy\,dz.
+  \end{align*}
+
+% \begin{align*}
+%   \overline{R}(\bd{x}, \bd{r}, t) &= \langle \overline{u}(x + r) \overline{u}(x) \rangle \\
+%   &= \Big\langle\int_\R \int_\R G(y) G(z) u(x+r-y, t) u(x-z, t) \dif y \dif z\Big\rangle \\
+%   &= \int_\R \int_\R G(y) G(z) \langle u(x+r-y, t) u(x-z, t) \rangle \dif y \dif z \\
+%   &\stackrel{x \rightarrow x + z}{=} \int_\R \int_\R G(y) G(z) \langle u(x+r+z-y, t) u(x, t) \rangle \dif y \dif z \\
+%   &= \int_\R \int_\R G(y) G(z) R(r+z-y, t) \dif y \dif z,
+% \end{align*}
+Izračunajmo filtrirano enodimenzionalno spektralno funkcijo:
+\begin{align*}
+\overline{E}(\kappa, t) &= \frac{1}{\pi} \int_\R \overline{R}(r, t) e^{-i\kappa r} \dif r = \\
+&= \frac{1}{\pi}\int_{\R} \int_{\R} \int_\R G(y) G(z) R(r+z-y,t) e^{-i\kappa r} \dif y \dif z \dif r = \\
+&= \frac{1}{\pi}\int_{\R} \int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) R(r+z-y,t) e^{-i\kappa(r+z-y)} \dif y \dif z \dif r.
+\end{align*}
+Po Fubinijevem izreku lahko zamenjamo vrstni red integracije,  
+z uvedbo spremenljivke $r + z - y = s$, $\dif r = \dif s$ dobimo invarianco notranjega integrala glede na
+spremenljivki $z$ in $y$
+\begin{align*}
+\frac{1}{\pi}&\int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) \Big(\int_{\R} R(r+z-y,t) e^{-i\kappa(r+z-y)} \dif r \Big) \dif y \dif z \\
+&= \int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) \Big(\frac{1}{\pi}\int_{\R} R(s,t) e^{-i\kappa s} \dif s \Big) \dif y \dif z = \\
+&= E(\kappa, t) \int_\R (G(y) e^{-i\kappa y}\dif y) \overline{\int_{\R} (G(z) e^{-i\kappa z} \dif z)}  = \\
+&= E(\kappa, t) G(\kappa) \overline{G}(\kappa) = \\
+&= |G(\kappa)|^2 E(\kappa, t).
 \end{align*}
 
-% \begin{align*}
-% \overline{E}(\kappa, t) &= \frac{1}{\pi} \int_\R \overline{R}(r, t) e^{-i\kappa r} \dif r = \\
-% &= \frac{1}{\pi}\int_{\R} \int_{\R} \int_\R G(y) G(z) R(r+z-y,t) e^{-i\kappa r} \dif y \dif z \dif r = \\
-% &= \frac{1}{\pi}\int_{\R} \int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) R(r+z-y,t) e^{-i\kappa(r+z-y)} \dif y \dif z \dif r.
-% \end{align*}
-% Po Fubinijevem izreku lahko zamenjamo vrstni red integracije: 
-% \begin{align*}
-% \frac{1}{\pi}\int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) \Big(\int_{\R} R(r+z-y,t) e^{-i\kappa(r+z-y)} \dif r \Big) \dif y \dif z.
-% \end{align*}
-% Z uvedbo spremenljivke $r + z - y = s$ $\Longrightarrow$ $\dif r = \dif s$ dobimo invarianco notranjega integrala glede na
-% spremenljivki $z$ in $y$
-% \begin{align*}
-% &= \int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) \Big(\frac{1}{\pi}\int_{\R} R(s,t) e^{-i\kappa s} \dif s \Big) \dif y \dif z = \\
-% &= E(\kappa, t) \int_\R (G(y) e^{-i\kappa y}\dif y) \overline{\int_{\R} (G(z) e^{-i\kappa z} \dif z)}  = \\
-% &= E(\kappa, t) G(\kappa) \overline{G}(\kappa) = \\
-% &= |G(\kappa)|^2 E(\kappa, t).
-% \end{align*}
+% \begin{align}
+% \overline{E_{ij}^k}(\bd{\text{$\kappa$}}, t) &= \frac{1}{\pi} \int_{\R} \overline{R_{ij}}(r\bd{e}_k) e^{-i (\bd{\text{$\kappa$}} \cdot \bd{e}_k) r} \dif {r} \nonumber\\
+% &= \frac{1}{\pi}\int_{\R} \int_{\R^n} \int_{\R^n} G(\bd{y}) G(\bd{z}) R(r\bd{e}_k + \bd{z}-\bd{y},t) e^{-i (\bd{\text{$\kappa$}} \cdot \bd{e}_k) r} \dif \bd{y} \dif \bd{z} \dif r \nonumber \\
+% &= \frac{1}{\pi}\int_{\R} \int_{\R} \int_\R (G(\bd{y}) e^{-i\bd{\text{$\kappa$}} \cdot\bd{y}}) (G(\bd{z}) e^{i\bd{\text{$\kappa$}} \cdot \bd{z}}) R(r\bd{e}_k + \bd{z}-\bd{y},t) e^{-i\bd{\text{$\kappa$}}(r\bd{e}_k+\bd{z}-\bd{y})} \dif \bd{y} \dif \bd{z} \dif r \nonumber\\
+% &= \frac{1}{\pi}\int_{\R^n} \int_{\R^n} (G(\bd{y}) e^{-i\bd{\text{$\kappa$}}\cdot \bd{y}}) (G(\bd{z}) e^{i\bd{\text{$\kappa$}}\cdot \bd{z}}) \Big(\int_{\R} R(r\bd{e}_k+\bd{z}-\bd{y},t) e^{-i\bd{\text{$\kappa$}}(r\bd{e}_k+\bd{z}-\bd{y})} \dif r \Big) \dif \bd{y} \dif \bd{z} \label{foubke}\\
+% &= \int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) \Big(\frac{1}{\pi}\int_{\R} R(s,t) e^{-i\kappa s} \dif s \Big) \dif y \dif z \label{nova_sp} \\
+% &= E(\kappa, t) \int_\R (G(y) e^{-i\kappa y}\dif y) \overline{\int_{\R} (G(z) e^{-i\kappa z} \dif z)} \nonumber\\
+% &= E(\kappa, t) G(\kappa) \overline{G}(\kappa) \nonumber\\
+% &= |G(\kappa)|^2 E(\kappa, t)\nonumber
+% \end{align}
 
-\begin{align}
-\overline{E}(\kappa, t) &= \frac{1}{\pi} \int_\R \overline{R}(r, t) e^{-i\kappa r} \dif r \nonumber\\
-&= \frac{1}{\pi}\int_{\R} \int_{\R} \int_\R G(y) G(z) R(r+z-y,t) e^{-i\kappa r} \dif y \dif z \dif r \nonumber \\
-&= \frac{1}{\pi}\int_{\R} \int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) R(r+z-y,t) e^{-i\kappa(r+z-y)} \dif y \dif z \dif r \nonumber\\
-&= \frac{1}{\pi}\int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) \Big(\int_{\R} R(r+z-y,t) e^{-i\kappa(r+z-y)} \dif r \Big) \dif y \dif z \label{foubke}\\
-&= \int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) \Big(\frac{1}{\pi}\int_{\R} R(s,t) e^{-i\kappa s} \dif s \Big) \dif y \dif z \label{nova_sp} \\
-&= E(\kappa, t) \int_\R (G(y) e^{-i\kappa y}\dif y) \overline{\int_{\R} (G(z) e^{-i\kappa z} \dif z)} \nonumber\\
-&= E(\kappa, t) G(\kappa) \overline{G}(\kappa) \nonumber\\
-&= |G(\kappa)|^2 E(\kappa, t)\nonumber
-\end{align}
-V enakosti \eqref{foubke} smo zamenjali vrstni red integracije po Fubinijevem izreku, v enačbi \eqref{nova_sp} pa smo uvedli novo spremenljivko $r + z - y = s$, $\dif r = \dif s$, kar je omogočilo, da notranji integral ni več odvisen od spremenljivk $z$ in $y$.
+% \begin{align}
+%   \overline{E}(\kappa, t) &= \frac{1}{\pi} \int_\R \overline{R}(r, t) e^{-i\kappa r} \dif r \nonumber\\
+%   &= \frac{1}{\pi}\int_{\R} \int_{\R} \int_\R G(y) G(z) R(r+z-y,t) e^{-i\kappa r} \dif y \dif z \dif r \nonumber \\
+%   &= \frac{1}{\pi}\int_{\R} \int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) R(r+z-y,t) e^{-i\kappa(r+z-y)} \dif y \dif z \dif r \nonumber\\
+%   &= \frac{1}{\pi}\int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) \Big(\int_{\R} R(r+z-y,t) e^{-i\kappa(r+z-y)} \dif r \Big) \dif y \dif z \label{foubke}\\
+%   &= \int_{\R} \int_\R (G(y) e^{-i\kappa y}) (G(z) e^{i\kappa z}) \Big(\frac{1}{\pi}\int_{\R} R(s,t) e^{-i\kappa s} \dif s \Big) \dif y \dif z \label{nova_sp} \\
+%   &= E(\kappa, t) \int_\R (G(y) e^{-i\kappa y}\dif y) \overline{\int_{\R} (G(z) e^{-i\kappa z} \dif z)} \nonumber\\
+%   &= E(\kappa, t) G(\kappa) \overline{G}(\kappa) \nonumber\\
+%   &= |G(\kappa)|^2 E(\kappa, t)\nonumber
+% \end{align}
 
 \end{dokaz}
 
 Najprej si bomo ogledali enodimenzionalni primer, za katerega bomo
-potrebovali poseben primer enodimenzionalne spektralne funkcije. To pa moramo 
-povezati z $E$, čigavo porazdelitev poznamo (označevali bomo $\bd{\text{$\kappa$}}^2 = \kappa^2$). Iz prejšnjih razdelkov vemo 
+potrebovali poseben primer enodimenzionalne spektralne funkcije. To moramo 
+povezati z $E$, katerega porazdelitev poznamo (označevali bomo $\bd{\text{$\kappa$}}^2 = \kappa^2$). Iz prejšnjih razdelkov vemo 
 naslednje: 
 \begin{align}
 E_{ij}^k(\kappa_k) &= 2 \int_{\R^{n-1}}\Phi_{ij}(\bd{\text{$\kappa$}}) \dif \hat{\bd{\text{$\kappa$}}} \nonumber\\
@@ -3863,31 +3469,29 @@ Diferencial je enak
 \end{align*}
 Integral \ref{int} se transformira v
 \begin{align*}
-= \frac{2\Gamma\big(\frac{n}{2}\big)}{(n-1)\pi^\frac{n}{2}} \int_{0}^\infty \int_{0}^{2\pi} \int_{[0,\pi]^{n-3}}\frac{E(\sqrt{\kappa_k^2 + r^2})}{(\kappa_k^2 + r^2)^{(n-1)/2}}\Big(1 - \frac{\kappa_k^2}{(\kappa_k^2 + r^2)}\Big) r^{n-2} \dif r \dif \Omega_{n-2}.
+&= \frac{2\Gamma\big(\frac{n}{2}\big)}{(n-1)\pi^\frac{n}{2}} \int_{0}^\infty \int_{0}^{2\pi} \int_{[0,\pi]^{n-3}}\frac{E(\sqrt{\kappa_k^2 + r^2})}{(\kappa_k^2 + r^2)^{(n-1)/2}}\Big(1 - \frac{\kappa_k^2}{(\kappa_k^2 + r^2)}\Big) r^{n-2} \dif r \dif \Omega_{n-2}\\
 \end{align*}
 Integral po kotih $\phi_i$ za $i = 1, \dots, n-2$, nam da volumen $n-1$ sfere, kar
-označimo z $S_{n-1}$:
-% \begin{align*}
-% &= \frac{2 \Gamma\big(\frac{n}{2}\big) S_{n-1}}{(n-1)\pi^\frac{n}{2}} \int_{0}^\infty \frac{E(\sqrt{\kappa_k^2 + r^2})}{(\kappa_k^2 + r^2)^{(n-1)/2}}\Big(1 - \frac{\kappa_k^2}{(\kappa_k^2 + r^2)}\Big) r^{n-2} \dif r = \\
-% &= \frac{2}{n-1} \int_{0}^\infty \frac{E(\sqrt{\kappa_k^2 + r^2})}{(\kappa_k^2 + r^2)^{(n-1)/2}}\cdot\Big(\frac{r^n}{\kappa_k^2 + r^2}\Big) \dif r = 
-% \end{align*}
-% uvedemo novo neznanko $\kappa = \sqrt{\kappa_k^2 + r^2} \Longrightarrow \dif \kappa = \frac{r}{\sqrt{\kappa}} \dif r$: 
-% \begin{align*}
-% = \frac{2}{n-1} \int_{|\kappa_k|}^{\infty} \frac{E(\kappa)}{\kappa^{n}}\cdot (\kappa^2 - \kappa_k^2)^{(n-1)/2} \dif \kappa = 
-% \end{align*}
-% Privzamemo predpostavke hipotez Kolmogorova in vstavimo spekter  Kolmogorov: 
-% \begin{align*}
-% = \frac{2}{n-1} C \epsilon^{2/3} \int_{|\kappa_k|}^{\infty} \frac{\kappa^{-5/3}}{\kappa^{n}}\cdot (\kappa^2 - \kappa_k^2)^{(n-1)/2} \dif \kappa.
-% \end{align*}
-% Integral lahko eksplicitno izračunamo preko Gamma funkcije, vendar 
-% bo za naše potrebe dovolj za primer $n=3$
-% $$
-% = \frac{18}{55} C \epsilon^{2/3} \kappa_k^{-5/3}
-% $$
+označimo z $S_{n-1}$. Pri predpostavki hipotez Kolmogorova dobimo:
+
+
 \begin{align*}
-&= \frac{2 \Gamma\big(\frac{n}{2}\big) S_{n-1}}{(n-1)\pi^\frac{n}{2}} \int_{0}^\infty \frac{E(\sqrt{\kappa_k^2 + r^2})}{(\kappa_k^2 + r^2)^{(n-1)/2}}\Big(1 - \frac{\kappa_k^2}{(\kappa_k^2 + r^2)}\Big) r^{n-2} \dif r = \\
-&= \frac{2}{n-1} \int_{0}^\infty \frac{E(\sqrt{\kappa_k^2 + r^2})}{(\kappa_k^2 + r^2)^{(n-1)/2}}\cdot\Big(\frac{r^n}{\kappa_k^2 + r^2}\Big) \dif r = 
+&= \frac{2 \Gamma\big(\frac{n}{2}\big) S_{n-1}}{(n-1)\pi^\frac{n}{2}} \int_{0}^\infty \frac{E(\sqrt{\kappa_k^2 + r^2})}{(\kappa_k^2 + r^2)^{(n-1)/2}}\Big(1 - \frac{\kappa_k^2}{(\kappa_k^2 + r^2)}\Big) r^{n-2} \dif r \\
+&= \frac{2}{n-1} \int_{0}^\infty \frac{E(\sqrt{\kappa_k^2 + r^2})}{(\kappa_k^2 + r^2)^{(n-1)/2}}\cdot\Big(\frac{r^n}{\kappa_k^2 + r^2}\Big) \dif r \\
+%\end{align*}
+%uvedemo novo neznanko $\kappa = \sqrt{\kappa_k^2 + r^2} \Longrightarrow \dif \kappa = \frac{r}{\sqrt{\kappa}} \dif r$: 
+%\begin{align*}
+&= \frac{2}{n-1} \int_{|\kappa_k|}^{\infty} \frac{E(\kappa)}{\kappa^{n}}\cdot (\kappa^2 - \kappa_k^2)^{(n-1)/2} \dif \kappa \\
+%\end{align*}
+%Privzamemo predpostavke hipotez Kolmogorova in vstavimo spekter  Kolmogorov: 
+%\begin{align*}
+&= \frac{2}{n-1} C \epsilon^{2/3} \int_{|\kappa_k|}^{\infty} \frac{\kappa^{-5/3}}{\kappa^{n}}\cdot (\kappa^2 - \kappa_k^2)^{(n-1)/2} \dif \kappa.
 \end{align*}
+Integral lahko eksplicitno izračunamo preko Gamma funkcije, vendar 
+bo za naše potrebe dovolj za primer $n=3$
+$$
+E_{ij}^k(\kappa_k) = 2 \int_{\R^{n-1}}\Phi_{ij}(\bd{\text{$\kappa$}}) \dif \hat{\bd{\text{$\kappa$}}} = \frac{18}{55} C \epsilon^{2/3} \kappa_k^{-5/3}.
+$$
 
 Sedaj si poglejmo primer 
 \begin{primer}
@@ -3926,7 +3530,7 @@ vedar potrebujemo približno 16-krat več točk.
 \end{primer}
 
 \begin{primer}
-Kinetična energija residulnega polja je 
+Kinetična energija rezidualnega polja je 
 $$
 k_r = \int_{0}^{\infty} (1 - \hat{G}^2(\kappa)) E(\kappa) \dif \kappa.
 $$
@@ -3939,7 +3543,7 @@ Za filter $T_c$ se $k_r$ izrazi kot
 $$
 k_r = \int_{\kappa_c}^{\infty} E(\kappa) \dif \kappa. 
 $$
-Uporabimo Kolmogorov spekter: 
+Uporabimo spekter Kolmogorova: 
 \begin{align*}
 k_r &= \int_{\kappa_c}^{\infty} E(\kappa) \dif \kappa = \int_{\kappa_c}^{\infty} C \epsilon^{\frac{2}{3}} \kappa^{-\frac{5}{3}} \dif \kappa = \\
 &= C \epsilon^{\frac{2}{3}} \Big(- \frac{3}{2} \kappa^{-\frac{2}{3}}\Big)\Big|_{\kappa_c}^\infty = \frac{3}{2} C \epsilon^{\frac{2}{3}}\kappa_c^{-\frac{2}{3}}.
@@ -3963,16 +3567,22 @@ za dan filter v tridimenzionalnem primeru.
 V tem poglavju se vrnemo k filtriranim Navier-Stokesovim enačbam: 
 \begin{align*}
   \nabla\cdot\overline{\bd{U}} = \frac{\partial \overline{U}_j}{\partial x_j} &= 0\\[2mm]
-  \frac{\partial \overline{U}_j}{\partial t} + \frac{\partial \overline{U_i}\, \overline{U_j}}{\partial x_i} = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_j}& 
-- \frac{\partial \tau_{ij}^{R}}{\partial x_i}+ \nu \frac{\partial^2 \overline{U}_j}{\partial x_i \partial x_i} + \overline{f}_j,
+  \frac{\partial \overline{U}_j}{\partial t} + \frac{\partial \overline{U_i}\, \overline{U_j}}{\partial x_i} = -\frac{1}{\rho} \frac{\partial \overline{P}}{\partial x_j}& 
+  - \frac{\partial \tau_{ij}^\text{anizo}}{\partial x_i}+ \nu \frac{\partial^2 \overline{U}_j}{\partial x_i \partial x_i} + \overline{f}_j,
 \end{align*}
-za $j=1, 2, 3$ in $\tau_{ij}^R = \overline{U_i U_j} - \overline{U_i} \,\overline{U_j}$. 
+kjer je $\overline{P} = \overline{p} + \rho\tau^\text{izo}$ modificiran filtriran tlak, $\tau^{\text{izo}}$
+definiran enako kot v drugem poglavju
+\begin{align}
+  \tau_{ij}^\text{anizo} &= \tau_{ij}^R - \frac{1}{2}\text{tr}(\tau^R)\delta_{ij},
+\label{anizo_def}
+\end{align}
+in za $j=1, 2, 3$ je $\tau_{ij}^R = \overline{U_i U_j} - \overline{U_i} \,\overline{U_j}$. 
 Pri reševanju te enačbe hitro naletimo na problem. Člen $\overline{U_i U_j}$ 
 je neznan, saj sistem rešujemo za $\overline{U}$, ki pa ni neposredno vezana na $\overline{U_i U_j}$. 
 To pomeni, da imamo več neznanih količin, kot imamo enačb. Iz linearne algebre 
 vemo, da za takšne sisteme redko kdaj lahko pričakujemo enolično rešitev, 
 običajno pa jih je neskončno. To je nedoločen sistem. Problem zaprtja je iskanje modela, ki bo impliciral enolično rešitev.
-Zato moramo poiskati model ,oz. aproksimacijo za $\tau_{ij}^R$, ki nam bo problem 
+Zato moramo poiskati model oz. aproksimacijo za $\tau_{ij}^R$, ki nam bo problem 
 zaprl. Rešitev bomo iskali v obliki 
 \begin{equation}
 \tau_{ij}^R = F(\overline{U}), 
@@ -4077,7 +3687,7 @@ za neko funkcijo $\tilde{G}: \R^n \rightarrow \R$.
   %Uvedemo spremenljivko $\bd{r} = \bd{s} + \hat{\bd{x}}$, $\dif \bd{r} = \dif \bd{s}$:
   Ker je $\bd{u}$ rešitev Navier-Stokesove enačbe, je invariantna za Galilejevo transformacijo lahko poenostavimo 
    \begin{align*}
-     &\int_{\R^n} G(\bd{r} + \bd{x}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} + \hat{\bd{x}} - \bd{r}, t) \dif \bd{r} \\
+     &\int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} + \hat{\bd{x}} - \bd{r}, t) \dif \bd{r} \\
      \stackrel{\ref{galilejeva_invarianca}}{=}& \int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \Big(\bd{u}(\bd{x} - \bd{r}, t) + \frac{\dif \hat{\bd{x}}}{\dif t} \Big)\dif \bd{r} \\
      =& \int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}  + \int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \frac{\dif \hat{\bd{x}}}{\dif t} \dif \bd{r}\\
      \stackrel{\eqref{renormal}}{=}& \int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}  + \frac{\dif \hat{\bd{x}}}{\dif t}\\[2mm]
@@ -4219,179 +3829,227 @@ na modeliranje tenzorja $\tau_{ij}^R$, kar si bomo ogledali v naslednjem razdelk
 
 \subsection{Boussinesqova aproksimacija in modeliranje tenzorja} %$\tau^R$
 
-Poglejmo si naslednjo skico
-\begin{figure}[h!]
-  \begin{center}
-    \begin{tikzpicture}
-      % Draw horizontal blue lines of different lengths
-      \draw[thick, blue] (0,2) -- (4,2);
-      \draw[thick, blue] (0,1.5) -- (3.5,1.5);
-      \draw[thick, blue] (0,1) -- (3,1);
-      \draw[thick, blue] (0,0.5) -- (2.5,0.5);
-      \draw[thick, blue] (0,0) -- (2,0);
+% Poglejmo si skico \ref{boussinesq2}
+% \begin{figure}[h!]
+%   \begin{center}
+%     \begin{tikzpicture}
+%       % Draw horizontal blue lines of different lengths
+%       \draw[thick, blue] (0,2) -- (4,2);
+%       \draw[thick, blue] (0,1.5) -- (3.5,1.5);
+%       \draw[thick, blue] (0,1) -- (3,1);
+%       \draw[thick, blue] (0,0.5) -- (2.5,0.5);
+%       \draw[thick, blue] (0,0) -- (2,0);
       
-      % Add atoms as small circles
-      \filldraw[black] (1.5,0.25) circle(2pt);
-      \filldraw[black] (2,0.75) circle(2pt);
-      \filldraw[black] (1,1.25) circle(2pt);
-      \filldraw[black] (0.5,1.75) circle(2pt);
+%       % Add atoms as small circles
+%       \filldraw[black] (1.5,0.25) circle(2pt);
+%       \filldraw[black] (2,0.75) circle(2pt);
+%       \filldraw[black] (1,1.25) circle(2pt);
+%       \filldraw[black] (0.5,1.75) circle(2pt);
       
-      % Add arrows for the motion of atoms
-      \draw[->, thick] (1.5,0.25) -- (1,0.2);
-      \draw[->, thick] (2,0.75) -- (2.5,1);
-      \draw[->, thick] (1,1.25) -- (0.7,0.9);
-      \draw[->, thick] (0.5,1.75) -- (1,2);
+%       % Add arrows for the motion of atoms
+%       \draw[->, thick] (1.5,0.25) -- (1,0.2);
+%       \draw[->, thick] (2,0.75) -- (2.5,1);
+%       \draw[->, thick] (1,1.25) -- (0.7,0.9);
+%       \draw[->, thick] (0.5,1.75) -- (1,2);
       
-      % Add a small red square (not the one to label)
-      \draw[red] (2.5,1.2) rectangle +(0.2,0.2);
+%       % Add a small red square (not the one to label)
+%       \draw[red] (2.5,1.2) rectangle +(0.2,0.2);
       
-      % Right-side red square (main one)
-      \draw[red] (6.5,0.7) rectangle +(1,1);
+%       % Right-side red square (main one)
+%       \draw[red] (6.5,0.7) rectangle +(1,1);
       
-      % Label the area of the red square
-      \node[red] at (7,1.2) {$\Delta A_y$};
+%       % Label the area of the red square
+%       \node[red] at (7,1.2) {$\Delta A_y$};
       
-      % Add vertical arrow to denote Δy
-      \draw[<->, thick] (7.7,0.7) -- (7.7,1.7);
-      \node[right] at (7.8,1.2) {$\triangle y$};
+%       % Add vertical arrow to denote Δy
+%       \draw[<->, thick] (7.7,0.7) -- (7.7,1.7);
+%       \node[right] at (7.8,1.2) {$\triangle y$};
       
-      % Blue velocity arrows near the square
-      \draw[->, thick, blue] (6.5,0.6) -- (7,0.6);
-      \draw[->, thick, blue] (6.5,1.8) -- (7.5,1.8);
+%       % Blue velocity arrows near the square
+%       \draw[->, thick, blue] (6.5,0.6) -- (7,0.6);
+%       \draw[->, thick, blue] (6.5,1.8) -- (7.5,1.8);
       
-      % Velocity labels
-      \node at (7.3,2.1) [left] {$u_{x2}$};
-      \node at (7.3,0.2) [left] {$u_{x1}$};
+%       % Velocity labels
+%       \node at (7.3,2.1) [left] {$u_{x2}$};
+%       \node at (7.3,0.2) [left] {$u_{x1}$};
       
-      % Label u under the blue lines
-      \node at (0.5, -0.5) {$u$};
+%       % Label u under the blue lines
+%       \node at (0.5, -0.5) {$u$};
   
-    \end{tikzpicture}
-  \end{center}
-  \caption{Skica hitrost gibanja delčka tekočine.}
-  \label{boussinesq2}
-  \end{figure}
-
-Opazujemo hitrost $u$ tekočine v $x$-smeri na majhnem delčku volumna. Recimo, da je $u_{x1} < u_{x2}$ 
-za hitrosti $u_{x1}$ in $u_{x2}$ na spodnji in zgornji stranici volumna kot na sliki \ref{boussinesq2}. Označimo stranico na sliki \ref{boussinesq2} s$\triangle A_y$
-in vertikalno razdaljo med stranicama $\triangle y$. Intuitivno lahko privzamemo, da za silo v $x$-smeri $F_x$ velja 
-$$
-\triangle F_x = F_{x_2} - F_{x_1} \propto \frac{(u_{x2} - u_{x1})\triangle A_y}{\triangle y} = \frac{\triangle u_x\triangle A_y}{\triangle y}.
-$$
-Koeficient sorazmernosti imenujemo dinamična viskoznost $\mu$. Strižna napetost 
-v smeri $x$ zaradi razlike sil v $y$ smeri je tako enaka
-$$
-\tau_{yx} = \lim_{\triangle y \rightarrow 0} \frac{\triangle F_x}{\triangle A_y} = 
-\lim_{\triangle y \rightarrow 0} \mu \frac{\triangle u_x \triangle A_y}{\triangle y\triangle A_y} = 
-\lim_{\triangle y \rightarrow 0} \mu \frac{\triangle u_x}{\triangle y} = \mu \frac{\partial u_x}{\partial y}.
-$$
-Ta količina nam intuitivno pove, da sprememba hitrosti v $x$ smeri povzroči majhno spremembo hitrosti v $y$
-smeri. Postopek lahko ponovimo v vseh treh smereh, kar nam da $9$ komponent tako imenovanega 
-strižnega tenzorja $\tau$. To količino bomo povezali s tenzorjem $\tau_{ij}^R$ preko 
-Boussinesqove hipoteze. Za začetek bomo namesto filtracije $\overline{\,\,\cdot\,\,}$ uporabili 
-statistično povprečje $\langle\,\, \cdot \,\,\rangle$ iz 3. poglavja. Tenzor $\tau_{ij}^R$ je 
-enak 
+%     \end{tikzpicture}
+%   \end{center}
+%   \caption{Skica hitrost gibanja delčka tekočine.}
+%   \label{boussinesq2}
+%   \end{figure}
+% Opazujemo hitrost $u$ tekočine v $x$-smeri na majhnem delčku volumna. Recimo, da je $u_{x1} < u_{x2}$ 
+% za hitrosti $u_{x1}$ in $u_{x2}$ na spodnji in zgornji stranici volumna kot na sliki \ref{boussinesq2}. Označimo stranico na sliki \ref{boussinesq2} s$\triangle A_y$
+% in vertikalno razdaljo med stranicama $\triangle y$. Intuitivno lahko privzamemo, da za silo v $x$-smeri $F_x$ velja 
+% $$
+% \triangle F_x = F_{x_2} - F_{x_1} \propto \frac{(u_{x2} - u_{x1})\triangle A_y}{\triangle y} = \frac{\triangle u_x\triangle A_y}{\triangle y}.
+% $$
+% Koeficient sorazmernosti imenujemo dinamična viskoznost $\mu$. Strižna napetost 
+% v smeri $x$ zaradi razlike sil v $y$ smeri je tako enaka
+% $$
+% \tau_{yx} = \lim_{\triangle y \rightarrow 0} \frac{\triangle F_x}{\triangle A_y} = 
+% \lim_{\triangle y \rightarrow 0} \mu \frac{\triangle u_x \triangle A_y}{\triangle y\triangle A_y} = 
+% \lim_{\triangle y \rightarrow 0} \mu \frac{\triangle u_x}{\triangle y} = \mu \frac{\partial u_x}{\partial y}.
+% $$
+% Ta količina nam intuitivno pove, da sprememba hitrosti v $x$ smeri povzroči majhno spremembo hitrosti v $y$
+% smeri. Postopek lahko ponovimo v vseh treh smereh, kar nam da $9$ komponent tako imenovanega 
+% strižnega tenzorja $\tau$. To količino bomo povezali s tenzorjem $\tau_{ij}^R$ preko 
+% Boussinesqove hipoteze. Za začetek bomo namesto filtracije $\overline{\,\,\cdot\,\,}$ uporabili 
+V filtrirani Navier–Stokesovi enačbi (enačba iz začetka poglavja 4) je
+prisoten tenzor $\tau_{ij}^{\mathrm{anizo}}$, v katerem nastopa člen
+$\overline{U_i U_j}$. Kot že omenjeno, je ta člen neznan in ga je
+potrebno modelirati. Člen predstavlja filtrirano povprečje dveh
+komponent hitrosti, kar pomeni, da je odvisen tudi od dolžin, ki so
+manjše od skale filtracije oz. manjše od dolžin, ki jih filtracija ohrani.
+Sledeče analiza bo narejena za statistično povprečje, sklep pa bo sledil tudi za filtracijo. 
 $$
 \tau_{ij}^R = \langle U_i U_j \rangle - \langle U_i \rangle \langle U_j \rangle.
 $$
-Vstavimo v zgornjo enakost Reynoldsov razcep $U_i = \langle U_i \rangle + u_i'$: 
+
+\noindent
+Naredimo Reynoldsov razcep hitrosti $U_i = \langle U_i \rangle + u_i'$:
 \begin{align*}
-\tau_{ij}^R &= \langle (\langle U_i \rangle + u_i')(\langle U_j \rangle + u_j') \rangle - \langle \langle U_i \rangle + u_i' \rangle \langle \langle U_j \rangle + u_j' \rangle = \\
-&= \langle \langle U_i \rangle \langle U_j \rangle + u_i' u_j' + \langle U_i \rangle u_j' + \langle U_j \rangle u_i' \rangle - (\langle\langle U_i \rangle\rangle +\langle u_i,'\rangle) \cdot (\langle\langle U_j \rangle\rangle + \langle u_j,'\rangle) = \\[2mm]
-&= \langle U_i\rangle \langle U_j \rangle + \langle u_i' u_j' \rangle - \langle U_i \rangle \langle U_j \rangle - \langle u_i' \rangle \langle u_j' \rangle = \\
-&\stackrel{\ref{lastnost iv}}{=} \langle u_i' u_j' \rangle
+\tau_{ij}^R &= \langle (\langle U_i \rangle + u_i')(\langle U_j \rangle + u_j') \rangle - \langle \langle U_i \rangle + u_i' \rangle \langle \langle U_j \rangle + u_j' \rangle \\
+&= \langle \langle U_i \rangle \langle U_j \rangle + u_i' u_j' + \langle U_i \rangle u_j' + \langle U_j \rangle u_i' \rangle - (\langle\langle U_i \rangle\rangle +\langle u_i,'\rangle) \cdot (\langle\langle U_j \rangle\rangle + \langle u_j,'\rangle)\\
+&= \langle U_i\rangle \langle U_j \rangle + \langle u_i' u_j' \rangle - \langle U_i \rangle \langle U_j \rangle - \langle u_i' \rangle \langle u_j' \rangle \\
+&\stackrel{\ref{lastnost iv}}{=} \langle u_i' u_j' \rangle,
 \end{align*}
+oz. za  $\tau_{ij}^{\mathrm{anizo}}$ dobimo 
+\begin{equation}
+\tau_{ij}^{\mathrm{anizo}} = \langle u_i' u_j' \rangle - \frac{2}{3}k_{ij}^R\delta_{ij}.   
+\end{equation}
 
-Naredimo podobno povezavo, kot pri strižni napetosti. V enodimenzionalnem primeru se 
-tok $\bd{U}$ premika v smeri ($x$-smeri) povprečja toka $\langle U_x \rangle$. Ker se na 
-nivoju majhnih delcev pojavijo razlike v hitrostih na zgornji in spodnji strani majhne domene, 
-to povzroči gibanje v $y$-smeri. 
+Količina $\tau_{ij}^{\mathrm{anizo}}$ je tenzor, imenovan
+Reynoldsov napetostni tenzor in je analogen tenzorju
+$\tau_{ij}$ \eqref{tenzor_tekocine} pri Newtonovih tekočinah. Vsebuje korelacije turbulentnih
+osciliranj in je zato definiran na podfiltrski skali. Ker ga iz
+filtriranih enačb ne moremo izračunati, ga je potrebno modelirati.
 
-\begin{figure}[h]
+Pri modeliranju si pomagamo z dejstvom, da zaradi Kolmogorove hipoteze o lokalni izotropiji, privzamemo da je ta tenzor izotropen (ker so male skale lokalne) ter uvedemo
+še Boussinesqovo hipotezo, ki za $i, j = 1, 2, 3$ pravi:
+
+\[
+\tau_{ij}^{\mathrm{anizo}}
+   \propto
+   \frac{\partial \langle U_i \rangle}{\partial x_j},
+\]
+oz. za filtracijo:
+\[
+\tau_{ij}^{\mathrm{anizo}}
+   \propto
+   \frac{\partial \overline{U_i}}{\partial x_j}.
+\]
+
+% Proporcionalnostno konstanto označimo z $\nu_t$ in dobimo
+% \[
+% \tau_{ij}^{\mathrm{anizo}}
+%    = - \nu_t \, \frac{\partial \langle U_i \rangle}{\partial x_j}.
+% \]  
+% oz. če namesto splošnega povprečja uporabimo filtrcijo: 
+% \[
+% \tau_{ij}^{\mathrm{anizo}}
+%    = - \nu_t \, \frac{\partial \overline{U_i}}{\partial x_j}.
+% \]  
+% $\nu_t$ se imenuje \bd{turbulentna viskoznost}.
+
+% Naredimo podobno povezavo, kot pri strižni napetosti. V enodimenzionalnem primeru se 
+% tok $\bd{U}$ premika v smeri povprečja toka $\langle U_x \rangle$ ($x$-smeri). Ker se na 
+% nivoju majhnih delcev pojavijo razlike v hitrostih na zgornji in spodnji strani majhne domene, 
+% to povzroči gibanje v $y$-smeri. 
+\noindent
+Ideja za Boussinesqovo hipotezo je prikazana na sliki \ref{fig:reynolds}. 
+
+\begin{figure}[h!]
   \centering
 \includegraphics[scale=0.45]{slike/Smag.jpg}
-\caption{Gibanje hitrejših delcev(rdeče območje) inducira gibanje počasnejših delcev(modro območje), kar označuje prenos 
-gibalne količine oz. gibanje hitrosti v $y$ smeri.}
+\caption{Slika ilustrira idejo  Boussinesqove hipoteze. Gibanje hitrejših delcev (rdeče območje) inducira gibanje počasnejših delcev(modro območje), kar označuje prenos 
+gibalne količine oz. gibanje hitrosti v $y$ smeri. Gibanje v $xy$ ravnini je povezano s strižno napetostjo $\tau_{xy}^R$.}
 \label{fig:reynolds}
 \end{figure}
 
-Ker za gibanje, ki odstopa od povprečja, pričakujemo, da je povezano s turbulentnim
-gibanjem toka, \bd{Boussinesqova hipoteza oz. aproksimacija} pravi, da je 
-\begin{equation}
--\tau_{ij} = -\langle u_i' u_j'\rangle = \nu_t \frac{\partial \langle U_i\rangle}{\partial x_j} = \tau_{ij}^R,
-\end{equation}
-kjer je običajno $i=x$, $j=y$, $k=z$ in $\frac{\partial}{\partial x} = \frac{\partial}{\partial x_i}$, $\frac{\partial}{\partial y} = \frac{\partial}{\partial x_j}$ ter 
-$\frac{\partial}{\partial z} = \frac{\partial}{\partial x_k}$. Konstanta $\nu_t>0$ se imenuje \bd{turbulentna viskoznost}, 
-ki jo prav tako treba modelirati. Poglejmo, kako ta model razširiti v višje dimenzije. 
-Začeli smo s primerom, ko gibanje toka poteka v $x$-smeri, če pa 
-pogledamo strižno napetost v $y$-smeri, dobimo:
-$$
--\langle u_j' u_i' \rangle = \nu_t \frac{\partial \langle U_j\rangle}{\partial x}.
-$$
-Ker velja $\langle u_i' u_j' \rangle = \langle u_j' u_i' \rangle$, enačbi seštejemo in 
-dobimo dvo-dimenzionalni primer: 
-\begin{equation}
-\label{eq:2dmodel}
--\langle u_i' u_j' \rangle = \frac{\nu_t}{2} \Big(\frac{\partial \langle U_i\rangle}{\partial y} + \frac{\partial \langle U_j\rangle}{\partial x}\Big).
-\end{equation}
-Ker količine $\nu_t$ nepoznamo bomo pisali kar $\nu_t$ namesto $\frac{\nu_t}{2}$.
-\begin{opomba}
-Ta postopek ne deluje če, predpostavimo nestisljivostni pogoj. 
-Če v prejšnjem primeru vzamemo $i=j$, dobimo
-$$
--\langle u_i' u_i' \rangle = 2\nu_t \frac{\partial \langle U_i\rangle}{\partial x_i}
-$$
-in člene seštejemo 
-$$
--\sum_{i=1}^n \langle u_i' u_i' \rangle = 2\nu_t \sum_{i=1}^n \frac{\partial \langle U_i\rangle}{\partial x_i} = 2\nu_t \nabla\cdot \langle U\rangle = 0.
-$$
-Ker je leva stran neničelna (saj tok ne miruje), dobimo protisloven rezultat.
-\end{opomba}
-Za splošno dimenzijo vzamemo za model tenzorja $\langle u_i' u_j' \rangle$
-\begin{equation}
-- \langle u_i' u_j' \rangle = \nu_t \Big(\frac{\partial\langle U_i\rangle}{\partial x_j} + \frac{\partial\langle U_j\rangle}{\partial x_i}
-- \frac{1}{3} \sum_{k=1}^n \frac{\partial\langle U_k\rangle}{\partial x_k}\delta_{ij}\Big) - \frac{2}{3}k\delta_{ij},
-\end{equation}
-kjer je 
-$$k = \sum_{i=1}^n \langle u_i' u_i' \rangle$$ 
-turbulentna kinetična energija. V vektorski obliki je model enak
-\begin{equation}
--\langle \bd{u}' \bd{u}'^T \rangle = \nu_t \Big(\nabla\langle \bd{U}\rangle + (\nabla\langle \bd{U}\rangle)^T - \frac{1}{3}(\nabla\cdot\langle \bd{U}\rangle)I\Big) - \frac{2}{3}kI.
-\end{equation}
-Ni težko preveriti, da ta model ni v protislovju z nestisljivostnim pogojem iz zgornje opombe.
+\noindent
+Analogno z enačbo za strižno napetost pri Newtonovih tekočinah \ref{tenzor_tekocine}
+definiramo model za tenzor $\tau_{ij}^{\mathrm{anizo}}$
+\[
+\tau_{ij}^{\mathrm{anizo}}
+   = - 2 \nu_t \, \overline{S}_{ij},
+\]
+%
+kjer je
+%
+\[
+\overline{S}_{ij}
+  = \frac{1}{2}
+    \left(
+       \frac{\partial \langle U_i \rangle}{\partial x_j}
+     + \frac{\partial \langle U_j \rangle}{\partial x_i}
+     - \frac{1}{3}
+       \frac{\partial \langle U_k \rangle}{\partial x_k}
+       \delta_{ij}
+    \right),
+\]
+%
+oz. za nestisljivo tekočino
+%
+\[
+\overline{S}_{ij}
+  = \frac{1}{2}
+    \left(
+       \frac{\partial \langle U_i \rangle}{\partial x_j}
+     + \frac{\partial \langle U_j \rangle}{\partial x_i}
+    \right).
+\]
 
-Ta model smo uvedli na podlagi Reynoldsovega razcepa, ki 
-ima sicer lastnosti, ki so bolj prikladne za obravnavo 
-tenzorja $\tau_{ij}^R$, vendar nam daje podlago, da razvijemo 
-model v primeru filtracije. 
-
-\begin{definicija}
-Model \bd{turbulentne viskoznosti} za $\nu_t > 0$ je 
+V vektorski obliki je model enak
 \begin{equation}
-\tau_{ij}^R = -\nu_t \Big(\frac{\partial \overline{U}_i}{\partial x_j} + \frac{\partial \overline{U}_j}{\partial x_i}
-- \frac{1}{3} \sum_{k=1}^n \frac{\partial \overline{U}_k}{\partial x_k}\delta_{ij}\Big) - \frac{2}{3}k\delta_{ij}.
+-\langle \bd{u}' \bd{u}'^T \rangle = \nu_t \Big(\nabla\langle \bd{U}\rangle + (\nabla\langle \bd{U}\rangle)^T - \frac{1}{3}(\nabla\cdot\langle \bd{U}\rangle)I\Big).
 \end{equation}
-Zapisu preko anizotropnega rezidualnega napetostnega tenzorja
-\begin{equation}
-\tau_{ij}^{\text{anizo}} = -\nu_t \Big(\frac{\partial \overline{U}_i}{\partial x_j} + \frac{\partial \overline{U}_j}{\partial x_i}
-- \frac{1}{3} \sum_{k=1}^n \frac{\partial \overline{U}_k}{\partial x_k}\delta_{ij}\Big).
-\end{equation}
-\end{definicija}
 
-\begin{opomba}
-  \hfill 
-\begin{itemize}
-  \item Sedaj vidimo, zakaj smo v drugem poglavju uvedli definicijo 
-  anizotropnega tenzorja $\tau_{ij}^{\text{anizo}}$. Predstavlja popravek
-  za model turbulentne viskoznosti.
-  \item V primeru nestisljivega toka se model glasi 
-  $$
-  \tau_{ij}^{\text{anizo}} = -\nu_t \Big(\frac{\partial \overline{U}_i}{\partial x_j} + \frac{\partial \overline{U}_j}{\partial x_i}\Big) = -\nu_t \overline{S}_{ij}.
-  $$
-\end{itemize}
-\end{opomba}
+Konstanta $\nu_t$ je proporcionalnostna konstanta po analogiji z dinamično viskoznostjo
+poimenovana \bd{turbulentna viskoznost}, čeprav je običajno mnogo
+večja (v določenih primerih pa lahko tudi negativna).
 
-Poglejmo si nekaj standardnih modelov torej izbir za $\nu_t$.
+Tenzor $\tau_{ij}^{\mathrm{anizo}}$ smo tako pretežno izrazili s pomočjo
+znanih količin $\overline{U_i}$, ostane pa še modeliranje
+turbulentne viskoznosti $\nu_t$, za katero obstaja več različnih
+modelov, ki si jih ogledamo v naslednjem razdelku.
+
+% Ni težko preveriti, da ta model ni v protislovju z nestisljivostnim pogojem iz zgornje opombe.
+
+% Ta model smo uvedli na podlagi Reynoldsovega razcepa, ki 
+% ima sicer lastnosti, ki so bolj prikladne za obravnavo 
+% tenzorja $\tau_{ij}^R$, vendar nam daje podlago, da razvijemo 
+% model v primeru filtracije. 
+
+% \begin{definicija}
+% Model \bd{turbulentne viskoznosti} za $\nu_t > 0$ je 
+% \begin{equation}
+% \tau_{ij}^R = -\nu_t \Big(\frac{\partial \overline{U}_i}{\partial x_j} + \frac{\partial \overline{U}_j}{\partial x_i}
+% - \frac{1}{3} \sum_{k=1}^n \frac{\partial \overline{U}_k}{\partial x_k}\delta_{ij}\Big) - \frac{2}{3}k\delta_{ij}.
+% \end{equation}
+% Zapisu preko anizotropnega rezidualnega napetostnega tenzorja
+% \begin{equation}
+% \tau_{ij}^{\text{anizo}} = -\nu_t \Big(\frac{\partial \overline{U}_i}{\partial x_j} + \frac{\partial \overline{U}_j}{\partial x_i}
+% - \frac{1}{3} \sum_{k=1}^n \frac{\partial \overline{U}_k}{\partial x_k}\delta_{ij}\Big).
+% \end{equation}
+% \end{definicija}
+
+% \begin{opomba}
+%   \hfill 
+% \begin{itemize}
+%   \item Sedaj vidimo, zakaj smo v drugem poglavju uvedli definicijo 
+%   anizotropnega tenzorja $\tau_{ij}^{\text{anizo}}$. Predstavlja popravek
+%   za model turbulentne viskoznosti.
+%   \item V primeru nestisljivega toka se model glasi 
+%   $$
+%   \tau_{ij}^{\text{anizo}} = -\nu_t \Big(\frac{\partial \overline{U}_i}{\partial x_j} + \frac{\partial \overline{U}_j}{\partial x_i}\Big) = -\nu_t \overline{S}_{ij}.
+%   $$
+% \end{itemize}
+% \end{opomba}
+
 \subsubsection{Model Smagorinskega} 
 
 To je prvi model simulacije velikih turbulentnih vrtincev, ki 
@@ -4402,7 +4060,7 @@ $$
 $$
 Predpostavimo oceno $\nu_t \sim U_0 l_0$ za neznano hitrost $U_0$ in dolžino $l_0$.
 Smagorinsky je domneval, da je, ker je model odvisen od tenzorja $\overline{S}_{ij}$, 
-proporcionalen velikosti tega tenzorja, tj. $U_0 \sim \sqrt{S_{ij} S_{ij}}$.
+$U_0$ proporcionalna velikosti tega tenzorja, tj. $U_0 \sim \sqrt{S_{ij} S_{ij}}$.
 Ker se enote ne ujemajo, dodamo izrazu dolžino $l_0$ in normalizacijsko konstanto $\sqrt{2}$.
 Torej je $U_0 = l_0\sqrt{2 S_{ij} S_{ij}}$. 
 
@@ -4413,7 +4071,7 @@ izračunal zelo dobro oceno za $C_s$, namreč
 $$
 C_s = \frac{1}{\pi} \Big(\frac{2}{3C}\Big)^\frac{3}{4} \approx 0.17.
 $$
-kjer je $C$ konstanta Kolmogorovega.
+kjer je $C$ konstanta Kolmogorova.
 Za model Smagorinskega velja, da zadošča vsem invariancam iz prejšnjega razdelka,
 z izjemo invariance raztezanja, kar daje upanje, da je model dober. 
 
@@ -4421,7 +4079,7 @@ z izjemo invariance raztezanja, kar daje upanje, da je model dober.
 
 Naslednji model je variacija modela Smagorinskega. Ideja je, da
 filtrirane Navier-Stokesove enačbe ponovno filtriramo z novo homogeno
-filtracijsko funkcijo, novo konstanto parametriziramo tako, da je odvisna od $\bd{x}$ in $t$,
+filtracijsko funkcijo novo konstanto parametriziramo tako, da je odvisna od $\bd{x}$ in $t$,
 tj. $C = C(\bd{x}, t)$. Drugo filtracijo označimo z $\widehat{\,\,\cdot\,\,}$.
 Filtriramo filtrirano Navier-Stokesovo enačbo 
 $$
@@ -4479,7 +4137,7 @@ Odvajamo izraz po $C_s$, kar nam da
 \begin{align*}
 \text{tr}(\overline{S}) &= 2\sum_{i=1}^n \frac{\partial \overline{U}_i}{\partial x_i} = \nabla \cdot \overline{U} = 0. \\
 \end{align*}
-To nam pa da
+Torej je 
 \begin{align*}
 \text{tr}(\widehat{\overline{S}}) = 0
 \end{align*}
@@ -4512,16 +4170,16 @@ Sedaj naštejemo še nekaj drugih modelov brez natančnejše analize
   $$
   \tau_{ij}^r = -\frac{\Delta^2}{12} G*(J_{\overline{\bd{U}}} J_{\overline{\bd{U}}}^T) + \Delta^2 \sqrt{2\overline{S_{ij}}\,\overline{S_{ij}}}\,\, \overline{S_{ij}},
   $$
-  kjer je $G$ Gaussovo filtracijska funkcija.
+  kjer je $G$ Gaussova filtracijska funkcija.
 \end{itemize}
 
 \section{Model MicroHH}
 
 V zadnjem poglavju se posvetimo konkretnemu računalniškemu modelu 
-MicroHH in rezultatom, ki nam jih vrne simulacija. Rezultate 
+MicroHH \cite{vanHeerwaarden2017MicroHH} in rezultatom, ki nam jih vrne simulacija. Rezultate 
 simulacije smo primerjali z rezultati 
 meteorološkega modela Aladin\footnote{ALADIN (Aire Limitée Adaptation dynamique Développement InterNational) je regionalni numerični vremenski model, ki ga uporablja tudi ARSO za operativne vremenske napovedi.}. 
-Medtem, ko se MicroHH uporablja primarno za reševanje majhnih skal pri visoki ločljivosti, 
+Medtem, ko se MicroHH uporablja primarno za reševanje enačb na majhnih domenah pri visoki ločljivosti, 
 Aladin da napovedi na veliko večji domeni, vendar pri manjši 
 ločljivosti. Druga ključna razlika je, da je MicroHH namenjen 
 predvsem analizi turbulence preko direktnih numeričnih 
@@ -4546,16 +4204,16 @@ ohranitvi mase
 $$
 \nabla \cdot \textbf{U} = 0.
 $$
-Naslednji zakoni, ki jih sicer že poznamo kot so ohranitev skalarja in
+Naslednji zakoni, ki jih sicer že poznamo, kot so ohranitev skalarja in
 gibalne količine, bodo zaradi Boussinesqove aproksimacije in uvedbe vlage nekoliko drugačni. 
 Enačba stanja pod vplivom Boussinesqove aproksimacije je
 \begin{equation}
 \frac{\theta_v'}{\theta_{v0}} = - \frac{\rho'}{\rho_0},
 \end{equation}
-kjer so $\theta_v$ - virtualna potencialna temperatura, $\theta_v'$ 
-- perturbacijska virtualna potencialna temperatura, $\rho'$ -
-perturbacijska gostota, $\rho_0 = \rho_0(z)$ - referenčna gostota in 
-$\theta_{v0}$ - referenčna virtualna potencialna temperatura.
+kjer so $\theta_v$ virtualna potencialna temperatura, $\theta_v'$ 
+perturbacijska virtualna potencialna temperatura, $\rho'$
+perturbacijska gostota, $\rho_0 = \rho_0(z)$ referenčna gostota in 
+$\theta_{v0}$ referenčna virtualna potencialna temperatura.
 Ta uvede temperaturo v odvisnosti od vlage.
 
 \noindent
@@ -4566,7 +4224,7 @@ Zakon o ohranitvi gibalne količine se glasi:
 \end{equation}
 kjer je edina razlika s prvotnimi enačbami v tretjem členu na desni strani, ki opisuje vzgon,
 ter v tem, da je tlak v enačbi \eqref{eq:gibalna} perturbacijski tlak. Enačbo rešujemo v tridimenzionalnem prostoru, 
-torej $n=3$, oz. tri enačbe. 
+to nam da tri enačbe.
 
 \noindent
 Zakon o ohranitvi skalarja se za skalar $\phi$ glasi
@@ -4648,7 +4306,7 @@ smeri pa privzamemo, da ni trenja.
 
 Integracija poteka po časovnih korakih največje velikosti $\Delta t_{\text{max}} = 2$, vendar časovni 
 korak ni fiksen, ampak se zaradi želje po konvergenci spreminja. Pogoju, po
-katerem časovni korak prilagajamo imenujemo 
+katerem časovni korak prilagajamo, imenujemo 
 CFL (Courant-Friedrichs-Lewy) pogoj. Ponazorimo ga na posebnem 
 primeru enodimenzionalne Navier-Stokesove enačbe, ki ji pravimo 
 tudi Burgerjeva enačba
@@ -4668,7 +4326,7 @@ u_k^{n+1} = u_k^{n} - a\frac{u \Delta t}{\Delta x}(u_{k}^{n} - u_{k-1}^{n}).
 $$
 Količini $\frac{a \Delta t}{\Delta x}$ pravimo število CFL in ga bomo 
 tudi označevali na enak način. Če ga lahko ocenimo tako, da
-nam zagotovi konvergenco iteracije, nam vo ocena povedala kako velik 
+nam zagotovi konvergenco iteracije, nam bo ocena povedala kako velik 
 časovni korak lahko naredimo, da bo metoda konvergentna.
 Za oceno uporabimo razvoj v Fourierjevo vrsto. Običajno je pri analizi
 napake večina členov vrste zanemarljiva, zato lahko namesto celotne 
@@ -4755,12 +4413,13 @@ n_z = \frac{z}{z_c} = 352.
 \begin{opomba}
   \hfill
   \begin{itemize}
-    \item Na sliki orografije \ref{fig:planica} opazimo, da imamo zelo izrazito uniformno območje. 
-    To je umetno narejeno tako, da smo nastavili robne vrednosti na minimlno vrednost celotnega 
-    območja. Razlog za to je torusna predstavitev domene. Ker indetificimo nasprotno 
+    \item Na sliki orografije \ref{fig:planica} opazimo zelo izrazito uniformno območje na robovih domene. 
+    To je umetno narejeno tako, da smo nastavili robne vrednosti na minimalno vrednost celotnega 
+    območja. Razlog za to je torusna predstavitev domene. Ker identificimo nasprotno 
     ležeče stranice, morajo biti robne vrednosti enake, saj bi v nasprotnem primeru
-    nastali veliki skoki v vrednostih na robovih oz. nezveznoti, kar bi pokvarilo rezultate.
-  \item Za diskretne domeno smo izbrali števila delilnih točk, ki na prvi pogled izgledajo popolnoma naključno. 
+    tam nastali veliki skoki oz. nezveznosti v orografiji, kar bi pokvarilo rezultate.
+    Minimalna vrednost pa je bila izbrana zato da se zmanjša vpliv nefizikalnega prehajanja vetra preko robov na drugo stran domene.
+  \item Za diskretno domeno smo izbrali števila delilnih točk, ki na prvi pogled izgledajo popolnoma naključno. 
   Vendar ni tako. Velikostni red teh števil je omejen z zmogljivostjo računalnika.
   Za sama števila pa opazimo, da so vsa deljiva z 8. Razlog za to je, da smo lahko 
   paralelno računanje razdelili na 8 jeder.
@@ -4807,7 +4466,7 @@ Kaj lahko sklepamo iz grafov hitrosti vetra?
    (od \(5500\,\mathrm{m}\) do \(7000\,\mathrm{m}\)). 
    Model {ALADIN} ohranja splošno smer vetra tudi 
     v dnu doline, kar ni v skladu z dejanskimi opazovanji.
-  \item Iz slike \ref{fig:planica_vy} je v v obeh primerih nad \(1300\,\mathrm{m}\) 
+  \item Iz slike \ref{fig:planica_vy} je v obeh primerih nad \(1300\,\mathrm{m}\) 
   profil temperature adiabaten, kar kaže, da je zrak 
   dobro premešan (posledica močnega vetra v višinah). 
   V modelu {ALADIN} se mešanje nadaljuje vse do 
@@ -4837,8 +4496,7 @@ n_z = \frac{z}{z_c} = 256.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{rezultati/barje_orografija.pdf}
-  \caption{Z oranžno je označena Zgornja Savska dolina, z rdečo položaj SODAR senzorja, 
-      z zeleno dolina Tamar, z rdečo pa naselje Rateče.}
+  \caption{Z oranžno je označena Šmarna gora, med tem ko je z rdečo označen položaj SODAR senzorja.}
   \label{fig:barje_combined}
 \end{figure}
 
@@ -4877,8 +4535,8 @@ Kaj lahko sklepamo iz grafov \ref{fig:barje_T3}, \ref{fig:barje_T4} in \ref{fig:
   V spodnjih plasteh ozračja je v {jutranjem času (med 7.00 in 8.00)} prišlo do pojava \textbf{megle}, 
   ki se je po sončnem vzhodu hitro razkrojila. 
   V višjih plasteh se je že okoli {10. ure} vzpostavil \textbf{adiabatni temperaturni profil}\footnote{Adiabatni temperaturni profil je razmerje med temperaturo in višino, ki ga določa adiabatno spreminjanje temperature zraka brez izmenjave toplote z okolico. V praksi to pomeni, da se ozračje zaradi mešanja približa stanju, kjer je temperatura v skladu z adiabatskim gradientom.}, 
-  kar nakazuje na \textbf{intenzivno turbulentno mešanje} 
-  V najnižjih plasteh ozračja je bila takrat še prisoten šibek ostanek talne inverzije, 
+  kar nakazuje na \textbf{intenzivno turbulentno mešanje}. 
+  V najnižjih plasteh ozračja je bil takrat še prisoten šibek ostanek talne inverzije, 
   ki se je popolnoma razkrojila po {10. uri} (ni prikazano na sliki).
   
  \item Na podlagi rezultatov (slika \ref{fig:barje_T4}) je razvidno, da je pri tleh še vedno prisotna 
@@ -4916,10 +4574,33 @@ z visoko občutljivostjo na začetne pogoje.
 Poleg tega je v tem modelu {mešanje vlage izrazito šibkejše} kot v simulaciji z MicroHH. 
 \end{itemize}
 
+\newpage
 \subsection{Zaključek}
-Rezultati simulacij z modelom MicroHH predstavljajo prvi poskus uporabe visokoločljivostnih turbulentnih modelov za slovenske mikrometeorološke razmere. Čeprav se rezultati kvantitativno ne ujemajo popolnoma z modelom ALADIN, je kvalitativna skladnost presenetljivo dobra, zlasti glede na enostavnost uporabljenega pristopa. Model uspešno zajame ključne pojave, kot so lokalni obrati vetra, nastanek talne inverzije in jutranje razkrajanje megle.
-Največje težave se pojavljajo pri robnih pogojih, predvsem na spodnji meji domene, kjer so pogoji skozi celotno simulacijo konstantni. To povzroča, da se tok toplote in vlage ne prilagaja več razmeram v ozračju, kar vodi do presežka vlage pri tleh in nenaravnih prehodov v profilih relativne vlage. Podobno je bilo treba zaradi torusne domene umetno izravnati orografijo, da se preprečijo nezveznosti na robovih.
-Kljub tem omejitvam so rezultati zelo obetavni. Takšne simulacije z modelom MicroHH doslej še niso bile izvedene, zato predstavljajo pomemben korak naprej. Model MicroHH se je izkazal kot zanesljivo in perspektivno orodje za analizo lokalnih atmosferskih procesov, z velikim potencialom za nadaljnje raziskave in izboljšave, zlasti pri obravnavi turbulentnih pojavov, megle in vetrov v kompleksnem terenu.
+Rezultati simulacij z modelom MicroHH predstavljajo prvi poskus
+uporabe visoko ločljivostnih turbulentnega modela za slovenske 
+meteorološke razmere, kjer model ni pognan na idealiziranem 
+eksperimentu z dobro znano situacijo, temveč je inicializiran 
+iz podatkov meteorološkega modela. Čeprav se rezultati 
+kvantitativno 
+ne ujemajo popolnoma z modelom ALADIN, je kvalitativna 
+skladnost presenetljivo dobra, zlasti glede na enostavnost 
+uporabljenega pristopa. Model uspešno zajame ključne pojave, 
+kot so lokalni obrati vetra, nastanek talne inverzije in 
+jutranje razkrajanje megle.
+Največje težave se pojavljajo pri robnih pogojih, predvsem na 
+spodnji meji domene, kjer so pogoji skozi celotno simulacijo 
+konstantni. To povzroča, da se tok toplote in vlage ne 
+prilagaja več razmeram v ozračju, kar vodi do presežka vlage 
+pri tleh in nenaravnih prehodov v profilih relativne vlage. 
+Podobno je bilo treba zaradi torusne domene umetno izravnati 
+orografijo, da se preprečijo nezveznosti na robovih.
+Kljub tem omejitvam so rezultati zelo obetavni. Takšne 
+simulacije z modelom MicroHH doslej še niso bile izvedene, zato
+predstavljajo pomemben korak naprej. Model MicroHH se je 
+izkazal kot zanesljivo in perspektivno orodje za analizo 
+lokalnih atmosferskih procesov, z velikim potencialom za 
+nadaljnje raziskave in izboljšave, zlasti pri obravnavi 
+turbulentnih pojavov, megle in vetrov v kompleksnem terenu.
 
 \newpage
 \appendix

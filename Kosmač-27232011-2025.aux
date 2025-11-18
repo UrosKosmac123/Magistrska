@@ -78,7 +78,9 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Zakon o ohranitvi mase}{8}{subsection.1.4}\protected@file@percent }
 \newlabel{ohranitev mase}{{1.19}{8}{}{equation.1.19}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.5}Zakon o ohranitvi gibalne količine}{9}{subsection.1.5}\protected@file@percent }
+\newlabel{zgoraj}{{1.20}{9}{Zakon o ohranitvi gibalne količine}{equation.1.20}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.6}Zakon o ohranitvi vrtilne količine}{10}{subsection.1.6}\protected@file@percent }
+\newlabel{tenzor_tekocine}{{1.30}{11}{Zakon o ohranitvi vrtilne količine}{equation.1.30}{}}
 \newlabel{navier-stokes}{{1.31}{12}{Zakon o ohranitvi vrtilne količine}{equation.1.31}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.7}Zakon o ohranitvi vrtinčnosti}{12}{subsection.1.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.8}Zakon o ohranitvi skalarja}{13}{subsection.1.8}\protected@file@percent }
@@ -126,13 +128,14 @@
 \newlabel{homogenost2}{{3.11}{44}{}{definicija.3.11}{}}
 \newlabel{dvo_točkovna_korelacija}{{3.12}{44}{}{definicija.3.12}{}}
 \newlabel{korr}{{3.12}{44}{}{equation.3.12}{}}
+\newlabel{kovarianca_integral}{{3.13}{45}{Osnovni pojmi}{equation.3.13}{}}
 \newlabel{hitrostno_spektralni_tenzor_lastnosti}{{3.15}{47}{}{definicija.3.15}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Hipoteze Kolmogorova}{48}{subsection.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Energijsko spektralna funkcija}{49}{subsection.3.3}\protected@file@percent }
-\newlabel{hitrostno_spektralni_tenzor_izotropija}{{3.20}{51}{Energijsko spektralna funkcija}{equation.3.20}{}}
+\newlabel{hitrostno_spektralni_tenzor_izotropija}{{3.21}{51}{Energijsko spektralna funkcija}{equation.3.21}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Spekter Kolmogorova}{52}{subsection.3.4}\protected@file@percent }
 \newlabel{Buck}{{3.4}{52}{Spekter Kolmogorova}{subsection.3.4}{}}
-\newlabel{pretvorba}{{3.23}{53}{}{equation.3.23}{}}
+\newlabel{pretvorba}{{3.24}{53}{}{equation.3.24}{}}
 \newlabel{lema_pretvorba}{{3.32}{54}{}{definicija.3.32}{}}
 \ExplSyntaxOn \cs_if_free:NT \pgfsyspdfmark {\cs_set_eq:NN \pgfsyspdfmark \@gobblethree }\ExplSyntaxOff 
 \ExplSyntaxOn 
@@ -219,63 +222,61 @@
 \cs_gset:cpn {__nicematrix_max_cell_width_1}{26.9449pt}
 \ExplSyntaxOff 
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Napake filtriranih polj}{58}{subsection.3.5}\protected@file@percent }
-\newlabel{foubke}{{3.33}{59}{Napake filtriranih polj}{equation.3.33}{}}
-\newlabel{nova_sp}{{3.34}{59}{Napake filtriranih polj}{equation.3.34}{}}
 \newlabel{int}{{3.35}{60}{Napake filtriranih polj}{equation.3.35}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Modeliranje majhnih skal in problem zaprtja}{62}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Modeliranje z invariantami in posledice}{62}{subsection.4.1}\protected@file@percent }
-\newlabel{galilejeva_invarianca}{{4.3}{63}{}{definicija.4.3}{}}
-\newlabel{renormal2}{{4.3}{64}{Modeliranje z invariantami in posledice}{equation.4.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Boussinesqova aproksimacija in modeliranje tenzorja}{67}{subsection.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Skica hitrost gibanja delčka tekočine.}}{67}{figure.caption.9}\protected@file@percent }
-\newlabel{boussinesq2}{{6}{67}{Skica hitrost gibanja delčka tekočine}{figure.caption.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Gibanje hitrejših delcev(rdeče območje) inducira gibanje počasnejših delcev(modro območje), kar označuje prenos gibalne količine oz. gibanje hitrosti v $y$ smeri.}}{68}{figure.caption.10}\protected@file@percent }
-\newlabel{fig:reynolds}{{7}{68}{Gibanje hitrejših delcev(rdeče območje) inducira gibanje počasnejših delcev(modro območje), kar označuje prenos gibalne količine oz. gibanje hitrosti v $y$ smeri}{figure.caption.10}{}}
-\newlabel{eq:2dmodel}{{4.5}{69}{Boussinesqova aproksimacija in modeliranje tenzorja}{equation.4.5}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Model Smagorinskega}{70}{subsubsection.4.2.1}\protected@file@percent }
+\newlabel{anizo_def}{{4.1}{62}{Modeliranje majhnih skal in problem zaprtja}{equation.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Modeliranje z invariantami in posledice}{63}{subsection.4.1}\protected@file@percent }
+\newlabel{galilejeva_invarianca}{{4.3}{64}{}{definicija.4.3}{}}
+\newlabel{renormal2}{{4.4}{65}{Modeliranje z invariantami in posledice}{equation.4.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Boussinesqova aproksimacija in modeliranje tenzorja}{68}{subsection.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Slika ilustrira idejo Boussinesqove hipoteze. Gibanje hitrejših delcev (rdeče območje) inducira gibanje počasnejših delcev(modro območje), kar označuje prenos gibalne količine oz. gibanje hitrosti v $y$ smeri. Gibanje v $xy$ ravnini je povezano s strižno napetostjo $\tau _{xy}^R$.}}{69}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:reynolds}{{6}{69}{Slika ilustrira idejo Boussinesqove hipoteze. Gibanje hitrejših delcev (rdeče območje) inducira gibanje počasnejših delcev(modro območje), kar označuje prenos gibalne količine oz. gibanje hitrosti v $y$ smeri. Gibanje v $xy$ ravnini je povezano s strižno napetostjo $\tau _{xy}^R$}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Model Smagorinskega}{69}{subsubsection.4.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Dinamični model Smagorinskega}{70}{subsubsection.4.2.2}\protected@file@percent }
+\abx@aux@cite{0}{vanHeerwaarden2017MicroHH}
+\abx@aux@segm{0}{0}{vanHeerwaarden2017MicroHH}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Model MicroHH}{72}{section.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Fizika modela}{72}{subsection.5.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Enačbe modela}{72}{subsubsection.5.1.1}\protected@file@percent }
+\newlabel{eq:gibalna}{{5.2}{72}{Enačbe modela}{equation.5.2}{}}
 \abx@aux@cite{0}{krueger2016gcss}
 \abx@aux@segm{0}{0}{krueger2016gcss}
 \abx@aux@cite{0}{tomita2008microphysics}
 \abx@aux@segm{0}{0}{tomita2008microphysics}
-\newlabel{eq:gibalna}{{5.2}{73}{Enačbe modela}{equation.5.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Sevanje}{73}{subsubsection.5.1.2}\protected@file@percent }
 \abx@aux@cite{0}{monin1954most}
 \abx@aux@segm{0}{0}{monin1954most}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.3}Mikrofizika oblakov}{74}{subsubsection.5.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.4}Zgornji blažilni sloj}{74}{subsubsection.5.1.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.5}Površinski sloj}{74}{subsubsection.5.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Sevanje}{73}{subsubsection.5.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.3}Mikrofizika oblakov}{73}{subsubsection.5.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.4}Zgornji blažilni sloj}{73}{subsubsection.5.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.5}Površinski sloj}{73}{subsubsection.5.1.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Domena, časovni korak, začetni in robni pogoji}{74}{subsection.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Rezultati simulacij}{76}{subsection.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1}Planica}{76}{subsubsection.5.3.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Orografija na domeni za simulacijo Planica. Z rumeno barvo je označena dolina Tamar, z rdečo lokacija skakalnice v Planici, z oranžno pa Zgornjesavska dolina.}}{77}{figure.caption.11}\protected@file@percent }
-\newlabel{fig:planica_combined}{{8}{77}{Orografija na domeni za simulacijo Planica. Z rumeno barvo je označena dolina Tamar, z rdečo lokacija skakalnice v Planici, z oranžno pa Zgornjesavska dolina}{figure.caption.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Prečni prerez $y$ komponente hitrosti vetra v $xz$ ravnini ob 11:00, kjer je $y$ konstanten in je izbran na zemljepisni širini skakalnice v Planici. Z rdečo barvo je označena Planica. }}{78}{figure.caption.12}\protected@file@percent }
-\newlabel{fig:planica}{{9}{78}{Prečni prerez $y$ komponente hitrosti vetra v $xz$ ravnini ob 11:00, kjer je $y$ konstanten in je izbran na zemljepisni širini skakalnice v Planici. Z rdečo barvo je označena Planica}{figure.caption.12}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2}Ljubljansko barje}{78}{subsubsection.5.3.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Višinska profila $x$ komponente hitrosti vetra iz modelov MicroHH in Aladin ob 11:00 na mestu skakalnice v Planici.}}{79}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:planica_T3}{{10}{79}{Višinska profila $x$ komponente hitrosti vetra iz modelov MicroHH in Aladin ob 11:00 na mestu skakalnice v Planici}{figure.caption.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Višinska profila $y$ komponente hitrosti vetra iz modelov MicroHH in Aladin ob 11:00 na mestu skakalnice v Planici.}}{79}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:planica_T4}{{11}{79}{Višinska profila $y$ komponente hitrosti vetra iz modelov MicroHH in Aladin ob 11:00 na mestu skakalnice v Planici}{figure.caption.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Višinska profila virtualne temperature iz modelov MicroHH Aladin ob 11.00 na mestu skakalnice v Planici .}}{80}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:planica_uy}{{12}{80}{Višinska profila virtualne temperature iz modelov MicroHH Aladin ob 11.00 na mestu skakalnice v Planici }{figure.caption.15}{}}
-\newlabel{fig:planica_vy}{{12}{80}{Višinska profila virtualne temperature iz modelov MicroHH Aladin ob 11.00 na mestu skakalnice v Planici }{figure.caption.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Z oranžno je označena Zgornja Savska dolina, z rdečo položaj SODAR senzorja, z zeleno dolina Tamar, z rdečo pa naselje Rateče.}}{80}{figure.caption.16}\protected@file@percent }
-\newlabel{fig:barje_combined}{{13}{80}{Z oranžno je označena Zgornja Savska dolina, z rdečo položaj SODAR senzorja, z zeleno dolina Tamar, z rdečo pa naselje Rateče}{figure.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Višinski profili virtualne temperature iz SODAR meritev ob 8.00, 9.00 in 10.00.}}{81}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:barje_T3}{{14}{81}{Višinski profili virtualne temperature iz SODAR meritev ob 8.00, 9.00 in 10.00}{figure.caption.17}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Višinski profil virtualne temperature iz SODAR meritev, modela MicroHH in modela Aladin ob 10.00 na mestu SODAR merilnika.}}{81}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:barje_T4}{{15}{81}{Višinski profil virtualne temperature iz SODAR meritev, modela MicroHH in modela Aladin ob 10.00 na mestu SODAR merilnika}{figure.caption.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Graf virtualne temperature $T$ v odvisnosti od višine, dobljen ob 10.00.}}{82}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:barje_T5}{{16}{82}{Graf virtualne temperature $T$ v odvisnosti od višine, dobljen ob 10.00}{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Rezultati simulacij}{75}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1}Planica}{75}{subsubsection.5.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Orografija na domeni za simulacijo Planica. Z rumeno barvo je označena dolina Tamar, z rdečo lokacija skakalnice v Planici, z oranžno pa Zgornjesavska dolina.}}{76}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:planica_combined}{{7}{76}{Orografija na domeni za simulacijo Planica. Z rumeno barvo je označena dolina Tamar, z rdečo lokacija skakalnice v Planici, z oranžno pa Zgornjesavska dolina}{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Prečni prerez $y$ komponente hitrosti vetra v $xz$ ravnini ob 11:00, kjer je $y$ konstanten in je izbran na zemljepisni širini skakalnice v Planici. Z rdečo barvo je označena Planica. }}{77}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:planica}{{8}{77}{Prečni prerez $y$ komponente hitrosti vetra v $xz$ ravnini ob 11:00, kjer je $y$ konstanten in je izbran na zemljepisni širini skakalnice v Planici. Z rdečo barvo je označena Planica}{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Višinska profila $x$ komponente hitrosti vetra iz modelov MicroHH in Aladin ob 11:00 na mestu skakalnice v Planici.}}{78}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:planica_T3}{{9}{78}{Višinska profila $x$ komponente hitrosti vetra iz modelov MicroHH in Aladin ob 11:00 na mestu skakalnice v Planici}{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Višinska profila $y$ komponente hitrosti vetra iz modelov MicroHH in Aladin ob 11:00 na mestu skakalnice v Planici.}}{78}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:planica_T4}{{10}{78}{Višinska profila $y$ komponente hitrosti vetra iz modelov MicroHH in Aladin ob 11:00 na mestu skakalnice v Planici}{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Višinska profila virtualne temperature iz modelov MicroHH Aladin ob 11.00 na mestu skakalnice v Planici .}}{79}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:planica_uy}{{11}{79}{Višinska profila virtualne temperature iz modelov MicroHH Aladin ob 11.00 na mestu skakalnice v Planici }{figure.caption.14}{}}
+\newlabel{fig:planica_vy}{{11}{79}{Višinska profila virtualne temperature iz modelov MicroHH Aladin ob 11.00 na mestu skakalnice v Planici }{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2}Ljubljansko barje}{79}{subsubsection.5.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Z oranžno je označena Šmarna gora, med tem ko je z rdečo označen položaj SODAR senzorja.}}{80}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:barje_combined}{{12}{80}{Z oranžno je označena Šmarna gora, med tem ko je z rdečo označen položaj SODAR senzorja}{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Višinski profili virtualne temperature iz SODAR meritev ob 8.00, 9.00 in 10.00.}}{81}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:barje_T3}{{13}{81}{Višinski profili virtualne temperature iz SODAR meritev ob 8.00, 9.00 in 10.00}{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Višinski profil virtualne temperature iz SODAR meritev, modela MicroHH in modela Aladin ob 10.00 na mestu SODAR merilnika.}}{81}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:barje_T4}{{14}{81}{Višinski profil virtualne temperature iz SODAR meritev, modela MicroHH in modela Aladin ob 10.00 na mestu SODAR merilnika}{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Graf virtualne temperature $T$ v odvisnosti od višine, dobljen ob 10.00.}}{82}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:barje_T5}{{15}{82}{Graf virtualne temperature $T$ v odvisnosti od višine, dobljen ob 10.00}{figure.caption.18}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Zaključek}{83}{subsection.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{Priloga A: Nepreverjene ali Izpeljane Enačbe}{84}{section*.20}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{Priloga A: Lastnosti diadskega produkta in operatorja nabla}{84}{section*.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{Literatura}{85}{section*.25}\protected@file@percent }
-\abx@aux@read@bbl@mdfivesum{2C99AC0417B1690F5EAD6B22B89D7A2B}
+\@writefile{toc}{\contentsline {section}{Priloga A: Nepreverjene ali Izpeljane Enačbe}{84}{section*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Priloga A: Lastnosti diadskega produkta in operatorja nabla}{84}{section*.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Literatura}{85}{section*.24}\protected@file@percent }
+\abx@aux@read@bbl@mdfivesum{5C3AF7E54128C4508DA77E0326A2B9AB}
 \abx@aux@defaultrefcontext{0}{wyngaard}{nty/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{pope}{nty/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{buckingham}{nty/global//global/global/global}
@@ -289,6 +290,7 @@
 \abx@aux@defaultrefcontext{0}{dina}{nty/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{foias}{nty/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{3blue1brown2018turbulence}{nty/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{vanHeerwaarden2017MicroHH}{nty/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{monin1954most}{nty/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{tomita2008microphysics}{nty/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{krueger2016gcss}{nty/global//global/global/global}
