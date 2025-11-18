@@ -3661,7 +3661,13 @@ Poglejmo si prvi dve točki, ostale preverimo na podoben način.
 
 Preden se lotimo modeliranja tenzorja $\tau_{ij}^R$, si poglejmo še invariante filtriranih enačb, 
 saj a priori ni razloga, da se zgoraj naštete invariante prenesejo na filtrirane enačbe. 
-Privzamemo, da je filtracijska funkcija zvezna in dana s kompaktnim nosilcem.
+Privzamemo, da je filtracijska funkcija zvezna in dana s kompaktnim nosilcem. Potem je filtracija enaka
+\begin{align*}
+\overline{\bd{u}}(\bd{x}, t) &= \int_{\R^n} G(\bd{r}, \bd{x}) \bd{u}(\bd{x} - \bd{r}, t) \dif \bd{r}, \\
+&= \int_{\text{supp}(G)_\bd{x}} G(\bd{r}, \bd{x}) p(\bd{x} - \bd{r}, t) \dif \bd{r},
+\end{align*}
+kjer je supp$(G)_\bd{x} = \overline{\{(\bd{r}, \bd{x}) \in \R^n \times \R^n \,|\, G(\bd{r}, \bd{x}) \neq 0 \}}$ omejena.
+Označimo $V(\bd{x}) = \text{supp}(G)$.
 Rezultate razdelimo na tri dele:
 \begin{lema}
 Naj bo $\bd{u}$ rešitev Navier-Stokesove enačbe. Potem je filtrirana Navier-Stokesova enačba 
@@ -3669,57 +3675,43 @@ invariantna za Galileovo transformacijo, če za filtracijsko funkcijo $G$ velja
 $$
 G(\bd{r}, \bd{x}) = \tilde{G}(\bd{r} - \bd{x})
 $$
-za neko funkcijo $\tilde{G}: \R^n \rightarrow \R$.
+za neko funkcijo $\tilde{G}: \text{supp}(G) \rightarrow \R$
 \end{lema}
 
 \begin{dokaz}
   Naj bo $\overline{\bd{u}}$ filtrirano polje, ki zadošča filtrirani Navier-Stokesovi enačbi.
   Če želimo, zadostiti splošni Galilejevi transformaciji, mora veljati 
   $$
-  \overline{\bd{u}}(\bd{x} + \hat{\bd{x}}, t) = \overline{\bd{u}}(\bd{x}, t) + \frac{\dif \hat{\bd{x}}}{\dif t}.
+  \overline{\bd{u}}(\bd{x} + \hat{\bd{x}}, t) = \overline{\bd{u}}(\bd{x}, t) + \frac{\dif \hat{\bd{x}}}{\dif t},
   $$
+  za poljubno zvezno odvedljivo vektorsko funkcija $\hat{\bd{x}}: [0, \infty) \rightarrow \R^n$.
   Po definiciji filtracije zapišemo
   \begin{align}
   \label{renormal2}
-  \int_{\R^n} G(\bd{r} + \widehat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} + \hat{\bd{x}} - \bd{r}, t) \dif \bd{r} = \int_{\R^n} G(\bd{r}, \bd{x}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r} + \frac{\dif \hat{\bd{x}}}{\dif t} .
+  \int_{V(\bd{x} + \hat{\bd{x}})} G(\bd{r} + \widehat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} + \hat{\bd{x}} - \bd{r}, t) \dif \bd{r} = \int_{V(\bd{x})} G(\bd{r}, \bd{x}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r} + \frac{\dif \hat{\bd{x}}}{\dif t} .
   \end{align}
   %Najprej se posvetimo levi strani enačbe \eqref{renormal2}.
   %Uvedemo spremenljivko $\bd{r} = \bd{s} + \hat{\bd{x}}$, $\dif \bd{r} = \dif \bd{s}$:
   Ker je $\bd{u}$ rešitev Navier-Stokesove enačbe, je invariantna za Galilejevo transformacijo lahko poenostavimo 
    \begin{align*}
-     &\int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} + \hat{\bd{x}} - \bd{r}, t) \dif \bd{r} \\
-     \stackrel{\ref{galilejeva_invarianca}}{=}& \int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \Big(\bd{u}(\bd{x} - \bd{r}, t) + \frac{\dif \hat{\bd{x}}}{\dif t} \Big)\dif \bd{r} \\
-     =& \int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}  + \int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \frac{\dif \hat{\bd{x}}}{\dif t} \dif \bd{r}\\
-     \stackrel{\eqref{renormal}}{=}& \int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}  + \frac{\dif \hat{\bd{x}}}{\dif t}\\[2mm]
+     &\int_{V(\bd{x} + \hat{\bd{x}})} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} + \hat{\bd{x}} - \bd{r}, t) \dif \bd{r} \\
+     \stackrel{\ref{galilejeva_invarianca}}{=}& \int_{V(\bd{x})} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \Big(\bd{u}(\bd{x} - \bd{r}, t) + \frac{\dif \hat{\bd{x}}}{\dif t} \Big)\dif \bd{r} \\
+     =& \int_{V(\bd{x})} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}  + \int_{{V(\bd{x})}} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \frac{\dif \hat{\bd{x}}}{\dif t} \dif \bd{r}\\
+     \stackrel{\eqref{renormal}}{=}& \int_{V(\bd{x})} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}  + \frac{\dif \hat{\bd{x}}}{\dif t}\\[2mm]
    \end{align*}
-  
-  % \begin{align*}
-  % &\int_{\R^n} G(\bd{r}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} + \hat{\bd{x}} - \bd{r}, t) \dif \bd{r} \\
-  % =& \int_{\R^n} G(\bd{s} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} - \bd{s}, t) \dif \bd{s}.
-  % \end{align*}
-
-
-  
-  % Po drugi strani, pa lahko uporabimo lastnost \ref{galilejeva_invarianca} v levi strani enačbe \eqref{renormal2}:
-  % \begin{align*}
-  %   &\int_{\R^n} G(\bd{r}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} + \hat{\bd{x}} - \bd{r}, t) \dif \bd{r} \\
-  %   \stackrel{\ref{galilejeva_invarianca}}{=}& \int_{\R^n} G(\bd{r}, \bd{x} + \hat{\bd{x}}) \Big(\bd{u}(\bd{x} - \bd{r}, t) + \frac{\dif \hat{\bd{x}}}{\dif t} \Big)\dif \bd{r} \\
-  %   =& \int_{\R^n} G(\bd{r}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}  + \int_{\R^n} G(\bd{r}, \bd{x} + \hat{\bd{x}}) \frac{\dif \hat{\bd{x}}}{\dif t} \dif \bd{r}\\
-  %   \stackrel{\ref{renormal}}{=}& \int_{\R^n} G(\bd{r}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}  + \frac{\dif \hat{\bd{x}}}{\dif t}
-  % \end{align*}
 
   Torej velja enakost
   \begin{align*}
-    &\int_{\R^n} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r} = \int_{\R^n} G(\bd{r}, \bd{x}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r},\\
-    & \int_{\R^n} (G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) - G(\bd{r}, \bd{x})) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r} = 0.
+    &\int_{V(\bd{x})} G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r} = \int_{V(\bd{x})} G(\bd{r}, \bd{x}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r},\\
+    & \int_{V(\bd{x})} (G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) - G(\bd{r}, \bd{x})) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r} = 0.
   \end{align*}
-  Ker je $\bd{u}$ zvezna, je 
+  Ker je $\bd{u}$ zvezna in $\hat{\bd{x}}, \bd{x}$ poljubna, sledi
   \begin{align*}
-  \forall \bd{x}, \hat{\bd{x}}, \bd{r} \in \R^n: G(\bd{r} + \hat{\bd{x}}, \bd{x} + \hat{\bd{x}}) = G(\bd{r}, \bd{x}).
+  \forall \bd{y}, \bd{r} \in V(\bd{x}): G(\bd{r} + \hat{\bd{x}}, \bd{y} + \hat{\bd{x}}) = G(\bd{r}, \bd{y}).
   \end{align*}
-  Vidimo, da je 
+  Trditev sedaj sledi: 
   $$
-  \forall \bd{x}, \bd{r} \in \R^n: G(\bd{r}, \bd{x}) = G(\bd{r} - \bd{x}, \bd{x} - \bd{x}) = G(\bd{r} - \bd{x}, \bd{0}) \eqqcolon \tilde{G}(\bd{r} - \bd{x}).
+  \forall \bd{x}, \bd{r}, \in \text{supp}(G): G(\bd{r}, \bd{x}) = G(\bd{r} - \bd{x}, \bd{x} - \bd{x}) = G(\bd{r} - \bd{x}, \bd{0}) \eqqcolon \tilde{G}(\bd{r} - \bd{x}).
   $$
 \end{dokaz}
 
@@ -3731,7 +3723,7 @@ V naslednjih dokazih bomo namesto $\tilde{G}$ pisali kar $G$.
   Naj bo $\bd{u}$ rešitev Navier-Stokesove enačbe. Potem je filtrirana Navier-Stokesova enačba 
   invariantna za splošno Galilejevo transformacijo in rotacije, če za filtracijsko funkcijo $G$ velja 
   $$
-  G(\bd{r}, \bd{x}) = \tilde{G}(|\bd{r} - \bd{x}|)
+  G(\bd{r}, \bd{x}) = {G}(|\bd{r} - \bd{x}|)
   $$
   \end{lema}
 
@@ -3741,76 +3733,105 @@ $$
 \overline{\bd{u}}(R\bd{x}, t) = R \overline{\bd{u}}(\bd{x}, t)
 $$
 za $R\in O(n)$. Postopamo kot pri dokazu zadnje leme:
-$$\int_{\R^n} G(\bd{r} - R\bd{x}) \bd{u}(R\bd{x} - \bd{r}, t)\dif \bd{r} = R \int_{\R^n} G(\bd{r}, \bd{x}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}$$
+$$\int_{V(R\bd{x})} G(\bd{r} - R\bd{x}) \bd{u}(R\bd{x} - \bd{r}, t)\dif \bd{r} = R \int_{V(\bd{x})} G(\bd{r}, \bd{x}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}$$
 V levo stran enakosti uvedemo spremenljivko $\bd{r} = R \bd{s}, \dif \bd{r} = |\det{R}| \dif \bd{s} = \dif \bd{s}$, in dobimo
 \begin{align*}
-&\int_{\R^n} G(\bd{r} - R\bd{x}) \bd{u}(R\bd{x} - \bd{r}, t)\dif \bd{r} = \int_{\R^n} G(R\bd{s} - R\bd{x}) \bd{u}(R\bd{x} - R\bd{s}, t)\dif \bd{s} \\
-\stackrel{(ii)}{=} &\int_{\R^n} G(R\bd{s} - R\bd{x}) R\bd{u}(\bd{x} - \bd{s}, t)\dif \bd{s} = R\int_{\R^n} G(R\bd{s} - R\bd{x}) \bd{u}(\bd{x} - \bd{s}, r)\dif \bd{s}.
+&\int_{V(R\bd{x})} G(\bd{r} - R\bd{x}) \bd{u}(R\bd{x} - \bd{r}, t)\dif \bd{r} = \int_{V(\bd{x})} G(R\bd{s} - R\bd{x}) \bd{u}(R\bd{x} - R\bd{s}, t)\dif \bd{s} \\
+\stackrel{(ii)}{=} &\int_{V(\bd{x})} G(R\bd{s} - R\bd{x}) R\bd{u}(\bd{x} - \bd{s}, t)\dif \bd{s} = R\int_{V(\bd{x})} G(R\bd{s} - R\bd{x}) \bd{u}(\bd{x} - \bd{s}, r)\dif \bd{s}.
 \end{align*}
 Torej mora veljati
 $$
-\int_{\R^n} G(\bd{r} - \bd{x}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r} = \int_{\R^n} G(R(\bd{r} - \bd{x})) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}.
+\int_{V(\bd{x})} G(\bd{r} - \bd{x}) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r} = \int_{V(\bd{x})} G(R(\bd{r} - \bd{x})) \bd{u}(\bd{x} - \bd{r}, t)\dif \bd{r}.
 $$
-Zaradi zveznosti polja $\bd{u}$ sledi
+Enak argument kot prej nam da
 \begin{align*}
-\forall \bd{r}, \bd{x}\in \R^n: G(\bd{r} - \bd{x}) = G(R(\bd{r} - \bd{x})).
+\forall \bd{r}, \bd{y}\in V(\bd{x}): G(\bd{r} - \bd{y}) = G(R(\bd{r} - \bd{y})).
 \end{align*}
-Ker zahtevamo rotacijsko invarianco funkcije $G$, mora biti radialna, torej \\ $G(\bd{r}, \bd{x}) = G(|\bd{r} - \bd{x}|)$.
+Ker zahtevamo rotacijsko invarianco funkcije $G$, mora biti radialna, torej \\ $G(\bd{r}, \bd{y}) = G(|\bd{r} - \bd{y}|)$.
 \end{dokaz}
   
+Poleg omejitve na filtracijsko funkcijo, nam lema omeji tudi obliko območja.
+Ker je $G$ radialna funkcija in območje omejeno, lahko namesto domene $V(\bd{x})$ obravnavamo 
+sfero s središčem v $\bd{x}$ in polmerom $R > 0$. Torej imamo
+$$
+V(\bd{x}) = \{\bd{r} \in \R^n \,|\, ||\bd{r} - \bd{x}|| \leq R\}.
+$$
+
 \begin{lema}
 Naj bo $\bd{u}$ rešitev Navier-Stokesove enačbe. Potem je filtrirana Navier-Stokesova enačba 
 invariantna za splošno Galilejevo transformacijo, rotacije in raztezanja, če je filtracijska funkcija $G$ oblike
 $$
-G(\bd{r}, \bd{x}) = A||\bd{r} - \bd{x}||^a
+G(\bd{r}, \bd{x}) = \frac{9}{4\pi R^3}||\bd{r} - \bd{x}||^{-1}.
 $$
-za $A, a\in \R$.
 \end{lema}
 
 \begin{dokaz}
 Sledimo istemu postopku kot pri dokazu prejšnjih dveh lem, da dobimo funkcijsko relacijo za $G$:
 $$
-\exists \lambda, \gamma \in \R.\, \forall\bd{r}, \bd{x}\in \R^n: G(\gamma||\bd{r} - \bd{x}||) = \lambda G(||\bd{r} - \bd{x}||)
+\exists \lambda \in \R.\, \forall\bd{r}, \bd{x}\in \text{supp}(G): \lambda G(\lambda||\bd{r} - \bd{x}||) = G(||\bd{r} - \bd{x}||)
 $$
 Bolj splošno, rešimo funkcijsko enačbo
 $$
-\forall \gamma\in \R.\, \exists \lambda(\gamma)\in \R.\, \forall \bd{x}\in \R^n: G(\gamma \bd{x}) = \lambda(\gamma) G(\bd{x}).
+\forall \gamma, a \in \R.\, \forall \bd{x}\in \text{supp}(G): \gamma^a G(\gamma ||\bd{x}||) = G(||\bd{x}||).
 $$
-Predpostavimo, da je $G$ odvedljiva in odvajamo po parametru $\gamma$:
+Če izberemo tak $x$, da velja $||x|| = 1$, dobimo
 $$
-(\nabla G)(\gamma \bd{x}) \cdot \bd{x} = \frac{\dif \lambda}{\dif \gamma} G(\bd{x}).
+G(\gamma) = A\gamma^{-a},
 $$
-Ker enakost velja za vsak $\gamma \in \R$, vzamemo $\gamma = 1$ in označimo $a = \frac{\dif \lambda}{\dif \gamma}(1)$:
-$$
-\nabla G(\bd{x}) \cdot \bd{x} = a G(\bd{x})
-$$
-Zapisano po komponentah dobimo linearno parcialno diferencialno enačbo prvega reda
-$$
-x_1\frac{\partial G}{\partial x_1} + \dots + x_n\frac{\partial G}{\partial x_n} = aG.
-$$
-Enačbo rešimo z metodo karakteristik: nastavimo karakteristični sistem 
+za $A = G(1) \in \R$. Upoštevamo normalizacijski pogoj \eqref{renormal}, da določimo konstanto $A$.
+Z uvedbo sferičnih koordinat dobimo:
 \begin{align*}
-\dot{x}_1 =&\,\, x_1 \\
-\!\!\!\!\vdots \\
-\dot{x}_n = &\,\, x_n \\
-\dot{G} =&\,\, aG,
+\int_{D(\bd{x}, R)} G(||\bd{r} -\bd{x}||) \dif \bd{r} &= 1 \\
+\int_{D(\bd{0}, R)} A||\bd{r}||^a \dif \bd{r} &= 1 \\
+A \int_{0}^{R} \int_{S^{n}} r^{a} r^{n} \dif S \dif r &= 1 \\
+A \text{Vol}(S^{n})\int_{0}^{R} r^{a + n} \dif r &= 1 \\
+A \text{Vol}(S^{n}) \frac{R^{a + n + 1}}{a + n + 1} &= 1.
 \end{align*}
-katerega rešitev je 
-\begin{align*}
-x_i(t, s) &= A_i(s) e^t \Longrightarrow e^t = \frac{x_i(t, s)}{A_i(s)}, \,\,\,\, i = 1, \dots, n\\
-G(t, s) &= B(s) e^{at} \Longrightarrow G(x_i) = \Big(\frac{B}{A_i^a}\Big) x_i^a.
-\end{align*}
-Ker zadnja enakost velja za vsak $i=1,\dots, n$, lahko splošno rešitev zapišemo, kot 
+Torej je konstana $A$ enaka
 $$
-G(\bd{x}) = A||\bd{x}||^a, \quad A\in \R.
+A = \frac{a + n + 1}{R^{a+n+1}\text{Vol}(S^{n})},
+$$ 
+za $a + n + 1\neq 0$.
+V našem primeru imamo $a = -1$ in tridimenzionalni prostor $n = 3$, torej je 
 $$
-S tem smo pokazali, da je filtracijska funkcija oblike 
+A = \frac{3}{R^3} \frac{\Gamma\big(\frac{5}{2}\big)}{\pi^\frac{3}{2}} = \frac{3}{R^3} \frac{\big(\frac{3}{2}\big) \big(\frac{1}{2}\big)\pi^\frac{1}{2}}{\pi^\frac{3}{2}} = \frac{9}{4\pi R^3}.
 $$
-G(\bd{r}, \bd{x}) = A||\bd{r} - \bd{x}||^a.
-$$
-(za razmisliti dve stvari, domena integriranja postane sfera, nisem ziher zakaj in 
-določitev konstate $C$ preko normalizacijskega pogoja, vendar ne razumem zakaj je $\frac{a+3}{4\pi l^{a+3}} $
-za $l$ velikost sfere)
+
+% Predpostavimo, da je $G$ odvedljiva in odvajamo po parametru $\gamma$:
+% $$
+% (\nabla G)(\gamma \bd{x}) \cdot \bd{x} = \frac{\dif \lambda}{\dif \gamma} G(\bd{x}).
+% $$
+% Ker enakost velja za vsak $\gamma \in \R$, vzamemo $\gamma = 1$ in označimo $a = \frac{\dif \lambda}{\dif \gamma}(1)$:
+% $$
+% \nabla G(\bd{x}) \cdot \bd{x} = a G(\bd{x})
+% $$
+% Zapisano po komponentah dobimo linearno parcialno diferencialno enačbo prvega reda
+% $$
+% x_1\frac{\partial G}{\partial x_1} + \dots + x_n\frac{\partial G}{\partial x_n} = aG.
+% $$
+% Enačbo rešimo z metodo karakteristik: nastavimo karakteristični sistem 
+% \begin{align*}
+% \dot{x}_1 =&\,\, x_1 \\
+% \!\!\!\!\vdots \\
+% \dot{x}_n = &\,\, x_n \\
+% \dot{G} =&\,\, aG,
+% \end{align*}
+% katerega rešitev je 
+% \begin{align*}
+% x_i(t, s) &= A_i(s) e^t \Longrightarrow e^t = \frac{x_i(t, s)}{A_i(s)}, \,\,\,\, i = 1, \dots, n\\
+% G(t, s) &= B(s) e^{at} \Longrightarrow G(x_i) = \Big(\frac{B}{A_i^a}\Big) x_i^a.
+% \end{align*}
+% Ker zadnja enakost velja za vsak $i=1,\dots, n$, lahko splošno rešitev zapišemo, kot 
+% $$
+% G(\bd{x}) = A||\bd{x}||^a, \quad A\in \R.
+% $$
+% S tem smo pokazali, da je filtracijska funkcija oblike 
+% $$
+% G(\bd{r}, \bd{x}) = A||\bd{r} - \bd{x}||^a.
+% $$
+% (za razmisliti dve stvari, domena integriranja postane sfera, nisem ziher zakaj in 
+% določitev konstate $C$ preko normalizacijskega pogoja, vendar ne razumem zakaj je $\frac{a+3}{4\pi l^{a+3}} $
+% za $l$ velikost sfere)
 \end{dokaz}
 
 Brez dokaza navedemo še naslednjo posledico.
@@ -3818,7 +3839,7 @@ Brez dokaza navedemo še naslednjo posledico.
 \begin{posledica}
 Filtracijska funkcija 
 $$
-G(\bd{r}, \bd{x}) = C||\bd{r} - \bd{x}||^a
+G(\bd{r}, \bd{x}) = \frac{9}{4\pi R^3}||\bd{r} - \bd{x}||^{-1}
 $$
 zadošča vsem invariantam $i) - vi)$.
 \end{posledica}
@@ -3902,9 +3923,9 @@ V filtrirani Navier–Stokesovi enačbi (enačba iz začetka poglavja 4) je
 prisoten tenzor $\tau_{ij}^{\mathrm{anizo}}$, v katerem nastopa člen
 $\overline{U_i U_j}$. Kot že omenjeno, je ta člen neznan in ga je
 potrebno modelirati. Člen predstavlja filtrirano povprečje dveh
-komponent hitrosti, kar pomeni, da je odvisen tudi od dolžin, ki so
+komponent hitrosti, kar pomeni, da je odvisen tudi od dolžin, ki so 
 manjše od skale filtracije oz. manjše od dolžin, ki jih filtracija ohrani.
-Sledeče analiza bo narejena za statistično povprečje, sklep pa bo sledil tudi za filtracijo. 
+Sledeče analiza bo narejena za statistično povprečje, sklep pa bo veljal tudi za filtracijo. 
 $$
 \tau_{ij}^R = \langle U_i U_j \rangle - \langle U_i \rangle \langle U_j \rangle.
 $$
@@ -4015,7 +4036,7 @@ večja (v določenih primerih pa lahko tudi negativna).
 Tenzor $\tau_{ij}^{\mathrm{anizo}}$ smo tako pretežno izrazili s pomočjo
 znanih količin $\overline{U_i}$, ostane pa še modeliranje
 turbulentne viskoznosti $\nu_t$, za katero obstaja več različnih
-modelov, ki si jih ogledamo v naslednjem razdelku.
+modelov, ki si jih obravnavamo v naslednjih podrazdelkih.
 
 % Ni težko preveriti, da ta model ni v protislovju z nestisljivostnim pogojem iz zgornje opombe.
 
