@@ -537,7 +537,7 @@
   \@frontpages@sl@zahvala
   \@frontpages@common@toc
   \@ifthen{\boolean{@drugastopnja}}{
-    \@frontpages@common@program
+    %\@frontpages@common@program
   }
 
   \thispagestyle{empty}
@@ -553,7 +553,7 @@
   \@frontpages@en@acknowledgements
   \@frontpages@common@toc
   \@ifthen{\boolean{@drugastopnja}}{
-    \@frontpages@common@program
+    %\@frontpages@common@program
   }
 
   \thispagestyle{empty}
